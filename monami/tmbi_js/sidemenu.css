@@ -1,0 +1,96 @@
+/* CSS Document */
+
+#sidemenu {
+		overflow-x: hidden;
+		overflow-y: auto;
+		z-index: 100;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100% !important;
+		background:rgba(123, 82, 61, 0.85);
+		transition: transform 400ms ease 0s;
+		-webkit-transition: -webkit-transform 1ms ease 0s;
+		box-shadow: 0 0 14px 2px #000;
+	}
+
+#sidemenu2 {
+		overflow-x: hidden;
+		overflow-y: hidden;
+		z-index: 100;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right:0;
+		width: 100% !important;
+		background:#fff;
+		transition: transform 400ms ease 0s;
+		-webkit-transition: -webkit-transform 1ms ease 0s;
+		box-shadow: 0 0 14px 2px #000;
+	}
+
+#wrap_bg {
+		z-index: 20;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100% !important;
+		background: url(../tmbi_images/common/bg_sidemenu.png) 0px 0px repeat;
+	}
+
+#sidemenu h1, #sidemenu2 h1	{ background:#424242; padding:17px 0 17px 10px; color:#fff; font-size:16px}	
+.closeWrap		{ position:relative;}
+.closeWrap img	{ position:absolute; right:10px; top:-35px; width:20px; cursor:pointer}
+
+.sdm_mypage		{ border-bottom:1px solid #c4d2dd; background:#eef8ff}
+.sdm_id			{ border-bottom:1px solid #c4d2dd;}
+.sdm_id:after	{ content:""; clear:both; display:block}
+.sdm_id span	{ display:block; float:left; width:50%; padding:10px 0; text-align:center; -webkit-box-sizing: border-box; -moz-box-sizing:border-box; box-sizing:border-box; color:#111 }
+.sdm_name		{ border-right:1px solid #c4d2dd}
+.sdm_mypage dl		{ padding-left:10px; padding-right:10px}
+.sdm_mypage dl dt	{ float:left}
+.sdm_mypage dl dd	{ float:right}
+
+.side_tit			{ font-size:15px; color:#333; font-size:12px; padding:5px 0 5px 10px;  font-family:Raleway, sans-serif; border-bottom:1px solid #ccc;}
+ul.sidemenulist	li	{ position:relative }
+ul.sidemenulist	li a{ display:block; padding:14px 0 14px 40px; background:#fff; border-bottom:1px solid #e1e1e1; font-size:13px;}
+ul.sidemenulist	li.on a{ background:#29a7e1; color:#fff}
+ul.sidemenulist	li a:before	{ font-family:FontAwesome; position:absolute; top:12px; left:10px; width:13px; font-size:14px; color:#666; font-weight:normal; text-align:center;}
+ul.sidemenulist	li.on a:before		{ color:#fff}
+ul.sidemenulist	li a.sdm1{ /*content:'\f072'*/ background:url(../tmbi_images/include/n_ico01.png) 10px center no-repeat; background-size:20px;}  /* 해외여행 */
+ul.sidemenulist	li a.sdm2{ /*content:'\f0f2'*/ background:url(../tmbi_images/include/n_ico02.png) 10px center no-repeat; background-size:24px;}  /* 국내여행 */
+ul.sidemenulist	li a.sdm3{ /*content:'\f207'*/ background:url(../tmbi_images/include/n_ico03.png) 10px center no-repeat; background-size:21px;}  /* 호텔/리조트 */
+ul.sidemenulist	li a.sdm4{ /*content:'\f1ad'*/ background:url(../tmbi_images/include/n_ico04.png) 10px center no-repeat; background-size:20px;}  /* 데이투어 */
+ul.sidemenulist	li a.sdm5{ /*content:'\f007'*/ background:url(../tmbi_images/include/n_ico05.png) 10px center no-repeat; background-size:22px;}  /* 픽업/샌딩 */
+ul.sidemenulist	li a.sdm6{ /*content:'\f0a1'*/ background:url(../tmbi_images/include/n_ico06.png) 10px center no-repeat; background-size:21px;}  /* 렌트카 */
+ul.sidemenulist	li a.sdm7{ /*content:'\f069'*/ background:url(../tmbi_images/include/n_ico07.png) 10px center no-repeat; background-size:20px;}  /* 항공권 */
+ul.sidemenulist	li a.sdm8{ /*content:'\f0c0'*/ background:url(../tmbi_images/include/n_ico08.png) 10px center no-repeat; background-size:20px;}  /* 고객센터 */
+ul.sidemenulist	li a.sdm9{ /*content:'\f069'*/ background:url(../tmbi_images/include/n_ico09.png) 10px center no-repeat; background-size:20px;}  /* 회사소개 */
+ul.sidemenulist	li a.sdm10{ /*content:'\f0c0'*/ background:url(../tmbi_images/include/n_ico10.png) 10px center no-repeat; background-size:20px;}  /* 회원관리 */
+ul.sidemenulist	li a.sdm11{ /*content:'\f132'*/ background:url(../tmbi_images/include/n_ico11.png) 10px center no-repeat; background-size:20px;}  /* 정책 */
+ul.sidemenulist	li a.sdm12{ /*content:'\f132'*/ background:url(../tmbi_images/include/n_ico12.png) 10px center no-repeat; background-size:20px;}  /* 마이페이지 */
+
+/***
+ul.sidemenulist	li a.sdm5:before	{content:'\f007'}  /* 마이페이지
+ul.sidemenulist	li a.sdm6:before	{content:'\f0a1'}  /* 고객센터 
+ul.sidemenulist	li a.sdm7:before	{content:'\f069'}  /* 회사소개 
+ul.sidemenulist	li a.sdm8:before	{content:'\f0c0'}  /* 회원관리 
+ul.sidemenulist	li a.sdm9:before	{*content:'\f132' }*/
+
+ul.sidemenulist	li a.sdmr1:before	{ /*content:'\f108'*/}  /* 예약확인 */
+ul.sidemenulist	li a.sdmr2:before	{ /*content:'\f09d'*/}  /* 결제조회 */
+ul.sidemenulist	li a.sdmr3:before	{ /*content:'\f044'*/}  /* 회원정보수정/탈퇴 */
+ul.sidemenulist	li a.sdmr4:before	{ /*content:'\f004'*/}  /* 찜리스트 */
+ul.sidemenulist	li a.sdmr5:before	{ /*content:'\f112'*/}  /* 로그아웃 */
+
+
+ul.depth2 li				{ position:relative}
+ul.depth2 li a				{ display:block; padding:5px 0 5px 40px; background:#fff !important; border-bottom:none; font-weight:normal; color:#333 !important}
+ul.depth2 li:first-child a	{ padding:15px 0 5px 40px}
+ul.depth2 li:last-child a	{ padding:5px 0 12px 40px; border-bottom:1px solid #dfe3e9}
+ul.depth2 li a:before		{ content:'\f068'; font-family:FontAwesome; position:absolute; top:5px; left:10px; width:14px; font-size:7px; color:#999 !important; font-weight:normal; text-align:center}
+ul.depth2 li:first-child a:before	{ top:16px}
+
+
