@@ -1,0 +1,87 @@
+/* CSS Document */
+
+#sidemenu {
+		overflow-x: hidden;
+		overflow-y: auto;
+		z-index: 3500;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left:0;
+		width: 100%;
+		background-color: rgb(0, 0, 0);
+		transition: transform 400ms ease 0s;
+		-webkit-transition: -webkit-transform 1ms ease 0s;
+		/*box-shadow: 0 0 25px 2px #555;*/
+
+	}
+#wrap_bg {
+		display:none;
+		z-index: 3000;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		/*background-color: rgba(0, 0, 0, 0.5);*/
+	}
+
+.m_login	{background:#fafafa;}
+.m_login a	{ display:block; position:relative; color:#fff; font-size:18px; height:64px; line-height:64px; padding:0px 14px;}
+/*.m_login a:before	{ content:""; position:absolute; left:10px; top:50%; width:20px; height:22px; background: url(/_m.homepage/images/common/icon_home_left.png) 0 0 no-repeat; background-size:20px; margin-top:-13px}
+*/
+
+.member_box{overflow: hidden;}
+.side_topmenu{overflow: hidden; border-top:1px solid #eaeaea; background:#fafafa;}
+.side_topmenu ul li	{ float:left; position:relative; width:50%; border-bottom:1px solid #eaeaea;}
+.side_topmenu ul li:first-child	{ border-right:1px solid #eaeaea; }
+.side_topmenu ul li a	{ display:block; height:50px; line-height: 48px; text-align:center}
+.side_topmenu ul li a img	{width:22px; margin-right:5px; margin-bottom:-4px; opacity:0.8;}
+
+.closeWrap		{ position:relative; z-index:100;}
+.closeWrap a	{ position:absolute; right:18px; top:20px; display:block; text-align:center}
+.closeWrap img	{ width:22px;}
+
+.sdm_mypage		{ border-bottom:1px solid #c4d2dd; background:#eef8ff; padding:16px 10px 14px 10px;}
+/*.sdm_id			{ border-bottom:1px solid #c4d2dd;}*/
+.sdm_id:after	{ content:""; clear:both; display:block}
+/*.sdm_id span	{ display:block; float:left; width:50%; padding:10px 0; text-align:center; -webkit-box-sizing: border-box; -moz-box-sizing:border-box; box-sizing:border-box; color:#111 }*/
+.sdm_id .sdm_img {float:left; margin-right:12px; margin-top:2px;}
+.sdm_id .sdm_img img {width:24px;}
+.sdm_id .sdm_login {float:left;}
+.sdm_id .sdm_login p {font-size:14px; margin:5px 0 8px 0; font-weight:bold;}
+.sdm_id .sdm_login span {display:block; float:left; background:#5e5e5e; border-radius:1px; padding:5px 12px; margin-right:6px; font-size:11px;}
+.sdm_id .sdm_login span:first-child {background:#179cd0; }
+.sdm_id .sdm_login span a {color:#fff; font-weight:normal}
+.sdm_name		{ border-right:1px solid #c4d2dd}
+.sdm_mypage dl		{ padding-left:10px; padding-right:10px}
+.sdm_mypage dl dt	{ float:left}
+.sdm_mypage dl dd	{ float:right}
+
+.side_tit			{ font-size:15px; color:#8394a9; font-size:12px; padding:5px 0 5px 10px;  font-family:Raleway, sans-serif; border-bottom:1px solid #c4d2dd}
+ul.sidemenulist	li	{ position:relative }
+ul.sidemenulist	li a{ position:relative; display:block; padding:16px 14px; background:#fff; border-bottom:1px solid #eaeaea}
+ul.sidemenulist	li.on a{ background:#eee; font-weight:500;}
+ul.sidemenulist	li a:before	{ position:absolute; top:14px; left:10px; width:14px; font-size:14px; color:#666; font-weight:normal; text-align:center}
+ul.sidemenulist	li.on a:before		{ color:#fff}
+/*ul.sidemenulist	li a.sdm1:before	{ content:'\f073'}
+ul.sidemenulist	li a.sdm2:before	{ content:'\f007'}
+ul.sidemenulist	li a.sdm3:before	{ content:'\f098'}
+ul.sidemenulist	li a.sdm4:before	{ content:'\f231'}
+ul.sidemenulist	li a.sdm5:before	{ content:'\f1ea'}
+ul.sidemenulist	li a.sdm6:before	{ content:'\f1d8'}*/
+ul.sidemenulist	li a:after	{ content:""; position:absolute; right:15px; top:50%; width:18px; height:8px; margin-top:-4px; background:url(/mobile/images/include/arrow_bottom.png) 0 0 no-repeat; background-size:14px; z-index:200 }
+ul.sidemenulist	li.on a:after	{ background:url(/mobile/images/include/arrow_top.png) 0 0 no-repeat; background-size:14px }
+
+ul.depth2 li	{ position:relative}
+ul.depth2 li a	{ display:block; padding:10px 0 10px 30px; background:#fff !important; border-bottom:none; font-weight:normal; color:#333 !important}
+ul.depth2 li:first-child a	{ padding:15px 0 10px 30px}
+ul.depth2 li:last-child a	{ padding:10px 0 15px 30px; border-bottom:1px solid #dfe3e9}
+/*ul.depth2 li a:before		{ content:'\f068'; font-family:FontAwesome; position:absolute; top:11px; left:10px; width:14px; font-size:7px; color:#bbb !important; font-weight:normal; text-align:center}*/
+ul.depth2 li:first-child a:before	{ top:16px}
+ul.depth2 li.one a:before	{ top:11px}
+ul.depth2 li a:after	{ content:none}
+
+
+.tour_wr{text-align:center; padding-top:20px;}
+.tour_wr img{width:110px;}
