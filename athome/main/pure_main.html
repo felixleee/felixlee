@@ -1,0 +1,1860 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>LJY Port :: 실제 운영되는 페이지가 아닙니다</title>
+    <link href="../css/style/default.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/common.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/main.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/sub_contents.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/product.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/all.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style/board.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/member.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/mypage.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/site.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/detail.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/popup.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/addon.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/font/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link href="../css/style/visa.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/type.css?v20211008" rel="stylesheet" type="text/css" />
+    <link href="../css/style/responsive.css?v20211008" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/main/pick/lightpick.css">
+    <script src="https://kit.fontawesome.com/9b9a67f5b5.js" crossorigin="anonymous"></script>
+
+    <!-- jquery -->
+    <script src="../js/jquery-1.9.1.js" type="text/javascript"></script>
+
+    <!-- jquery ui -->
+    <link type="text/css" rel="stylesheet" href="../js/jquery-ui/css/jquery-ui-1.10.4.custom.css" />
+    <script src="../js/jquery-ui/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
+
+    <!-- jquery lazyload -->
+    <script type="text/javascript" src="../js/jquery.lazyload.min.js"></script>
+
+    <!-- jquery 갤러리(movegellery) -->
+    <script type='text/javascript' src="../js/jquery.movegellery.js"></script>
+
+    <!-- Magnific Popup -->
+    <script type='text/javascript' src="../js/magnific-popup/jquery.magnific-popup.js"></script>
+    <link href="../js/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+    <!-- jquery Banner -->
+    <script src="../js/jquery.banner.js" type="text/javascript"></script>
+
+    <!-- jquery form -->
+    <script type="text/javascript" src="../js/jquery.form.js"></script>
+
+    <!-- bxslider -->
+    <script type="text/javascript" src="../js/jquery.bxslider.js"></script>
+    <link type="text/css" href="../css/style/jquery.bxslider.css" rel="stylesheet" />
+
+    <!-- AjaxCalendar(PHP) -->
+    <script type="text/javascript" src="../js/ajaxcalendar/AjaxCalendar.js"></script>
+
+    <!-- jquery.bpopup.min.js -->
+    <script src="../js/jquery.bpopup.js" type="text/javascript"></script>
+
+    <!-- chosen.js -->
+    <script src="../js/chosen_v1.8.7/chosen.jquery.js" type="text/javascript"></script>
+    <script src="../js/chosen_v1.8.7/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/chosen_v1.8.7/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../js/chosen_v1.8.7/chosen.css">
+
+    <!--swiper -->
+    <script type="text/javascript" src="../js/swiper.jquery.min.js"></script>
+    <link type="text/css" href="../js/swiper.css" rel="stylesheet" />
+
+    <!-- sidemenu  -->
+    <script type="text/javascript" src="../js/sidemenu.js"></script>
+    <link type="text/css" href="../js/sidemenu.css" rel="stylesheet" />
+
+    <!-- slick slider-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+
+</head>
+
+<body>
+
+    <!-- ajax처리 레이어 -->
+    <div id="ajax_proc"></div>
+    <div id="sidemenu" style="display:none;">
+
+
+        <div class="sidemenu_wrap">
+            <div class="side_title">
+                <!-- <a href="#" class="sidemenu_close" data-role="sidemenu-close">
+					<i class="xi-close" style="font-size:22px; color:#495056;"></i>
+				</a> -->
+                <!-- <h2>로그인하세요.</h2> -->
+                <div class="logo" style="text-align:center;">
+                    <img src="../FileData/logo/2022_new_logo.png" alt="AthomeTrip" width="60%" />
+                </div>
+            </div>
+            <div class="side_myp">
+                <ul>
+                    <li><a href="">로그인</a></li>
+                    <li class="join"><a href="">회원가입</a></li>
+                </ul>
+            </div>
+            <div class="side_category new">
+                <p class="menu"><a href=""><img src="../image/main/all_loca_icon.png" alt="" />전체여행지</a></p>
+                <p class="menu">
+                    <a href=""><img src="../image/main/like_ico.png" alt="" />위시리스트</a>
+                    <a href=""><img src="../image/main/bag_ico.png" alt="" />내 여행</a>
+                    <a href=""><img src="../image/main/msg_ico.png" alt="" />메시지</a>
+                    <a href=""><img src="../image/main/arm_ico.png" alt="" />알림</a>
+                </p>
+                <p class="menu"><a href=""><img src="../image/main/private_ico.png" alt="" />1:1 채팅 상담</a></p>
+                <p class="menu">
+                    <a href="">파트너 페이지</a>
+                    <a href="">한인민박 파트너 페이지</a>
+                    <a href="javascript:;" onClick="goPage('logout','/index.html');return false;">로그아웃</a>
+                </p>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- wrap_bg -->
+    <div id="wrap_bg" style="display:none;" data-role="sidemenu-close"></div>
+    <!-- /wrap_bg -->
+
+    <!-- wrap -->
+    <div id="wrap">
+
+        <!-- header -->
+        <div id="header">
+            <!-- 모바일 좌우측 사이드 메뉴  -->
+            <div class="head_top">
+                <div class="allmenu">
+                    <a href="" class="ico_head menuall" data-role="sidemenu-toggle" data-direction="left"
+                        data-id="sidemenu"> <i class="xi-bars"></i> </a>
+                </div>
+                <div class="mb_search_btn">
+                    <a nohref=""><i class="xi-magnifier"></i></a>
+                </div>
+
+            </div>
+            <!-- top_wrap -->
+            <!-- /top_wrap -->
+            <!-- logo_wrap -->
+            <!-- 폼 -->
+            <form class="logo_zone_c" name="top_search_frm" method="get" action="../good/list.html">
+                <div class="logo_wrap">
+                    <h1><a href=""><img src="../FileData/logo/2022_new_logo.png" alt="AthomeTrip" /></a></h1>
+                </div>
+
+                <div class="search-open">
+                    <i class="xi-search xi-fw"></i>
+                    <input type="text" name="searching_box" value="" id="searching_box"
+                        placeholder="여행 상품과 도시를 검색해보세요" />
+                </div>
+                <!--  -->
+
+                <ul class="top_right">
+                    <li class="language"><a nohref="" style="cursor:pointer;">KR<i class="xi-caret-down-min"></i></a>
+                        <ul class="det_menu" style="display:none;">
+                            <li><a href="">KR</a></li>
+                            <li><a href="">EN</a></li>
+                        </ul>
+                    </li>
+                    <li class="last"><a href="">Q&A</a></li>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="" class="join_btn">회원가입</a></li>
+
+                </ul>
+
+            </form>
+            <!-- /폼 -->
+            <!-- /logo_wrap -->
+            <!-- gnb -->
+            <div id="gnb_c">
+                <div class="gnb_wrap">
+                    <div class="swiper-container-top">
+                        <div class="swiper-wrapper">
+                            <span class="swiper-slide home_for_mobile"><a href="">홈</a></span>
+                            <span class="swiper-slide ">
+                                <a href="">스마트패스</a>
+                            </span>
+                            <span class="swiper-slide ">
+                                <a href="">입장권·패스</a>
+                            </span>
+                            <span class="swiper-slide ">
+                                <a href="">공연예매</a>
+                            </span>
+                            <span class="swiper-slide ">
+                                <span class="new">NEW</span>
+                                <a href="">가이드투어</a>
+                            </span>
+                            <span class="swiper-slide ">
+                                <a href="">스냅촬영</a>
+                            </span>
+                            <span class="swiper-slide ">
+                                <span class="event">EVENT</span>
+                                <a href="">숙소예약</a>
+                            </span>
+                            <span class="swiper-slide ">
+                                <a href="">이동·교통</a>
+                            </span>
+                            <span class="swiper-slide ">
+                                <a href="">미국유심</a>
+                            </span>
+                            <div class="swiper-scrollbar" style="opacity:0;"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- hotel_search_area -->
+
+                <div class="hotel_search_area">
+                    <div class="for_mobile_bg">
+                        <div class="tabs_menu">
+                            <ul class="tabsearch">
+                                <li class="on"><input type="radio" name="searchTabRadio" value="1" id="searchTabRadio1"
+                                        checked /><label for="searchTabRadio1">호텔</label></li>
+                                <li class=""><input type="radio" name="searchTabRadio" value="2"
+                                        id="searchTabRadio2" /><label for="searchTabRadio2">여행</label></li>
+                            </ul>
+                        </div>
+                        <div class="sch_closeBtn"><span><i class="xi-close"></i></span></div>
+                        <div class="for_mobile_close"><span><i class="xi-close"></i></span></div>
+                        <div class="search_box">
+                            <div class="tit_for_mobile">
+                                <h3>호텔 검색하기</h3>
+                                <div class="for_mobile_close">
+                                    <span><i class="xi-close"></i></span>
+                                </div>
+                            </div>
+                            <div class="area">
+                                <div class="tab_content">
+                                    <div class="search_form">
+
+                                        <ul id="hotel_search" class="search_selected accommo_search" style="">
+                                            <!-- 검색 창 -->
+                                            <form id="searchHotelForm" method="get" action="">
+
+
+                                                <li class="chkin">
+                                                    <input name="checkInOut" id="checkinout_ok"
+                                                        placeholder="체크인 - 체크아웃 선택" class="search_cal" type="text"
+                                                        value=" ~ " style="cursor:pointer;" readonly="" required>
+                                                </li>
+
+                                                <li class="inwon_area">
+                                                    <input class="peoplecheck personNumCheck" type="text"
+                                                        name="hotel_peoplecheck" value="성인 2명 / 소아 0명" readonly="">
+                                                    <div class="personNumArea">
+                                                        <ul class="sel">
+                                                            <li>
+                                                                <span class="num">성인 <strong class="adultNum"
+                                                                        value="2">2</strong>명</span>
+                                                                <div class="set-btn">
+                                                                    <span class="minus"
+                                                                        onclick="person_set('adult','minus','searchHotelForm')"><i
+                                                                            class="xi-minus-circle-o"></i></span>
+                                                                    <span class="plus"
+                                                                        onclick="person_set('adult','plus','searchHotelForm')"><i
+                                                                            class="xi-plus-circle-o"></i></span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <span class="num">소아 <strong class="childNum"
+                                                                        value="0">0</strong>명</span>
+                                                                <div class="set-btn">
+                                                                    <span class="minus"
+                                                                        onclick="person_set('child','minus','searchHotelForm')"><i
+                                                                            class="xi-minus-circle-o"></i></span>
+                                                                    <span class="plus"
+                                                                        onclick="person_set('child','plus','searchHotelForm')"><i
+                                                                            class="xi-plus-circle-o"></i></span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="room_area ml15">
+                                                    <input class="roomcheck roomNumCheck" type="text"
+                                                        name="hotel_roomcheck" value="1 객실" readonly="">
+                                                    <div class="roomNumArea">
+                                                        <ul class="sel">
+                                                            <li>
+                                                                <span class="num"> <strong class="roomNum">1</strong>
+                                                                    객실</span>
+                                                                <div class="set-btn">
+                                                                    <span class="minus"
+                                                                        onclick="person_set('room','minus','searchHotelForm')"><i
+                                                                            class="xi-minus-circle-o"></i></span>
+                                                                    <span class="plus"
+                                                                        onclick="person_set('room','plus','searchHotelForm')"><i
+                                                                            class="xi-plus-circle-o"></i></span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </form>
+                                        </ul>
+
+                                        <ul id="tour_search" class="search_selected">
+                                            <form name="searchTourForm" id="searchTourForm" method="get" action="">
+                                                <input type="hidden" name="kind" value="t">
+
+
+                                                <li class="departure">
+                                                    <select name="start_point" id="start_point">
+                                                        <option>출발지 선택</option>
+                                                    </select>
+                                                </li>
+                                                <li class="chkin">
+                                                    <input name="departDate" id="departDate" placeholder="출발일 선택"
+                                                        class="search_cal" type="text" value="" style="cursor:pointer;"
+                                                        readonly="" required>
+                                                </li>
+                                            </form>
+                                        </ul>
+                                        <li class="search_confirm">
+                                            <a href="javascript:;" class="book_btn for_Hotel btnRes" id="topSearchBtn"
+                                                data-kind="h"><i class="xi-search"></i>&nbsp;검색<i
+                                                    class="xi-angle-right"></i></a>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+
+                    //검색 탭 & 스크롤 기능
+                    $(document).ready(function () {
+                        $('.hotel.for_top div.loca_inner.overseas div.scrolling_area div').each(function (index) {
+                            $(this).addClass('menu' + index);
+                        });
+                        $('.hotel.for_top div.loca_inner.domestic div.scrolling_area div').each(function (index) {
+                            $(this).addClass('menu' + index);
+                        });
+                        $('.tour.for_top div.loca_inner.overseas div.scrolling_area div').each(function (index) {
+                            $(this).addClass('menu' + index);
+                        });
+                        $('.tour.for_top div.loca_inner.domestic div.scrolling_area div').each(function (index) {
+                            $(this).addClass('menu' + index);
+                        });
+                    });
+
+                    $(".hotel div.overseas .mainCate li").bind("click", function () {
+                        $(this).addClass("on").siblings().removeClass("on");
+                        $(".hotel.for_top div.overseas .city_wrap").hide();
+                        $(".hotel.for_top div.overseas .city_wrap").eq($(this).index()).fadeIn();
+                    });
+
+                    $(".hotel div.domestic .mainCate li").bind("click", function () {
+                        $(this).addClass("on").siblings().removeClass("on");
+                        $(".hotel.for_top div.domestic .city_wrap").hide();
+                        $(".hotel.for_top div.domestic .city_wrap").eq($(this).index()).fadeIn();
+                    });
+
+                    $(".tour div.overseas .mainCate li").bind("click", function () {
+                        $(this).addClass("on").siblings().removeClass("on");
+                        $(".tour.for_top div.overseas .city_wrap").hide();
+                        $(".tour.for_top div.overseas .city_wrap").eq($(this).index()).fadeIn();
+                    });
+
+                    $(".tour div.domestic .mainCate li").bind("click", function () {
+                        $(this).addClass("on").siblings().removeClass("on");
+                        $(".tour.for_top div.domestic .city_wrap").hide();
+                        $(".tour.for_top div.domestic .city_wrap").eq($(this).index()).fadeIn();
+                    });
+                    //검색 탭 & 스크롤 기능 end
+
+                    // toggle 팝업설정.
+                    $('#top_hotel_location_input').on('click', function () {
+                        $(this).siblings('.location_wrap').show();
+                    });
+
+                    $('#top_tour_location_input').on('click', function () {
+                        $(this).siblings('.location_wrap').show();
+                    });
+
+                    $('.personNumCheck').on('click', function () {
+                        $(this).siblings('.personNumArea').toggleClass('show');
+                    });
+
+                    $('.roomNumCheck').on('click', function () {
+                        $(this).siblings('.roomNumArea').toggleClass('show');
+                    });
+
+                    $('p.location_close').on('click', function () {
+                        $(this).parents('.location_wrap').hide();
+                    });
+
+
+                </script>
+
+                <script src="/main/pick/moment-locale.min.js"></script>
+                <script src="/main/pick/lightpick.js"></script>
+                <script>
+
+                    var minDateFormat = moment().add(1, 'days').format('YYYY-MM-DD');
+                    var today = moment().format('YYYY');
+                    var picker = new Lightpick({
+
+                        field: document.getElementById('checkinout_ok'),
+                        singleDate: false,
+                        tooltipNights: false,
+                        //lang:'ko',
+                        firstDay: 7,
+                        disabledDatesInRange: false,
+                        dropdowns: {
+                            years: {
+                                min: today,
+                                max: today,
+                            },
+                            months: true,
+                        },
+                        separator: ' ~ ',
+                        hoveringTooltip: false,
+                        selectForward: true,
+                        selectBackward: false,
+                        repick: false,
+                        minDate: minDateFormat,
+                        minDays: 2,
+                        format: 'YYYY-MM-DD',
+                        numberOfMonths: 2,
+                        numberOfColumns: 2,
+                        autoclose: false, //[son]검색폼도 같이 닫혀서 false 지정
+                        parentEl: "#hotel_search",
+                        onSelectStart: function (start) {
+                            var startStr = start.format('YYYY-MM-DD');
+                            $("#searchHotelForm input[name=checkIn]").val(startStr);
+                            checkInStr = startStr;
+                        },
+                        onSelectEnd: function (end) {
+                            var endStr = end.format('YYYY-MM-DD');
+                            $("#searchHotelForm input[name=checkOut]").val(endStr);
+                            checkOutStr = endStr;
+                        }
+
+                    });
+
+                    var minDateFormat = moment().add(1, 'days').format('YYYY-MM-DD');
+                    var today = moment().format('YYYY');
+                    var picker = new Lightpick({
+
+                        field: document.getElementById('departDate'),
+                        singleDate: true,
+                        tooltipNights: false,
+                        //lang:'ko',
+                        firstDay: 7,
+                        disabledDatesInRange: false,
+                        dropdowns: {
+                            years: {
+                                min: today,
+                                max: today,
+                            },
+                            months: true,
+                        },
+                        hoveringTooltip: false,
+                        selectForward: true,
+                        selectBackward: false,
+                        repick: false,
+                        minDate: minDateFormat,
+                        minDays: 2,
+                        format: 'YYYY-MM-DD',
+                        numberOfMonths: 1,
+                        numberOfColumns: 1,
+                        autoclose: true,
+                        parentEl: "#tour_search",
+                    });
+
+                    $('#topSearchBtn').click(function () {
+                        var kind = $(this).data("kind");
+
+                        if (kind == "h") {
+                            if ($("#searchHotelForm select[name=areab_cd_s]").val() == "") {
+                                alert("국가를 선택하세요.");
+                                return false;
+                            }
+                            // if($("#searchHotelForm select[name=city_area]").val()==""){
+                            // 	alert("도시를 선택하세요.");
+                            // 	return false;
+                            // }
+                            var checkinout_ok = $("#checkinout_ok").val();
+                            if (checkinout_ok && checkInStr == "") {
+
+                                alert("체크인 선택 하세요");
+                                return false;
+                            }
+
+                            if (checkinout_ok && checkOutStr == "") {
+                                alert("체크아웃을 선택 하세요");
+                                return false;
+                            }
+                            $("#searchHotelForm input[name=checkInOut]").attr('disabled', 'disabled');
+                            $("#searchHotelForm").submit();
+                        } else {
+                            if ($("#searchTourForm input[name='g_title_s']").val() == "" && $("#searchTourForm input[name='departDate']").val() == "") {
+                                alert("상품명이나 출발 일자를 선택하세요.");
+                                return false;
+                            }
+
+                            $("#searchTourForm").submit();
+                        }
+                    });
+
+
+
+                </script>
+                <!-- hotel_search_area -->
+
+
+            </div>
+            <!-- /gnb -->
+
+            <div class="hd_search_wrap">
+                <form name="sfrm" id="top_sfrm" action="">
+                    <input class="search_input" type="search" title="" name="g_title_s" value=""
+                        placeholder="나라, 도시, 상품명으로 검색">
+                    <a href="" class="search_btn"><i class="xi-magnifier"></i></a>
+                </form>
+            </div>
+
+
+
+
+
+        </div>
+        <!-- /header -->
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $("ul.top_right > li.language").click(function () {
+                    $(this).find("ul.det_menu").stop().fadeToggle(300);
+                });
+
+                $(".inwon_area .child .minus").css('color', '#ffd5d1');
+                $(".room_area .room .minus").css('color', '#ffd5d1');
+
+                $('.gnb_opener i').on("click", function () {
+                    if ($(this).hasClass('xi-close')) {
+                        $(this).removeClass("xi-close");
+                        $("#gnb_d").stop(true, true).animate({
+                            "height": "0"
+                        }, 400, 'easeOutExpo');
+                    } else {
+                        $(this).addClass("xi-close");
+                        $("#gnb_d").stop(true, true).animate({
+                            "height": "740px"
+                        }, 400, 'easeOutExpo');
+                    }
+                });
+
+                $("#top_nav > li").hover(function () {
+                    $(this).find("ul").slideDown('fast');
+                }, function () {
+                    $(this).find("ul").slideUp('fast');
+                });
+
+            });
+            // 전체메뉴 보기
+            $('.simple-ajax-popup-align-top').magnificPopup({
+                type: 'ajax',
+                alignTop: true,
+                overflowY: 'hidden',
+                fixedContentPos: false,
+                mainClass: 'mfp-fade'
+            });
+
+            // 타겟영역을 제외하고 클릭했을 시 팝업 숨김처리.
+            $('body').on('click', function (e) {
+                var $tgPoint = $(e.target);
+                var $popCallBtn = $tgPoint.hasClass('personNumCheck');
+                var $popArea = $tgPoint.is('.personNumArea *');
+                if (!$popCallBtn && !$popArea) {
+                    $('.personNumArea').removeClass('show');
+                }
+            });
+
+            //GNB 고정
+            // var gnb_c = $("#gnb_c").offset();
+            // $(window).scroll(function(){
+            // var docScrollY = $(document).scrollTop()
+            // var barThis = $("#gnb_c")
+            // 
+            // if( docScrollY > gnb_c.top ) {
+            // barThis.addClass("_fix");
+            // $(".gnb_wrap").addClass('move');
+            // $(".gnb_wrap span a").addClass('move');
+            // $(".gnb_wrap a.gnb_go_home").addClass('move');
+            // }else{
+            // barThis.removeClass("_fix");
+            // $(".gnb_wrap a.gnb_go_home").removeClass('move');
+            // $(".gnb_wrap span a").delay(300).removeClass('move');
+            // $(".gnb_wrap").delay(300).removeClass('move');
+            // }
+            // });
+
+            // Drop down2
+            $(".item-menu").mouseover(function () {
+                $('.menu_box').addClass('none');
+                $(this).find('.menu_box').removeClass('none');
+            });
+            $(".menu_box").mouseleave(function () {
+                $('.menu_box').addClass('none');
+                $(".item-menu").mouseleave(function () {
+                    $('.menu_box').addClass('none');
+                });
+            });
+
+            $(document).on("click", ".side_category > p", function () {
+                if (!$(this).hasClass('one')) {
+                    if ($(this).next().css("display") == "none") {
+                        $(this).next().slideDown();
+                        $(this).children("span").html("<i class=\"xi-angle-up\"></i>");
+                    } else {
+                        $(this).next().slideUp();
+                        $(this).children("span").html("<i class=\"xi-angle-down\"></i>");
+                    }
+                }
+            });
+
+            //검색하기 열고 닫고 버튼 (PC&모바일)
+            // $('.search-open').on('click', function () {
+            // $('.hotel_search_area').fadeToggle();
+            // $('.transparent_bg').fadeToggle();
+            // $('.hotel_search_area').toggleClass('search-on');
+            // });
+
+            $('.mb_search_btn').on('click', function () {
+                $('.hd_search_wrap').slideToggle();
+                //$('.transparent_bg').fadeToggle();
+            });
+
+            $('.for_mobile_close').on('click', function () {
+                $('.hotel_search_area').fadeOut();
+                //$('.transparent_bg').css('display','none');
+            });
+
+            $('.sch_closeBtn').on('click', function () {
+                $('.hotel_search_area').fadeOut();
+            });
+            //검색 끝	
+
+            // 타겟영역을 제외하고 클릭했을 시 팝업 숨김처리. PC에서만 필요함
+            // if (document.body.clientWidth > 767) {
+            $('body').on('click', function (e) {
+                var $tgPoint = $(e.target);
+
+                var $popCallBtn = $tgPoint.hasClass('personNumCheck');
+                var $popArea = $tgPoint.is('.personNumArea *');
+                var $popRoomBtn = $tgPoint.hasClass('roomNumCheck');
+                var $popRoom = $tgPoint.is('.roomNumArea *');
+
+                if (!$popCallBtn && !$popArea) {
+                    $('.personNumArea').removeClass('show');
+                }
+                if (!$popRoomBtn && !$popRoom) {
+                    $('.roomNumArea').removeClass('show');
+                }
+
+                var $popMainCallBtn = $tgPoint.hasClass('main_personNumCheck');
+                var $popMainArea = $tgPoint.is('.main_personNumArea *');
+                var $popMainRoomBtn = $tgPoint.hasClass('main_roomNumCheck');
+                var $popMainRoom = $tgPoint.is('.main_roomNumArea *');
+
+                if (!$popMainCallBtn && !$popMainArea) {
+                    $('.main_personNumArea').removeClass('show');
+                }
+                if (!$popMainRoomBtn && !$popMainRoom) {
+                    $('.main_roomNumArea').removeClass('show');
+                }
+            });
+            // }
+
+            function person_set(type, sign, form) {
+                if (type == "child") {
+                    var max = 3;
+                    var min = 0;
+                } else {
+                    var max = 9;
+                    var min = 1;
+                }
+                var num = Number($("#" + form + " input[name=" + type + "Num]").val());
+                if (sign == 'plus') {
+                    num++;
+                    $("#" + form + " ." + type + " .minus").css('color', '#ff6f61');
+                    if (num == max) $("#" + form + " ." + type + " .plus").css('color', '#ffd5d1');
+                    if (num > max) return;
+                } else {
+                    num--;
+                    $("#" + form + " ." + type + " .plus").css('color', '#ff6f61');
+                    if (num == min) $("#" + form + " ." + type + " .minus").css('color', '#ffd5d1');
+                    if (num < min) return;
+                }
+
+                $("#" + form + " input[name=" + type + "Num]").val(num);
+                $("#" + form + " ." + type + "Num").text(num);
+                var str = '';
+                if (type == "room") {
+                    str = num + " 객실";
+                    $("#" + form + " .roomNumCheck").val(str);
+                } else {
+                    var adultNum = $("#" + form + " input[name=adultNum]").val();
+                    var childNum = $("#" + form + " input[name=childNum]").val();
+                    str = "성인 " + adultNum + "명 / " + "소아 " + childNum + "명 ";
+                    $("#" + form + " .personNumCheck").val(str);
+                }
+            }
+
+            $(document).ready(function () {
+
+                if (document.body.clientWidth < 767) {
+
+                    var m_topmenu_slide = new Swiper('.swiper-container-top', {
+                        slidesPerView: 'auto',
+                        scrollbar: '.swiper-scrollbar',
+                        scrollbarHide: true,
+                        centeredSlides: false,
+                        freeMode: true,
+                    });
+
+                    if (window.location.href.indexOf("/good/tour_detail") > -1) {
+                        $("#gnb_c").css("display", "none");
+
+                        $('#header').addClass('not_main');
+                        $('.logo_zone_c .logo_wrap h1 img').addClass('not_main');
+                        $('#container').addClass('not_main');
+                    }
+
+                }
+
+            });
+        </script>
+
+
+        <!-- popup layer css -->
+        <link type="text/css" rel="stylesheet" href="/popup/popup_layer.css" />
+
+
+        <!-- container -->
+        <div id="container">
+
+            <div class="main_3pcs_slide top">
+                <div class="swiper-container-3pcs">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="../image/main/main1.jpg" />
+                                <div class="text_wrap">
+                                    <h4>뉴욕 브로드웨이 뮤지컬</h4>
+                                    <p>할인된 가격! 좋은좌석에서 공연의 감동을 경험해 보세요</p>
+                                    <span class="more" href="">둘러보기</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="../image/main/main1.jpg" />
+                                <div class="text_wrap">
+                                    <h4>뉴욕 브로드웨이 뮤지컬</h4>
+                                    <p>할인된 가격! 좋은좌석에서 공연의 감동을 경험해 보세요</p>
+                                    <span class="more" href="">둘러보기</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="../image/main/main1.jpg" />
+                                <div class="text_wrap">
+                                    <h4>뉴욕 브로드웨이 뮤지컬</h4>
+                                    <p>할인된 가격! 좋은좌석에서 공연의 감동을 경험해 보세요</p>
+                                    <span class="more" href="">둘러보기</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-pagination-3pcs"></div> -->
+                </div>
+                <div class="swiper-button-next-3pcs"><i class="xi-angle-right"></i></div>
+                <div class="swiper-button-prev-3pcs"><i class="xi-angle-left"></i></div>
+            </div>
+
+            <div class="m_contents_wrap resizing_wrap main_top_area">
+                <div class="main_icon_wrap new">
+                    <a href=""><img src="../image/main/m_icon_1.png" alt="" />
+                        <p>입장권·패스</p>
+                    </a>
+                    <a href=""><img src="../image/main/m_icon_2.png" alt="" />
+                        <p>공연예매</p>
+                    </a>
+                    <a href=""><img src="../image/main/m_icon_3.png" alt="" />
+                        <p>가이드투어</p>
+                    </a>
+                    <a href=""><img src="../image/main/m_icon_4.png" alt="" />
+                        <p>스냅촬영</p>
+                    </a>
+                    <a href=""><img src="../image/main/m_icon_5.png" alt="" />
+                        <p>숙소예약</p>
+                    </a>
+                    <a href=""><img src="../image/main/m_icon_6.png" alt="" />
+                        <p>이동·교통</p>
+                    </a>
+                    <a href=""><img src="../image/main/m_icon_7.png" alt="" />
+                        <p>미국유심</p>
+                    </a>
+                    <a href=""><img src="../image/main/m_icon_8.png" alt="" />
+                        <p>이벤트</p>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- 하단 고객센터 -->
+            <div class="bbs_wrap">
+                <div class="inner">
+                    <div class="notice">
+                        <h3>머물고 싶은 여행</h3>
+                        <p>
+                            미국여행의 일상을<br />
+                            앳홈트립과 함께하세요
+                        </p>
+                        <a href="">자세히 보기 ></a>
+                    </div>
+
+                    <div class="cs_guide">
+                        <!-- <h3>이용가이드</h3> -->
+                        <ul class="cs_guide_tbl">
+
+                            <li>
+                                <a href="">
+                                    <img class="off" src="../image/main/review.png" alt="여행후기">
+                                    <img class="on" src="../image/main/review.png" alt="여행후기">
+                                    <p class="tit">최다 고객후기</p>
+                                    <p class="clocked_txt">마우스 오버 시 나타났다가 사라질 텍스트 영역입니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img class="off" src="../image/main/consumer.png" alt="자주하는 질문">
+                                    <img class="on" src="../image/main/consumer.png" alt="자주하는 질문">
+                                    <p class="tit">소비자 만족도 1위</p>
+                                    <p class="clocked_txt">마우스 오버 시 나타났다가 사라질 텍스트 영역입니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img class="off" src="../image/main/loca.png" alt="문의답변">
+                                    <img class="on" src="../image/main/loca.png" alt="문의답변">
+                                    <p class="tit">현지 직영운영</p>
+                                    <p class="clocked_txt">마우스 오버 시 나타났다가 사라질 텍스트 영역입니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img class="off" src="../image/main/good_price.png" alt="제휴안내">
+                                    <img class="on" src="../image/main/good_price.png" alt="제휴안내">
+                                    <p class="tit">가성비 여행</p>
+                                    <p class="clocked_txt">마우스 오버 시 나타났다가 사라질 텍스트 영역입니다.</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="m_contents_wrap">
+                <div class="banner_slide">
+                    <!-- <h3></h3> -->
+                    <div class="slide_wrap">
+                        <ul class="bxslide4">
+                            <li><a href=""><img src="../FileData/hotel/20210804_38E70685B8E438F4.jpg" alt=""></a></li>
+                            <li><a href=""><img src="../FileData/hotel/20210617_030F83A6696A28E8.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="bx_direction">
+                        <span class="slider_prev_4"></span><span class="slider_next_4"></span>
+                    </div>
+                    <div class="pager_04"></div>
+
+                    <!-- mobile start -->
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="javascript:void(0)">
+                                    <img src="../FileData/hotel/20210623_1A47CA3F52DBFCB4.jpg" /></a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"><i class="xi-angle-right"></i></div>
+                        <div class="swiper-button-prev"><i class="xi-angle-left"></i></div>
+                    </div>
+                    <!-- mobile end -->
+                </div>
+            </div>
+
+            <h3 class="main_h3">최근 본 상품</h3>
+            <div class="recent_seen">
+                <div class="swiper-container-seen">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="../image/main/main1.jpg" alt="" />
+                            </div>
+                            <div class="context">
+                                <p class="category">티켓/패스 · 뉴욕</p>
+                                <p class="tit">뉴욕 샘플 상품</p>
+                                <span class="h_info">
+                                    <span class="h_star"><img src="../image/hotel_level/star05.svg" alt=""></span> 18
+                                </span>
+                                <p class="price_area"><span class="original">116,000</span> <span
+                                        class="price">389,000원</span><span class="amount"> / 1인</span></p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="../image/main/main1.jpg" alt="" />
+                            </div>
+                            <div class="context">
+                                <p class="category">티켓/패스 · 뉴욕</p>
+                                <p class="tit">뉴욕 샘플 상품</p>
+                                <span class="h_info">
+                                    <span class="h_star"><img src="../image/hotel_level/star05.svg" alt=""></span> 18
+                                </span>
+                                <p class="price_area"><span class="original">116,000</span> <span
+                                        class="price">389,000원</span><span class="amount"> / 1인</span></p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="../image/main/main1.jpg" alt="" />
+                            </div>
+                            <div class="context">
+                                <p class="category">티켓/패스 · 뉴욕</p>
+                                <p class="tit">뉴욕 샘플 상품</p>
+                                <span class="h_info">
+                                    <span class="h_star"><img src="../image/hotel_level/star05.svg" alt=""></span> 18
+                                </span>
+                                <p class="price_area"><span class="original">116,000</span> <span
+                                        class="price">389,000원</span><span class="amount"> / 1인</span></p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="../image/main/main1.jpg" alt="" />
+                            </div>
+                            <div class="context">
+                                <p class="category">티켓/패스 · 뉴욕</p>
+                                <p class="tit">뉴욕 샘플 상품</p>
+                                <span class="h_info">
+                                    <span class="h_star"><img src="../image/hotel_level/star05.svg" alt=""></span> 18
+                                </span>
+                                <p class="price_area"><span class="original">116,000</span> <span
+                                        class="price">389,000원</span> / 1인</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="../image/main/main1.jpg" alt="" />
+                            </div>
+                            <div class="context">
+                                <p class="category">티켓/패스 · 뉴욕</p>
+                                <p class="tit">뉴욕 샘플 상품</p>
+                                <span class="h_info">
+                                    <span class="h_star"><img src="../image/hotel_level/star05.svg" alt=""></span> 18
+                                </span>
+                                <p class="price_area"><span class="original">116,000</span> <span
+                                        class="price">389,000원</span> / 1인</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next-seen"><i class="xi-angle-right"></i></div>
+                <div class="swiper-button-prev-seen"><i class="xi-angle-left"></i></div>
+
+            </div>
+
+            <h3 class="main_h3">앳홈트립's PICK</h3>
+            <div class="main_3pcs_slide">
+                <div class="m_best">
+                    <div class="swiper-container-pick">
+                        <div class="swiper-wrapper" style="padding : 2px 0 8px;">
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_54C21DF235C964D9.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>1</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 18
+                                            </span>
+                                            <p class="price_area"><span class="original">116,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <!-- <p class="txt">관광만으론 부족한 노랑족에게.. 파타야에 럭셔리를 더한 신상품을 소개합니다.
+파...</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_B303D7717F5A57E1.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>2</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 18
+                                            </span>
+                                            <p class="price_area"><span class="original">116,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <!-- <p class="txt">가보고 싶은 섬, 홍도/흑산도 1박2일여행</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_6D2E5367DB9265D3.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>3</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 18
+                                            </span>
+                                            <p class="price_area"><span class="original">116,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <!-- <p class="txt">아름다운 신비의 섬,  울릉도로 여러분을 초대합니다.</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_65075DC85B619465.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>4</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 18
+                                            </span>
+                                            <p class="price_area"><span class="original">116,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210419_52B7C6C3C0B7492C.jpg"
+                                                alt="[바다 속 체험] 푸켓5일 #스쿠버다이빙 체험 투어 5일" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>6</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[바다 속 체험] 푸켓5일 #스쿠버다이빙 체험 투어 5일</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 18
+                                            </span>
+                                            <p class="price_area"><span class="original">116,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <!-- <p class="txt">초특급 리조트 투숙
+라차섬 스킨스쿠버체험 투어
+바닷속 기념 사진
+푸껫 유명 ...</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next-pick"><i class="xi-angle-right"></i></div>
+                <div class="swiper-button-prev-pick"><i class="xi-angle-left"></i></div>
+            </div>
+
+            <h3 class="main_h3">전체 여행지</h3>
+            <div class="main_3pcs_slide">
+                <div class="m_best">
+                    <div class="swiper-container-2nd-cate">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <img src="../image/product/newyork.jpg" /><span>뉴욕</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <img src="../image/product/sanfran.jpg" /><span>샌프란시스코</span></a>
+                            </div>
+                            <div class="swiper-slide"><a href="">
+                                    <img src="../image/product/lasvegas.jpg" /><span>라스베이거스</span></a></div>
+                            <div class="swiper-slide"><a href=""><img
+                                        src="../image/product/la.jpg" /><span>로스엔젤레스</span></a></div>
+                            <div class="swiper-slide"><a href=""><img
+                                        src="../image/product/orlando.jpg" /><span>올랜도</span></a></div>
+                            <div class="swiper-slide"><a href=""><img
+                                        src="../image/product/chicago.jpg" /><span>시카고</span></a></div>
+                            <div class="swiper-slide"><a href=""><img
+                                        src="../image/product/newyork.jpg" /><span>뉴욕</span></a></div>
+                            <div class="swiper-slide"><a href=""><img
+                                        src="../image/product/sanfran.jpg" /><span>샌프란시스코</span></a></div>
+                            <div class="swiper-slide"><a href=""><img
+                                        src="../image/product/lasvegas.jpg" /><span>라스베이거스</span></a></div>
+                            <div class="swiper-slide"><a href=""><img
+                                        src="../image/product/la.jpg" /><span>로스엔젤레스</span></a></div>
+                            <div class="swiper-slide"><a href=""><img
+                                        src="../image/product/orlando.jpg" /><span>올랜도</span></a></div>
+                            <div class="swiper-slide"><a href=""><img
+                                        src="../image/product/chicago.jpg" /><span>시카고</span></a></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next-2nd-cate"><i class="xi-angle-right"></i></div>
+                <div class="swiper-button-prev-2nd-cate"><i class="xi-angle-left"></i></div>
+            </div>
+
+            <h3 class="main_h3">뉴욕 필수여행 Top 10</h3>
+            <div class="main_3pcs_slide">
+                <div class="m_best">
+                    <div class="swiper-container-pick">
+                        <div class="swiper-wrapper" style="padding : 2px 0 8px;">
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_54C21DF235C964D9.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                            <p class="best_box"><span>BEST 1</span></p>
+                                        </div>
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">관광만으론 부족한 노랑족에게.. 파타야에 럭셔리를 더한 신상품을 소개합니다.
+파...</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_B303D7717F5A57E1.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                            <p class="best_box"><span>BEST 2</span></p>
+                                        </div>
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">가보고 싶은 섬, 홍도/흑산도 1박2일여행</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_6D2E5367DB9265D3.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                            <p class="best_box"><span>BEST 3</span></p>
+                                        </div>
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">아름다운 신비의 섬,  울릉도로 여러분을 초대합니다.</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_65075DC85B619465.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                            <p class="best_box"><span>BEST 4</span></p>
+                                        </div>
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">전객실 실내탕과 노천탕을 갖추고 있는 별채타입의 료칸.
+자그마한 강과 나무들에 ...</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210419_52B7C6C3C0B7492C.jpg"
+                                                alt="[바다 속 체험] 푸켓5일 #스쿠버다이빙 체험 투어 5일" />
+                                            <p class="best_box"><span>BEST 6</span></p>
+                                        </div>
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[바다 속 체험] 푸켓5일 #스쿠버다이빙 체험 투어 5일</p>
+                                            <!-- <p class="right_now"><i class="xi-flash"></i><span>즉시사용</span></p> -->
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">초특급 리조트 투숙
+라차섬 스킨스쿠버체험 투어
+바닷속 기념 사진
+푸껫 유명 ...</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next-pick"><i class="xi-angle-right"></i></div>
+                <div class="swiper-button-prev-pick"><i class="xi-angle-left"></i></div>
+            </div>
+
+            <h3 class="main_h3 ">우리끼리 가이드 투어</h3>
+            <div class="main_3pcs_slide">
+                <div class="m_best">
+                    <div class="swiper-container-pick2">
+                        <div class="swiper-wrapper" style="padding : 2px 0 8px;">
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a
+                                        href="/good/tour_detail_working.html?b_uid_s=70&m_uid_s=181&s_uid_s=217&g_uid=420">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_54C21DF235C964D9.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>1</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">관광만으론 부족한 노랑족에게.. 파타야에 럭셔리를 더한 신상품을 소개합니다.
+파...</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a
+                                        href="/good/tour_detail_working.html?b_uid_s=86&m_uid_s=204&s_uid_s=233&g_uid=431">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_B303D7717F5A57E1.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>2</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">가보고 싶은 섬, 홍도/흑산도 1박2일여행</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a href="/good/tour_detail_working.html?b_uid_s=86&m_uid_s=205&s_uid_s=&g_uid=432">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_6D2E5367DB9265D3.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>3</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">아름다운 신비의 섬,  울릉도로 여러분을 초대합니다.</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a
+                                        href="/good/tour_detail_working.html?b_uid_s=70&m_uid_s=178&s_uid_s=215&g_uid=397">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210617_65075DC85B619465.jpg"
+                                                alt="[SAMPLE] 뉴욕 샘플 상품" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>4</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[SAMPLE] 뉴욕 샘플 상품</p>
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">전객실 실내탕과 노천탕을 갖추고 있는 별채타입의 료칸.
+자그마한 강과 나무들에 ...</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="m_best_info">
+                                    <span class="like_mark"><i class="xi-heart-o"></i></span>
+                                    <a
+                                        href="/good/tour_detail_working.html?b_uid_s=70&m_uid_s=181&s_uid_s=217&g_uid=455">
+                                        <div class="img_rel">
+                                            <img src="../FileData/good/20210419_52B7C6C3C0B7492C.jpg"
+                                                alt="[바다 속 체험] 푸켓5일 #스쿠버다이빙 체험 투어 5일" />
+                                        </div>
+                                        <!-- <p class="best_box"><span>BEST</span><br>6</p> -->
+                                        <div class="context">
+                                            <p class="category">티켓/패스 · 뉴욕</p>
+                                            <p class="tit">[바다 속 체험] 푸켓5일 #스쿠버다이빙 체험 투어 5일</p>
+                                            <span class="h_info">
+                                                <span class="h_star"><img src="../image/hotel_level/star05.svg"
+                                                        alt=""></span> 15
+                                            </span>
+
+                                            <p class="stat_icon"><i class="xi-lightning"></i>즉시사용</p>
+                                            <p class="price_area"><span class="original">146,000</span> <span
+                                                    class="price"><span class='txt_price'>요금문의</span></span> / 1인</p>
+                                            <!-- <p class="txt">초특급 리조트 투숙
+라차섬 스킨스쿠버체험 투어
+바닷속 기념 사진
+푸껫 유명 ...</p> -->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next-pick2"><i class="xi-angle-right"></i></div>
+                <div class="swiper-button-prev-pick2"><i class="xi-angle-left"></i></div>
+            </div>
+
+            <div class="youtube_area">
+                <div class="tube_tit">
+                    <h3 class="youtube_h3">영상으로<br />미리보는 여행</h3>
+                    <p class="sub_tit">원하는 곳 어디서나<br />호캉스</p>
+                    <p class="third_tit">찬 바람 쌀쌀할 땐 따뜻한<br />호텔이 최고!</p>
+                </div>
+                <div class="main_youtube_slide">
+                    <div class="swiper-container-tube">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide tube_img_area"><a href=""><img
+                                        src="../FileData/hotel/20210701_6893A9C0418CCA1C.jpg" alt="" /></a></div>
+                            <div class="swiper-slide tube_img_area"><a href=""><img
+                                        src="../FileData/hotel/20210701_CF717DC1754990EE.jpg" alt="" /></a></div>
+                            <div class="swiper-slide tube_img_area"><a href=""><img
+                                        src="../FileData/hotel/20210701_17CD5D5309D2B475.jpg" alt="" /></a></div>
+                            <div class="swiper-slide tube_img_area"><a href=""><img
+                                        src="../FileData/hotel/20210701_514A1F4D69AC7FF6.jpg" alt="" /></a></div>
+                            <div class="swiper-slide tube_img_area"><a href=""><img
+                                        src="../FileData/hotel/20210701_F1DC6C64D5BB173D.jpg" alt="" /></a></div>
+                            <div class="swiper-slide tube_img_area"><a href=""><img
+                                        src="../FileData/hotel/20210701_5D917DDA11D5E13F.jpg" alt="" /></a></div>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-button-next-tube"><i class="xi-angle-right"></i></div>
+			<div class="swiper-button-prev-tube"><i class="xi-angle-left"></i></div> -->
+                </div>
+            </div>
+
+
+
+
+            <!-- 배너  -->
+            <div class="banner_full mt50 mb50">
+                <a class="pc_line_banner" nohref="">
+                    <img src="../FileData/hotel/20211018_0802ED13BAB67752.jpg" alt="" align="center"></a>
+                <a class="mobile_line_banner" nohref="">
+                    <img src="../FileData/hotel/20210623_251F72D5D64E00F8.jpg" alt="" align="center"></a>
+            </div>
+
+            <div class="m_contents_wrap mobile_slide_only">
+                <!-- <h3>이달의 여행지</h3> -->
+                <ul class="popular swiper-wrapper" style="padding: 8px 0 8px;">
+                    <li class="swiper-slide"><a href=""><img src="../image/sample/b1.jpg" style="border-radius:7px"
+                                alt="" /></a></li>
+                    <li class="swiper-slide"><a href=""><img src="../image/sample/b2.jpg" style="border-radius:7px"
+                                alt="" /></a></li>
+                    <li class="swiper-slide"><a href=""><img src="../image/sample/b3.jpg" style="border-radius:7px"
+                                alt="" /></a></li>
+                </ul>
+               
+            </div>
+
+
+
+        </div>
+
+        <style>
+            .gnb_wrap span.home_for_mobile {
+                display: none;
+            }
+        </style>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var slider4 = $('.bxslide4').bxSlider({
+                    mode: 'horizontal',
+                    slideWidth: 1200,   // 슬라이드 너비
+                    auto: true,        // 자동 실행 여부
+                    autoHover: true,   // 마우스 호버시 정지 여부
+                    controls: true,   // 이전 다음 버튼 노출 여부
+                    nextSelector: '.slider_next_4',
+                    prevSelector: '.slider_prev_4',
+                    nextText: '<i class="xi-angle-right"></i>',
+                    prevText: '<i class="xi-angle-left"></i>',
+                    pagerSelector: '.pager_04'
+                });
+
+                $(document).on('click', '.pager_04', function () {
+                    slider4.stopAuto();
+                    slider4.startAuto();
+                });
+
+                // 검색창
+                $(".item_search_btn").on("click", function () {
+                    if ($("form#top_search_frm input[name='g_title_s']").val() == "검색어를 입력하세요.")
+                        $("form#top_search_frm input[name='g_title_s']").val('');
+                    $("form#top_search_frm").submit();
+                }).css("cursor", "pointer");
+
+                // 이주의 인기상품 best표시
+                $(".popular li:nth-child(1) .best_circle").html("<span>BEST<b>1</b></span>");
+
+
+
+            });
+        </script>
+
+        <script type="text/javascript">
+
+            var swiper3 = new Swiper('.swiper-container-3pcs', {
+                pagination: '.swiper-pagination-3pcs',
+                paginationClickable: true,
+                nextButton: '.swiper-button-next-3pcs',
+                prevButton: '.swiper-button-prev-3pcs',
+                slidesPerView: 3,
+                spaceBetween: 20,
+                slidesPerGroup: 3,
+                loop: true,
+                autoplay: 8000,
+                lazy: {
+                    loadPrevNext: true // 이전, 다음 이미지는 미리 로딩
+                },
+                breakpoints: { // 반응형 설정이 가능 width값으로 조정
+                    768: {
+                        slidesPerView: 1.3,
+                        slidesPerGroup: 1,
+                        centeredSlides: true,
+                        spaceBetween: 30,
+                        loopedSlides: 7,
+                    },
+                },
+            });
+
+
+            $(document).ready(function () {
+                if (document.body.clientWidth > 767) {
+
+                    $('.swiper-container-3pcs .swiper-slide').mouseover(function () {
+                        $(this).siblings().find('img').css('filter', 'brightness(0.7)');
+                    });
+
+                    $('.swiper-container-3pcs .swiper-slide').mouseout(function () {
+                        $(this).siblings().find('img').css('filter', 'brightness(1)');
+                    });
+
+                }
+
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 30,
+                    loop: true,
+                    effect: 'fade',
+                    autoplay: 2500,
+                    autoplayDisableOnInteraction: false
+                });
+
+                var swiper2 = new Swiper('.swiper-container2', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 30,
+                    loop: true,
+                    effect: 'fade',
+                    autoplay: 2500,
+                    autoplayDisableOnInteraction: false
+                });
+
+                var swiper4 = new Swiper('.swiper-container-pick', {
+                    pagination: '.swiper-pagination-pick',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next-pick',
+                    prevButton: '.swiper-button-prev-pick',
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                    freeMode: true,
+                    breakpoints: { // 반응형 설정이 가능 width값으로 조정
+                        768: {
+                            slidesPerView: 2.3,
+                            slidesPerGroup: 1,
+                            freeMode: false,
+                            spaceBetween: 10,
+                        },
+                    },
+                });
+
+                var swiper4a = new Swiper('.swiper-container-pick2', {
+                    nextButton: '.swiper-button-next-pick2',
+                    prevButton: '.swiper-button-prev-pick2',
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                    freeMode: true,
+                    breakpoints: { // 반응형 설정이 가능 width값으로 조정
+                        768: {
+                            slidesPerView: 2.3,
+                            slidesPerGroup: 1,
+                            freeMode: false,
+                            spaceBetween: 10,
+                        },
+                    },
+                });
+
+                var swiper5 = new Swiper('.swiper-container-2nd-cate', {
+                    pagination: '.swiper-pagination-2nd-cate',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next-2nd-cate',
+                    prevButton: '.swiper-button-prev-2nd-cate',
+                    slidesPerView: 6,
+                    spaceBetween: 10,
+                    freeMode: true,
+                    breakpoints: { // 반응형 설정이 가능 width값으로 조정
+                        768: {
+                            slidesPerView: 3.4,
+                            slidesPerGroup: 1,
+                            spaceBetween: 10,
+                        },
+                    },
+                });
+
+                var swiper6 = new Swiper('.swiper-container-tube', {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                    loop: true,
+                    autoplay: 3500,
+                    loopedSlides: 7,
+                    autoplayDisableOnInteraction: false,
+                    breakpoints: { // 반응형 설정이 가능 width값으로 조정
+                        768: {
+                            slidesPerView: 2,
+                            slidesPerGroup: 1,
+                            spaceBetween: 10,
+                        },
+                    },
+                });
+
+                var swiper_seen = new Swiper('.swiper-container-seen', {
+                    pagination: '.swiper-pagination-seen',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next-seen',
+                    prevButton: '.swiper-button-prev-seen',
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                    freeMode: true,
+                    breakpoints: { // 반응형 설정이 가능 width값으로 조정
+                        768: {
+                            slidesPerView: 1.1,
+                            slidesPerGroup: 1,
+                            freeMode: false,
+                            spaceBetween: 15,
+                        },
+                    },
+                });
+
+                if (document.body.clientWidth < 767) {
+                    var swiper_mobile_bottom = new Swiper('.mobile_slide_only', {
+                        loop: true,
+                        autoplay: 3000,
+                        autoplayDisableOnInteraction: false
+                    });
+                }
+
+            });
+
+            $('.cs_guide_tbl li').mouseover(function () {
+                $(this).addClass('on');
+            });
+
+            $('.cs_guide_tbl li').mouseout(function () {
+                $(this).removeClass('on');
+            });
+
+
+
+            $(document).on('click', '.like_mark', function () {
+                $(this).addClass('color_on');
+                $(this).html("<i class='xi-heart' style='color:#ff6f61;'></i>");
+            });
+
+            $(document).on('click', '.color_on', function () {
+                $(this).removeClass('color_on');
+                $(this).html("<i class='xi-heart-o'></i>");
+            });
+
+
+
+
+        </script>
+
+
+        <div class="footer">
+            <div class="sns">
+                <a href=""><span><i class="xi-kakaotalk"></i></span><span class="txt">카카오톡 1:1 문의</span></a>
+                <a href=""><span><i class="xi-blogger"></i></span><span class="txt">블로그</span></a>
+                <a href=""><span><i class="xi-instagram"></i></span><span class="txt">인스타그램</span></a>
+                <a href=""><span><i class="xi-facebook"></i></span><span class="txt">페이스북</span></a>
+                <a href=""><span><i class="xi-youtube"></i></span><span class="txt">유튜브</span></a>
+            </div>
+            <div class="inner">
+
+                <div class="footer_menu">
+                    <ul>
+                        <li class="time_area">
+                            <h4>영업시간</h4>
+                            <p class="work_time">
+                                <span>평일 9am ~ 5:30pm</span>
+                                <span>주말 9am ~ 5:30pm</span>
+                                <span class="last">미국 공휴일은 휴무입니다.</span>
+                            </p>
+                        </li>
+                        <li class="comp_m first">
+                            <h4>회사소개</h4>
+                            <ul>
+                                <li><a href="">AthomeTrip 소개</a></li>
+                                <li><a href="">찾아오시는 길</a></li>
+                                <li><a href="">채용정보</a></li>
+                                <li><a href="">파트너십</a></li>
+                            </ul>
+                        </li>
+                        <li class="comp_m">
+                            <h4>파트너십</h4>
+                            <ul>
+                                <li><a href="">파트너 등록하기</a></li>
+                                <li><a href="">파트너 제휴문의</a></li>
+                                <li><a href="">인플루언서 프로그램</a></li>
+                                <li><a href="">제휴 프로그램</a></li>
+                            </ul>
+                        </li>
+                        <li class="comp_m">
+                            <h4>이용약관</h4>
+                            <ul>
+                                <li><a href="">이용약관</a></li>
+                                <li><a href="">개인정보 취급방침</a></li>
+                            </ul>
+                        </li>
+                        <li class="ask_area">
+                            <ul>
+                                <li><a href="" class="contact_btn">문의하기</a></li>
+                                <li class="card_tit mt20 mb10"><a nohref>결제 수단</a></li>
+                                <li>
+                                    <ul class="card_img">
+                                        <li class="american"><img src="../image/main/american_ex.png" alt="" /></li>
+                                        <li class="visa"><img src="../image/main/visa.png" alt="" /></li>
+                                        <li class="master"><img src="../image/main/mastercard.png" alt="" /></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer_2">
+                <div class="address">
+                    <ul>
+                        <li>Tel. +1 012-345-6789<span class="slash">|</span>Email. sample@notreal.com</li>
+                        <li>AthomeTrip<span class="slash">|</span>012 1st Sample, Test 01234</li>
+                    </ul>
+                </div>
+                <div class="copyright">ⓒ 2019-2021 AthomeTrip. All RIGHTS RESERVED.</div>
+
+            </div>
+            <p class="go_top" onclick="goTop();return false;"><i class="xi-arrow-top"></i></p>
+        </div>
+
+
+        <!-- wrap -->
+    </div>
+    <!-- /wrap -->
+
+
+    <script type='text/javascript'>
+        $(function ($) {
+            $("img.lazy").lazyload({ effect: "fadeIn" });
+        });
+
+        function goTop() {
+            jQuery('html, body').animate({
+                scrollTop: 0
+            }, 500, 'swing');
+            return false;
+        }
+
+        if (document.body.clientWidth < 767) {
+            $('li.comp_m').click(function () {
+                $(this).children('ul').slideToggle();
+            });
+        }
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

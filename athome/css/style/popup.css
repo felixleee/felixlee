@@ -1,0 +1,85 @@
+/* 갤러리 */
+#popup{ height:100%;}
+#popup #p_tit{height:21px; padding:13px 7px 7px 15px; position:relative; font-size:16px; font-weight:600}
+#popup #p_tit h2{ font-size:18px; font-weight:600; padding:5px}
+#popup #p_tit span{position:absolute; top:10px; right:10px;}
+#popup #p_contents{padding:20px;background:url(../image/gallery/con_bg.gif) repeat-x;}
+#popup #p_contents .btn{text-align:center; padding-top:14px; clear:both;}
+
+#popup #p_contents .gallery{clear:both;}
+#popup #p_contents .gallery ul{display:inline-block;}
+#popup #p_contents .gallery li{border:1px solid #cccccc; padding:3px 2px 2px 2px; margin:10px 5px 0 0; float:left;}
+#popup #p_contents .gallery .a_before{border:none; padding:0 2px 0 0; margin:margin:10px 0 0 0 ;}
+#popup #p_contents .gallery .a_next{border:none; padding:0 0 0 3px; margin:10px 0 0 0 ;}
+
+.b_form{width:100%; border-top:1px solid #cccccc;}
+.b_form tbody th{border-bottom:1px solid #cccccc; border-right:1px solid #cccccc; background:#ebebeb; text-align:left; padding:4px 0 4px 10px; color:#000000; letter-spacing:-1px; font-size:11px; font-family:"돋움";}
+.b_form tbody td{border-bottom:1px solid #cccccc; padding:4px 4px 4px 10px;}
+
+#p_contents .member{text-align:center;}
+#p_contents .member .zip_tab2{ overflow:hidden}
+#p_contents .member .m_input{border:1px solid #dddddd; background:#fff; padding:10px;  margin:10px 0; clear:both; overflow:hidden}
+#p_contents .member .m_input input.input_1{ border:1px solid #cfcfd1; height:12px; position:relative; top:1px}
+#p_contents .member .m_input input[type=image]{ border:none; height:20px}
+#p_contents .member .m_input p{height:20px;}
+#p_contents .member .result{text-align:center; clear:both; padding:20px;}
+#p_contents .member table{margin:10px;}
+#p_contents .member table tbody td{border-bottom:1px dotted #dddddd; padding:4px; font-size:12px}
+
+#p_contents table.mail th{width:60px; padding:5px 0 5px 10px; border-bottom:1px solid #716b92; text-align:left;}
+#p_contents table.mail td{padding:5px 20px 5px 0 ; border-bottom:1px solid #716b92;}
+#p_contents table.mail td input{line-height:14px; background:#d6d5e0; border:1px solid #241e45; height:16px;}
+
+
+
+/* 상담예약팝업 */
+.popup_wrap{ border:4px solid #4b4b4b; padding:40px 20px; width:500px; position:relative }
+.popup_wrap h3{ font-size:27px; font-weight:600; color:#4b4b4b; padding-bottom:25px; border-bottom:2px solid #4b4b4b}
+.popup_wrap h3 strong{ font-size: 33px; color:#e8a010; display:block; padding-top:25px}
+.popup_wrap .logo{ background:url(../image/popup/logo.gif) right top no-repeat; width:95px; height:34px; position:absolute; top:30px; right:20px}
+.popup_wrap .benefit{ margin-top:20px; background-color:#F9F9F9; padding:20px; overflow:hidden}
+.popup_wrap .benefit li{ font-size:14px; padding:5px 0 5px 12px; letter-spacing:-0.5px; color:#2b2b2b; border-bottom:1px dotted #CCCCCC; background:url(../image/popup/bullet.gif) 5px 12px no-repeat; line-height:20px}
+.popup_wrap .benefit li strong{ color:#e8a010;}
+.popup_wrap .form_wrap{ border:1px solid #DEDEDE; margin-top:20px; padding-bottom:25px}
+.popup_wrap .form_wrap h4{ background-color:#4B4B4B; padding:7px; margin:0 auto; width:50%; display:block; text-align:center; color:#FFFFFF}
+.popup_wrap .form_wrap .rule{ width:85%; height:150px; border:1px solid #E6E6E6; overflow-y:auto; margin:5px 0; padding-top:3px; scrollbar-face-color: #ffffff; scrollbar-highlight-color: #cccccc; scrollbar-shadow-color: #cccccc; scrollbar-3dlight-color: #ffffff;scrollbar-arrow-color: #555555; scrollbar-track-color: #ffffff; scrollbar-darkshadow-color: #ffffff; padding:0 15px; margin:20px auto 0;}
+.popup_wrap .form_wrap .rule p{ color:#888888}
+.popup_wrap .form_wrap .rule_input{ width:90%; text-align:right; margin:0 auto; padding:5px 0 20px 0; font-size:12px; color:#888888}
+
+.table_l3{ clear:both; border-top:1px solid #434343; margin:0 auto}
+.table_l3 th{ padding:5px 0 5px 7px; background-color:#f3f3f3; border-right:1px solid #dedede; border-bottom:1px solid #dedede; color:#353535; font-weight:600; text-align:left; font-size:12px}
+.table_l3 td{ border-right:1px solid #dedede; border-bottom:1px solid #dedede; padding:5px 3px; color:#555555; height:26px; font-size:12px}
+.table_l3 .subtxt{ font-size:12px; color:#888888; display:block; padding-bottom:5px}
+.table_l3 .last{ border-left:none}
+
+
+/* 항공 규정보기 */
+.white-popup h2{ font-size:15px; font-weight:600; padding-bottom:7px; color:#000000}
+.white-popup .btn{ width:50px; height:20px; display:block; padding:3px 10px 2px 10px; background-color:#68b0e4; margin:20px auto 0; color:#FFFFFF; text-align:center; cursor:pointer }
+
+
+/* btn_wrap */
+.popup_wrap .btn_w { width:230px; margin:20px auto 0; overflow:hidden;}
+.popup_wrap .btn_w li{ float:left;  width:80px; height:16px; padding:5px; background-color:#da6f18; border-right:1px solid #c95a00; border-bottom:1px solid #c95a00; text-align:center; display:block; margin:0 0 0 10px; cursor:pointer; color:#FFFFFF; font-size:14px; font-weight:600; }
+.popup_wrap .btn_w li.cancel{ background-color:#666666; border-right:1px solid #333333; border-bottom:1px solid #454545;}
+.popup_wrap .btn_w li a{ color:#FFFFFF}
+
+
+/* 게시판 비밀번호 입력 */
+.popup_password{ text-align:center}
+
+.popup_password .title{ font-size:13px; font-weight:600; color:#333333}
+
+
+
+.btn_popup_wrap {overflow:hidden;}
+.btn_popup_wrap li { float:left; margin-left:5px; font-size:13px; font-weight:600;}
+.btn_popup_wrap li a {display:block; padding:7px 15px; background:#f5f5f5; border:1px solid #c7c7c7; color:#424242; min-width:65px; text-align:center;}
+
+
+#popup .top_info_wrap .detail_info_wrap { width:455px !important; }
+#popup .top_info_wrap .detail_info_wrap .detail_info{ width:455px !important; }
+
+#popup .product_wrap {margin-top:20px;}
+
+#popup .detail_info dd {float:right !important;}
