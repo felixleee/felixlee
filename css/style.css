@@ -1,0 +1,374 @@
+/* top */
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+header {
+  width: 100%;
+  position: fixed;
+  height: 80px;
+  top: 0;
+  left: 0;
+  /* background: rgba(0,0,0,0.3); */
+  transition: all 0.3s;
+  z-index: 100;
+}
+header.fix {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.04);
+}
+header .top {
+  max-width: 1300px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .top .logo_wrap h3 {
+  color: #5c4f4e;
+  font-size: 42px;
+  font-family: "Dancing Script";
+}
+header .top .right_menu_wrap ul.menu li {
+  display: inline-block;
+  color: #5c4f4e;
+  font-size: 21px;
+  margin-left: 32px;
+  font-family: "Ysabeau SC";
+}
+header .top .right_menu_wrap ul.menu li:first-child {
+  margin-left: 0;
+}
+
+#main_wrap {
+  margin: 0 auto;
+  width: 100%;
+}
+#main_wrap .main_slider_wrap {
+  width: 100%;
+  height: 570px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: #fff4bc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main_wrap .main_slider_wrap .main_txt {
+  max-width: 1300px;
+  width: 100%;
+  display: flex;
+  color: #4c4745;
+  justify-content: space-between;
+  align-items: center;
+}
+#main_wrap .main_slider_wrap .main_txt .left_txt {
+  font-family: "Ysabeau SC";
+  font-size: 75px;
+}
+#main_wrap .main_slider_wrap .main_txt .right_txt {
+  text-align: right;
+  font-family: "Ysabeau SC";
+}
+#main_wrap .main_slider_wrap .main_txt .right_txt h2 {
+  opacity: 0.75;
+}
+#main_wrap .main_slider_wrap .main_txt .right_txt h4 {
+  font-size: 37px;
+  letter-spacing: 0.5px;
+}
+
+.big_project_slider {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  padding: 60px 0;
+}
+.big_project_slider .tit_wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.big_project_slider .main_sec {
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.big_project_slider .main_sec .photo_wrap {
+  text-align: right;
+  margin-right: 3%;
+}
+.big_project_slider .main_sec .photo_wrap img {
+  width: 320px;
+  height: 320px;
+  background: #ddd;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25%;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+}
+.big_project_slider .main_sec .txt_wrap {
+  margin-left: 3%;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner {
+  width: 810px;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .tit {
+  margin-bottom: 10px;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .tit h3 {
+  font-size: 25px;
+  font-weight: 300;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .tit h2 {
+  font-size: 35px;
+  font-family: "Ysabeau SC";
+  color: #4c4745;
+  margin-bottom: 9px;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .tit.second {
+  margin-top: 17px;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .tit.second h2 {
+  font-size: 25px;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .contents {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 25px;
+  word-break: keep-all;
+  color: #4c4745;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .contents p {
+  margin-bottom: 15px;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .contents p:last-child {
+  margin-bottom: 0;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .contents a {
+  font-family: "Ysabeau SC";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 35px;
+  border: 2px solid #817975;
+  text-align: center;
+  color: #4c4745;
+  font-weight: 700;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .contents a .view {
+  display: none;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .contents a:hover {
+  background-color: #807A5E;
+  border: 2px solid #807A5E;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-size: 25px;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .contents a:hover .pdf {
+  display: none;
+}
+.big_project_slider .main_sec .txt_wrap .txt_inner .contents a:hover .view {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.tit_wrap {
+  text-align: center;
+}
+.tit_wrap h3 {
+  font-size: 35px;
+  font-family: "Ysabeau SC";
+  color: #4c4745;
+}
+
+.tit_wrap span.under_bar {
+  width: 75px;
+  height: 1px;
+  display: block;
+  background: #fff;
+  margin: 10px auto;
+}
+
+.tit_wrap p {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.card_gallery_wrap {
+  padding: 60px 0;
+}
+.card_gallery_wrap .card_area {
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 35px;
+}
+.card_gallery_wrap .card_area .card_list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.card_gallery_wrap .card_area .card_list .card {
+  width: 31%;
+  margin-right: 3.5%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+.card_gallery_wrap .card_area .card_list .card:nth-child(3n) {
+  margin-right: 0;
+}
+.card_gallery_wrap .card_area .card_list .card .img_wrap {
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #ddd;
+  width: 100%;
+  height: 250px;
+  border: 1px solid #ddd;
+}
+.card_gallery_wrap .card_area .card_list .card .img_wrap img {
+  width: 100%;
+  transition: all 0.5s;
+}
+.card_gallery_wrap .card_area .card_list .card .img_wrap img:hover {
+  transform: scale(1.2);
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap {
+  font-family: "Ysabeau SC";
+  color: #4c4745;
+  margin-top: 11px;
+  padding: 0 3px;
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap h3 {
+  font-size: 21px;
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap h3 span {
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap p {
+  word-break: keep-all;
+  margin-top: 7px;
+  line-height: 19px;
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap .view_list {
+  display: flex;
+  margin-top: 9px;
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap .view_list li {
+  margin-right: 11px;
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap .view_list a {
+  font-family: "Ysabeau SC";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 27px;
+  border: 2px solid #817975;
+  text-align: center;
+  color: #4c4745;
+  font-weight: 700;
+  transition: all 0.3s;
+  font-size: 15px;
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap .view_list a i {
+  margin-left: 5px;
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap .view_list a:hover {
+  background-color: #807A5E;
+  border: 2px solid #807A5E;
+  color: #fff;
+}
+.card_gallery_wrap .card_area .card_list .card .text_wrap .tool_date {
+  margin-top: 9px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact_area {
+  margin-top: 17px;
+}
+.contact_area .tit_wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left;
+  font-family: "Ysabeau SC";
+  color: #4c4745;
+  margin-bottom: 13px;
+}
+.contact_area .tit_wrap h2 {
+  font-size: 21px;
+}
+.contact_area .contact_feature {
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: "Ysabeau SC";
+}
+.contact_area .contact_feature ul {
+  display: flex;
+  justify-content: space-between;
+}
+.contact_area .contact_feature ul li {
+  font-size: 16px;
+  color: #4c4745;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-right: 11px;
+}
+.contact_area .contact_feature ul li i {
+  font-size: 19px;
+}
+.contact_area .contact_feature ul li span {
+  margin-bottom: 2px;
+  margin-left: 5px;
+  color: #4c4745;
+}
+
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 35px 0 40px;
+  font-family: "Ysabeau SC";
+  color: #222;
+  font-size: 15px;
+}
+
+.go_top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 49px;
+  height: 49px;
+  background: #c7c7c7;
+  transition: all 0.3s;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+.go_top i {
+  position: relative;
+  top: 15px;
+  transition: all 0.2s;
+}
+.go_top:hover {
+  background-color: #807A5E;
+}
+.go_top:hover i {
+  font-size: 26px;
+  top: 10px;
+}/*# sourceMappingURL=style.css.map */
