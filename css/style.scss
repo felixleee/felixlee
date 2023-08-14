@@ -630,6 +630,10 @@ footer {
 		i {
 			font-size: 26px;
     		top: 10px;
+			@include mobile {
+				top: 10px;
+				font-size: 12px;
+			}
 		}
 	}
 }
