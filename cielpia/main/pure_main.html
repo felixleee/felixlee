@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="CIELPIA :: 씨엘피아">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="CIELPIA에 오신것을 환영합니다">
+    <title>LJY Port :: 실제 운영되는 페이지가 아닙니다</title>
+
+    <link rel="stylesheet" href="../css/web/default.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/web/main.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/web/user.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/web/content.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/web/intro.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/web/mypage.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/web/support.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/web/respon.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/admin/lightpick.css" type="text/css">
+    <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper-bundle.js"></script>
+    <link rel="stylesheet" href="../css/web/swiper-bundle.css" type="text/css" charset="utf-8" />
+    <!--------------------------------------------------------------------------------------- sidemenu  -->
+    <script type="text/javascript" src="../js/sidemenu.js"></script>
+    <link type="text/css" href="../js/sidemenu.css" rel="stylesheet" />
+    <!--------------------------------------------------------------------------------------- jquery ui -->
+    <link type="text/css" rel="stylesheet" href="../js/jquery-ui/css/jquery-ui-1.10.4.custom.css" />
+    <script src="../js/jquery-ui/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="../js/admin.js"></script>
+
+</head>
+
+<body>
+    <div class="top_liner">
+
+        <a href="javascript:;">
+            <img class="pc" src="../image/web/main/top_liner.jpg" width="100%" style="max-width: 1200px;" alt="" />
+            <img class="mobile" src="../image/web/main/mobile_line_banner.jpg" width="100%" style="max-width: 1200px;"
+                alt="" />
+        </a>
+
+
+
+    </div>
+
+    <div id="sidemenu" style="display:none;">
+        <div class="sidemenu_wrap">
+            <div class="side_title">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="lang_setting_btn">
+                            <img src="../image/web/icon/setting.png" alt="세팅아이콘" />
+                            <span>설정</span>
+                        </a>
+                    </li>
+                </ul>
+                <a href="#" class="sidemenu_close" data-role="sidemenu-close">
+                    <i class="xi-close"></i>
+                </a>
+            </div>
+            <div class="side_category">
+                <p class="menu "><span>소개</span><i class="xi-angle-down"></i></p>
+                <ul class="sub_menu">
+                    <li><a href="">수업 추천</a></li>
+                    <li><a href="">전문강사 가입</a></li>
+                    <li><a href="">교육 픽토그램</a></li>
+                </ul>
+                <p class="menu "><span>지원</span><i class="xi-angle-down"></i></p>
+                <ul class="sub_menu">
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">자주하는 질문</a></li>
+                    <li><a href="">1:1 문의</a></li>
+                </ul>
+                <p class="menu one"><a href="">로그인</a></p>
+            </div>
+
+            <h4>강의</h4>
+            <div class="side_category">
+
+            </div>
+        </div>
+
+        <script>
+            $(document).on("click", ".side_category p", function () {
+                if (!$(this).hasClass('one')) {
+                    if ($(this).next().css("display") == "none") {
+                        $('p.menu').removeClass('on');
+                        $(this).addClass('on');
+                        $('ul.sub_menu').slideUp();
+                        $(this).next().slideDown();
+                        $(this).children("i").addClass('xi-rotate-180');
+                    } else {
+                        $(this).removeClass('on');
+                        $(this).next().slideUp();
+                        $(this).children("i").removeClass('xi-rotate-180');
+                    }
+                }
+            });
+
+            $(document).on("click", "a.third_tit", function () {
+                if ($(this).next().css("display") == "none") {
+                    $(this).addClass('on');
+                    $('ul.third_menu').slideUp();
+                    $(this).next().slideDown();
+                } else {
+                    $(this).removeClass('on');
+                    $(this).next().slideUp();
+                }
+            });
+
+        </script>
+    </div>
+    <div id="wrap_bg" style="display:none;" data-role="sidemenu-close"></div>
+
+    <header>
+        <a class="m_left_menu" data-role="sidemenu-toggle" data-direction="left" data-id="sidemenu">
+            <i class="xi-bars"></i>
+        </a>
+
+        <ul class="m_right_menu">
+            <li><a href="">로그인</a></li>
+            <li><a href=""></a><i class="xi-search"></i></a></li>
+        </ul>
+
+        <div class="inner">
+            <div class="logo_area" onclick="" style="cursor: pointer;">
+                <h1 class="cl_logo">CIELPIA</h1>
+                <h1 class="branch_logo">
+
+
+                </h1>
+            </div>
+
+            <nav>
+                <ul class="nav_list">
+                    <li><a href="">홈</a></li>
+                    <li>
+                        <a href="">소개</a>
+                        <ul class="sub_menu">
+                            <li><a href="">· 수업 추천</a></li>
+                            <li><a href="">· 전문강사 가입</a></li>
+                            <li><a href="">· 교육 픽토그램</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">지원</a>
+                        <ul class="sub_menu">
+                            <li><a href="">· 공지사항</a></li>
+                            <li><a href="">· 자주하는 질문</a></li>
+                            <li><a href="">· 1:1 문의</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="javascript:;" class="lang_setting_btn"><img src="../image/web/icon/setting.png"
+                                alt="세팅아이콘" /></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="child_select setting_pop">
+        <form name="childForm" id="childForm" method="post" action="/setting/set_child">
+            <input type="hidden" name="_token" value="dVK27YXWKRNIspo8pjpbl2EKYx7y9cKmvzpGOg4j">
+            <div class="inner align_c">
+                <i class="xi-close"></i>
+                <div class="header">
+                    <p>자녀선택</p>
+                </div>
+                <div class="select_wrap">
+                    <ul>
+                    </ul>
+                    <a class="ok_btn mt30 mb20" href="javascript:;">선택완료</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="lang_select setting_pop">
+        <form name="languageForm" id="languageForm" method="post" action="/setting/set_language">
+            <input type="hidden" name="_token" value="dVK27YXWKRNIspo8pjpbl2EKYx7y9cKmvzpGOg4j">
+            <div class="inner align_c">
+                <i class="xi-close"></i>
+                <div class="header">
+                    <p>설정</p>
+                </div>
+                <div class="select_wrap">
+                    <ul>
+                        <li>
+                            <p>언어변경</p>
+                            <div class="input">
+                                <input type="radio" name="flag_language" value="1" id="flag_language_kr"
+                                    checked /><label for="flag_language_kr">한국어</label>
+                            </div>
+                            <div class="input">
+                                <input type="radio" name="flag_language" value="2" id="flag_language_en" /><label
+                                    for="flag_language_en">영어</label>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Change currency</p>
+                            <div class="input">
+                                <input type="radio" name="flag_current" value="1" id="flag_current_krw" checked /><label
+                                    for="flag_current_krw">KRW (원화)</label>
+                            </div>
+                            <div class="input">
+                                <input type="radio" name="flag_current" value="2" id="flag_current_usd" /><label
+                                    for="flag_current_usd">USD (미국달러)</label>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="ok_btn mt30 mb20" href="javascript:;">OK</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        $("ul.nav_list > li").hover(function () {
+            $(this).children('ul.sub_menu').stop().slideToggle();
+        });
+
+        $("a.child_select_btn").click(function () {
+            $('div.child_select').css("display", "flex").hide().fadeIn();
+        });
+
+        $(".child_select a.ok_btn, .child_select .xi-close").click(function () {
+            $('div.child_select').fadeOut();
+        });
+
+        $("a.lang_setting_btn").click(function () {
+            $('div.lang_select').css("display", "flex").hide().fadeIn();
+        });
+
+        $(".lang_select a.ok_btn, .lang_select .xi-close").click(function () {
+            $('div.lang_select').fadeOut();
+        });
+
+        // function setConfig(formName) {
+        //     let urlStr = $('#' + formName).attr('action');
+        //     let params = $('#' + formName).serializeObject();
+        //     $.ajax({
+        //         type: "post",
+        //         cache: false,
+        //         url: urlStr,
+        //         data: JSON.stringify(params),
+        //         dataType: "json",
+        //         context: this,
+        //         beforeSend: function (xhr) {
+        //             xhr.setRequestHeader("X-CSRF-TOKEN", "dVK27YXWKRNIspo8pjpbl2EKYx7y9cKmvzpGOg4j");
+        //             xhr.setRequestHeader("Content-Type", "application/json");
+        //         },
+        //         success: function (data) {
+        //             if (data.status == "200") location.reload();
+        //         }
+        //     });
+        // }
+    </script>
+
+
+
+
+
+
+
+
+    <!-- <div class="guide_wrap" id="main_guide">
+        <div class="inner" id="mg2">
+            <div class="top_guide">
+                <div class="borderBox"></div>
+                <div class="straight-line-down"></div>
+                <div class="triangle triangle--down"></div>
+                <p>로그인을 누르시면 회원가입을 하실 수 있습니다.</p>
+            </div>
+            <div class="center_pic_guide">
+                <p>콘텐츠 강의 소개</p>
+                <div class="triangle triangle--top"></div>
+                <div class="straight-line-top"></div>
+                <div class="borderBox-center"></div>
+            </div>
+            <div class="stop_to_display">
+                <div class="flex">
+                    <input type="checkbox" name="guide_checkbox" id="guide_checkbox" onclick="monthcloseWin()" />
+                    <label for="guide_checkbox">한달동안 안내페이지 열지 않기</label>
+                </div>
+                <a class="guide_close" href="javascript:;"><span>닫기</span> <i class="xi-close"></i></a>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <main>
+
+        <div class="main_slider_wrap">
+            <div class="swiper-container-main pc">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../image/web/main/pc_1_230210013933.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image/web/main/pc_2_230204181555.jpg" />
+                    </div>
+                </div>
+                <div class="swiper-pagination pc"></div>
+                <div class="swiper-button-next pc"></div>
+                <div class="swiper-button-prev pc"></div>
+            </div>
+
+            <div class="swiper-container-main mobile">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <img src="../image/web/main/mobile_1_221128133254.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image/web/main/mobile_2_220609012451.jpg" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="sub_line_wrap">
+            <div class="inner w1200">
+                <ul class="left_menu">
+                </ul>
+                <div class="right_search_wrap">
+                    <form id="searchForm" method="get" action="/search">
+                        <input type="text" name="search_word" value="" id="main_search" />
+                    </form>
+                    <a class="sch_btn" href="javascript:;" id="search_btn"><i class="xi-search"></i></a>
+                    <div class="alert alert-danger" id="search_alert"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub_list">
+            <ul id="category_group" class="space_item">
+                <li class="picBTN pic1">
+                    <a onclick="javascript:;">
+                        <div class="img_box">
+                            <img class="common_st" src="../image/web/main/cate1.png">
+                            <img class="hover_st" src="../image/web/main/cate1_blue.png">
+                        </div>
+                        <span>몬테소리</span>
+                    </a>
+                    <div class="sub_menu">
+                        <ul class="left_cate">
+                            <li data-idx="9">
+                                <a href="javascript:;">
+                                    · 유아 Lv.1 <i class="xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                            <li data-idx="10">
+                                <a href="javascript:;">
+                                    · 유아 Lv.2 <i class="xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                            <li data-idx="11">
+                                <a href="javascript:;">
+                                    · 유아 Lv.3 <i class="xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                            <li data-idx="13">
+                                <a href="javascript:;">
+                                    · 초등 Lv.1 <i class="xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                            <li data-idx="14">
+                                <a href="javascript:;">
+                                    · 초등 Lv.2 <i class="xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <ul class="right_cate"></ul>
+                    </div>
+                </li>
+                <li class="picBTN pic2">
+                    <a onclick="javascript:;">
+                        <div class="img_box">
+                            <img class="common_st" src="../image/web/main/cate2.png">
+                            <img class="hover_st" src="../image/web/main/cate2_blue.png">
+                        </div>
+                        <span>건강</span>
+                    </a>
+                    <div class="sub_menu">
+                        <ul class="left_cate">
+                            <li data-idx="4">
+                                <a href="javascript:;">
+                                    · 공통 <i class="xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <ul class="right_cate"></ul>
+                    </div>
+                </li>
+                <li class="picBTN pic3">
+                    <a onclick="">
+                        <div class="img_box">
+                            <img class="common_st" src="../image/web/main/cate3.png">
+                            <img class="hover_st" src="../image/web/main/cate3_blue.png">
+                        </div>
+                        <span>문화/예술</span>
+                    </a>
+                    <div class="sub_menu">
+                        <ul class="left_cate">
+                            <li data-idx="5">
+                                <a href="javascript:;">
+                                    · 공통 <i class="xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <ul class="right_cate"></ul>
+                    </div>
+                </li>
+                <li class="picBTN pic5">
+                    <a onclick="">
+                        <div class="img_box">
+                            <img class="common_st" src="../image/web/main/cate5.png">
+                            <img class="hover_st" src="../image/web/main/cate5_blue.png">
+                        </div>
+                        <span>글로벌리더</span>
+                    </a>
+                    <div class="sub_menu">
+                        <ul class="left_cate">
+                            <li data-idx="7">
+                                <a href=">
+                                    · 공통 <i class=" xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <ul class="right_cate"></ul>
+                    </div>
+                </li>
+                <li class="picBTN pic6">
+                    <a onclick="">
+                        <div class="img_box">
+                            <img class="common_st" src="../image/web/main/cate6.png">
+                            <img class="hover_st" src="../image/web/main/cate6_blue.png">
+                        </div>
+                        <span>코딩</span>
+                    </a>
+                    <div class="sub_menu">
+                        <ul class="left_cate">
+                            <li data-idx="8">
+                                <a href="javascript:;">
+                                    · 공통 <i class="xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <ul class="right_cate"></ul>
+                    </div>
+                </li>
+                <li class="picBTN pic7">
+                    <a onclick="">
+                        <div class="img_box">
+                            <img class="common_st" src="../image/web/main/cate7.png">
+                            <img class="hover_st" src="../image/web/main/cate7_blue.png">
+                        </div>
+                        <span>탐험가 프로그램</span>
+                    </a>
+                    <div class="sub_menu">
+                        <ul class="left_cate">
+                            <li data-idx="12">
+                                <a href="">
+                                    · 공통 <i class="xi-angle-right-thin"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <ul class="right_cate"></ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="monte_intro mt10 mb10">
+            <img src="../image/web/main/monte_intro.png" alt="" />
+            <div class="right_txt_box">
+                <!--
+    		<h4><span class="skyblue">몬테소리</span> <span class="blue">교육</span>의 목표</h4>
+    		-->
+                <h4><span class="skyblue">온라인 학습 코치 CIELPIA!</span></h4>
+                <p class="pc">
+                    하나, 일상생활과 연계된 체험 중심 교육 활동 지원<br />
+                    둘, 국∙내외 다양한 학습 상황에 적용 가능한 개인 맞춤형 학습환경 지원<br />
+                    셋, 디지털 콘텐츠 활용이 가능한 감성, 창의력 중심의 감성적 창조 인재 양성<br />
+                    넷, 인공지능 시대가 요구하는 ICT 활용 가능한 미래 인재 양성<br />
+                </p>
+                <p class="mobile">
+                    하나, 일상생활과 연계된 체험 중심 교육 활동 지원<br />
+                    둘, 국∙내외 다양한 학습 상황에 적용 가능한 개인 맞춤형 학습환경 지원<br />
+                    셋, 디지털 콘텐츠 활용이 가능한 감성, 창의력 중심의 감성적 창조 인재 양성<br />
+                    넷, 인공지능 시대가 요구하는 ICT 활용 가능한 미래 인재 양성<br />
+                </p>
+            </div>
+        </div>
+
+
+        <div class="class_case">
+            <h3>Class Case</h3>
+            <div class="slide_wrap">
+                <div class="swiper-container-3pcs class">
+                    <div class="swiper-wrapper">
+                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase1.jpg" /></a></div>
+                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase2.jpg" /></a></div>
+                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase3.jpg" /></a></div>
+                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase1.jpg" /></a></div>
+                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase2.jpg" /></a></div>
+                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase3.jpg" /></a></div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev-class"><</div>
+                <div class="swiper-button-next-class">></div>
+            </div>
+        </div>
+
+        <div class="line_banner">
+            <a href="/intro/cielpia_intro">
+                <img class="pc" src="../image/web/main/cielpia_sub1.jpg" alt="" />
+                <img class="mobile" src="../image/web/main/m_sub1.jpg" alt="" />
+            </a>
+        </div>
+        <div class="real_time_banner">
+            <div class="inner">
+                <img class="bg pc" src="../image/web/main/real_time_bg.jpg" alt="" />
+
+                <img class="bg mobile" src="../image/web/main/m_sub2.jpg" alt="" />
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-----------------------------------------------------------------
+글로벌리더 클릭시 나타나는 팝업
+----------------------------------------------------------------->
+    <div class="nation_detail" id="nation_detail" style="display: none;">
+        <div class="inner">
+            <i class="xi-close"></i>
+            <div class="header">
+                <h3>글로벌리더</h3>
+            </div>
+            <div class="pc_list">
+                <ul class="table_list" style="overflow-y:auto; height: 500px;">
+                    <div id="img_list">
+                        <span><a href=""><img src="../image/web/nation/usa.jpg">
+                                <p>국가1</p>
+                            </a></span>
+                        <span><a href=""><img src="../image/web/nation/usa.jpg">
+                                <p>국가2</p>
+                            </a></span>
+                        <span><a href=""><img src="../image/web/nation/usa.jpg">
+                                <p>국가3</p>
+                            </a></span>
+                        <span><a href=""><img src="../image/web/nation/usa.jpg">
+                                <p>국가4</p>
+                            </a></span>
+                        <span><a href=""><img src="../image/web/nation/usa.jpg">
+                                <p>국가5</p>
+                            </a></span>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <style>
+        body {
+            position: relative;
+        }
+    </style>
+
+    <script>
+        $('#search_btn').on("click", function () {
+            if ($("input[name='search_word']").val() == "") {
+                $('#search_alert').text('검색어를 입력하세요');
+                return;
+            }
+
+            $('#searchForm').submit();
+        });
+
+        function setContentValue(cate) {
+            window.location.href = "../content/lecture_list.html?cate=" + cate;
+        }
+
+        var swiper_cielpia_pc = new Swiper('.swiper-container-main.pc', {
+
+            navigation: {
+                nextEl: ".swiper-button-next.pc",
+                prevEl: ".swiper-button-prev.pc",
+            },
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination.pc',
+            },
+        });
+
+        var swiper_cielpia_m = new Swiper('.swiper-container-main.mobile', {
+
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+
+        var swiper3live = new Swiper('.swiper-container-3pcs.live', {
+            slidesPerView: 1.8,
+            spaceBetween: 13,
+            navigation: {
+                nextEl: ".swiper-button-next-live",
+                prevEl: ".swiper-button-prev-live",
+            },
+            breakpoints: { // 반응형 설정이 가능 width값으로 조정
+                768: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 1,
+                    centeredSlides: false,
+                    spaceBetween: 30,
+                    loopedSlides: 7,
+                },
+            },
+        });
+
+        var swiper3class = new Swiper('.swiper-container-3pcs.class', {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            navigation: {
+                nextEl: ".swiper-button-next-class",
+                prevEl: ".swiper-button-prev-class",
+            },
+        });
+
+        // 타겟영역을 제외하고 클릭했을 시 팝업 숨김처리.
+        $(".sub_list ul li").mouseenter(function (e) {
+            var $tgPoint = $(e.target);
+            var $popCallBtn = $tgPoint.is('.picBTN');
+            var $popArea = $tgPoint.is('div.sub_menu *');
+
+            if (!$popArea && !$popCallBtn) {
+                //if ($(this).hasClass("pic2") === false){
+                $('.right_cate').html("");
+                $(".left_cate li").removeClass("on");
+                //}
+            }
+        });
+
+        $(".left_cate li").bind("click", function (e) {
+            $(".left_cate li").removeClass("on");
+            $(this).addClass("on");
+            $(this).parents(".left_cate").next(".right_cate").fadeIn();
+            let url = "category/category_3/" + this.dataset.idx;
+            getAjax(url).then(response => {
+                $(this).parents(".left_cate").next(".right_cate").html(response.html);
+            });
+        });
+
+        $(".sub_list ul li:nth-of-type(2)").bind("mouseenter", function (e) {
+
+            $(this).find(".right_cate").fadeIn();
+            let url = "category/category_3/4";
+            getAjax(url).then(response => {
+                $(this).find(".right_cate").html(response.html);
+            });
+        });
+
+        var stop_t = $(".main_slider_wrap").offset().top - 30;
+        var quick_scroll = function () {
+            var pos = $(window).scrollTop();
+            if (pos > stop_t)
+                $(".right_quick").addClass('fixed');
+            else {
+                $(".right_quick").removeClass('fixed');
+            }
+        }
+        $(window).scroll(quick_scroll);
+
+
+
+
+
+
+    </script>
+
+    <script>
+        // window.addEventListener('load', function () {
+        //
+        // var body = document.body,
+        // html = document.documentElement;
+        // var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+        // $(".guide_wrap").css('height',height);
+        // });
+
+
+        $(".guide_close").click(function () {
+            $(".guide_wrap").fadeOut();
+            //$('body').css('overflow','visible');
+        });
+
+        $(document).ready(function () {
+            cookiedata_guide = document.cookie;
+            if (cookiedata_guide.indexOf("mg2=done") < 0) {
+                document.getElementById('main_guide').style.display = "block";
+            } else {
+                document.getElementById('main_guide').style.display = "none";
+            }
+        });
+
+        function setCookie(name, value, expiredays) {
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+
+        function monthcloseWin() {
+            setCookie("mg2", "done", 30);
+        }
+
+    </script>
+
+
+
+
+    <footer>
+
+
+
+        <div class="foot_info">
+            <ul class="comp_menu">
+                <li><a href="">회사소개</a></li>
+                <li><a href="">이용약관</a></li>
+                <li><a href="">개인정보처리방침</a></li>
+                <li><a href="">사이트맵</a></li>
+                <li><a href="">공지사항</a></li>
+            </ul>
+            <div class="company_info">
+                <p>CIELPIA / Footer 사업자 주소란 / 사업자 번호 : 012-34-5678</p>
+                <p>대표 : 가나다 / 이메일 : sample@notreal.com
+                    <!--------------------------------------------------------------------------------------- / 연락처 : 010-2885-4441 -->
+                </p>
+                <p>통신판매업신고번호 : 제 0123-샘플-4567호 / 개인정보관리책임자 : 가나다</p>
+                <p class="copyright">Copyright ⓒ 씨엘피아 All Rights Reserved</p>
+            </div>
+
+            <ul class="sns">
+            </ul>
+
+        </div>
+    </footer>
+</body>
+
+</html>
