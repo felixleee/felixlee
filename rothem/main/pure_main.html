@@ -1,0 +1,958 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="naver-site-verification" content="334e7cfae4ce3da653da79a49ea557d2dd453e30" />
+    <meta name="robots" content="index,follow" />
+    <title>LJY Port :: 실제 운영되는 페이지가 아닙니다</title>
+    <link href="../css/all.css?ver=1.1" rel="stylesheet" type="text/css" />
+    <link href="../css/font/css/font-awesome.css" rel="stylesheet">
+    <!--- favicon --->
+    <link href="../image/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
+
+    <!-- jquery -->
+    <script src="../js/jquery-1.9.1.js" type="text/javascript"></script>
+
+    <!-- jquery ui -->
+    <link type="text/css" rel="stylesheet" href="../js/jquery-ui/css/jquery-ui-1.10.4.custom.css" />
+    <script src="../js/jquery-ui/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
+
+    <!-- jquery lazyload -->
+    <script type="text/javascript" src="../js/jquery.lazyload.min.js"></script>
+
+    <!-- jquery 갤러리(movegellery) -->
+    <script type='text/javascript' src="../js/jquery.movegellery.js"></script>
+
+    <!-- Magnific Popup -->
+    <script type='text/javascript' src="/js/magnific-popup/jquery.magnific-popup.js"></script>
+    <link href="/js/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+    <!-- jquery Banner -->
+    <script src="../js/jquery.banner.js" type="text/javascript"></script>
+
+    <!-- jquery form -->
+    <script type="text/javascript" src="../js/jquery.form.js"></script>
+    <!-- jquery.bpopup.min.js -->
+    <script src="../js/jquery.bpopup.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <!-- 로딩바 -->
+    <div id="ajax_loading_bar" style="position:absolute;z-index:100;display:none;cursor:pointer;"
+        onclick="$(this).hide();">
+        <img src="../image/ajax-loader.gif" alt="로딩중입니다." />
+    </div>
+
+    <!-- ajax처리 레이어 -->
+    <div id="ajax_proc"></div>
+
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- skip_navi -->
+        <dl id="skip_navi">
+            <dt><strong class="title">바로가기 메뉴</strong></dt>
+            <dd><a href="">본문내용 바로가기</a></dd>
+            <dd><a href="">메인메뉴 바로가기</a></dd>
+            <dd><a href="">서브메뉴 바로가기</a></dd>
+        </dl>
+        <!-- /skip_navi -->
+
+        <!--퀵메뉴 -->
+        <div id="divMenu" class="m_quick">
+            <dl id="quick">
+                <dt>
+                    <p>고객센터</p>
+                    <p>1688-9182</p>
+                </dt>
+                <dd>
+                    <ul class="btn_area_1">
+                        <li class="quick2"><a href="">고객센터</a></li>
+                        <li class="quick3"><a href="">여행후기</a></li>
+                        <li class="quick8"><a href=""><i class="xi-pencil-point"></i><br />단체문의</a></li>
+                    </ul>
+                    <ul class="btn_area_2">
+                        <li><a href=""><img src="../image/social/kakao_talktalk.png" alt="" />카카오톡</a></li>
+                        <li><a href=""><img src="../image/social/naver_talktalk.png" alt="" />네이버톡톡</a></li>
+                        <li><a href=""><img src="../image/common/card.png" alt="" />무이자 할부</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <div class="today_list_wrap" id="quick_good_list" style="text-align:center;"></div>
+            <div class="top_go"><a href="#" onclick="goTop();return false;">
+                    <i class="xi-angle-up"></i><br />
+                    TOP
+                </a></div>
+        </div>
+        <!-- /퀵메뉴 -->
+
+
+        <script type="text/javascript">
+
+            function goTop() {
+                jQuery('html, body').animate({
+                    scrollTop: 0
+                }, 500, 'swing');
+                return false;
+            }
+        </script>
+        <!-- header -->
+        <div id="header">
+            <div class="top_banner">
+                <img src="../image/main/211105_top_banner.jpg" alt="">
+            </div>
+            <!-- top_wrap -->
+            <div class="top_wrap_b">
+                <!-- top_menu -->
+                <div class="top_menu_b">
+                    <ul class="top_left">
+                        <li><a href="/">홈</a></li>
+                        <li><a href="#"
+                                onclick="{window.external.AddFavorite('http://www.rothemtour.co.kr','로뎀투어')}">즐겨찾기</a>
+                        </li>
+                        <li><a class="simple-ajax-popup-align-top" href="">전체메뉴보기</a></li>
+                    </ul>
+                    <div class="top_center_txt">
+                        성지순례 패키지 1위 <span>'로뎀투어'</span>
+                    </div>
+                    <ul class="top_right">
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">예약조회</a></li>
+                        <li class="last"><a href=".">회원가입</a></li>
+                        <li style="display:none;"><a href="">마이페이지</a></li>
+
+
+                        <li style="display:none;" class="last"><a href="">공지사항</a></li>
+                    </ul>
+                </div>
+                <!-- /top_menu -->
+            </div>
+            <!-- /top_wrap -->
+            <style>
+            </style>
+            <!-- logo_wrap -->
+            <!-- 폼 -->
+            <form class="logo_zone_b" name="top_search_frm" method="get" action="../good/list.html">
+                <div class="logo_wrap">
+                    <h1 style="display: inline-block;"><a href="/"><img src="../FileData/logo_700x303.png"
+                                alt="로뎀투어" /></a></h1>
+                    <div class="top_search_wrap">
+                        <p class="top_search">
+                            <input id="" class="input_search" type="text"
+                                onblur="if(this.value==''){ this.className='input_search'; this.value='여행지를 입력하세요.'; }"
+                                onfocus="if (this.value == '여행지를 입력하세요.') {this.value = '';}" title="여행지를 입력하세요."
+                                size="25" name="g_title_s" value="여행지를 입력하세요.">
+                            <input class="btn_search" type="image" align="top" alt="검색"
+                                src="../image/main_b/btn_top_search.png">
+                        </p>
+                    </div>
+                    <!-- <div class="top_quick_menu">
+						<ul>
+							<li>
+								<a href="#" class="bookmark" onclick="{window.external.AddFavorite('http://www.rothemtour.co.kr','로뎀투어')}">
+									<i class="xi-star xi-x"></i>즐겨찾기
+								</a>
+							</li>
+							<li><a href="../cmm/?BD_CD=REVIEW" class="review"><i class="xi-pen xi-x"></i>여행리뷰</a></li>
+							<li><a href="../cmm/inquiry_travel.html?BD_CD=QNA" class="alliance"><i class="xi-community xi-x"></i>단체문의</a></li>
+							<li><a href="http://pf.kakao.com/_sfGsd" target="_blank"><img src="../image/main/icon_kakaoplus.png" alt="카카오플러스"></a></li>
+						</ul>	
+					</div> -->
+
+
+                    <div class="t_top_quick_menu">
+                        <ul>
+                            <li>
+                                <a href="#" class="t_bookmark">
+                                    <img src="../image/main/icon1.png" alt="즐겨찾기">
+                                </a>
+                            </li>
+                            <li><a href="" class="t_review"><img src="../image/main/icon2.png" alt="여행후기"></a></li>
+                            <li><a href="" class="t_alliance"><img src="../image/main/icon3.png" alt="단체문의"></a></li>
+                            <li><a href="" class="t_alliance"><img src="../image/main/icon5_new.png" alt="네이버블로그"></a></li>
+                            <li><a href="" class="t_alliance"><img src="../image/main/icon6_new.png" alt="인스타그램"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+            <!-- /폼 -->
+            <!-- /logo_wrap -->
+            <!-- gnb -->
+            
+            <div id="gnb_re">
+                <div class="gnb_re_wrap">
+                    <ul class="menu">
+                        <li class="item-menu">
+                            <a href="">출애굽</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="">이스라엘+요르단</a></li>
+                                    <li><a href="">이집트+이스라엘+요르단</a></li>
+                                    <li><a href="">이스라엘 일주</a></li>
+                                    <li><a href="">이스라엘+요르단+두바이</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="item-menu">
+                            <a href="">바울여정</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="">튀르키예+그리스</a></li>
+                                    <li><a href="">튀르키예+그리스+로마</a></li>
+                                    <li><a href="">튀르키예 일주</a></li>
+                                    <li><a href="">그리스 일주</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="item-menu">
+                            <a href="">종교개혁지</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="">종교개혁지 5국</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="item-menu">
+                            <a href="">성지완전일주</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="">이스라엘+요르단+튀르키예</a></li>
+                                    <li><a href="">이스라엘+이태리</a></li>
+                                    <li><a href="">이스라엘+튀르키예</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--	<li class="item-menu">
+							<a href="../cmm/?BD_CD=GRP101">기획전</a>
+							<div class="menu_box none">
+								<ul>
+																			<li class=""><a href="../cmm/?BD_CD=GRP101">2021 기획전</a></li>
+																	</ul>
+							</div>	
+					</li>	 -->
+                        <li class="item-menu">
+                            <a href="">고객센터</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="">공지사항</a></li>
+
+                                    <li><a href="">여행후기</a></li>
+
+                                    <li><a href="">극동방송 랜선 성지순례</a></li>
+
+                                    <li><a href="">극동방송 성서의 땅 칼럼</a></li>
+
+                                    <li><a href="">보도자료</a></li>
+
+                                    <li><a href="">자주묻는질문</a></li>
+
+                                    <li><a href="">갤러리</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $("#gnb span").first().addClass("start");
+            })
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // Drop down
+                $(".item-menu").mouseover(function () {
+                    $('.menu_box').addClass('none');
+                    $(this).find('.menu_box').removeClass('none');
+                });
+                $(".menu_box").mouseleave(function () {
+                    $('.menu_box').addClass('none');
+                });
+            });
+        </script>
+        <style>
+            .mfp-fade.mfp-bg {
+                opacity: 0;
+            }
+        </style>
+        <!-- jquery Slider -->
+        <script type="text/javascript" src="../js/jquery.bxslider.js"></script><!-- 슬라이드js -->
+        <link type="text/css" href="../css/jquery.bxslider.css" rel="stylesheet" /><!-- 슬라이드css -->
+
+        <!-- container -->
+        <div id="container">
+
+            <!--메인배너롤링-->
+            <div class="main_visual_b">
+                <div class="img_area_wrap main_visual"><!-- main_visual -->
+                    <ul class="img_area bxslider"><!-- bxslider -->
+                        <li><a href=""><img src="../FileData/20200319_7C83A5926E54D431.jpg" width="100%" alt=""></a></li>
+                        <li><a href=""><img src="../FileData/20200319_BA4F2C9442804FD4.jpg" width="100%" alt=""></a></li>
+                        <li><a href=""><img src="../FileData/20200324_3988B3BEC25AFEFD.jpg" width="100%" alt=""></a></li>
+                </div>
+            </div>
+            <!--/메인배너롤링-->
+
+            <!-- m_contents_wrap -->
+            <div class="m_contents_wrap_b">
+                <!-- m_best_deals -->
+                <div class="m_best_deals_b">
+                    <!--				<h3 class="stitle_img_box"><img src="../image/main/main_stitle.png" alt="2019~2020 Winter Best 추천 상품"></h3>-->
+                    <h3 class="stitle_img_box"><img src="../image/main/210906_main_stitle.jpg"
+                            alt="2022 new seaseon best 추천 상품"></h3>
+                    <ul>
+                        <li class='product03'>
+                            <div class="m_best_info">
+                                <div class="img">
+                                    <a href="" class="m_best_box">
+                                        <img src="../FileData/good_thum/20191111_9FA3C7BDEB00BB0E.jpg" width="326" height="216" alt="">
+                                    </a>
+                                </div>
+                                <div class="context">
+                                    <a href="" class="m_best_box">
+                                        <strong class="tit">▶왕복 비즈니스◀ 이스라엘/요르단 2국 9일 터키항공</strong>
+                                        <span class="txt">출발확정 - 2021년 11/8</span><strong
+                                            class="price">2,450,000<span class='text1'>원</span> ~ </strong></a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class='product03'>
+                            <div class="m_best_info">
+                                <div class="img">
+                                    <a href="" class="m_best_box">
+                                        <img src="../FileData/good_thum/20191111_F32515C4394C397F.jpg" width="326" height="216" alt="">
+                                    </a>
+                                </div>
+                                <div class="context">
+                                    <a href="" class="m_best_box">
+                                        <strong class="tit">▶부산 출발◀ 이스라엘/요르단 2국 9일 캐세이퍼시픽항공</strong>
+                                        <span class="txt">출발확정 - 2021년 11/12</span><strong
+                                            class="price">1,890,000<span class='text1'>원</span> ~ </strong></a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class='product03 last'>
+                            <div class="m_best_info">
+                                <div class="img">
+                                    <a href="" class="m_best_box">
+                                        <img src="../FileData/good_thum/20200129_14683B393DDD9753.jpg" width="326" height="216" alt="">
+                                    </a>
+                                </div>
+                                <div class="context">
+                                    <a href="" class="m_best_box">
+                                        <strong class="tit">[6코스] 이스라엘/요르단 2국 9일 러시아항공</strong>
+                                        <span class="txt">출발확정 - 2021년 09/21</span><strong
+                                            class="price">4,890,000<span class='text1'>원</span> ~ </strong></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li class='product03'>
+                            <div class="m_best_info">
+                                <div class="img">
+                                    <a href="" class="m_best_box">
+                                        <img src="../FileData/good_thum/20200129_26688A19A2757ED7.jpg" width="326" height="216" alt="">
+                                    </a>
+                                </div>
+                                <div class="context">
+                                    <a href="" class="m_best_box">
+                                        <strong class="tit">▶왕복 비즈니스◀ 이스라엘/요르단 2국 9일 터키항공</strong>
+                                        <span class="txt">출발확정 - 2021년 11/8</span><strong
+                                            class="price">2,450,000<span class='text1'>원</span> ~ </strong></a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class='product03'>
+                            <div class="m_best_info">
+                                <div class="img">
+                                    <a href="" class="m_best_box">
+                                        <img src="../FileData/good_thum/20200129_33D5E2F2AA0BFA37.jpg" width="326" height="216" alt="">
+                                    </a>
+                                </div>
+                                <div class="context">
+                                    <a href="" class="m_best_box">
+                                        <strong class="tit">▶부산 출발◀ 이스라엘/요르단 2국 9일 캐세이퍼시픽항공</strong>
+                                        <span class="txt">출발확정 - 2021년 11/12</span><strong
+                                            class="price">1,890,000<span class='text1'>원</span> ~ </strong></a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class='product03 last'>
+                            <div class="m_best_info">
+                                <div class="img">
+                                    <a href="" class="m_best_box">
+                                        <img src="../FileData/good_thum/20200129_C3E350964415EA7A.jpg" width="326" height="216" alt="">
+                                    </a>
+                                </div>
+                                <div class="context">
+                                    <a href="" class="m_best_box">
+                                        <strong class="tit">[6코스] 이스라엘/요르단 2국 9일 러시아항공</strong>
+                                        <span class="txt">출발확정 - 2021년 09/21</span><strong
+                                            class="price">4,890,000<span class='text1'>원</span> ~ </strong></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /m_best_deals -->
+            </div>
+
+            <div class="m_contents_wrap_b">
+                <!-- m_recommend -->
+                <div class="m_recommend_b">
+                    <!--<h3>단체 & 소그룹 추천 상품</h3>-->
+                    <h3 class="stitle_img_box"><img src="../image/main/img191119.png" alt="단체 & 소그룹 추천 상품"></h3>
+
+                    <ul class="recom_tab">
+                        <li class="on"><a href="javascript:;">출애굽</a></li>
+                        <li class=""><a href="javascript:;">바울여정</a></li>
+                        <li class=""><a href="javascript:;">종교개혁지</a></li>
+                        <li class=""><a href="javascript:;">성지완전일주</a></li>
+                    </ul>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $(".recom_tab").children().last().addClass("last");
+                        });
+                    </script>
+
+                    <div id="ajax_recomm" style="height:350px; clear:both">
+                        <ul class="m_recom_info on">
+                            <li class="">
+                                <a href="">
+                                    <dl>
+                                        <dt title=""><img src="../FileData/good_thum/20190808_E6F56D0F2705FA79.jpg" width="324" height="216" alt=""></dt>
+                                        <dd><strong class="tit" title="">이집트/이스라엘/요르단 12일 사우디항공</strong>
+                                        <span class="txt" title="출발확정 - 2021년 11/1, 11/8, 11/22, 12/6">출발확정 - 2023년 11/1, 11/8, 11/22, 12/6</span>
+                                        <strong class="price">4,350,000<span class="text1">원</span> ~ </strong></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="">
+                                    <dl>
+                                        <dt title=""><img src="../FileData/good_thum/20221129_41DE549555D65301.jpg" width="324" height="216" alt=""></dt>
+                                        <dd><strong class="tit" title="">이집트/이스라엘/요르단 11일 카타르항공</strong>
+                                        <span class="txt" title="출발확정 - 2021년 11/1, 11/8, 11/22, 12/6">출발확정 - 2023년 11/1, 11/8, 11/22, 12/6</span>
+                                        <strong class="price">6,690,000<span class="text1">원</span> ~ </strong></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="last">
+                                <a href="">
+                                    <dl>
+                                        <dt title=""><img src="../FileData/good_thum/20190808_28F33E6E859C231B.jpg" width="324" height="216" alt=""></dt>
+                                        <dd><strong class="tit" title="">[하계 특선] 이스라엘 일주 6일 러시아항공</strong>
+                                        <span class="txt" title="출발확정 - 2021년 10/30, 11/27">출발확정 - 2021년 7/30, 8/27</span>
+                                        <strong class="price">3,000,000<span class="text1">원</span> ~ </strong></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="m_recom_info">
+                            <li class="">
+                                <a href="">
+                                    <dl>
+                                        <dt title=""><img src="../FileData/good_thum/20201126_DE98321481BF384D.jpg" width="324" height="216" alt=""></dt>
+                                        <dd><strong class="tit" title="">튀르키예(7대 교회)/그리스(메테오라) 2국 9일 아시아나항공</strong>
+                                        <span class="txt" title="출발확정 - 2021년 11/1, 11/8, 11/22, 12/6">출발확정 - 2023년 11/1, 11/8, 11/22, 12/6</span>
+                                        <strong class="price">2,690,000<span class="text1">원</span> ~ </strong></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="">
+                                    <dl>
+                                        <dt title=""><img src="../FileData/good_thum/20210120_7BB66ED067A8FDF8.jpg" width="324" height="216" alt=""></dt>
+                                        <dd><strong class="tit" title="">★노옵션★그리스(메테오라)/터키(7대 교회) 2국 11일 러시아항공</strong>
+                                        <span class="txt" title="출발확정 - 2021년 11/1, 11/8, 11/22, 12/6">출발확정 - 2023년 11/1, 11/8, 11/22, 12/6</span>
+                                        <strong class="price">2,690,000<span class="text1">원</span> ~ </strong></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="last">
+                                <a href="">
+                                    <dl>
+                                        <dt title=""><img src="../FileData/good_thum/20210120_087C2F145BBDBED4.jpg" width="324" height="216" alt=""></dt>
+                                        <dd><strong class="tit" title="">터키(7대 교회)/그리스(메테오라) 2국 11일 아시아나항공</strong>
+                                        <span class="txt" title="출발확정 - 2021년 10/30, 11/27">출발확정 - 2021년 10/30, 11/27</span>
+                                        <strong class="price">3,130,000<span class="text1">원</span> ~ </strong></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="m_recom_info">
+                            <li class="">
+                                <a href="">
+                                    <dl>
+                                        <dt title="[종교개혁지] 독일/체코/오스트리아/스위스 11일 폴란드항공"><img src="../FileData/good_thum/20190808_48FB41E98A7F4E53.jpg" width="324" height="216" alt=""></dt>
+                                        <dd><strong class="tit" title="[종교개혁지] 독일/체코/오스트리아/스위스 11일 폴란드항공">[종교개혁지] 독일/체코/오스트리아/스위스 11일 폴란드항공</strong>
+                                        <span class="txt" title="출발확정 - 2021년 11/1, 11/8, 11/22, 12/6">출발확정 - 2023년 11/1, 11/8, 11/22, 12/6</span>
+                                        <strong class="price">2,690,000<span class="text1">원</span> ~ </strong></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="last">
+                                <a href="">
+                                    <dl>
+                                        <dt title="[종교개혁지] 독일/체코/오스트리아/스위스 11일 에미레이트항공"><img src="../FileData/good_thum/20230502_CA6EF0EED24F8B0D.jpg" width="324" height="216" alt=""></dt>
+                                        <dd><strong class="tit" title="[종교개혁지] 독일/체코/오스트리아/스위스 11일 에미레이트항공">[종교개혁지] 독일/체코/오스트리아/스위스 11일 에미레이트항공</strong>
+                                        <span class="txt" title="출발확정 - 2021년 10/30, 11/27">출발확정 - 2021년 10/30, 11/27</span>
+                                        <strong class="price">3,130,000<span class="text1">원</span> ~ </strong></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="m_recom_info">
+                            <li class="last">
+                                <a href="">
+                                    <dl>
+                                        <dt title="이스라엘/이태리 12일 폴란드항공"><img src="../FileData/good_thum/20190808_999218202DB8B20B.jpg" width="324" height="216" alt=""></dt>
+                                        <dd><strong class="tit" title="이스라엘/이태리 12일 폴란드항공">이스라엘/이태리 12일 폴란드항공</strong>
+                                        <span class="txt" title="출발확정">출발확정</span>
+                                        <strong class="price">3,390,000<span class="text1">원</span> ~ </strong></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <script>
+                    $(".recom_tab li").on('click', function() {
+                        let index = $(".recom_tab li").index(this);
+
+                        //모든 div의 on 클래스 제거
+                        $('.recom_tab li').removeClass('on');
+                        $('#ajax_recomm ul').removeClass('on');
+                        //클릭된 index에 해당하는 div에 on 추가
+                        $('.recom_tab li:eq('+ index +')').addClass('on');
+                        $('#ajax_recomm ul:eq('+ index +')').addClass('on');
+                    })
+                </script>
+                <!-- /m_recommend -->
+            </div>
+            <!-- /m_contents_wrap -->
+
+
+
+            <!-- m_bbs_wrap -->
+            <div class="m_bbs_wrap_b">
+                <div class="m_bbs_zone_b b_list">
+                    <!-- m_b_list -->
+                    <div class="m_b_list">
+                        <h4>여행후기
+                            <span class="bbs_more">
+                                <a href="">
+                                    <img src="../image/main_b/btn_bbs_more.jpg" alt="여행후기 더보기">
+                                </a>
+                            </span->
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="" title="">
+                                    2020.09.29~10.07 이스라엘, ... </a>
+                                <span class="m_bbs_date">
+                                    2020-10-12 </span>
+                            </li>
+                            <li><a href=""
+                                    title="">
+                                    2020.9.25-10.4 이스라엘+요... </a>
+                                <span class="m_bbs_date">
+                                    2020-10-06 </span>
+                            </li>
+                            <li><a href=""
+                                    title="">
+                                    9월25일출발 10월3일 도착 ... </a>
+                                <span class="m_bbs_date">
+                                    2020-10-06 </span>
+                            </li>
+                            <li><a href=""
+                                    title="">
+                                    9/25~10/4 이스라엘-요르단 ... </a>
+                                <span class="m_bbs_date">
+                                    2020-10-06 </span>
+                            </li>
+                            <li><a href="" title="">
+                                    9월13일~23일,이집트-이스라... </a>
+                                <span class="m_bbs_date">
+                                    2020-10-06 </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /m_b_list -->
+                    <!-- m_b_list -->
+                    <div class="m_b_list">
+                        <h4>극동방송 랜선 성지순례
+                            <span class="bbs_more"><a href=""><img
+                                        src="../image/main_b/btn_bbs_more.jpg" alt="칼럼 더보기"></a></span>
+                        </h4>
+                        <ul>
+                            <li><a href=""
+                                    title="[극동방송 으랏차차1시] 이스라엘/요르단 9일 여정 - 9일차 (2021-03-16)">
+                                    [극동방송 으랏차차1시] 이스라엘/... </a>
+
+                                <span class="m_bbs_date">
+                                    2021-03-17 </span>
+                            </li>
+                            <li><a href=""
+                                    title="[극동방송 으랏차차1시] 이스라엘/요르단 9일 여정 - 8일차 (2021-03-09)">
+                                    [극동방송 으랏차차1시] 이스라엘/... </a>
+
+                                <span class="m_bbs_date">
+                                    2021-03-17 </span>
+                            </li>
+                            <li><a href=""
+                                    title="[극동방송 으랏차차1시] 이스라엘/요르단 9일 여정 - 7일차 (2021-03-02)">
+                                    [극동방송 으랏차차1시] 이스라엘/... </a>
+
+                                <span class="m_bbs_date">
+                                    2021-03-02 </span>
+                            </li>
+                            <li><a href=""
+                                    title="[극동방송 으랏차차1시] 이스라엘/요르단 9일 여정 - 6일차 (2021-02-23)">
+                                    [극동방송 으랏차차1시] 이스라엘/... </a>
+
+                                <span class="m_bbs_date">
+                                    2021-02-24 </span>
+                            </li>
+                            <li><a href=""
+                                    title="[극동방송 으랏차차1시] 이스라엘/요르단 9일 여정 - 5일차 (2021-02-16)">
+                                    [극동방송 으랏차차1시] 이스라엘/... </a>
+
+                                <span class="m_bbs_date">
+                                    2021-02-24 </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /m_b_list -->
+                    <!-- m_b_list -->
+                    <div class="m_b_list last">
+                        <img src="../image/main/inquiry_bg.jpg" alt="inquiry_bg">
+                        <div class="tit">
+                            <p>교회/단체 최저가<br> 맞춤 견적 문의</p>
+                            <p class="call">1688-9182</p>
+                            <a href="/cmm/inquiry_travel.html?BD_CD=QNA" class="m_b_btn" target="_blank">
+                                <i class="xi-pencil-point"></i> 단체문의하기
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="m_b_list last">
+				</div> -->
+                    <!-- /m_b_list -->
+                </div>
+                <!-- /m_bbs_zone -->
+            </div>
+            <!-- /m_bbs_wrap -->
+
+
+            <div class="customer_info">
+                <div class="c_info_box">
+                    <div class="box">
+                        <h3><em style="color:#1f76a8;font-weight: 600;">고객상담</em>센터</h3>
+                        <div class="icon"><img src="../image/main/icon_customer.png" alt="고객센터 아이콘"></div>
+                        <div class="text">
+
+                            <p class="call">0123-4567</p>
+                            <p class="time">상담시간 : (평일) 09:00~18:00</p>
+                            <p class="holi">토요일, 일요일, 공휴일은 휴무입니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="c_info_box">
+                    <div class="box">
+                        <h3><em style="color:#208d7c;font-weight: 600;">입금계좌</em>안내</h3>
+                        <div class="text">
+                            <p class="hana"><span><img src="../image/main/hana.png" alt="하나은행"></span> 012-345678-90123
+                            </p>
+                            <p class="kb"><img src="../image/main/kb.png" alt="국민은행"> 123456-78-987654</p>
+                            <p class="name"><em style="color:#96672b;font-weight: 900;">예금주</em> : (주)샘플샘플</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <style>
+                .bottom_banner {
+                    width: 1000px;
+                    height: 100%;
+                    margin: auto;
+                    margin-top: 60px;
+                    overflow: hidden;
+                }
+            </style>
+
+            <div class="bottom_banner">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td style="width:1200px; height:54px;border: solid 1px #e2e2e2;border-radius: 5px;">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td height="54" width="93" align="center" class="bottom_roll_t">파트너</td>
+                                            <td height="54" valign="middle" width="1"><img align="absmiddle"
+                                                    src="../image/main/bottom_roll.gif" alt=""></td>
+                                            <td height="54" width="900">
+                                                <div
+                                                    style="width:900px; height:40px; vertical-align:middle; padding-top:10px;">
+                                                    <script type="text/javascript">
+
+                                                        var sliderwidth = "900px";  //스크롤 가로 사이즈  
+                                                        var sliderheight = "40px";  //스크롤 세로 사이즈  
+                                                        var slidespeed = "1";
+                                                        var slidebgcolor = "#ffffff";  //스크롤 배경 색상  
+
+                                                        var leftarrowimage = "";
+                                                        var rightarrowimage = "";
+                                                        var finalslide = '';
+
+                                                        var imagegap = "";
+                                                        var slideshowgap = 0;
+
+
+                                                        var copyspeed = slidespeed;
+                                                        var partnerData = 10;
+                                                        var leftrightslide = []; // leftrightslide 배열 초기화
+
+                                                        for (var i = 0; i < partnerData; i++) {
+                                                            leftrightslide[i] = '<a href=""><img src="../image/main/air' + i + '.jpg" border=0 style="height: 28px;"></a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;';
+                                                        }
+                                                        
+                                                        leftrightslide = '<nobr>' + leftrightslide.join(imagegap) + '</nobr>';
+                                                        var iedom = document.all || document.getElementById;
+                                                        if (iedom)
+                                                            document.write('<span id="temp" style="visibility:hidden;position:absolute;top:-100px;left:-9000px;">' + leftrightslide + '</span>');
+
+
+
+                                                        var actualwidth = '';
+                                                        var cross_slide, ns_slide;
+                                                        var righttime, lefttime;
+
+                                                        function fillup() {
+
+                                                            if (iedom) {
+                                                                cross_slide = document.getElementById ? document.getElementById("test2") : document.all.test2
+                                                                cross_slide2 = document.getElementById ? document.getElementById("test3") : document.all.test3
+                                                                cross_slide.innerHTML = cross_slide2.innerHTML = leftrightslide
+                                                                actualwidth = document.all ? cross_slide.offsetWidth : document.getElementById("temp").offsetWidth
+                                                                cross_slide2.style.left = actualwidth + slideshowgap + "px"
+                                                            }
+
+                                                            else if (document.layers) {
+                                                                ns_slide = document.ns_slidemenu.document.ns_slidemenuorange
+                                                                ns_slide2 = document.ns_slidemenu.document.ns_slidemenu3
+                                                                ns_slide.document.write(leftrightslide)
+                                                                ns_slide.document.close()
+                                                                actualwidth = ns_slide.document.width
+                                                                ns_slide2.left = actualwidth + slideshowgap
+                                                                ns_slide2.document.write(leftrightslide)
+                                                                ns_slide2.document.close()
+                                                            }
+
+                                                            lefttime = setInterval("slideleft()", 30)   // 롤링 속도
+
+                                                        }
+
+                                                        window.onload = fillup
+
+
+
+                                                        function slideleft() {
+
+                                                            if (iedom) {
+                                                                if (parseInt(cross_slide.style.left) > (actualwidth * (-1) + 9))
+                                                                    cross_slide.style.left = parseInt(cross_slide.style.left) - copyspeed + "px"
+                                                                else
+                                                                    cross_slide.style.left = parseInt(cross_slide2.style.left) + actualwidth + slideshowgap + "px"
+                                                                if (parseInt(cross_slide2.style.left) > (actualwidth * (-1) + 9))
+                                                                    cross_slide2.style.left = parseInt(cross_slide2.style.left) - copyspeed + "px"
+                                                                else
+                                                                    cross_slide2.style.left = parseInt(cross_slide.style.left) + actualwidth + slideshowgap + "px"
+                                                            }
+                                                            else if (document.layers) {
+                                                                if (ns_slide.left > (actualwidth * (-1) + 9))
+                                                                    ns_slide.left -= copyspeed
+                                                                else
+                                                                    ns_slide.left = ns_slide2.left + actualwidth + slideshowgap
+                                                                if (ns_slide2.left > (actualwidth * (-1) + 9))
+                                                                    ns_slide2.left -= copyspeed
+                                                                else
+                                                                    ns_slide2.left = ns_slide.left + actualwidth + slideshowgap
+                                                            }
+                                                        }
+
+                                                        function slideright() {
+                                                            if (iedom) {
+                                                                if (parseInt(cross_slide.style.left) < (actualwidth + 9))
+                                                                    cross_slide.style.left = parseInt(cross_slide.style.left) + copyspeed + "px"
+                                                                else
+                                                                    cross_slide.style.left = parseInt(cross_slide2.style.left) + actualwidth * (-1) + slideshowgap + "px"
+                                                                if (parseInt(cross_slide2.style.left) < (actualwidth + 9))
+                                                                    cross_slide2.style.left = parseInt(cross_slide2.style.left) + copyspeed + "px"
+                                                                else
+                                                                    cross_slide2.style.left = parseInt(cross_slide.style.left) + actualwidth * (-1) + slideshowgap + "px"
+                                                            }
+
+                                                            else if (document.layers) {
+                                                                if (ns_slide.left > (actualwidth * (-1) + 9))
+                                                                    ns_slide.left -= copyspeed
+                                                                else
+                                                                    ns_slide.left = ns_slide2.left + actualwidth + slideshowgap
+                                                                if (ns_slide2.left > (actualwidth * (-1) + 9))
+                                                                    ns_slide2.left -= copyspeed
+                                                                else
+                                                                    ns_slide2.left = ns_slide.left + actualwidth + slideshowgap
+                                                            }
+                                                        }
+
+                                                        function right() {
+                                                            if (lefttime) {
+                                                                clearInterval(lefttime)
+                                                                clearInterval(righttime)
+                                                                righttime = setInterval("slideright()", 30)   //오른쪽 속도 
+                                                            }
+                                                        }
+
+                                                        function left() {
+                                                            if (righttime) {
+                                                                clearInterval(lefttime)
+                                                                clearInterval(righttime)
+                                                                lefttime = setInterval("slideleft()", 30)    //왼쪽 속도
+                                                            }
+                                                        }
+
+                                                        document.write('<table width=934 border=0 cellspacing=0 cellpadding=0>');
+                                                        document.write('<tr>')
+
+                                                        if (iedom || document.layers) {
+                                                            with (document) {
+                                                                document.write('<td>')
+                                                                if (iedom) {
+                                                                    write('<div style="position:relative;width:' + sliderwidth + ';height:' + sliderheight + ';overflow:hidden">')
+                                                                    write('<div style="position:absolute;width:' + sliderwidth + ';height:' + sliderheight + ';background-color:' + slidebgcolor + '" onMouseover="copyspeed=0" onMouseout="copyspeed=1">')
+                                                                    write('<div id="test2" style="position:absolute;left:0px;top:0px"></div>')
+                                                                    write('<div id="test3" style="position:absolute;left:-900px;top:0px"></div>')
+                                                                    write('</div></div>')
+                                                                }
+
+                                                                else if (document.layers) {
+                                                                    write('<ilayer width=' + sliderwidth + ' height=' + sliderheight + ' name="ns_slidemenu" bgColor=' + slidebgcolor + '>')
+                                                                    write('<layer name="ns_slidemenuorange" left=0 top=0 onMouseover="copyspeed=0" onMouseout="copyspeed=slidespeed"></layer>')
+                                                                    write('<layer name="ns_slidemenu3" left=0 top=0 onMouseover="copyspeed=0" onMouseout="copyspeed=slidespeed"></layer>')
+                                                                    write('</ilayer>')
+                                                                }
+                                                                document.write('</td>')
+                                                            }
+                                                        }
+
+                                                        document.write('<td width=33 align=center valign=middle></td></tr></table>')
+
+                                                    </script>
+
+                                                </div>
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <!-- /container -->
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //메인 롤링
+                $('.bxslider').bxSlider({
+                    auto: true,
+                    mode: 'fade',
+                    pager: true,
+                    controls: false,
+                    speed: 1000
+                });
+
+
+
+            });
+
+        </script>
+
+
+
+
+        <!-- footer -->
+        <div id="footer_b">
+            <!-- gnb_footer -->
+            <div id="gnb_footer_b">
+                <ul>
+                    <li><a href="">회사소개</a></li>
+                    <li><a href="">개인정보취급방침</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">해외여행약관</a></li>
+                    <li><a href="">해외여행보험약관</a></li>
+                    <li class="no_bg"><a href="">제휴안내</a></li>
+                </ul>
+            </div>
+            <!-- /gnb_footer -->
+            <!-- copyright_zone -->
+            <div class="copyright_zone_b">
+                <h2><a href="#"><img src="../FileData/logo_200x87.png" alt="로고" /></a></h2>
+                <!-- address -->
+                <ul class="address">
+                    <li>상호 : (주)로뎀투어네트워크</li>
+                    <li>대표이사 : 홍길동&nbsp;&nbsp;|&nbsp;&nbsp;사업자등록번호 : 012-34-56789 &nbsp;&nbsp;|&nbsp;&nbsp;관광사업등록증 :
+                        일반여행업&nbsp;&nbsp;|&nbsp;&nbsp;통신판매업신고 : 제 0123-샘플-4567호 &nbsp;<a
+                            href="" target="_blank"
+                            style="display: inline-block; padding: 1px; border: 1px solid #b6b7bc">사업자정보 확인</a>
+                    </li>
+                    <li><i style="vertical-align: middle; font-size: 16px;" class="xi-social-email"></i>E-mail :
+                        sample@notreal.com</li>
+                </ul>
+                <ul class="copyright">
+                    <li>본 홈페이지에 게시된 이메일 주소가 자동 수집되는 것을 거부하며 이를 위반시 정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.</li>
+                    <li>COPYRIGHT (C) <strong>(주)로뎀투어네트워크</strong>. ALL RIGHTS RESERVED.</li>
+                </ul>
+                <!-- /address -->
+            </div>
+            <!-- /copyright_zone -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /wrap -->
+
+
+    <script type='text/javascript'>
+        $(function ($) {
+            $("img.lazy").lazyload({ effect: "fadeIn" });
+        });
+    </script>
+
+</body>
+
+</html>
