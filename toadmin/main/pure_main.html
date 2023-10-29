@@ -1,0 +1,616 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+<title>Travel Management System(v39220105.3)</title>
+<link type="text/css" rel="stylesheet" href="../css/all.css?v230227.1" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
+
+<script type="text/javascript">
+var lang = "";
+</script>
+
+<!-- jquery -->
+<script src="../js/jquery-1.9.1.js?v230227.1" type="text/javascript"></script>
+
+<!-- 갤러리플래시 -->
+<script src="../js/swf_upload.js?v230227.1" type="text/javascript"></script>
+
+<!-- jquery ui -->
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/css/jquery-ui-1.10.4.custom.css?v230227.1" />
+<script src="../js/jquery-ui/jquery-ui-1.10.4.custom.js?v230227.1" type="text/javascript"></script>
+
+<!-- admin js -->
+<script type="text/javascript" src="../js/admin.lib.js?v230227.1"></script>
+
+<!-- 웹에디터 -->
+<!-- <script type="text/javascript" src="../js/ckeditor_v4.9/ckeditor.js?v230227.1"></script> -->
+
+<!-- timepicker -->
+<!-- <link type="text/css" rel="stylesheet" href="../js/wickedpicker/dist/wickedpicker.min.css?v230227.1" />
+<script type="text/javascript" src="../js/wickedpicker/dist/wickedpicker.min.js?v230227.1"></script> -->
+
+<script  type="text/javascript">
+
+
+$(document).ready(function(){
+	setTimeout("help_box()",1000); // 풍선도움말
+
+});
+var to_mb_id = 'click';
+</script>
+</head>
+<body>
+
+<!-- 로딩바 -->
+<div id="ajax_loading_bar" style="position:absolute;z-index:100;display:none;cursor:pointer;" onclick="$(this).hide();">
+ <img src="../image/ajax-loader.gif" alt="로딩중입니다." />
+</div>
+
+<!-- ajax처리 레이어 -->
+<div id="ajax_proc"></div>
+
+<div id="wrap_main">
+		<div class="top_blue" id="top_menu_bg">
+	<div class="top_btn_home"><a href="../main/main.html"><img src="../image/top/logo.png" alt="홈으로가기" /></a></div>
+	<div id="gnb">
+		<ul class="top_menu01">
+					<li ><a href="">상담/예약</a></li>
+					<li ><a href="">정산</a></li>
+					<li ><a href="">여행</a></li>
+					<li ><a href="">호텔</a></li>
+					<li ><a href="">관광(지)</a></li>
+					<li ><a href="">회원/거래처</a></li>
+					<li ><a href="">게시판</a></li>
+					<li ><a href="">디자인</a></li>
+					<li ><a href="">여행자보험</a></li>
+					<li ><a href="">기초설정</a></li>
+				</ul>
+		<ul class="top_menu02">
+				</ul>
+			</div>
+  <div class="log_wrap">
+  	<div class="p_info">
+  		<p class="info_log"><a href="">로그아웃</a></p>
+    	<p class="info_name" style="margin-right: 10px;">
+    		<img src="../image/btn/btn_reset.png" alt="새로고침" title="새로고침" style="vertical-align:middle; /*padding-right:6px;*/cursor:pointer; margin-bottom:1px;" onclick="javascript:document.location.reload();"  />
+    		<span style="color:#333; font-weight:600; margin-right:3px;">클릭</span>
+    		<span>투어오피스<span>[master]</span>
+    	</p>
+    	<div class="clear"></div>
+    </div>
+  </div>
+  <div class="page_id_wrap">화면ID:<span id="tooltip_help" onclick="window.clipboardData.setData('text','main_main');" style="cursor:pointer;">main_main</span></div>
+</div>
+
+
+<script type="text/javascript">
+//top_menu_bg에 class 변경
+var red_page_arr=new Array('/intra/','/exchange/','/log/'); // ARRAY에 페이지명이나 폴더명 추가
+
+for(var i=0 ; i < red_page_arr.length ; i++)
+{
+	if(document.location.href.indexOf(red_page_arr[i])>0)
+	{
+		$("#top_menu_bg").removeClass();
+		$("#top_menu_bg").addClass("top_blue");
+	}
+}
+
+</script>
+
+
+		<div id="contents">
+		<div class="left_wrap">
+			<div class="left_menu_wrap">
+				<ul class="left_menu">
+					<li>
+					    <a href="" onclick="javascript:;">
+						<img name="Image1" src="../image/left/left_off_menu01.gif" alt="사이트" /></a>
+					</li>
+					<li>
+						<a href="">
+						<img name="Image7" src="../image/left/left_off_menu07.gif" alt="모바일" /></a>
+					</li>
+					<li>
+						<a href="">
+						<img name="Image2" src="../image/left/left_off_menu02.gif" alt="사내" /></a>
+					</li>
+					<li>
+						<a href="">
+						<img name="Image8" src="../image/left/left_off_menu08.gif" alt="문자팩스충전" /></a>
+					</li>
+					<li>
+						<a href="">
+						<img name="Image3" src="../image/left/left_off_menu03.gif" alt="환율" /></a>
+					</li>
+					<li>
+						<a href="">
+						<img name="Image5" src="../image/left/left_off_menu05.gif" alt="내정보" /></a>
+					</li>
+					<li>
+                        <a href="">
+					    <img name="Image6" src="../image/left/left_off_menu06.gif" alt="KCP PG" /></a><!--  src="../image/left/left_off_menu06_ini.gif" alt="ini PG" -->
+					</li>
+					<li>
+						<a href="">
+						<img name="Image4" src="../image/left/left_off_menu04.gif" alt="방문" /></a>
+					</li>
+				</ul>
+			</div>
+
+					</div>
+
+
+<script type='text/javascript'>
+	// 좌측 부메뉴 닫기
+	$('.btn_close').hide();
+	var leftorigin_width = $('#contents .left_wrap').width();
+
+	function menu_toggle(){
+		if($('#contents .left_wrap').width()>150){
+
+			//close
+			$('#wrap_main').css('background-image',"url('')");
+			$('#wrap').css('background-image',"url('')");
+			$('#contents .left_wrap').animate({
+				width:'0px'
+			},300,function(){
+				$(this).hide();
+				$('.btn_close').show();
+				$('.btn_open').hide();
+			});
+
+			$('#contents .contents_wrap').animate({
+				marginLeft:'0'
+			}
+			,300);
+
+		}else{
+			//open
+			$('#contents .left_wrap').animate({
+				width:leftorigin_width+'px'
+			},300,function(){
+				$('.btn_close').hide();
+				$('.btn_open').show();
+				$('#contents .left_wrap').show();
+				$('#wrap_main').css('background',"url('../image/left/left_menu_bg.gif')");
+				$('#wrap').css('background',"url('../image/left/left_menu_bg.gif')  left top repeat-y");
+			});
+
+
+			$('#contents .contents_wrap').animate({
+				marginLeft:'257px'
+			},300);
+		}
+	}
+	
+    const tourReg = document.getElementById("tour_reg");
+    if(tourReg){
+        tourReg.addEventListener("click", function(){
+            let tab = ""; 
+            if(!tab){
+                alert("카테고리를 먼저 선택하세요.");
+            }else{
+                location.href=`good_write.html?tab=${tab}`;
+            }
+        });
+    }
+    
+  $(function(){
+	  // 공통버튼 on class
+	  var url = window.location.href.toLowerCase();
+	  var comm_link_l , comm_link_r;
+
+	  if(!$('.sub_top_btn').length) return false; //[son]main.html제외	
+	  comm_link_l = $(".sub_top_btn .btn_left a").attr("href").replace('..','').toLowerCase(); // 왼쪽버튼
+	  comm_link_r = $(".sub_top_btn .btn_right a").attr("href").replace('..','').toLowerCase();// 오른쪽 버튼
+
+	  if ( url.indexOf(comm_link_l) > -1 ) $(".sub_top_btn .btn_left").addClass("on");
+	  if ( url.indexOf(comm_link_r) > -1 ) $(".sub_top_btn .btn_right").addClass("on");
+  });
+
+</script>
+    <div class="main_wrap">
+    <div class="contents_wrap_in newIn">
+    	    <div class="title"><strong>Travel Management System()</strong></div>
+    <div class="contents_detail">
+
+
+    <!-- 221007 게시판 -->
+    <div class="main_situation0"> <!-- main_situation0 -->
+        <!-- 예약관리 상담기록 -->
+        <div class="flex_box pb20">  
+            <h2>예약관리 상담기록</h2>
+                <form name="board_List" id="board_List" method="POST">
+                    <input type="hidden" name="SqlType" id="SqlType" value="">
+                    <input type="hidden" name="BD_CD" id="BD_CD" value="INTRA01">
+                    <div style="width:100%; max-height:220px; overflow:auto">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="board_list_tbl" class="t_list" summary="게시물을 확인하실 수 있습니다.">
+                            <caption>게시물 확인</caption>
+                                    <colgroup>
+                                    <col style=" width:10%">
+                                    <col style=" width:50%">
+                                    <col style=" width:10%">
+                                    <col style=" width:10%">
+                                    <col style=" width:10%">
+                                    </colgroup>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">내용</th>
+                                        <th scope="col">작성자</th>
+                                        <th scope="col">알림일</th>
+                                        <th scope="col">등록일</th>
+                                    </tr>
+                                                            </table>
+                    </div>
+                </form>
+        </div>
+
+        <!-- 일정관리 상담기록 -->
+        <div class="flex_box pb20"> 
+            <h2>일정관리</h2>
+                <form name="board_List" id="board_List" method="POST">
+                    <input type="hidden" name="SqlType" id="SqlType" value="">
+                    <input type="hidden" name="BD_CD" id="BD_CD" value="INTRA01">
+                    <div style="width:100%; max-height:220px; overflow:auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="board_list_tbl" class="t_list" summary="게시물을 확인하실 수 있습니다.">
+                        <caption>게시물 확인</caption>
+                                <colgroup>
+                                <col style=" width:10%">
+                                <col style=" width:50%">
+                                <col style=" width:10%">
+                                <col style=" width:10%">
+                                </colgroup>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">작성자</th>
+                                    <th scope="col">등록일</th>
+                                </tr>
+                                
+                                
+                    </table>
+                    </div>
+                </form>
+        </div> <!-- flex_box -->
+
+        <!-- 사내게시판 -->
+        <div class="flex_box pb20"> 
+            <h2>사내게시판</h2>
+                <form name="board_List" id="board_List" method="POST">
+                    <input type="hidden" name="SqlType" id="SqlType" value="">
+                    <input type="hidden" name="BD_CD" id="BD_CD" value="INTRA01">
+                    <div style="width:100%; max-height:220px; overflow:auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="board_list_tbl" class="t_list" summary="게시물을 확인하실 수 있습니다.">
+                        <caption>게시물 확인</caption>
+                                <colgroup>
+                                <col style=" width:10%">
+                                <col style=" width:50%">
+                                <col style=" width:10%">
+                                <col style=" width:10%">
+                                </colgroup>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">작성자</th>
+                                    <th scope="col">등록일</th>
+                                </tr>
+                                                    </table>
+                    </div>
+                </form>
+        </div> <!-- flex_box -->
+
+    </div><!-- main_situation0 -->
+
+
+
+    <!-- main_situation01  -->
+	<div class="main_situation01">
+    <!-- 상담및 예약현황 -->
+    <!-- flex_leftBox -->
+    <div class="flex_leftBox">
+    <!-- 예약관리 상담기록  -->
+	<!-- 타이틀바 -->
+    <div class="c_top_bar line_r" style="border-bottom:none;">
+        <h2>상담/예약현황</h2>
+        <span class="more">
+            <a href="../res_good/index.html"><img src="../image/btn/btn_more.gif" alt="더보기" /></a>
+        </span>
+    </div>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="t_list">
+    <caption>예약현황</caption>
+	    <thead>
+        <tr>
+            <th rowspan="2" width="100px">일자</th>
+            <th colspan="2">여행</th>
+            <th colspan="2">호텔</th>            <!-- <th colspan="2">항공</th>
+            <th colspan="2">렌터카</th> -->
+        </tr>
+        <tr>
+            <th>상담</th>
+            <th>예약</th>
+                                <th>상담</th>
+            <th>예약</th>
+                                <!-- <th>상담</th>
+            <th>예약</th>
+            <th>상담</th>
+            <th>예약</th> -->
+        </tr>
+        </thead>
+		<tbody>
+			    	<tr>
+				<td>10.27</td>
+				<td>0</td>
+				<td>0</td>
+								<td>0</td>
+				<td>0</td>
+								<!-- <td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td> -->
+    	</tr>
+			    	<tr>
+				<td>10.26</td>
+				<td>0</td>
+				<td>0</td>
+								<td>0</td>
+				<td>0</td>
+								<!-- <td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td> -->
+    	</tr>
+			    	<tr>
+				<td>10.25</td>
+				<td>0</td>
+				<td>0</td>
+								<td>0</td>
+				<td>0</td>
+								<!-- <td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td> -->
+    	</tr>
+			    	<tr>
+				<td>10.24</td>
+				<td>0</td>
+				<td>0</td>
+								<td>0</td>
+				<td>0</td>
+								<!-- <td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td> -->
+    	</tr>
+			    	<tr>
+				<td>10.23</td>
+				<td>0</td>
+				<td>0</td>
+								<td>0</td>
+				<td>0</td>
+								<!-- <td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td> -->
+    	</tr>
+			    	<tr>
+				<td>10.22</td>
+				<td>0</td>
+				<td>0</td>
+								<td>0</td>
+				<td>0</td>
+								<!-- <td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td> -->
+    	</tr>
+			    	<tr>
+				<td>10.21</td>
+				<td>0</td>
+				<td>0</td>
+								<td>0</td>
+				<td>0</td>
+								<!-- <td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td> -->
+    	</tr>
+					</tbody>
+	</table>
+	<!-- /예약목록 -->
+</div>
+<!-- flex_leftBox -->
+	
+
+	<!-- 회원가입 및 게시판현황 -->
+    <!-- flex_rightBox -->
+    <div class="flex_rightBox">
+	<div class="c_top_bar line_r" style="border-bottom:none;"><h2>회원가입 및 게시판현황</h2><span class="more"><a href="../member/person_member_list.html"><img src="../image/btn/btn_more.gif" alt="더보기" /></a></span></div>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="t_list" summary="여행, 호텔, 항공, 렌터카의 상담및 예약현황을 확인하실 수 있습니다.">
+    <caption>예약현황</caption>
+		<thead>
+      <tr>
+      	<th rowspan="2">일자</th>
+        <th colspan="2">회원</th>
+        <th colspan="3">게시판현황</th>
+        </tr>
+      <tr>
+      	<th>회원가입</th>
+        <th>로그인</th>
+        <th>질문과 답변</th>
+        <th>여행후기</th>
+        <th>공지사항</th>
+      </tr>
+    </thead>
+		<tbody>
+						<tr>
+				<td>10.27</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0/0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+						<tr>
+				<td>10.26</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0/0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+						<tr>
+				<td>10.25</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0/0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+						<tr>
+				<td>10.24</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0/0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+						<tr>
+				<td>10.23</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0/0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+						<tr>
+				<td>10.22</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0/0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+						<tr>
+				<td>10.21</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0/0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+					</tbody>
+	</table>
+	</div>
+    <!-- flex_rightBox -->
+	<!-- /회원가입 및 게시판현황 -->
+	</div>
+  <!-- main_situation01  -->
+
+
+	<div class="main_situation02">
+	    <dl>
+          	<dt>오늘의 상담/예약현황</dt>
+            <dd>상담 : 0건</dd>
+            <dd>예약 : 0건</dd>
+        </dl>
+          <dl>
+          	<dt>고객현황</dt>
+            <dd>오늘의가입고객 : 0명</dd>
+            <dd>10월의가입고객 : 0명</dd>
+            <dd>총가입고객 : 5명</dd>
+          </dl> 
+          <!-- <dl class="last">
+          	<dt>사내게시판</dt>
+            <dl>
+          		<ul class="board">
+								          		</ul>
+             </dl>
+			</dl> -->
+      </div>
+      </div>
+    </div>
+    </div>
+
+		</div>
+   
+   <div id="footer"><div id="ajax_proc2"></div>
+   	<div class="footer_w">   		
+   		<!--<h2><img src="../image/common/bottom_logo.png" alt="투어오피스" /></h2>-->
+      <span>Copyrightsⓒ <strong>Travel Management System(v39220105.3) 투어오피스</strong>. All Rights Reserved.</span>
+   	</div>
+   </div>  
+  
+</div>
+
+
+<!-- 풍선도움말 -->
+<!-- 수정하는 경우에 ../include/footer.html ../include/footer_proc.html ../include/footer_iframe.html 같이 수정함.-->
+<script type="text/javascript">
+$(document).ready(function(){
+	var tooltip_array = new Array();
+		
+	
+
+	$(".help_tooltip").each(function() {
+		var title = $(this).html();
+
+		for(var n in tooltip_array)
+		{
+			if ( title.indexOf(tooltip_array[n].help_title) >= 0 )
+			{
+				$(this).attr('tooltip_id','tooltip_cont_'+tooltip_array[n].idx+"_"+tooltip_array[n].help_seq);
+				$(this).attr('idx',tooltip_array[n].idx);
+			}
+		}
+	});
+});
+</script>
+
+
+<script type="text/javascript">
+// 이미지 멀티 업로드 callback(/toadmn/ck_upload/ckeditor_upload.html)
+function ckInsertImagesHtml(dir,images,tmp_layer_id,instance) 
+{
+	var arr=images.split("||");
+	var obj=eval("CKEDITOR.instances."+instance);
+
+	to_dialog.close(tmp_layer_id); 
+	
+	for(var i in arr ){
+		if(arr[i]) obj.insertHtml("<img src=\""+dir+arr[i]+"\"><br />");
+	}
+}
+</script>
+<!-- /풍선도움말 -->
+
+<!-- datepicker -->
+<script src="/js/datepicker.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".sub_menu_title span").on("click",function(){
+		$(this).parent().children("ul").slideToggle(function(){
+
+			if($(this).parent().find("span").hasClass("on")) $(this).parent().find("span").removeClass("on");
+			else $(this).parent().find("span").addClass("on");
+			
+		});
+	});
+	
+});
+
+function showAlert() {
+    alert("클릭 이벤트가 발생했습니다!");
+}
+
+</script>
+</body>
+</html>
+
+

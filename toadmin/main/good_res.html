@@ -1,0 +1,1521 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <title>Travel Management System(v39220105.3)</title>
+    <link type="text/css" rel="stylesheet" href="../css/all.css?v230227.1">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
+
+    <script type="text/javascript">
+        var lang = "";
+    </script>
+
+    <!-- jquery -->
+    <script src="/js/jquery-1.9.1.js?v230227.1" type="text/javascript"></script>
+
+    <!-- 갤러리플래시 -->
+    <script src="../js/swf_upload.js?v230227.1" type="text/javascript"></script>
+
+    <!-- jquery ui -->
+    <link type="text/css" rel="stylesheet" href="/js/jquery-ui/css/jquery-ui-1.10.4.custom.css?v230227.1">
+    <script src="/js/jquery-ui/jquery-ui-1.10.4.custom.js?v230227.1" type="text/javascript"></script>
+
+    <!-- 공통 js -->
+    <script type="text/javascript" src="/js/common.js?v230227.1"></script>
+    <script type="text/javascript" src="/js/common.lib.js?v230227.1"></script>
+    <script type="text/javascript" src="/js/Validator.js?v230227.1"></script>
+
+    <!-- admin js -->
+    <script type="text/javascript" src="../js/admin.lib.js?v230227.1"></script>
+
+    <!-- AjaxCalendar(PHP) -->
+    <script type="text/javascript" src="/js/ajaxcalendar/AjaxCalendar.js?v230227.1"></script>
+
+    <!-- 웹에디터 -->
+    <script type="text/javascript" src="/js/ckeditor_v4.9/ckeditor.js?v230227.1"></script>
+    <style>
+        .cke {
+            visibility: hidden;
+        }
+    </style>
+
+    <!-- timepicker -->
+    <link type="text/css" rel="stylesheet" href="/js/wickedpicker/dist/wickedpicker.min.css?v230227.1">
+    <script type="text/javascript" src="/js/wickedpicker/dist/wickedpicker.min.js?v230227.1"></script>
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            setTimeout("help_box()", 1000); // 풍선도움말
+
+        });
+        var to_mb_id = 'click';
+    </script>
+</head>
+
+<body>
+
+    <!-- 로딩바 -->
+    <div id="ajax_loading_bar" style="position:absolute;z-index:100;display:none;cursor:pointer;"
+        onclick="$(this).hide();">
+        <img src="../image/ajax-loader.gif" alt="로딩중입니다.">
+    </div>
+
+    <!-- ajax처리 레이어 -->
+    <div id="ajax_proc"></div>
+
+    <div id="wrap">
+        <div class="top_blue" id="top_menu_bg">
+            <div class="top_btn_home"><a href="../main/main.html"><img src="../image/top/logo.png" alt="홈으로가기"></a>
+            </div>
+            <div id="gnb">
+                <ul class="top_menu01">
+                    <li class="on"><a href="../res_good/good_res_list.html">상담/예약</a></li>
+                    <li><a href="../cal_good/good_date_cal.html">정산</a></li>
+                    <li><a href="../good/index.html">여행</a></li>
+                    <li><a href="../hotel/hotel_list.html">호텔</a></li>
+                    <li><a href="../place/sights_list.html">관광(지)</a></li>
+                    <li><a href="../member/person_member_list.html">회원/거래처</a></li>
+                    <li><a href="../board/index.html?BD_CD=NOTICE">게시판</a></li>
+                    <li><a href="../design/index.html">디자인</a></li>
+                    <li><a href="../insu/index.html">여행자보험</a></li>
+                    <li><a href="../setting/index.html">기초설정</a></li>
+                </ul>
+                <ul class="top_menu02">
+                </ul>
+            </div>
+            <div class="log_wrap">
+                <div class="p_info">
+                    <p class="info_log"><a href="../logout.html">로그아웃</a></p>
+                    <p class="info_name" style="margin-right: 10px;">
+                        <img src="../image/btn/btn_reset.png" alt="새로고침" title="새로고침"
+                            style="vertical-align:middle; /*padding-right:6px;*/cursor:pointer; margin-bottom:1px;"
+                            onclick="javascript:document.location.reload();">
+                        <span style="color:#333; font-weight:600; margin-right:3px;">클릭</span>
+                        <span>클릭<span>[master]</span>
+                        </span>
+                    </p>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="page_id_wrap">화면ID:<span id="tooltip_help"
+                    onclick="window.clipboardData.setData('text','resgood_goodreslist');"
+                    style="cursor:pointer;">resgood_goodreslist</span></div>
+        </div>
+
+
+        <script type="text/javascript">
+            //top_menu_bg에 class 변경
+            var red_page_arr = new Array('/intra/', '/exchange/', '/log/'); // ARRAY에 페이지명이나 폴더명 추가
+
+            for (var i = 0; i < red_page_arr.length; i++) {
+                if (document.location.href.indexOf(red_page_arr[i]) > 0) {
+                    $("#top_menu_bg").removeClass();
+                    $("#top_menu_bg").addClass("top_blue");
+                }
+            }
+
+        </script>
+
+
+        <div id="contents">
+            <div class="left_wrap">
+                <div class="left_menu_wrap">
+                    <ul class="left_menu">
+                        <li>
+                            <a onmouseover="MM_swapImage('Image1','','../image/left/left_on_menu01.gif',1)"
+                                onmouseout="MM_swapImgRestore()" href="https://tour39sky.touroffice.co.kr/"
+                                target="_blank">
+                                <img border="0" name="Image1" src="../image/left/left_off_menu01.gif" alt="사이트"></a>
+                        </li>
+                        <li>
+                            <a href="https://tour39sky.touroffice.co.kr/?_m=mb" target="_blank"
+                                onmouseover="MM_swapImage('Image7','','../image/left/left_on_menu07.gif',1)"
+                                onmouseout="MM_swapImgRestore()">
+                                <img border="0" name="Image7" src="../image/left/left_off_menu07.gif" alt="모바일"></a>
+                        </li>
+                        <li>
+                            <a href="../intra/index.html?BD_CD=INTRA01"
+                                onmouseover="MM_swapImage('Image2','','../image/left/left_on_menu02.gif',1)"
+                                onmouseout="MM_swapImgRestore()">
+                                <img border="0" name="Image2" src="../image/left/left_off_menu02.gif" alt="사내"></a>
+                        </li>
+                        <li>
+                            <a href="#" onmouseover="MM_swapImage('Image8','','../image/left/left_on_menu08.gif',1)"
+                                onmouseout="MM_swapImgRestore()"
+                                onclick="to_dialog.iframe('../mypage/sms_fill.html','문자/팩스/카카오알림톡 충전현황조회','500','400',true,true,'yes');"
+                                style="cursor:pointer;">
+                                <img border="0" name="Image8" src="../image/left/left_off_menu08.gif" alt="문자팩스충전"></a>
+                        </li>
+                        <li>
+                            <a href="../exchange/exchang_admin.html"
+                                onmouseover="MM_swapImage('Image3','','../image/left/left_on_menu03.gif',1)"
+                                onmouseout="MM_swapImgRestore()" style="cursor:pointer;">
+                                <img border="0" name="Image3" src="../image/left/left_off_menu03.gif" alt="환율"></a>
+                        </li>
+                        <li>
+                            <a onmouseover="MM_swapImage('Image5','','../image/left/left_on_menu05.gif',1)"
+                                onmouseout="MM_swapImgRestore()"
+                                onclick="to_dialog.iframe('../mypage/index.html','내정보 조회','830','600',true,true,'yes');"
+                                style="cursor:pointer;">
+                                <img border="0" name="Image5" src="../image/left/left_off_menu05.gif" alt="내정보"></a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                onclick="window.open('https://admin8.kcp.co.kr/assist/login.LoginAction.do');return false;"
+                                onmouseover="MM_swapImage('Image6','','../image/left/left_on_menu06.gif',1)"
+                                onmouseout="MM_swapImgRestore()" style="cursor:pointer;">
+                                <img border="0" name="Image6" src="../image/left/left_off_menu06.gif"
+                                    alt="KCP PG"></a><!--  src="../image/left/left_off_menu06_ini.gif" alt="ini PG" -->
+                        </li>
+                        <li>
+                            <a href="http://analytics.google.com/" target="_blank"
+                                onmouseover="MM_swapImage('Image4','','../image/left/left_on_menu04.gif',1)"
+                                onmouseout="MM_swapImgRestore()" style="cursor:pointer;">
+                                <img border="0" name="Image4" src="../image/left/left_off_menu04.gif" alt="방문"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sub_menu_wrap">
+                    <!-- 공통버튼 -->
+                    <ul class="sub_top_btn">
+                        <li class="btn_left"><a href="../res_good/contab_write.html">상담등록</a></li>
+                        <li class="btn_right"><a href="javascript:;"
+                                onclick="to_dialog.iframe('../res_good/goodResReg.html','여행상품예약','1200','700',true,true,'yes');">예약등록</a>
+                        </li>
+                        <!--<a href="#" onclick="menu_toggle();return false;" class="btn_open"></a>-->
+                    </ul>
+                    <ul class="sub_menu">
+
+                        <li class="sub_menu_title"><span>여행예약</span>
+                            <ul class="sub_menu_s">
+                                <li class="on"><a href="../res_good/good_res_list.html">예약관리</a></li>
+                                <!-- <li ><a href="../res_good/good_res.html">예약등록(구)</a></li>-->
+                                <li><a href="javascript:;"
+                                        onclick="to_dialog.iframe('../res_good/goodResReg.html','여행상품예약','1400','700',true,true,'yes');">예약등록</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+                        <!--<li class="sub_menu_title"><span>무통장입금</span>
+            <ul class="sub_menu_s">
+            <li ><a href="../res_good/bank_in.html">입금예약목록</a></li>
+            </ul>
+        </li>-->
+                        <!-- <li class="sub_menu_title"><span>항공권예약</span>
+            <ul class="sub_menu_s">
+            <li ><a href="../res_air/airticket.html">할인항공권조회</a></li>
+            <li ><a href="../res_air/airdate.html">항공출발일조회</a></li>
+            <li ><a href="../res_air/index.html">예약관리</a></li>
+            <li ><a href="../res_air/list_void.html">VOID목록</a></li>
+            <li ><a href="../res_air/list_acm.html">ACM목록</a></li>
+            <li ><a href="../res_air/list_adm.html">ADM목록</a></li>
+            </ul>
+        </li>
+         <li class="sub_menu_title"><span>렌트카예약</span>
+            <ul class="sub_menu_s">
+                <li ><a href="../res_rentcar/car.html">차량별 출발일조회</a></li>
+                <li ><a href="../res_rentcar/index.html">예약관리</a></li>
+            </ul>
+        </li> -->
+                    </ul>
+
+                </div>
+            </div>
+
+            <!--<div class="btn_close"><a href="#" onclick="menu_toggle();return false;"></a></div>-->
+
+            <script type="text/javascript">
+                // 좌측 부메뉴 닫기
+                $('.btn_close').hide();
+                var leftorigin_width = $('#contents .left_wrap').width();
+
+                function menu_toggle() {
+                    if ($('#contents .left_wrap').width() > 150) {
+
+                        //close
+                        $('#wrap_main').css('background-image', "url('')");
+                        $('#wrap').css('background-image', "url('')");
+                        $('#contents .left_wrap').animate({
+                            width: '0px'
+                        }, 300, function () {
+                            $(this).hide();
+                            $('.btn_close').show();
+                            $('.btn_open').hide();
+                        });
+
+                        $('#contents .contents_wrap').animate({
+                            marginLeft: '0'
+                        }
+                            , 300);
+
+                    } else {
+                        //open
+                        $('#contents .left_wrap').animate({
+                            width: leftorigin_width + 'px'
+                        }, 300, function () {
+                            $('.btn_close').hide();
+                            $('.btn_open').show();
+                            $('#contents .left_wrap').show();
+                            $('#wrap_main').css('background', "url('../image/left/left_menu_bg.gif')");
+                            $('#wrap').css('background', "url('../image/left/left_menu_bg.gif')  left top repeat-y");
+                        });
+
+
+                        $('#contents .contents_wrap').animate({
+                            marginLeft: '257px'
+                        }, 300);
+                    }
+                }
+
+                const tourReg = document.getElementById("tour_reg");
+                if (tourReg) {
+                    tourReg.addEventListener("click", function () {
+                        let tab = "";
+                        if (!tab) {
+                            alert("카테고리를 먼저 선택하세요.");
+                        } else {
+                            location.href = `good_write.html?tab=${tab}`;
+                        }
+                    });
+                }
+
+                $(function () {
+                    // 공통버튼 on class
+                    var url = window.location.href.toLowerCase();
+                    var comm_link_l, comm_link_r;
+
+                    if (!$('.sub_top_btn').length) return false; //[son]main.html제외	
+                    comm_link_l = $(".sub_top_btn .btn_left a").attr("href").replace('..', '').toLowerCase(); // 왼쪽버튼
+                    comm_link_r = $(".sub_top_btn .btn_right a").attr("href").replace('..', '').toLowerCase();// 오른쪽 버튼
+
+                    if (url.indexOf(comm_link_l) > -1) $(".sub_top_btn .btn_left").addClass("on");
+                    if (url.indexOf(comm_link_r) > -1) $(".sub_top_btn .btn_right").addClass("on");
+                });
+
+            </script>
+            <div class="contents_wrap">
+                <div class="contents_wrap_in">
+                    <div class="title">여행예약<span class="arrow">&gt;</span><strong>예약관리</strong></div>
+                    <div class="contents_detail">
+                        <!-- 폼 -->
+                        <form name="frm_search" id="frm_search" method="get">
+                            <input type="hidden" name="period_date_s" id="period_date_s" value="bebore1month">
+                            <input type="hidden" name="period_yy_s" id="period_yy_s" value="">
+                            <input type="hidden" name="period_mm_s" id="period_mm_s" value="">
+                            <input type="hidden" name="search_box_s" id="search_box_s" value="">
+                            <div class="c_top_bar_search">
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                    summary="여행상품 예약관리 통합검색입니다." class="c_top_table">
+                                    <caption>여행상품 예약관리 통합검색</caption>
+                                    <colgroup>
+                                        <col width="150px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr class="" style="display:none;">
+                                            <th>구분</th>
+                                            <td>
+                                                <ul class="form_list">
+                                                    <li>
+                                                        <input type="radio" name="contract_s" id="contract_s_1" value=""
+                                                            style="vertical-align:middle;" checked="">
+                                                        <label for="contract_s_1" title="전체예약">전체</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="contract_s" id="contract_s_2"
+                                                            value="person" style="vertical-align:middle;">
+                                                        <label for="contract_s_2" title="개인예약">개인예약</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="contract_s" id="contract_s_3"
+                                                            value="agent" style="vertical-align:middle;">
+                                                        <label for="contract_s_3" title="대리점예약">대리점예약</label>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr style="display:;">
+                                            <th>검색어</th>
+                                            <td>
+                                                <ul class="form_list">
+                                                    <li class="mr5">
+                                                        <select name="search_key_s" id="">
+                                                            <option value="res_cust_nm">예약자명</option>
+                                                            <option value="mb_id">예약자 아이디</option>
+                                                            <option value="res_cust_tel">예약자 전화번호</option>
+                                                            <option value="res_cust_hp">예약자 핸드폰번호</option>
+                                                            <option value="res_cust_email">예약자 이메일</option>
+                                                            <option value="res_no">예약번호</option>
+                                                            <option value="srh_persons_nm">여행자명</option>
+                                                            <option value="srh_persons_tel">여행자 전화번호</option>
+                                                            <option value="srh_persons_hp">여행자 핸드폰번호</option>
+                                                            <option value="g_title">상품명</option>
+                                                            <option value="ev_title">행사명</option>
+                                                            <option value="ev_code">행사코드</option>
+                                                            <option value="agent_corp_nm">대리점명</option>
+                                                            <option value="admin_nm">담당자명</option>
+                                                        </select>
+                                                    </li>
+                                                    <li>
+                                                        <input type="text" id="" name="search_word_s" value=""
+                                                            style="width:330px;">
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr style="display:;">
+                                            <th rowspan="2">기간</th>
+                                            <td>
+                                                <ul class="form_list">
+                                                    <li class="pt5">
+                                                        <input type="radio" name="mode_period_s" id="period_s_1"
+                                                            value="ins_dt" style="vertical-align:middle;" checked="">
+                                                        <label for="period_s_1" title="예약접수일">예약접수일</label>
+                                                    </li>
+                                                    <li class="pt5">
+                                                        <input type="radio" name="mode_period_s" id="period_s_2"
+                                                            value="ev_start" style="vertical-align:middle;">
+                                                        <label for="period_s_2" title="출발일">출발일</label>
+                                                    </li>
+                                                    <li class="pt5">
+                                                        <input type="radio" name="mode_period_s" id="period_s_3"
+                                                            value="ev_end" style="vertical-align:middle;">
+                                                        <label for="period_s_3" title="도착일">도착일</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="text" name="date_s1" id="date_s1" class="cal_input"
+                                                            value="2023-09-28"
+                                                            onclick="AjaxCal(this,event,{'add_event':'clear_period_date()'});"
+                                                            readonly="">
+                                                        ~
+                                                        <input type="text" name="date_s2" id="date_s2" class="cal_input"
+                                                            value="2023-10-28"
+                                                            onclick="AjaxCal(this,event,{'add_event':'clear_period_date()'});"
+                                                            readonly="">
+                                                    </li>
+                                                    <li>
+                                                        <ul class="form_in_btn item_period_date">
+                                                            <li class=""><a href="javascript:;"
+                                                                    onclick="$('#date_s1').val('2023-10-27');$('#date_s2').val('2023-10-27');$('#period_date_s').val('yesterday');">어제</a>
+                                                            </li>
+                                                            <li class=""><a href="javascript:;"
+                                                                    onclick="$('#date_s1').val('2023-10-28');$('#date_s2').val('2023-10-28');$('#period_date_s').val('today');">오늘</a>
+                                                            </li>
+                                                            <li class=""><a href="javascript:;"
+                                                                    onclick="$('#date_s1').val('2023-10-21');$('#date_s2').val('2023-10-28');$('#period_date_s').val('bebore7day');">7일</a>
+                                                            </li>
+                                                            <li class=""><a href="javascript:;"
+                                                                    onclick="$('#date_s1').val('2023-10-13');$('#date_s2').val('2023-10-28');$('#period_date_s').val('bebore15day');">15일</a>
+                                                            </li>
+                                                            <li class="on"><a href="javascript:;"
+                                                                    onclick="$('#date_s1').val('2023-09-28');$('#date_s2').val('2023-10-28');$('#period_date_s').val('bebore1month');">1개월</a>
+                                                            </li>
+                                                            <li class=""><a href="javascript:;"
+                                                                    onclick="$('#date_s1').val('2023-07-28');$('#date_s2').val('2023-10-28');$('#period_date_s').val('bebore3month');">3개월</a>
+                                                            </li>
+                                                            <li class=""><a href="javascript:;"
+                                                                    onclick="$('#date_s1').val('2022-10-28');$('#date_s2').val('2023-10-28');$('#period_date_s').val('bebore1year');">1년</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr style="display:;">
+                                            <td>
+                                                <ul class="form_list">
+                                                    <li class="mr5">
+                                                        <select name="period_yy_s" id="item_period_yy">
+                                                            <option value="2023">2023년</option>
+                                                        </select>
+                                                    </li>
+                                                    <li>
+                                                        <ul class="form_in_btn item_period_mm">
+                                                            <li class=""><a href="javascript:;">1월</a></li>
+                                                            <li class=""><a href="javascript:;">2월</a></li>
+                                                            <li class=""><a href="javascript:;">3월</a></li>
+                                                            <li class=""><a href="javascript:;">4월</a></li>
+                                                            <li class=""><a href="javascript:;">5월</a></li>
+                                                            <li class=""><a href="javascript:;">6월</a></li>
+                                                            <li class=""><a href="javascript:;">7월</a></li>
+                                                            <li class=""><a href="javascript:;">8월</a></li>
+                                                            <li class=""><a href="javascript:;">9월</a></li>
+                                                            <li class="on"><a href="javascript:;">10월</a></li>
+                                                            <li class=""><a href="javascript:;">11월</a></li>
+                                                            <li class=""><a href="javascript:;">12월</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr style="display:;">
+                                            <th>예약경로</th>
+                                            <td>
+                                                <ul class="form_list">
+                                                    <li>
+                                                        <input type="radio" name="ins_route_s" id="ins_route_s_1"
+                                                            value="" style="vertical-align:middle;" checked="">
+                                                        <label for="ins_route_s_1" title="전체">전체</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="ins_route_s" id="ins_route_s_2"
+                                                            value="B" style="vertical-align:middle;">
+                                                        <label for="ins_route_s_2" title="웹사이트">웹사이트</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="ins_route_s" id="ins_route_s_3"
+                                                            value="C" style="vertical-align:middle;">
+                                                        <label for="ins_route_s_3" title="모바일웹">모바일웹</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="ins_route_s" id="ins_route_s_4"
+                                                            value="A" style="vertical-align:middle;">
+                                                        <label for="ins_route_s_4" title="수기예약">수기예약</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="ins_route_s" id="ins_route_s_5"
+                                                            value="A1" style="vertical-align:middle;">
+                                                        <label for="ins_route_s_5" title="수기예약">상담예약</label>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr style="display:;">
+                                            <th>결제수단</th>
+                                            <td>
+                                                <ul class="form_list">
+                                                    <li>
+                                                        <input type="radio" name="srh_payment_s" id="srh_payment_s_1"
+                                                            value="" style="vertical-align:middle;" checked="">
+                                                        <label for="srh_payment_s_1" title="전체">전체</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="srh_payment_s" id="srh_payment_s_2"
+                                                            value="A" style="vertical-align:middle;">
+                                                        <label for="srh_payment_s_2" title="무통장입금">무통장입금</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="srh_payment_s" id="srh_payment_s_3"
+                                                            value="B" style="vertical-align:middle;">
+                                                        <label for="srh_payment_s_3" title="전자결제">전자결제</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="srh_payment_s" id="srh_payment_s_4"
+                                                            value="C" style="vertical-align:middle;">
+                                                        <label for="srh_payment_s_4" title="포인트">포인트</label>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr style="display:;">
+                                            <th>회원검색</th>
+                                            <td>
+                                                <ul class="form_list">
+                                                    <li>
+                                                        <input type="radio" name="is_member_s" id="is_member_s_1"
+                                                            value="" style="vertical-align:middle;" checked="">
+                                                        <label for="is_member_s_1" title="전체">전체</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="is_member_s" id="is_member_s_2"
+                                                            value="member" style="vertical-align:middle;">
+                                                        <label for="is_member_s_2" title="회원">회원</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="is_member_s" id="is_member_s_3"
+                                                            value="nomember" style="vertical-align:middle;">
+                                                        <label for="is_member_s_3" title="비회원">비회원</label>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr style="display:;">
+                                            <th>예약상태</th>
+                                            <td>
+                                                <ul class="form_list">
+                                                    <li>
+                                                        <input type="radio" name="order_state_s" id="order_state_s_99"
+                                                            style="vertical-align:middle;" checked="" value="">
+                                                        <label for="order_state_s_99">전체</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="order_state_s" id="order_state_s_0"
+                                                            value="A" style="vertical-align:middle;">
+                                                        <label for="order_state_s_0" title="예약접수 ">예약접수 </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="order_state_s" id="order_state_s_1"
+                                                            value="B" style="vertical-align:middle;">
+                                                        <label for="order_state_s_1" title="예약확정">예약확정</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="order_state_s" id="order_state_s_2"
+                                                            value="C" style="vertical-align:middle;">
+                                                        <label for="order_state_s_2" title="계약금입금">계약금입금</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="order_state_s" id="order_state_s_3"
+                                                            value="D" style="vertical-align:middle;">
+                                                        <label for="order_state_s_3" title="입금완료">입금완료</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="order_state_s" id="order_state_s_4"
+                                                            value="E" style="vertical-align:middle;">
+                                                        <label for="order_state_s_4" title="예약완료">예약완료</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="order_state_s" id="order_state_s_5"
+                                                            value="F" style="vertical-align:middle;">
+                                                        <label for="order_state_s_5" title="행사완료">행사완료</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="order_state_s" id="order_state_s_6"
+                                                            value="G" style="vertical-align:middle;">
+                                                        <label for="order_state_s_6" title="취소요청">취소요청</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="order_state_s" id="order_state_s_7"
+                                                            value="H" style="vertical-align:middle;">
+                                                        <label for="order_state_s_7" title="취소완료">취소완료</label>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr style="display:;">
+                                            <th>입금</th>
+                                            <td>
+                                                <ul class="form_list">
+                                                    <li>
+                                                        <input type="radio" name="srh_pay_stat_s" id="srh_pay_stat_s_1"
+                                                            value="" style="vertical-align:middle;" checked="">
+                                                        <label for="srh_pay_stat_s_1" title="전체">전체</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="srh_pay_stat_s" id="srh_pay_stat_s_2"
+                                                            value="A" style="vertical-align:middle;">
+                                                        <label for="srh_pay_stat_s_2" title="미입금">미입금</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="srh_pay_stat_s" id="srh_pay_stat_s_3"
+                                                            value="B" style="vertical-align:middle;">
+                                                        <label for="srh_pay_stat_s_3" title="부분입금">부분입금</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="srh_pay_stat_s" id="srh_pay_stat_s_4"
+                                                            value="C" style="vertical-align:middle;">
+                                                        <label for="srh_pay_stat_s_4" title="입금완료">입금완료</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="srh_pay_stat_s" id="srh_pay_stat_s_5"
+                                                            value="D" style="vertical-align:middle;">
+                                                        <label for="srh_pay_stat_s_5" title="과입금">과입금</label>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr class="bot_line" style="display:;">
+                                            <th>카테고리/국가</th>
+                                            <td>
+                                                <ul class="form_list s2">
+                                                    <li>
+                                                        <select name="srh_b_uid_s" id="srh_b_uid_s">
+                                                            <option value="" selected="">1차 카테고리</option>
+                                                            <option value="71">국내여행</option>
+                                                            <option value="70">해외여행</option>
+                                                            <option value="86">섬여행</option>
+                                                            <option value="2">데이투어</option>
+                                                            <option value="108">패스/티켓</option>
+                                                        </select>
+                                                    </li>
+                                                    <li>
+                                                        <span id="ajax_mc">
+                                                            <select name="srh_m_uid_s" id="srh_m_uid_s">
+                                                                <option value="">2차 카테고리</option>
+                                                            </select>
+                                                            <script type="text/javascript">
+                                                                $(document).ready(function () {
+                                                                    $("#srh_m_uid_s").on("change", function () {
+                                                                        var srh_m_uid = $(this).val();
+
+                                                                        ajax_loader("ajax_selectbox_sc.html?srh_m_uid=" + srh_m_uid, "ajax_sc");
+                                                                    });
+                                                                });
+                                                            </script>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span id="ajax_sc">
+                                                            <select name="srh_s_uid_s" id="srh_s_uid_s">
+                                                                <option value="">3차 카테고리</option>
+                                                            </select>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <select name="srh_Bidx_s" id="srh_Bidx_s">
+                                                            <option value="">국가</option>
+                                                            <option value="GU">괌</option>
+                                                            <option value="GR">그리스</option>
+                                                            <option value="ZA">남아프리카공화국</option>
+                                                            <option value="NZ">뉴질랜드</option>
+                                                            <option value="NC">뉴칼레도니아</option>
+                                                            <option value="KO">대한민국</option>
+                                                            <option value="MX">멕시코</option>
+                                                            <option value="MV">몰디브</option>
+                                                            <option value="US">미국</option>
+                                                            <option value="VN">베트남</option>
+                                                            <option value="BR">브라질</option>
+                                                            <option value="CH">스위스</option>
+                                                            <option value="ES">스페인</option>
+                                                            <option value="AR">아르헨티나</option>
+                                                            <option value="EG">이집트</option>
+                                                            <option value="IT">이탈리아</option>
+                                                            <option value="ID">인도네시아</option>
+                                                            <option value="JP">일본</option>
+                                                            <option value="CN">중국</option>
+                                                            <option value="KZ">카자흐스탄</option>
+                                                            <option value="KH">캄보디아</option>
+                                                            <option value="CA">캐나다</option>
+                                                            <option value="KG">키르기스스탄 정부</option>
+                                                            <option value="TJ">타지키스탄</option>
+                                                            <option value="TA">태국</option>
+                                                            <option value="TM">투르크메니스탄</option>
+                                                            <option value="PW">팔라우</option>
+                                                            <option value="PU">팔라우</option>
+                                                            <option value="FR">프랑스</option>
+                                                            <option value="PH">필리핀</option>
+                                                            <option value="AU">호주</option>
+                                                        </select>
+                                                    </li>
+                                                    <li>
+                                                        <span id="ajax_areac">
+                                                            <select name="srh_Cidx_s" id="srh_Cidx_s">
+                                                                <option value="">도시</option>
+                                                            </select>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="sch_btn_wrap"><a href="javascript:;" class="sch_btn"
+                                        onclick="document.frm_search.submit();">검색</a></div>
+                                <div class="Bclose" t="c" style="display:none;"><a href="#"><img
+                                            src="../image/btn/arrow_up.gif" alt="닫기"></a></div>
+                            </div>
+                            <script type="text/javascript">
+                                function clear_period_date() {
+                                    //no op
+                                }
+
+                                $(document).ready(function () {
+                                    $(".Bclose").on("click", function () {
+                                        if ($(this).attr('t') == 'c') {
+                                            $(".c_top_bar_search tr").hide().first().show().addClass("bot_line");
+                                            $(this).children().children("img").attr("src", "../image/btn/arrow_down.gif");
+                                            $(this).attr('t', 's');
+                                            $("#search_box_s").val("simple");
+                                        }
+                                        else {
+                                            $(".c_top_bar_search tr").show().removeClass("bot_line");
+                                            $(this).children().children("img").attr("src", "../image/btn/arrow_up.gif");
+                                            $(this).attr('t', 'c');
+                                            $("#search_box_s").val("complex");
+                                        }
+                                    });
+
+                                    // 카테고리
+                                    $("#srh_b_uid_s").on("change", function () {
+                                        var srh_b_uid = $(this).val();
+
+                                        ajax_loader("ajax_selectbox_mc.html?srh_b_uid=" + srh_b_uid, "ajax_mc");
+                                        ajax_loader("ajax_selectbox_sc.html", "ajax_sc", false);
+                                    });
+
+                                    // 국가
+                                    $("#srh_Bidx_s").on("change", function () {
+                                        var srh_Bidx = $(this).val();
+
+                                        ajax_loader("ajax_selectbox_areac.html?srh_Bidx=" + srh_Bidx, "ajax_areac");
+                                    });
+
+                                    // 기간검색
+                                    $(".item_period_date li").on("click", function () {
+                                        $(this).addClass("on").siblings().removeClass("on");
+                                    });
+
+                                    $("#item_period_yy").on("change", function () {
+                                        var yy = $(this).val();
+                                        var mm = '';
+
+                                        $(".item_period_mm li").each(function () {
+                                            if ($(this).hasClass("on")) {
+                                                mm = parseInt($(this).index()) + 1;
+                                                if (mm < 10) mm = '0' + mm;
+                                            }
+                                        });
+
+                                        var dd = (new Date(yy, mm, 0)).getDate().toString();
+
+                                        $("#date_s1").val(yy + '-' + mm + '-01');
+                                        $("#date_s2").val(yy + '-' + mm + '-' + dd);
+
+                                        $("#period_yy_s").val(yy);
+                                    });
+
+                                    $(".item_period_mm li").on("click", function () {
+                                        var yy = '';
+                                        var mm = '';
+
+                                        $(this).addClass("on").siblings().removeClass("on");
+
+                                        yy = $("#item_period_yy").val();
+
+                                        $(".item_period_mm li").each(function () {
+                                            if ($(this).hasClass("on")) {
+                                                mm = parseInt($(this).index()) + 1;
+                                                if (mm < 10) mm = '0' + mm;
+                                            }
+                                        });
+
+                                        var dd = (new Date(yy, mm, 0)).getDate().toString();
+
+                                        $("#date_s1").val(yy + '-' + mm + '-01');
+                                        $("#date_s2").val(yy + '-' + mm + '-' + dd);
+
+                                        $("#period_mm_s").val(mm);
+                                    });
+                                });
+
+
+                            </script>
+
+                        </form>
+                        <!-- /폼 -->
+
+
+
+
+                        <div id="Content_box">
+                            <!-- <ul class="register_tab">
+        <li class="on"><a href="../res_good/good_res_list.html">여행상품예약</a></li>	<li class=""><a href="../res_hotel/hotel_res_list.html">호텔/숙박예약</a></li></ul>-->
+
+                            <div class="c_top_sch_wrap">
+                                <p class="c_top_sch_l">
+                                    <span><a href="javascript:;" class="c_red">검색 19개</a> ／ <a href="javascript:;"
+                                            class="c_blue">전체 19개</a>&nbsp;&nbsp;(검색된 예약&nbsp;&nbsp;&nbsp;총 판매금액 :
+                                        6,125,000원&nbsp;&nbsp;&nbsp;총 결제금액 : 464,800원&nbsp;&nbsp;&nbsp;총 미입금액 :
+                                        3,107,200원)</span>
+                                </p>
+                            </div>
+
+
+                            <!-- 폼 -->
+                            <form name="frm_list" id="frm_list" method="post">
+                                <input type="hidden" name="SqlType" value="chg_order_state">
+
+                                <div class="c_top_sch_wrap">
+                                    <p class="c_top_sch_l">
+                                        <span>선택된 예약을</span>
+                                        <select class="mt-3 ml10" name="order_state" id="" hname="" required="">
+                                            <option value="A">예약접수 </option>
+                                            <option value="B">예약확정</option>
+                                            <option value="C">계약금입금</option>
+                                            <option value="D">입금완료</option>
+                                            <option value="E">예약완료</option>
+                                            <option value="F">행사완료</option>
+                                            <option value="G">취소요청</option>
+                                            <option value="H">취소완료</option>
+                                        </select>
+                                        <a href="javascript:;" class="Tbtn gray2 ml5 item_chg_order_state">일괄처리</a>
+                                        <span class="ml20">선택된 예약을</span>
+                                        <a href="javascript:;"
+                                            class="Tbtn gray2 ml5 item_chg_account_customer">입금일괄처리</a>
+                                    </p>
+                                    <!-- 상품정렬 -->
+                                    <ul class="c_top_sch_r">
+                                        <li><input type="button" class="Table_btn gray" value="예약등록"
+                                                onclick="to_dialog.iframe('goodResReg.html','예약등록','1200','700',true,true,'yes');">
+                                        </li>
+                                        <li><a href="javascript:;" class="Tbtn"
+                                                onclick="to_excel('','+ins_dt+desc+');"><img
+                                                    src="../image/btn/ico_excel.gif" alt="엑셀"> 엑셀저장</a></li>
+                                        <li class="ml10">
+                                            <select name="order_by_s" id="order_by_s">
+                                                <option value="ins_dt desc" selected="">예약접수일 ↑</option>
+                                                <option value="ins_dt">예약접수일 ↓</option>
+                                                <option value="ev_start desc">출발일 ↑</option>
+                                                <option value="ev_start">출발일 ↓</option>
+                                                <option value="ev_end desc">도착일 ↑</option>
+                                                <option value="ev_end">도착일 ↓</option>
+                                                <option value="sales_total desc">판매액 ↑</option>
+                                                <option value="sales_total">판매액 ↓</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <select name="list_count_s" id="list_count_s">
+                                                <option value="20" selected="">20개 보기</option>
+                                                <option value="30">30개 보기</option>
+                                                <option value="50">50개 보기</option>
+                                                <option value="70">70개 보기</option>
+                                            </select>
+                                        </li>
+                                    </ul><!-- 상품등록 -->
+                                </div>
+
+
+                                <table border="0" cellspacing="0" cellpadding="0" width="100%" class="t_list">
+                                    <colgroup>
+                                        <col style=" width:35px">
+                                        <col style=" width:85px">
+                                        <col style=" width:56px">
+                                        <col style=" width:100px">
+                                        <col style=" width:35px">
+                                        <col>
+                                        <col style=" width:100px">
+                                        <col style=" width:100px">
+                                        <col style=" width:80px">
+                                        <col style=" width:80px">
+                                        <col style=" width:65px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th><label for="checkall" class="v_none2">선택 체크</label><input
+                                                    type="checkbox" name="checkall" id="checkall"></th>
+                                            <th>예약접수일</th>
+                                            <th>예약상태</th>
+                                            <th>고객명</th>
+                                            <th>인원</th>
+                                            <th>행사명</th>
+                                            <th>출발일/출발편</th>
+                                            <th>도착일/도착편</th>
+                                            <th>판매액</th>
+                                            <th>미납액</th>
+                                            <th>담당자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P16969054634965B89"></td>
+                                            <td>2023-10-10 11:38:03</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><span
+                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>테스트<br>010-2580-0546</td><!-- 예약자 -->
+                                            <td>2</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16969054634965B89','여행상품예약 수정 - P16969054634965B89','1400','700',true,true,'yes');">
+                                                <strong>[선착순+좌석확보](싱글팩)스페인 일주 9일-QR</strong><br>스페인 일주 9일-QR</td>
+                                            <!-- 행사명 -->
+                                            <td>2023-10-11(수)<br>&nbsp;<img src="/FileData/airlogo/AIRLogo_438_1.gif"
+                                                    width="22" align="absmiddle">123</td><!-- 출발일/출발편 -->
+                                            <td>2023-10-19(목)<br>&nbsp;<img src="/FileData/airlogo/AIRLogo_438_1.gif"
+                                                    width="22" align="absmiddle">124</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">2,370,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">2,370,000</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1694581554E8650BA"></td>
+                                            <td>2023-09-13 14:06:02</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#FF0033;">입금완료</span>
+                                                <span color=""><span
+                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1694581554E8650BA','여행상품예약 수정 - P1694581554E8650BA','1400','700',true,true,'yes');">
+                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
+                                            <td>2023-09-14(목)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
+                                            <!-- 출발일/출발편 -->
+                                            <td>2023-09-15(금)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
+                                            <!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">50,000</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P16945815325C80134"></td>
+                                            <td>2023-09-13 14:05:45</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#FF0033;">입금완료</span>
+                                                <span color=""><span
+                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16945815325C80134','여행상품예약 수정 - P16945815325C80134','1400','700',true,true,'yes');">
+                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
+                                            <td>2023-09-14(목)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
+                                            <td>2023-09-14(목)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">179,100</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P169415377463D1B0D"></td>
+                                            <td>2023-09-08 15:16:46</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color="">대기</span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>3</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P169415377463D1B0D','여행상품예약 수정 - P169415377463D1B0D','1400','700',true,true,'yes');">
+                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
+                                            <td>2023-09-09(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
+                                            <td>2023-09-09(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">498,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                투어테스트
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P169415363898C8813"></td>
+                                            <td>2023-09-08 15:14:38</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color="">대기</span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>3</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P169415363898C8813','여행상품예약 수정 - P169415363898C8813','1400','700',true,true,'yes');">
+                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
+                                            <td>2023-09-30(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
+                                            <td>2023-09-30(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">597,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                투어테스트
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1693547691D86B214"></td>
+                                            <td>2023-09-01 14:55:03</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color="">대기</span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1693547691D86B214','여행상품예약 수정 - P1693547691D86B214','1400','700',true,true,'yes');">
+                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
+                                            <td>2023-09-20(수)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
+                                            <td>2023-09-20(수)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                투어테스트
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P16891275129E67F64"></td>
+                                            <td>2023-07-12 11:05:21</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><b>완납</b></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16891275129E67F64','여행상품예약 수정 - P16891275129E67F64','1400','700',true,true,'yes');">
+                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
+                                            <td>2023-08-24(목)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
+                                            <!-- 출발일/출발편 -->
+                                            <td>2023-08-25(금)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
+                                            <!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">2,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P16891274921204A05"></td>
+                                            <td>2023-07-12 11:05:01</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><b>완납</b></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16891274921204A05','여행상품예약 수정 - P16891274921204A05','1400','700',true,true,'yes');">
+                                                <strong>[부산출발] 문화재의 집합소 제천 여행</strong><br>문화재 투어</td><!-- 행사명 -->
+                                            <td>2023-08-24(목)<br>&nbsp;</td><!-- 출발일/출발편 -->
+                                            <td>2023-08-24(목)<br>&nbsp;</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">1,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1689127460ABF4301"></td>
+                                            <td>2023-07-12 11:04:30</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><b>완납</b></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1689127460ABF4301','여행상품예약 수정 - P1689127460ABF4301','1400','700',true,true,'yes');">
+                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
+                                            <td>2023-08-24(목)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
+                                            <td>2023-08-24(목)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">3,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                투어테스트
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1688948227E70CA0E"></td>
+                                            <td>2023-07-10 09:19:55</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color="">대기</span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>9</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1688948227E70CA0E','여행상품예약 수정 - P1688948227E70CA0E','1400','700',true,true,'yes');">
+                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
+                                            <td>2023-07-11(화)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
+                                            <!-- 출발일/출발편 -->
+                                            <td>2023-07-12(수)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
+                                            <!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">900,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="D168801307274EC446"></td>
+                                            <td>2023-06-29 13:31:59</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color="">대기</span>
+                                            </td><!-- 진행전달 -->
+                                            <td>엄현정<br>01020836726</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=D168801307274EC446','여행상품예약 수정 - D168801307274EC446','1400','700',true,true,'yes');">
+                                                <strong> [단독투어] 부산 시티투어</strong><br>[단독투어] 부산 시티투어</td><!-- 행사명 -->
+                                            <td>2023-07-01(토)<br>&nbsp;</td><!-- 출발일/출발편 -->
+                                            <td>2023-07-01(토)<br>&nbsp;</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">60,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1686727080D54F195"></td>
+                                            <td>2023-06-14 16:18:00</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color="">대기</span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>010-1111-2222</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1686727080D54F195','여행상품예약 수정 - P1686727080D54F195','1400','700',true,true,'yes');">
+                                                <strong></strong><br>테스트 데이투어</td><!-- 행사명 -->
+                                            <td>2023-06-28(수)<br>&nbsp;</td><!-- 출발일/출발편 -->
+                                            <td>2023-06-28(수)<br>&nbsp;</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1685672475272D812"></td>
+                                            <td>2023-06-02 11:21:23</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><b>완납</b></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685672475272D812','여행상품예약 수정 - P1685672475272D812','1400','700',true,true,'yes');">
+                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
+                                            <td>2023-06-03(토)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
+                                            <!-- 출발일/출발편 -->
+                                            <td>2023-06-04(일)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
+                                            <!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P16856724626944646"></td>
+                                            <td>2023-06-02 11:21:09</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><span
+                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16856724626944646','여행상품예약 수정 - P16856724626944646','1400','700',true,true,'yes');">
+                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
+                                            <td>2023-06-03(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
+                                            <td>2023-06-03(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">179,100</td><!-- 미납요금 -->
+                                            <td>
+                                                투어테스트
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1685671118E1C4596"></td>
+                                            <td>2023-06-02 10:58:48</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><span
+                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685671118E1C4596','여행상품예약 수정 - P1685671118E1C4596','1400','700',true,true,'yes');">
+                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
+                                            <td>2023-06-03(토)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
+                                            <!-- 출발일/출발편 -->
+                                            <td>2023-06-04(일)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
+                                            <!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">90,000</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1685671101BDDDA47"></td>
+                                            <td>2023-06-02 10:58:29</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><span
+                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685671101BDDDA47','여행상품예약 수정 - P1685671101BDDDA47','1400','700',true,true,'yes');">
+                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
+                                            <td>2023-06-03(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
+                                            <td>2023-06-03(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">179,100</td><!-- 미납요금 -->
+                                            <td>
+                                                투어테스트
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1685670809A3A2F37"></td>
+                                            <td>2023-06-02 10:53:37</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><b>완납</b></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685670809A3A2F37','여행상품예약 수정 - P1685670809A3A2F37','1400','700',true,true,'yes');">
+                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
+                                            <td>2023-06-03(토)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
+                                            <!-- 출발일/출발편 -->
+                                            <td>2023-06-04(일)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
+                                            <!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                클릭
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P1685670790C69482E"></td>
+                                            <td>2023-06-02 10:53:19</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color=""><b>완납</b></span>
+                                            </td><!-- 진행전달 -->
+                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685670790C69482E','여행상품예약 수정 - P1685670790C69482E','1400','700',true,true,'yes');">
+                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
+                                            <td>2023-06-03(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
+                                            <td>2023-06-03(토)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                투어테스트
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
+                                                    value="P16849935960EEC656"></td>
+                                            <td>2023-05-25 14:46:59</td><!-- 예약접수일 -->
+                                            <td>
+                                                <span style="color:#999999;">예약접수 </span>
+                                                <span color="">대기</span>
+                                            </td><!-- 진행전달 -->
+                                            <td>소담<br>01093834697</td><!-- 예약자 -->
+                                            <td>1</td><!-- 인원 -->
+                                            <td class="t_title" style="cursor:pointer;"
+                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16849935960EEC656','여행상품예약 수정 - P16849935960EEC656','1400','700',true,true,'yes');">
+                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
+                                            <td>2023-06-02(금)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
+                                            <td>2023-06-02(금)<br>&nbsp;<img
+                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
+                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
+                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
+                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
+                                            <td>
+                                                투어테스트
+                                            </td><!-- 담당자 -->
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                            <!-- 폼 -->
+                            <div class="c_paging">
+                                <ul class="c_paging_wrap">
+                                    <ul class="list_no01">
+                                        <li><img src="../image/btn/btn_first.gif" alt="처음목록보기"></li>
+                                        <li><img src="../image/btn/btn_prev.gif" alt="앞목록보기"></li>
+                                        <li class="list_no02">
+                                            <ul>
+                                                <li class="on"><span>1</span></li>
+                                            </ul>
+                                        </li>
+                                        <li><img src="../image/btn/btn_next.gif" alt="뒤목록보기"></li>
+                                        <li><img src="../image/btn/btn_last.gif" alt="마지막목록보기"></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var res_good_num = '';
+
+                function reserv_good(g_uid, d_uid) {
+
+                    if (!confirm('예약을 진행하시겠습니까?')) return;
+
+                    to_dialog.iframe('good_res_reg.html?g_uid=' + g_uid + '&d_uid=' + d_uid, '여행상품예약', '1400', '700', true, true, 'yes');
+                }
+
+                $(document).ready(function () {
+                    $("#order_by_s").on("change", function () {
+                        var order_by_s = $("#order_by_s").val();
+                        var list_count_s = $("#list_count_s").val();
+
+                        window.document.location.href = '/toadmin/res_good/good_res_list.html?&cseq=&contract_s=&search_key_s=&search_word_s=&mode_period_s=&ins_route_s=&srh_payment_s=&is_member_s=&order_state_s=&srh_pay_stat_s=&srh_b_uid_s=&srh_m_uid_s=&srh_s_uid_s=&srh_Bidx_s=&srh_Cidx_s=&period_date_s=&period_yy_s=&period_mm_s=&date_s1=&date_s2=&search_box_s=&order_by_s=&list_count_s=&order_by_s=' + order_by_s + '&list_count_s=' + list_count_s;
+                    });
+                    $("#list_count_s").on("change", function () {
+                        var order_by_s = $("#order_by_s").val();
+                        var list_count_s = $("#list_count_s").val();
+
+                        window.document.location.href = '/toadmin/res_good/good_res_list.html?&cseq=&contract_s=&search_key_s=&search_word_s=&mode_period_s=&ins_route_s=&srh_payment_s=&is_member_s=&order_state_s=&srh_pay_stat_s=&srh_b_uid_s=&srh_m_uid_s=&srh_s_uid_s=&srh_Bidx_s=&srh_Cidx_s=&period_date_s=&period_yy_s=&period_mm_s=&date_s1=&date_s2=&search_box_s=&order_by_s=&list_count_s=&order_by_s=' + order_by_s + '&list_count_s=' + list_count_s;
+                    });
+
+
+                    $("#checkall").on("click", function () {
+                        $(".item_checkbox_res").prop("checked", $(this).prop("checked"));
+                    });
+
+                    $(".item_chg_order_state").on("click", function () {
+                        if ($(".item_checkbox_res:checked").length == 0) {
+                            alert('적어도 한개 항목을 선택해 주세요.');
+                            return;
+                        }
+
+                        if (!confirm('예약전달 상태를 변경하시겠습니까?')) return;
+                        ajax_post("ajax_proc", "good_res_proc.html", "frm_list");
+                    });
+
+                    $(".item_chg_account_customer").on("click", function () {
+                        var cnt = parseInt($(".item_checkbox_res:checked").length);
+                        if (cnt == 0) {
+                            alert('적어도 한개 항목을 선택해 주세요.');
+                            return;
+                        }
+
+                        var res_no_all = '';
+                        $(".item_checkbox_res:checked").each(function (i) {
+                            if (i == cnt - 1) res_no_all += $(this).val();
+                            else res_no_all += $(this).val() + '||';
+                        });
+
+
+                        to_dialog.iframe('good_res_account_all.html?res_no_all=' + res_no_all, '입금일괄처리', '1200', '700', true, true, 'yes');
+                    });
+                });
+
+
+                //엑셀출력
+                function to_excel(sql_where, sql_order) {
+                    if (!confirm('1,000건이하로 엑셀다운로드됩니다.\n시간이 소요될수 있습니다.\n엑셀파일을 다운로드 하시겠습니까?')) return;
+
+                    document.location.href = 'good_res_excel.html?sql_where=' + sql_where + '&sql_order=' + sql_order;
+                }
+            </script>
+
+        </div>
+
+        <div id="footer">
+            <div id="ajax_proc2"></div>
+            <div class="footer_w">
+                <!--<h2><img src="../image/common/bottom_logo.png" alt="투어오피스" /></h2>-->
+                <span>Copyrightsⓒ <strong>Travel Management System(v39220105.3) 투어오피스</strong>. All Rights
+                    Reserved.</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 풍선도움말 -->
+    <!-- 수정하는 경우에 ../include/footer.html ../include/footer_proc.html ../include/footer_iframe.html 같이 수정함.-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var tooltip_array = new Array();
+
+
+
+            $(".help_tooltip").each(function () {
+                var title = $(this).html();
+
+                for (var n in tooltip_array) {
+                    if (title.indexOf(tooltip_array[n].help_title) >= 0) {
+                        $(this).attr('tooltip_id', 'tooltip_cont_' + tooltip_array[n].idx + "_" + tooltip_array[n].help_seq);
+                        $(this).attr('idx', tooltip_array[n].idx);
+                    }
+                }
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        // 이미지 멀티 업로드 callback(/toadmn/ck_upload/ckeditor_upload.html)
+        function ckInsertImagesHtml(dir, images, tmp_layer_id, instance) {
+            var arr = images.split("||");
+            var obj = eval("CKEDITOR.instances." + instance);
+
+            to_dialog.close(tmp_layer_id);
+
+            for (var i in arr) {
+                if (arr[i]) obj.insertHtml("<img src=\"" + dir + arr[i] + "\"><br />");
+            }
+        }
+    </script>
+    <!-- /풍선도움말 -->
+
+    <!-- datepicker -->
+    <script src="/js/datepicker.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".sub_menu_title span").on("click", function () {
+                $(this).parent().children("ul").slideToggle(function () {
+
+                    if ($(this).parent().find("span").hasClass("on")) $(this).parent().find("span").removeClass("on");
+                    else $(this).parent().find("span").addClass("on");
+
+                });
+            });
+
+        });
+    </script>
+
+
+</body>
+
+</html>

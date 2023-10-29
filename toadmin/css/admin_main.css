@@ -1,0 +1,52 @@
+#contents .main_wrap{ margin-left:44px; overflow:hidden}
+.main_situation01 h2{ font-size:15px; font-weight:600; padding-top:4px}
+.main_situation01 .more{ position:absolute; right:10px; top:13px}
+
+/* 추가 */
+
+
+.main_situation0 {position: relative;  height: auto; padding: 30px 0 30px 30px;}
+
+.main_situation0 .flex_box h2 {
+         padding: 15px 0;
+          font-size: 20px; color: #000; font-weight: bold;
+   
+}
+
+.main_situation01 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 30px 30px;
+}
+
+.main_situation01 .c_top_bar {
+    position: relative;
+}
+
+.main_situation01 .flex_leftBox {
+   width: 49%;
+}
+.main_situation01 .flex_rightBox {
+    width: 49%;
+}
+
+.main_situation02{ width: 150px;
+    border: 1px solid #E4E4E4;
+    padding: 25px 25px 0 25px;
+    position: absolute;
+    top: 79px;
+    left: 102%;}
+
+.main_situation02 dl{ padding-bottom:15px}
+.main_situation02 dt{ font-size:12px; color:#000000; font-weight:600; padding-bottom:5px}
+.main_situation02 dd{ padding:0 0 3px 7px; background:url(../image/left/bullet01.gif) 2px 6px no-repeat}
+.main_situation02 .last{ padding:0}
+.main_situation02 .board{}
+.main_situation02 .board li{ padding:0 0 2px 7px; background:url(../image/left/bullet01.gif) 2px 6px no-repeat; overflow:hidden}
+.main_situation02 .board span{ padding-right:7px; float:left}
+.main_situation02 .board .date{ width:25%; clear:both}
+.main_situation02 .board .content{ width:65%;}
+
+
+.main_wrap .t_list { border-top:2px solid #cacaca !important; }
