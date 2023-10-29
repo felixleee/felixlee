@@ -454,9 +454,11 @@ header {
 					}
 
 					p {
-						word-break: keep-all;
+						// word-break: keep-all;
 						margin-top: 7px;
 						line-height: 19px;
+						min-height: 90px;
+						
 						@include mobile {
 							font-size: 12px;
 							height: 130px;

@@ -635,4 +635,10 @@ footer {
 .go_top:hover i {
   font-size: 26px;
   top: 10px;
+}
+@media (max-width: 767px) {
+  .go_top:hover i {
+    top: 10px;
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=style.css.map */
