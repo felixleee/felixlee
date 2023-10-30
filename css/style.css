@@ -441,19 +441,17 @@ header .top .right_menu_wrap ul.menu li:first-child {
 .card_gallery_wrap .card_area .card_list .card .text_wrap h3 span {
   font-size: 15px;
   font-weight: 500;
-  margin-left: 5px;
+  display: block;
 }
 @media (max-width: 767px) {
   .card_gallery_wrap .card_area .card_list .card .text_wrap h3 span {
-    margin-left: 0;
-    display: block;
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 .card_gallery_wrap .card_area .card_list .card .text_wrap p {
-  word-break: keep-all;
   margin-top: 7px;
   line-height: 19px;
+  min-height: 90px;
 }
 @media (max-width: 767px) {
   .card_gallery_wrap .card_area .card_list .card .text_wrap p {
