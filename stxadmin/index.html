@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Admin</title>
+		<link rel="stylesheet" href="css/default.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="css/admin_main.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="js/admin.js"></script>
+		<script type="text/javascript" src="js/swiper-bundle.js"></script>
+		<link rel="stylesheet" href="css/swiper-bundle.css" type="text/css" charset="utf-8"/>
+		<!-- CKEditor -->
+		<script type="text/javascript" src="js/ckeditor_v4.9/ckeditor.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="head_nav">
+					<li><h1>STX Admin Page</h1></li>
+				</ul>
+				<ul class="head_nav">
+					<li><a href="">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="">슈퍼관리자</a></li>
+					<li><a href="../login.html">로그아웃</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<aside>
+            <div class="logo">
+                <h1>
+					<a href=""><img src="image/stxlogo.png" alt=""></a>
+				</h1>
+            </div>
+            <div class="to_user_page">
+                <a class='' href="index.html"><i class="xi-home"></i> 메인 페이지</a>
+            </div>
+            <ul id="left_wrap">
+                <!-- <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 기본정보 관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 운영 관리</span><i class="xi-angle-down"></i></a>
+                </li> -->
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 화면 관리</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu ">
+                        <!-- <li><a href="" class="">즐겨찾기</a></li> -->
+                        <li><a href="display/e_schedule.html" class="">긴급일정</a></li>
+                        <!-- <li><a href="" class="">공지사항</a></li> -->
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 입고정보</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu ">
+                        <li><a href="display/wh_detail.html" class="">입고정보 조회</a></li>
+                        <li><a href="display/wh_new.html" class="">입고정보 등록</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a href="display/record.html" class="m_menu_list"><span><i class="xi-label"></i> 이력관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="" class="">검사성적서</a></li>
+                        <li><a href="" class="">조립공정기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="" class="">시운전성적서</a></li>
+                        <li><a href="" class="">입고검사기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+		
+		
+		<main>
+			<section>
+				
+				<article class="search_result_wrap w1200">
+					<div class="flex_box maintb">
+						<div class="left_tb">
+						<h3 class="section_tit">즐겨찾기</h3>
+							<table class="table partner_table align_c on_main" cellpadding="0" cellspacing="0">
+								<thead>
+									<tr class="tb_header">
+										<th>
+											<input type="checkbox" name="all_chk" value="" id="all_chk"/>
+										</th>
+										<th>No</th>
+										<th>항목</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_15" value="" id="cont_15"/>
+										</td>
+										<td>1</td>
+										<td>입고정보</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_14" value="" id="cont_14"/>
+										</td>
+										<td>2</td>
+										<td>예상 소요</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_13" value="" id="cont_13"/>
+										</td>
+										<td>
+											3
+										</td>
+										<td>이력시스템</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_12" value="" id="cont_12"/>
+										</td>
+										<td>
+											4
+										</div>
+										<td>시운전</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_11" value="" id="cont_11"/>
+										</td>
+										<td>
+											5
+										</div>
+										<td>품질문서</td>
+									</tr>
+									
+								</tbody>
+							</table>
+							
+							<!-- <div class="flex_box">
+		                        <ul class="btn_area mt10">
+		                        </ul>
+		                        <ul class="btn_area flex_end mt10">
+		                            <li><a href="">삭제</a></li>
+		                        </ul>
+		                    </div> -->
+                   		</div>
+                   		
+                   		<div id="myDiv" class="right_tb">
+                   			<h3 class="section_tit">공지사항</h3>
+                   			<table class="table partner_table align_c on_main" cellpadding="0" cellspacing="0">
+								<thead>
+									<tr class="tb_header">
+										<th>
+											<input type="checkbox" name="all_chk" value="" id="all_chk"/>
+										</th>
+										<th>No</th>
+										<th>제목</th>
+										<th>내용</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_15" value="" id="cont_15"/>
+										</td>
+										<td>1</td>
+										<td>공지 제목1</td>
+										<td>내용...</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_14" value="" id="cont_14"/>
+										</td>
+										<td>2</td>
+										<td>공지 제목2</td>
+										<td>내용...</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_13" value="" id="cont_13"/>
+										</td>
+										<td>
+											3
+										</td>
+										<td>공지 제목3</td>
+										<td>내용...</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_12" value="" id="cont_12"/>
+										</td>
+										<td>
+											4
+										</div>
+										<td>공지 제목4</td>
+										<td>내용...</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_11" value="" id="cont_11"/>
+										</td>
+										<td>
+											5
+										</div>
+										<td>공지 제목5</td>
+										<td>내용...</td>
+									</tr>
+									
+								</tbody>
+							</table>
+							
+							<!-- <div class="flex_box">
+		                        <ul class="btn_area mt10">
+		                        </ul>
+		                        <ul class="btn_area flex_end mt10">
+		                        	<li><a href="">글쓰기</a></li>
+		                        	<li><a href="">수정</a></li>
+		                            <li><a href="">삭제</a></li>
+		                        </ul>
+		                    </div> -->
+                   		</div>
+                   	</div>
+					
+					<h3 class="section_tit pt20">긴급일정</h3>
+                   			<table class="table partner_table align_c on_main" cellpadding="0" cellspacing="0">
+								<thead>
+									<tr class="tb_header">
+										<th>
+											<input type="checkbox" name="all_chk" value="" id="all_chk"/>
+										</th>
+										<th>No</th>
+										<th>제목</th>
+										<th>등록일</th>
+										<th>표출</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_15" value="" id="cont_15"/>
+										</td>
+										<td>1</td>
+										<td>3월 긴급 일정 팝업</td>
+										<td>2022-01-28</td>
+										<td>표출</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_14" value="" id="cont_14"/>
+										</td>
+										<td>2</td>
+										<td>4월 긴급 일정 팝업</td>
+										<td>2022-01-28</td>
+										<td>표출</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_13" value="" id="cont_13"/>
+										</td>
+										<td>
+											3
+										</td>
+										<td>5월 긴급 일정 팝업</td>
+										<td>2022-01-28</td>
+										<td>표출</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_12" value="" id="cont_12"/>
+										</td>
+										<td>
+											4
+										</td>
+										<td>6월 긴급 일정 팝업</td>
+										<td>2022-01-28</td>
+										<td>표출</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="cont_11" value="" id="cont_11"/>
+										</td>
+										<td>
+										</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									
+								</tbody>
+							</table>	
+					
+							
+					
+					
+					<!-- <div class="paging">
+						<ul>
+							<li><a href="">처음</a></li>
+							<li><a href="">이전</a></li>
+							<li class="on"><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li><a href="">다음</a></li>
+							<li><a href="">마지막</a></li>
+						</ul>
+					</div> -->
+					
+				</article>
+
+			</section>
+			
+		</main>
+		
+		
+	</body>
+
+	<!-- <script>
+		document.getElementById('myButton').addEventListener('click', function() {
+			var divHtml = encodeURIComponent(document.getElementById('myDiv').innerHTML);
+			var url = 'http://127.0.0.1:5500/admin_page_220921/B.html?divHtml=' + divHtml;
+			fetch(url, { method: 'POST' });
+		});
+	</script> -->
+
+</html>

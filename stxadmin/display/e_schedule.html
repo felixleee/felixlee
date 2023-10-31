@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Admin</title>
+		<link rel="stylesheet" href="../css/default.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/admin_main.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="../js/admin.js"></script>
+		<script type="text/javascript" src="../js/swiper-bundle.js"></script>
+		<link rel="stylesheet" href="../css/swiper-bundle.css" type="text/css" charset="utf-8"/>
+		<!-- CKEditor -->
+		<script type="text/javascript" src="../js/ckeditor_v4.9/ckeditor.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="head_nav">
+					<li><h1>STX Admin Page</h1></li>
+				</ul>
+				<ul class="head_nav">
+					<li><a href="">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="">슈퍼관리자</a></li>
+					<li><a href="">로그아웃</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<aside>
+            <div class="logo">
+                <h1>
+					<a href=""><img src="../image/stxlogo.png" alt=""></a>
+				</h1>
+            </div>
+            <div class="to_user_page">
+                <a href="../index.html"><i class="xi-home"></i> 메인 페이지</a>
+            </div>
+            <ul id="left_wrap">
+                <li class="main_menu on">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 화면 관리</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu on">
+                        <li><a href="e_schedule.html" class="on">긴급일정</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 입고정보</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu ">
+                        <li><a href="wh_detail.html" class="">입고정보 조회</a></li>
+                        
+                        <li><a href="wh_new.html" class="">입고정보 등록</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a href="record.html" class="m_menu_list"><span><i class="xi-label"></i> 이력관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="" class="">검사성적서</a></li>
+                        <li><a href="" class="">조립공정기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="" class="">시운전성적서</a></li>
+                        <li><a href="" class="">입고검사기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+		
+		
+		<main>
+			<section>
+				
+				<article class="search_result_wrap w1200">
+						<h3 class="section_tit">긴급일정</h3>
+							<table class="table partner_table align_c" cellpadding="0" cellspacing="0">
+						<thead>
+							<tr class="tb_header">
+								<th>
+									<input type="checkbox" name="all_chk" value="" id="all_chk"/>
+								</th>
+								<th>No</th>
+								<th>아이템</th>
+								<th>리드타임</th>
+								<th>전화번호</th>
+								<th>입고일</th>
+								<th>출고일</th>
+								<th>파일 다운로드</th>
+								<th>인쇄</th>
+								<th>형식</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<input type="checkbox" name="cont_15" value="" id="cont_15"/>
+								</td>
+								<td>1</td>
+								<td>아이템 이름1</td>
+								<td>1개월 (32일)</td>
+								<td>000-0000</td>
+								<td>2022.3.21</td>
+								<td>2022.5.21</td>
+								<td><a class="gray_btn" href="">다운로드</a></td>
+								<td><a class="gray_btn" href="">인쇄</a></td>
+								<td><a class="" href=""><img src="../image/excel_icon.png" width="30" alt="엑셀"></a></td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="cont_14" value="" id="cont_14"/>
+								</td>
+								<td>2</td>
+								<td>아이템 이름2</td>
+								<td>2개월 (58일)</td>
+								<td>000-0000</td>
+								<td>2022.5.21</td>
+								<td>2022.7.21</td>
+								<td><a class="gray_btn" href="">다운로드</a></td>
+								<td><a class="gray_btn" href="">인쇄</a></td>
+								<td><a class="" href=""><img src="../image/excel_icon.png" width="30" alt="엑셀"></a></td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="cont_13" value="" id="cont_13"/>
+								</td>
+								<td>
+									3
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="cont_12" value="" id="cont_12"/>
+								</td>
+								<td>
+									4
+								</div>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="cont_11" value="" id="cont_11"/>
+								</td>
+								<td>
+									5
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="cont_10" value="" id="cont_10"/>
+								</td>
+								<td>
+									6
+								</div>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="cont_9" value="" id="cont_9"/>
+								</td>
+								<td>
+									7
+								</div>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="cont_8" value="" id="cont_8"/>
+								</td>
+								<td>
+									8
+								</div>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+						</tbody>
+					</table>
+                   		
+                   		
+					
+					
+					<div class="paging">
+						<ul>
+							<li><a href="">처음</a></li>
+							<li><a href="">이전</a></li>
+							<li class="on"><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li><a href="">다음</a></li>
+							<li><a href="">마지막</a></li>
+						</ul>
+					</div>
+					
+				</article>
+
+			</section>
+			
+			
+			
+		</main>
+		
+		
+	</body>
+</html>

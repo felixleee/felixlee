@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Admin</title>
+		<link rel="stylesheet" href="../css/default.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/admin_main.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="../js/admin.js"></script>
+		<script type="text/javascript" src="../js/swiper-bundle.js"></script>
+		<link rel="stylesheet" href="../css/swiper-bundle.css" type="text/css" charset="utf-8"/>
+		<!-- CKEditor -->
+		<script type="text/javascript" src="../js/ckeditor_v4.9/ckeditor.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="head_nav">
+					<li><h1>STX Admin Page</h1></li>
+				</ul>
+				<ul class="head_nav">
+					<li><a href="">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="">슈퍼관리자</a></li>
+					<li><a href="">로그아웃</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<aside>
+            <div class="logo">
+                <h1>
+					<a href=""><img src="../image/stxlogo.png" alt=""></a>
+				</h1>
+            </div>
+            <div class="to_user_page">
+                <a href="../index.html"><i class="xi-home"></i> 메인 페이지</a>
+            </div>
+            <ul id="left_wrap">
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 화면 관리</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu ">
+                        <li><a href="e_schedule.html" class="">긴급일정</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu on">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 입고정보</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu on">
+                        <li><a href="wh_detail.html" class="on">입고정보 조회</a></li>
+                        
+                        <li><a href="wh_new.html" class="">입고정보 등록</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a href="record.html" class="m_menu_list"><span><i class="xi-label"></i> 이력관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="" class="">검사성적서</a></li>
+                        <li><a href="" class="">조립공정기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="" class="">시운전성적서</a></li>
+                        <li><a href="" class="">입고검사기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+		
+		
+		<main>
+			<section>
+				<h3 class="section_tit">입고정보 조회</h3>
+				<article class="search_wrap w1200">
+					<div class="option_area">
+						<span>기간</span>
+						<input name="startDate" id="startDate" placeholder="검색 시작일" class="search_cal" type="text" value="" style="cursor:pointer;" readonly required />
+						<span class="ml5">~</span>
+						<input name="endDate" id="endDate" placeholder="검색 마감일" class="search_cal mr20" type="text" value="" style="cursor:pointer;" readonly required />
+					</div>
+
+					<div class="btn_area">
+						<a href="javascript:;">조회</a>
+						<a onclick="addClassName('edit_pop')">입고정보입력</a>
+					</div>
+				</article>
+				<article class="search_result_wrap w1200">
+						
+							<table class="table partner_table align_c" cellpadding="0" cellspacing="0">
+						<thead>
+							<tr class="tb_header">
+								<th style="width: 170px;"></th>
+								<th>1월</th>
+								<th>2월</th>
+								<th>3월</th>
+								<th>4월</th>
+								<th>5월</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>12V856TB82</td>
+								<td><a onclick="addClassName('view_pop')">2</a></td>
+								<td></td>
+								<td><a onclick="addClassName('view_pop')">3</a></td>
+								<td></td>
+								<td><a onclick="addClassName('view_pop')">1</a></td>
+							</tr>
+							<tr>
+								<td>20V568TB82</td>
+								<td></td>
+								<td><a onclick="addClassName('view_pop')">1</a></td>
+								<td><a onclick="addClassName('view_pop')">1</a></td>
+								<td></td>
+								<td><a onclick="addClassName('view_pop')">2</a></td>
+							</tr>
+							<tr>
+								<td>16V2000TB82</td>
+								<td><a onclick="addClassName('view_pop')">1</a></td>
+								<td></td>
+								<td><a onclick="addClassName('view_pop')">2</a></td>
+								<td><a onclick="addClassName('view_pop')">1</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>12V4000TB82</td>
+								<td></td>
+								<td><a onclick="addClassName('view_pop')">3</a></td>
+								<td></td>
+								<td><a onclick="addClassName('view_pop')">2</a></td>
+								<td><a onclick="addClassName('view_pop')">1</a></td>
+							</tr>
+						</tbody>
+					</table>
+					
+				</article>
+
+			</section>
+			
+			<div id="view_pop" class="layer_pop">
+				<div class="inner">
+					<div class="header">
+						<h3>조회</h3>
+						<i onclick="removeClassName('view_pop')" class="xi-close"></i>
+					</div>
+					
+					<div class="register">
+						<table class="table no_shadowtable bc_on cate align_c" cellpadding="0" cellspacing="0">
+							<thead>
+								<tr>
+									<th>구분</th>
+									<th>데이터</th>
+									<th>구분</th>
+									<th>데이터</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>S/N</td>
+									<td class="align_l"><input type="text" name="sn_num" value="12345a" id="sn_num"/></td>
+									<td>함명</td>
+									<td><input type="text" name="ship_name" value="참수리" id="ship_name"/></td>
+								</tr>
+								<tr>
+									<td>기종</td>
+									<td class="align_l"><input type="text" name="model" value="12V956TB82" id="model"/> </td>
+									<td>오버홀회차</td>
+									<td><input type="text" name="over" value="2" id="over"/></td>
+								</tr>
+								<tr>
+									<td>가동시간</td>
+									<td class="align_l"><input type="text" name="runnin_time" value="12000H" id="runnin_time"/></td>
+									<td>입고일</td>
+									<td><input type="text" name="Date1" value="2022-02-11" id="Date1"/></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<ul class="btn_area">
+                        <li><a onclick="removeClassName('view_pop')">저장</a></li>
+                        <li><a onclick="removeClassName('view_pop')">취소</a></li>
+                    </ul>
+					
+					</div>
+				
+			</div>
+			
+			<div id="edit_pop" class="layer_pop">
+                <div class="inner">
+                    <div class="header">
+                        <h3>입고정보 변경</h3>
+                        <i onclick="removeClassName('edit_pop')" class="xi-close"></i>
+                    </div>
+                    
+                    <div class="register mt10">
+                        <table class="table no_shadowtable bc_on cate align_c" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td>기종</td>
+                                    <td><input type="text" name="model" value="12V856TB82" id="model"/></td>
+                                    <td>S/N</td>
+                                    <td><input type="text" name="sn_num" value="123456a" id="sn_num"/></td>
+                                </tr>
+                                <tr>
+                                    <td>항명</td>
+                                    <td><input type="text" name="ship_name" value="참수리" id="ship_name"/></td>
+                                    <td>오버홀 회차</td>
+                                    <td><input type="text" name="over" value="2" id="over"/></td>
+                                </tr>
+                                <tr>
+                                    <td>가동시간</td>
+                                    <td><input type="text" name="runningtime" value="10,000H" id="runningtime"/></td>
+                                    <td>입고일</td>
+                                    <td><input type="text" name="Date1" value="2022-02-11" id="Date1"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ul class="btn_area">
+                        <li><a onclick="removeClassName('edit_pop')">저장</a></li>
+                        <li><a onclick="removeClassName('edit_pop')">취소</a></li>
+                    </ul>
+                    
+                    </div>
+                
+            </div>
+			
+		</main>
+		
+		
+	</body>
+	
+<link rel="stylesheet" type="text/css" href="../css/lightpick.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="../js/lightpick.js"></script>
+<script>
+	var picker = new Lightpick({
+	    field: document.getElementById('startDate'),
+	    secondField: document.getElementById('endDate'),
+	    format: 'YYYY-MM-DD',
+	    singleDate: false,
+	    locale: {
+	    	tooltip: {
+                one: '일',
+                other: '일',
+            },
+	    },
+	});
+	
+	var picker2 = new Lightpick({
+        field: document.getElementById('Date1'),
+        format: 'YYYY-MM-DD',
+        singleDate: true,
+        locale: {
+            tooltip: {
+                one: '일',
+                other: '일',
+            },
+        },
+    });
+</script>
+	
+</html>

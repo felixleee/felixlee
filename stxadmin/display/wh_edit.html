@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Admin</title>
+		<link rel="stylesheet" href="../css/default.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/admin_main.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="../js/admin.js"></script>
+		<script type="text/javascript" src="../js/swiper-bundle.js"></script>
+		<link rel="stylesheet" href="../css/swiper-bundle.css" type="text/css" charset="utf-8"/>
+		<!-- CKEditor -->
+		<script type="text/javascript" src="../js/ckeditor_v4.9/ckeditor.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="head_nav">
+					<li><h1>STX Admin Page</h1></li>
+				</ul>
+				<ul class="head_nav">
+					<li><a href="../teacher/teacher_info.html">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="../controller/admin_setting.html">슈퍼관리자</a></li>
+					<li><a href="../login.html">로그아웃</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<aside>
+            <div class="logo">
+                <h1>Logo Place</h1>
+            </div>
+            <div class="to_user_page">
+                <a href="../index.html"><i class="xi-home"></i> 메인 페이지</a>
+            </div>
+            <ul id="left_wrap">
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 기본정보 관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 운영 관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 화면 관리</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu ">
+                        <li><a href="" class="">즐겨찾기</a></li>
+                        <li><a href="e_schedule.html" class="on">긴급일정</a></li>
+                        <li><a href="" class="">공지사항</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu on">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 입고정보</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu on">
+                        <li><a href="wh_detail.html" class="">입고정보 조회</a></li>
+                        
+                        <li><a href="wh_new.html" class="">입고정보 등록</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a href="record.html" class="m_menu_list"><span><i class="xi-label"></i> 이력관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> 예측소요</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="" class="">검사성적서</a></li>
+                        <li><a href="" class="">조립공정기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="" class="">시운전성적서</a></li>
+                        <li><a href="" class="">입고검사기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> 시운전</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> C/S</span><i class="xi-angle-down"></i></a>
+                </li>
+            </ul>
+        </aside>
+		
+		
+		<main>
+			<section>
+				<h3 class="section_tit">입고정보 변경</h3>
+				<article>
+				<table class="table form_table input95" cellpadding="0" cellspacing="0">
+						<colgroup>
+							<col width="15%">
+							<col width="35%">
+							<col width="15%">
+							<col width="35%">
+						</colgroup>
+						<tbody>
+						<tr>
+							<td>기종</td>
+							<td><input type="text" name="model" value="12V856TB82" id="model"/></td>
+							<td>S/N</td>
+							<td><input type="text" name="sn_num" value="123456a" id="sn_num"/></td>
+						</tr>
+						<tr>
+							<td>항명</td>
+							<td><input type="text" name="ship_name" value="참수리" id="ship_name"/></td>
+							<td>오버홀 회차</td>
+							<td><input type="text" name="over" value="2" id="over"/></td>
+						</tr>
+						<tr>
+							<td>가동시간</td>
+							<td><input type="text" name="runningtime" value="10,000H" id="runningtime"/></td>
+							<td>입고일</td>
+							<td><input type="text" name="Date1" value="2022-02-11" id="Date1"/></td>
+						</tr>
+					</tbody></table>
+					<ul class="btn_area mt20 w1200">
+						<li><a href="wh_view.html">목록</a></li>
+						<li><a href="wh_view.html">저장</a></li>
+					</ul>
+				</article>
+			</section>
+			
+			
+			
+		</main>
+		
+		
+	</body>
+	
+<link rel="stylesheet" type="text/css" href="../css/lightpick.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="../js/lightpick.js"></script>
+<script>
+	var picker = new Lightpick({
+	    field: document.getElementById('Date1'),
+	    format: 'YYYY-MM-DD',
+	    singleDate: true,
+	    locale: {
+	    	tooltip: {
+                one: '일',
+                other: '일',
+            },
+	    },
+	});
+</script>	
+	
+</html>

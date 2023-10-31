@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Admin</title>
+		<link rel="stylesheet" href="../css/default.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/admin_new.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="../js/admin.js"></script>
+		<script type="text/javascript" src="../js/swiper-bundle.js"></script>
+		<link rel="stylesheet" href="../css/swiper-bundle.css" type="text/css" charset="utf-8"/>
+		<!-- CKEditor -->
+		<script type="text/javascript" src="../js/ckeditor_v4.9/ckeditor.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="head_nav">
+					<li><h1>STX Admin Page</h1></li>
+				</ul>
+				<ul class="head_nav">
+					<li><a href="../teacher/teacher_info.html">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="../controller/admin_setting.html">슈퍼관리자</a></li>
+					<li><a href="../login.html">로그아웃</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<aside>
+            <div class="logo">
+                <h1>Logo Place</h1>
+            </div>
+            <div class="to_user_page">
+                <a href="../index.html"><i class="xi-home"></i> 메인 페이지</a>
+            </div>
+            <ul id="left_wrap">
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 기본정보 관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 운영 관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu on">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 화면 관리</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu on">
+                        <li><a href="" class="">즐겨찾기</a></li>
+                        <li><a href="e_schedule.html" class="on">긴급일정</a></li>
+                        <li><a href="" class="">공지사항</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 입고정보</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu ">
+                        <li><a href="wh_detail.html" class="">입고정보 조회</a></li>
+                        
+                        <li><a href="wh_new.html" class="">입고정보 등록</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a href="record.html" class="m_menu_list"><span><i class="xi-label"></i> 이력관리</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> 예측소요</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="" class="">검사성적서</a></li>
+                        <li><a href="" class="">조립공정기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="" class="">시운전성적서</a></li>
+                        <li><a href="" class="">입고검사기록부</a></li>
+                        <li><a href="" class="">시운전일지</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu ">
+                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> 시운전</span><i class="xi-angle-down"></i></a>
+                </li>
+                <li class="main_menu ">
+                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> C/S</span><i class="xi-angle-down"></i></a>
+                </li>
+            </ul>
+        </aside>
+		
+		
+		<main>
+			<section>
+				
+				<article class="search_result_wrap w1200">
+						<h3 class="section_tit">20V538 소요율 집계</h3>
+							<table class="table partner_table collap align_c" cellpadding="0" cellspacing="0">
+						<thead class="no_blue">
+							<tr class="tb_header">
+								<th rowspan="2">품번</th>
+								<th rowspan="2">대당수량</th>
+								<th colspan="2">전체</th>
+								<th colspan="2">최근 15개</th>
+								<th rowspan="2">E19R580</th>
+								<th rowspan="2">E20R573</th>
+								<th rowspan="2">E20R588</th>
+								<th rowspan="2">E21R571</th>
+								<th rowspan="2">재고수량</th>
+								<th rowspan="2">AI 예측수량</th>
+							</tr>
+							<tr>
+								<th>평균 수량</th>
+								<th>평균 소요율</th>
+								<th>평균 수량</th>
+								<th>평균 소요율</th>
+							</tr> 
+						</thead>
+						<tbody>
+							<tr>
+								<td>2234-135C10146/3</td>
+								<td>20</td>
+								<td>20</td>
+								<td>100%</td>
+								<td>20</td>
+								<td>100%</td>
+								<td>20</td>
+								<td>20</td>
+								<td>20</td>
+								<td>20</td>
+								<td>40</td>
+								<td>20</td>
+							</tr>
+							
+							<tr>
+								<td>2234-135D17018/3</td>
+								<td>4</td>
+								<td>2</td>
+								<td>50%</td>
+								<td>1</td>
+								<td>25%</td>
+								<td></td>
+								<td>2</td>
+								<td>1</td>
+								<td>3</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+
+							<tr>
+								<td>2234-305T12005/1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>9%</td>
+								<td>1</td>
+								<td>33%</td>
+								<td></td>
+								<td>1</td>
+								<td></td>
+								<td>1</td>
+								<td>2</td>
+								<td>1</td>
+							</tr>
+
+							<tr>
+								<td>2234-717152308003</td>
+								<td>5</td>
+								<td>3</td>
+								<td>20%</td>
+								<td>4</td>
+								<td>40%</td>
+								<td>2</td>
+								<td>4</td>
+								<td>1</td>
+								<td>3</td>
+								<td>8</td>
+								<td>3</td>
+							</tr>
+						</tbody>
+					</table>
+                   		
+                   		
+					
+					
+					<!-- <div class="paging">
+						<ul>
+							<li><a href="">처음</a></li>
+							<li><a href="">이전</a></li>
+							<li class="on"><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li><a href="">다음</a></li>
+							<li><a href="">마지막</a></li>
+						</ul>
+					</div> -->
+					
+				</article>
+
+			</section>
+			
+			
+			
+		</main>
+		
+		
+	</body>
+</html>
