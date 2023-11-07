@@ -187,10 +187,15 @@ header {
 .big_project_slider {
 	@include basicWidth;
 	width:100%;
-	max-width: none;
-	padding: 60px 0;
+	max-width: 1300px;
+	padding: 30px 0 60px 0;
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+    margin-bottom: 50px;
 	@include mobile {
 		padding: 0;
+		margin-top: 0;
+		border-top: 0;
 	}
 
 	.tit_wrap {
@@ -207,7 +212,10 @@ header {
 
 		@include mobile {
 			flex-direction: column;				
-			padding: 0 13px;
+			margin: 0 13px;
+			border-top: 1px solid #ccc;
+			padding-top: 55px;
+    		margin-top: 15px;
 		}
 
 		.photo_wrap {
@@ -227,8 +235,8 @@ header {
 				border: 1px solid rgba(0,0,0,0.05);
 				box-shadow: 7px 7px 10px rgba(0,0,0,0.25);
 				@include mobile {
-					width: 80vw;
-					height: 80vw;
+					width: 55vw;
+					height: 55vw;
 				}
 			}
 		}
@@ -361,9 +369,9 @@ header {
 
 .card_gallery_wrap {
 	// background: #f1f1f1;
-	padding: 60px 0;
+	padding: 60px 0 0;
 	@include mobile {
-		padding: 40px 13px;
+		padding: 40px 13px 20px;
 		width:100%;
 		box-sizing: border-box;
 	}

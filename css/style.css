@@ -147,8 +147,11 @@ header .top .right_menu_wrap ul.menu li:first-child {
   margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
-  max-width: none;
-  padding: 60px 0;
+  max-width: 1300px;
+  padding: 30px 0 60px 0;
+  border-top: 1px solid #ccc;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 @media (max-width: 767px) {
   .big_project_slider {
@@ -158,6 +161,8 @@ header .top .right_menu_wrap ul.menu li:first-child {
 @media (max-width: 767px) {
   .big_project_slider {
     padding: 0;
+    margin-top: 0;
+    border-top: 0;
   }
 }
 .big_project_slider .tit_wrap {
@@ -188,7 +193,10 @@ header .top .right_menu_wrap ul.menu li:first-child {
 @media (max-width: 767px) {
   .big_project_slider .main_sec {
     flex-direction: column;
-    padding: 0 13px;
+    margin: 0 13px;
+    border-top: 1px solid #ccc;
+    padding-top: 55px;
+    margin-top: 15px;
   }
 }
 .big_project_slider .main_sec .photo_wrap {
@@ -213,8 +221,8 @@ header .top .right_menu_wrap ul.menu li:first-child {
 }
 @media (max-width: 767px) {
   .big_project_slider .main_sec .photo_wrap img {
-    width: 80vw;
-    height: 80vw;
+    width: 55vw;
+    height: 55vw;
   }
 }
 .big_project_slider .main_sec .txt_wrap {
@@ -342,11 +350,11 @@ header .top .right_menu_wrap ul.menu li:first-child {
 }
 
 .card_gallery_wrap {
-  padding: 60px 0;
+  padding: 60px 0 0;
 }
 @media (max-width: 767px) {
   .card_gallery_wrap {
-    padding: 40px 13px;
+    padding: 40px 13px 20px;
     width: 100%;
     box-sizing: border-box;
   }
