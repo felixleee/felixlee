@@ -1733,13 +1733,13 @@
             });
 
 
-
-            $(document).on('click', '.like_mark', function () {
+	
+            $('.like_mark').click(function () {
                 $(this).addClass('color_on');
                 $(this).html("<i class='xi-heart' style='color:#ff6f61;'></i>");
             });
 
-            $(document).on('click', '.color_on', function () {
+            $('.color_on').click(function () {
                 $(this).removeClass('color_on');
                 $(this).html("<i class='xi-heart-o'></i>");
             });
