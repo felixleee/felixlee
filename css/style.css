@@ -422,6 +422,9 @@ header .top .right_menu_wrap ul.menu li:first-child {
 }
 .card_gallery_wrap .card_area .card_list .card .img_wrap img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: all 0.5s;
 }
 .card_gallery_wrap .card_area .card_list .card .img_wrap img:hover {
