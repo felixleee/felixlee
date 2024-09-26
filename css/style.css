@@ -283,6 +283,9 @@ header .top .right_menu_wrap ul.menu li:first-child {
 .big_project_slider .main_sec .txt_wrap .txt_inner .contents p {
   margin-bottom: 15px;
 }
+.big_project_slider .main_sec .txt_wrap .txt_inner .contents p span {
+  font-weight: 500;
+}
 .big_project_slider .main_sec .txt_wrap .txt_inner .contents p:last-child {
   margin-bottom: 0;
 }
