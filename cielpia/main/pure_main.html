@@ -14,17 +14,19 @@
 
     <link rel="stylesheet" href="../css/web/default.css?ver=220607" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="../css/web/main.css?ver=220607" type="text/css" charset="utf-8" />
-    <link rel="stylesheet" href="../css/web/user.css?ver=220607" type="text/css" charset="utf-8" />
-    <link rel="stylesheet" href="../css/web/content.css?ver=220607" type="text/css" charset="utf-8" />
-    <link rel="stylesheet" href="../css/web/intro.css?ver=220607" type="text/css" charset="utf-8" />
-    <link rel="stylesheet" href="../css/web/mypage.css?ver=220607" type="text/css" charset="utf-8" />
-    <link rel="stylesheet" href="../css/web/support.css?ver=220607" type="text/css" charset="utf-8" />
+    <!-- 데모: 저장소에 없는 user·content·intro·mypage·support.css, ../css/admin/lightpick.css 링크는 404 라서 뺌 -->
     <link rel="stylesheet" href="../css/web/respon.css?ver=220607" type="text/css" charset="utf-8" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-    <link rel="stylesheet" href="../css/admin/lightpick.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="../js/swiper-bundle.js"></script>
     <link rel="stylesheet" href="../css/web/swiper-bundle.css" type="text/css" charset="utf-8" />
+    <!--------------------------------------------------------------------------------------- demo (가상 데이터) -->
+    <link rel="stylesheet" href="../css/demo.css" type="text/css" charset="utf-8" />
+    <script src="../../mock/mock-api.js"></script>
+    <script src="../data/categories.js"></script>
+    <script src="../data/lectures.js"></script>
+    <script src="../data/user.js"></script>
+    <script src="../js/demo/common.js"></script>
     <!--------------------------------------------------------------------------------------- sidemenu  -->
     <script type="text/javascript" src="../js/sidemenu.js"></script>
     <link type="text/css" href="../js/sidemenu.css" rel="stylesheet" />
@@ -40,7 +42,7 @@
 <body>
     <div class="top_liner">
 
-        <a href="javascript:;">
+        <a href="javascript:;" onclick="return Mock.notInDemo('아빠 체험단 모집 이벤트')">
             <img class="pc" src="../image/web/main/top_liner.jpg" width="100%" style="max-width: 1200px;" alt="" />
             <img class="mobile" src="../image/web/main/mobile_line_banner.jpg" width="100%" style="max-width: 1200px;"
                 alt="" />
@@ -68,17 +70,19 @@
             <div class="side_category">
                 <p class="menu "><span>소개</span><i class="xi-angle-down"></i></p>
                 <ul class="sub_menu">
-                    <li><a href="">수업 추천</a></li>
-                    <li><a href="">전문강사 가입</a></li>
-                    <li><a href="">교육 픽토그램</a></li>
+                    <li><a href="../intro/cielpia_intro.html">씨엘피아 소개</a></li>
+                    <li><a href="../content/lecture_list.html?sort=rate">수업 추천</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('전문강사 가입')">전문강사 가입</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('교육 픽토그램')">교육 픽토그램</a></li>
                 </ul>
                 <p class="menu "><span>지원</span><i class="xi-angle-down"></i></p>
                 <ul class="sub_menu">
-                    <li><a href="">공지사항</a></li>
-                    <li><a href="">자주하는 질문</a></li>
-                    <li><a href="">1:1 문의</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('공지사항')">공지사항</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('자주하는 질문')">자주하는 질문</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('1:1 문의')">1:1 문의</a></li>
                 </ul>
-                <p class="menu one"><a href="">로그인</a></p>
+                <p class="menu one"><a href="../mypage/my_class.html">내 강의실</a></p>
+                <p class="menu one"><a href="javascript:;" onclick="return Mock.notInDemo('로그인')">로그인</a></p>
             </div>
 
             <h4>강의</h4>
@@ -125,12 +129,12 @@
         </a>
 
         <ul class="m_right_menu">
-            <li><a href="">로그인</a></li>
-            <li><a href=""></a><i class="xi-search"></i></a></li>
+            <li><a href="javascript:;" onclick="return Mock.notInDemo('로그인')">로그인</a></li>
+            <li><a href="../content/search.html" title="강의 검색"><i class="xi-search"></i></a></li>
         </ul>
 
         <div class="inner">
-            <div class="logo_area" onclick="" style="cursor: pointer;">
+            <div class="logo_area" onclick="location.href='../main/pure_main.html'" style="cursor: pointer;">
                 <h1 class="cl_logo">CIELPIA</h1>
                 <h1 class="branch_logo">
 
@@ -140,24 +144,25 @@
 
             <nav>
                 <ul class="nav_list">
-                    <li><a href="">홈</a></li>
+                    <li><a href="../main/pure_main.html">홈</a></li>
                     <li>
-                        <a href="">소개</a>
+                        <a href="../intro/cielpia_intro.html">소개</a>
                         <ul class="sub_menu">
-                            <li><a href="">· 수업 추천</a></li>
-                            <li><a href="">· 전문강사 가입</a></li>
-                            <li><a href="">· 교육 픽토그램</a></li>
+                            <li><a href="../content/lecture_list.html?sort=rate">· 수업 추천</a></li>
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('전문강사 가입')">· 전문강사 가입</a></li>
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('교육 픽토그램')">· 교육 픽토그램</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">지원</a>
+                        <a href="javascript:;" onclick="return Mock.notInDemo('지원')">지원</a>
                         <ul class="sub_menu">
-                            <li><a href="">· 공지사항</a></li>
-                            <li><a href="">· 자주하는 질문</a></li>
-                            <li><a href="">· 1:1 문의</a></li>
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('공지사항')">· 공지사항</a></li>
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('자주하는 질문')">· 자주하는 질문</a></li>
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('1:1 문의')">· 1:1 문의</a></li>
                         </ul>
                     </li>
-                    <li><a href="">로그인</a></li>
+                    <li><a href="../mypage/my_class.html">내 강의실</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('로그인')">로그인</a></li>
                     <li><a href="javascript:;" class="lang_setting_btn"><img src="../image/web/icon/setting.png"
                                 alt="세팅아이콘" /></a></li>
                 </ul>
@@ -165,8 +170,8 @@
         </div>
     </header>
     <div class="child_select setting_pop">
-        <form name="childForm" id="childForm" method="post" action="/setting/set_child">
-            <input type="hidden" name="_token" value="dVK27YXWKRNIspo8pjpbl2EKYx7y9cKmvzpGOg4j">
+        <form name="childForm" id="childForm" method="post" action="javascript:;" onsubmit="return false;"><!-- 원래 POST /setting/set_child → 데모: MockDB.setItem('cielpia.child') (js/demo/common.js) -->
+            <input type="hidden" name="_token" value="{CSRF_TOKEN}">
             <div class="inner align_c">
                 <i class="xi-close"></i>
                 <div class="header">
@@ -182,8 +187,8 @@
     </div>
 
     <div class="lang_select setting_pop">
-        <form name="languageForm" id="languageForm" method="post" action="/setting/set_language">
-            <input type="hidden" name="_token" value="dVK27YXWKRNIspo8pjpbl2EKYx7y9cKmvzpGOg4j">
+        <form name="languageForm" id="languageForm" method="post" action="javascript:;" onsubmit="return false;"><!-- 원래 POST /setting/set_language → 데모: MockDB.setItem('cielpia.setting') (js/demo/common.js) -->
+            <input type="hidden" name="_token" value="{CSRF_TOKEN}">
             <div class="inner align_c">
                 <i class="xi-close"></i>
                 <div class="header">
@@ -251,7 +256,7 @@
         //         dataType: "json",
         //         context: this,
         //         beforeSend: function (xhr) {
-        //             xhr.setRequestHeader("X-CSRF-TOKEN", "dVK27YXWKRNIspo8pjpbl2EKYx7y9cKmvzpGOg4j");
+        //             xhr.setRequestHeader("X-CSRF-TOKEN", "{CSRF_TOKEN}");
         //             xhr.setRequestHeader("Content-Type", "application/json");
         //         },
         //         success: function (data) {
@@ -327,10 +332,13 @@
         <div class="sub_line_wrap">
             <div class="inner w1200">
                 <ul class="left_menu">
+                    <li><a href="../content/lecture_list.html">전체 강의</a></li>
+                    <li><a href="../content/lecture_list.html?price=free">무료 강의</a></li>
+                    <li><a href="../mypage/my_class.html">내 강의실</a></li>
                 </ul>
                 <div class="right_search_wrap">
-                    <form id="searchForm" method="get" action="/search">
-                        <input type="text" name="search_word" value="" id="main_search" />
+                    <form id="searchForm" method="get" action="../content/search.html"><!-- 원래 GET /search -->
+                        <input type="text" name="search_word" value="" id="main_search" placeholder="강의명·선생님·키워드로 검색해 보세요" title="강의 검색어" />
                     </form>
                     <a class="sch_btn" href="javascript:;" id="search_btn"><i class="xi-search"></i></a>
                     <div class="alert alert-danger" id="search_alert"></div>
@@ -340,160 +348,7 @@
 
         <div class="sub_list">
             <ul id="category_group" class="space_item">
-                <li class="picBTN pic1">
-                    <a onclick="javascript:;">
-                        <div class="img_box">
-                            <img class="common_st" src="../image/web/main/cate1.png">
-                            <img class="hover_st" src="../image/web/main/cate1_blue.png">
-                        </div>
-                        <span>몬테소리</span>
-                    </a>
-                    <div class="sub_menu">
-                        <ul class="left_cate">
-                            <li data-idx="9">
-                                <a href="javascript:;">
-                                    · 유아 Lv.1 <i class="xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                            <li data-idx="10">
-                                <a href="javascript:;">
-                                    · 유아 Lv.2 <i class="xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                            <li data-idx="11">
-                                <a href="javascript:;">
-                                    · 유아 Lv.3 <i class="xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                            <li data-idx="13">
-                                <a href="javascript:;">
-                                    · 초등 Lv.1 <i class="xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                            <li data-idx="14">
-                                <a href="javascript:;">
-                                    · 초등 Lv.2 <i class="xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                        </ul>
-                        <ul class="right_cate"></ul>
-                    </div>
-                </li>
-                <li class="picBTN pic2">
-                    <a onclick="javascript:;">
-                        <div class="img_box">
-                            <img class="common_st" src="../image/web/main/cate2.png">
-                            <img class="hover_st" src="../image/web/main/cate2_blue.png">
-                        </div>
-                        <span>건강</span>
-                    </a>
-                    <div class="sub_menu">
-                        <ul class="left_cate">
-                            <li data-idx="4">
-                                <a href="javascript:;">
-                                    · 공통 <i class="xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                        </ul>
-                        <ul class="right_cate"></ul>
-                    </div>
-                </li>
-                <li class="picBTN pic3">
-                    <a onclick="">
-                        <div class="img_box">
-                            <img class="common_st" src="../image/web/main/cate3.png">
-                            <img class="hover_st" src="../image/web/main/cate3_blue.png">
-                        </div>
-                        <span>문화/예술</span>
-                    </a>
-                    <div class="sub_menu">
-                        <ul class="left_cate">
-                            <li data-idx="5">
-                                <a href="javascript:;">
-                                    · 공통 <i class="xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                        </ul>
-                        <ul class="right_cate"></ul>
-                    </div>
-                </li>
-                <li class="picBTN pic5">
-                    <a onclick="">
-                        <div class="img_box">
-                            <img class="common_st" src="../image/web/main/cate5.png">
-                            <img class="hover_st" src="../image/web/main/cate5_blue.png">
-                        </div>
-                        <span>글로벌리더</span>
-                    </a>
-                    <div class="sub_menu">
-                        <ul class="left_cate">
-                            <li data-idx="7">
-                                <a href=">
-                                    · 공통 <i class=" xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                        </ul>
-                        <ul class="right_cate"></ul>
-                    </div>
-                </li>
-                <li class="picBTN pic6">
-                    <a onclick="">
-                        <div class="img_box">
-                            <img class="common_st" src="../image/web/main/cate6.png">
-                            <img class="hover_st" src="../image/web/main/cate6_blue.png">
-                        </div>
-                        <span>코딩</span>
-                    </a>
-                    <div class="sub_menu">
-                        <ul class="left_cate">
-                            <li data-idx="8">
-                                <a href="javascript:;">
-                                    · 공통 <i class="xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                        </ul>
-                        <ul class="right_cate"></ul>
-                    </div>
-                </li>
-                <li class="picBTN pic7">
-                    <a onclick="">
-                        <div class="img_box">
-                            <img class="common_st" src="../image/web/main/cate7.png">
-                            <img class="hover_st" src="../image/web/main/cate7_blue.png">
-                        </div>
-                        <span>탐험가 프로그램</span>
-                    </a>
-                    <div class="sub_menu">
-                        <ul class="left_cate">
-                            <li data-idx="12">
-                                <a href="">
-                                    · 공통 <i class="xi-angle-right-thin"></i>
-                                </a>
-                            </li>
-
-
-                        </ul>
-                        <ul class="right_cate"></ul>
-                    </div>
-                </li>
+                <!-- 데모: 카테고리 6개·하위메뉴(data-idx)는 data/categories.js 에서 렌더링 (js/demo/main.js) -->
             </ul>
         </div>
         <div class="monte_intro mt10 mb10">
@@ -524,12 +379,7 @@
             <div class="slide_wrap">
                 <div class="swiper-container-3pcs class">
                     <div class="swiper-wrapper">
-                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase1.jpg" /></a></div>
-                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase2.jpg" /></a></div>
-                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase3.jpg" /></a></div>
-                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase1.jpg" /></a></div>
-                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase2.jpg" /></a></div>
-                        <div  class="swiper-slide"><a href=""><img src="../image/web/main/classcase3.jpg" /></a></div>
+                        <!-- 데모: Class Case 6장은 data/lectures.js(cielpia.classcases)에서 렌더링 -->
                     </div>
                 </div>
                 <div class="swiper-button-prev-class"><</div>
@@ -538,7 +388,7 @@
         </div>
 
         <div class="line_banner">
-            <a href="/intro/cielpia_intro">
+            <a href="../intro/cielpia_intro.html">
                 <img class="pc" src="../image/web/main/cielpia_sub1.jpg" alt="" />
                 <img class="mobile" src="../image/web/main/m_sub1.jpg" alt="" />
             </a>
@@ -562,25 +412,12 @@
             <i class="xi-close"></i>
             <div class="header">
                 <h3>글로벌리더</h3>
+                <p class="cp-nation-desc">배우고 싶은 나라를 고르면 그 나라 언어 강의를 모아 보여 드려요</p>
             </div>
             <div class="pc_list">
                 <ul class="table_list" style="overflow-y:auto; height: 500px;">
                     <div id="img_list">
-                        <span><a href=""><img src="../image/web/nation/usa.jpg">
-                                <p>국가1</p>
-                            </a></span>
-                        <span><a href=""><img src="../image/web/nation/usa.jpg">
-                                <p>국가2</p>
-                            </a></span>
-                        <span><a href=""><img src="../image/web/nation/usa.jpg">
-                                <p>국가3</p>
-                            </a></span>
-                        <span><a href=""><img src="../image/web/nation/usa.jpg">
-                                <p>국가4</p>
-                            </a></span>
-                        <span><a href=""><img src="../image/web/nation/usa.jpg">
-                                <p>국가5</p>
-                            </a></span>
+                        <!-- 데모: 국가 5개는 data/categories.js(cielpia.nations)에서 렌더링, 국기는 CSS (원래 ../image/web/nation/usa.jpg 없음) -->
                     </div>
                 </ul>
             </div>
@@ -595,6 +432,8 @@
         }
     </style>
 
+    <!-- 데모: 카테고리·Class Case·국가 팝업을 데이터로 렌더링한 뒤 아래 원래 스크립트가 Swiper 를 초기화 -->
+    <script src="../js/demo/main.js"></script>
     <script>
         $('#search_btn').on("click", function () {
             if ($("input[name='search_word']").val() == "") {
@@ -681,19 +520,15 @@
             $(".left_cate li").removeClass("on");
             $(this).addClass("on");
             $(this).parents(".left_cate").next(".right_cate").fadeIn();
-            let url = "category/category_3/" + this.dataset.idx;
-            getAjax(url).then(response => {
-                $(this).parents(".left_cate").next(".right_cate").html(response.html);
-            });
+            // 원래: getAjax("category/category_3/" + idx) 응답의 html → 데모: 가상 데이터 (js/demo/main.js)
+            $(this).parents(".left_cate").next(".right_cate").html(CPMain.rightCate(this.dataset.idx));
         });
 
         $(".sub_list ul li:nth-of-type(2)").bind("mouseenter", function (e) {
-
+            if (!$(this).find(".right_cate").length) return;
             $(this).find(".right_cate").fadeIn();
-            let url = "category/category_3/4";
-            getAjax(url).then(response => {
-                $(this).find(".right_cate").html(response.html);
-            });
+            // 원래: getAjax("category/category_3/4") → 데모: 가상 데이터
+            $(this).find(".right_cate").html(CPMain.rightCate('4'));
         });
 
         var stop_t = $(".main_slider_wrap").offset().top - 30;
@@ -731,6 +566,7 @@
 
         $(document).ready(function () {
             cookiedata_guide = document.cookie;
+            if (!document.getElementById('main_guide')) return; // 데모: 안내 레이어(#main_guide)는 주석 처리돼 있어 없음
             if (cookiedata_guide.indexOf("mg2=done") < 0) {
                 document.getElementById('main_guide').style.display = "block";
             } else {
@@ -759,16 +595,16 @@
 
         <div class="foot_info">
             <ul class="comp_menu">
-                <li><a href="">회사소개</a></li>
-                <li><a href="">이용약관</a></li>
-                <li><a href="">개인정보처리방침</a></li>
-                <li><a href="">사이트맵</a></li>
-                <li><a href="">공지사항</a></li>
+                <li><a href="../intro/cielpia_intro.html">회사소개</a></li>
+                <li><a href="javascript:;" onclick="return Mock.notInDemo('이용약관')">이용약관</a></li>
+                <li><a href="javascript:;" onclick="return Mock.notInDemo('개인정보처리방침')">개인정보처리방침</a></li>
+                <li><a href="javascript:;" onclick="return Mock.notInDemo('사이트맵')">사이트맵</a></li>
+                <li><a href="javascript:;" onclick="return Mock.notInDemo('공지사항')">공지사항</a></li>
             </ul>
             <div class="company_info">
                 <p>CIELPIA / Footer 사업자 주소란 / 사업자 번호 : 012-34-5678</p>
-                <p>대표 : 가나다 / 이메일 : sample@notreal.com
-                    <!--------------------------------------------------------------------------------------- / 연락처 : 010-2885-4441 -->
+                <p>대표 : 가나다 / 이메일 : sample@example.com
+                    <!--------------------------------------------------------------------------------------- / 연락처 : 010-0000-4441 -->
                 </p>
                 <p>통신판매업신고번호 : 제 0123-샘플-4567호 / 개인정보관리책임자 : 가나다</p>
                 <p class="copyright">Copyright ⓒ 씨엘피아 All Rights Reserved</p>

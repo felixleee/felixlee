@@ -1,0 +1,1122 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <title>여행상품 :: LJY Port :: 실제 운영되는 페이지가 아닙니다</title>
+    <link href="../css/default.css" rel="stylesheet" type="text/css" />
+    <link href="../css/common.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../css/sub_contents.css" rel="stylesheet" type="text/css" />
+    <link href="../css/product.css" rel="stylesheet" type="text/css" />
+    <link href="../css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../css/board.css" rel="stylesheet" type="text/css" />
+    <link href="../css/member.css" rel="stylesheet" type="text/css" />
+    <link href="../css/mypage.css" rel="stylesheet" type="text/css" />
+    <link href="../css/site.css" rel="stylesheet" type="text/css" />
+    <link href="../css/detail.css" rel="stylesheet" type="text/css" />
+    <link href="../css/addon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+    <link href="../css/visa.css" rel="stylesheet" type="text/css" />
+    <link href="../css/type.css" rel="stylesheet" type="text/css" />
+    <link href="../css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="../main/pick/lightpick.css" rel="stylesheet" type="text/css" />
+    <link href="../css/demo.css" rel="stylesheet" type="text/css" />
+
+    <!-- jquery -->
+    <script src="../js/jquery-1.9.1.js" type="text/javascript"></script>
+
+    <!-- jquery ui -->
+    <link type="text/css" rel="stylesheet" href="../js/jquery-ui/css/jquery-ui-1.10.4.custom.css" />
+    <script src="../js/jquery-ui/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
+
+    <!-- jquery Banner -->
+    <!-- <script src="../js/jquery.banner.js" type="text/javascript"></script> -->
+
+
+    <!-- bxslider -->
+    <script type="text/javascript" src="../js/jquery.bxslider.js"></script>
+    <link type="text/css" href="../css/jquery.bxslider.css" rel="stylesheet" />
+
+    <!-- jquery.bpopup.min.js -->
+    <!-- <script src="../js/jquery.bpopup.js" type="text/javascript"></script> -->
+
+    <!--swiper -->
+    <script type="text/javascript" src="../js/swiper.jquery.min.js"></script>
+    <link type="text/css" href="../js/swiper.css" rel="stylesheet" />
+
+    <!-- sidemenu  -->
+    <script type="text/javascript" src="../js/sidemenu.js"></script>
+    <link type="text/css" href="../js/sidemenu.css" rel="stylesheet" />
+
+
+    <!-- 데모: 가상 데이터(mock) — 상품·예약을 데이터에서 그리고, 예약은 TMS 로 넘어갑니다 -->
+    <script src="../../mock/mock-api.js"></script>
+    <script src="../../mock/shared/touroffice-tours.js"></script>
+    <script src="../../mock/shared/tms-reservations.js"></script>
+    <script src="../js/demo/common.js"></script>
+</head>
+
+<body>
+
+    <!-- 로딩바 -->
+    <!-- <div id="ajax_loading_bar" style="position:absolute;z-index:100;display:none;cursor:pointer;"
+        onclick="$(this).hide();">
+        <img src="../image/ajax-loader.gif" alt="로딩중입니다." />
+    </div> -->
+
+    <!-- ajax처리 레이어 -->
+    <div id="ajax_proc"></div>
+    <div id="sidemenu" style="display:none;">
+
+
+        <div class="sidemenu_wrap">
+            <div class="side_title">
+                <a href="#" class="sidemenu_close" data-role="sidemenu-close">
+                    <i class="xi-close" style="font-size:22px; color:#fff;"></i>
+                </a>
+                <h2>로그인하세요.</h2>
+            </div>
+            <div class="side_myp">
+                <ul>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('로그인');">로그인</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('회원가입');">회원가입</a></li>
+                </ul>
+            </div>
+            <div class="side_category">
+
+                <p class="menu ">국내여행<span><i class="xi-angle-down"></i></span></p>
+                <ul>
+                    <li><a href="../good/tour_list.html?b_uid_s=71">전체보기</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=71&amp;m_uid_s=7101">부산출발</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=71&amp;m_uid_s=7102">대구출발</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=71&amp;m_uid_s=7103">서울출발</a></li>
+                </ul>
+
+                <!--<p class="one menu ">
+					<a href="../good/tour_list.html?b_uid_s=70">해외여행</a>
+				</p>-->
+                <p class="menu ">해외여행<span><i class="xi-angle-down"></i></span></p>
+                <ul>
+                    <li><a href="../good/tour_list.html?b_uid_s=70">전체보기</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7001">일본</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7002">중국, 홍콩, 마카오, 대만</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7003">동남아</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7004">서유럽</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7005">미국캐마나</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7006">기타및특수지역</a></li>
+                </ul>
+
+                <!--<p class="one menu ">
+					<a href="../good/tour_list.html?b_uid_s=86">섬여행</a>
+				</p>-->
+                <p class="menu ">섬여행<span><i class="xi-angle-down"></i></span></p>
+                <ul>
+                    <li><a href="../good/tour_list.html?b_uid_s=86">전체보기</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=86&amp;m_uid_s=8601">홍도</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=86&amp;m_uid_s=8602">울릉도</a></li>
+                </ul>
+
+                <!--<p class="one menu ">
+					<a href="../good/tour_list.html?b_uid_s=2">데이투어</a>
+				</p>-->
+                <p class="menu ">데이투어<span><i class="xi-angle-down"></i></span></p>
+                <ul>
+                    <li><a href="../good/tour_list.html?b_uid_s=2">전체보기</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=2&amp;m_uid_s=201">지상투어</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=2&amp;m_uid_s=202">차량투어</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=2&amp;m_uid_s=203">골프투어</a></li>
+                </ul>
+
+                <!--<p class="one menu ">
+					<a href="../good/tour_list.html?b_uid_s=108">패스/티켓</a>
+				</p>-->
+                <p class="menu ">패스/티켓<span><i class="xi-angle-down"></i></span></p>
+                <ul>
+                    <li><a href="../good/tour_list.html?b_uid_s=108">전체보기</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=108&amp;m_uid_s=10801">뮤지컬</a></li>
+                </ul>
+
+                <!--<p class="one menu ">
+					<a href="../hotel/hotel_list.html?b_uid_s=69">호텔/리조트</a>
+				</p>-->
+                <p class="menu ">호텔/리조트<span><i class="xi-angle-down"></i></span></p>
+                <ul>
+                    <li><a href="../hotel/hotel_list.html?b_uid_s=69">전체보기</a></li>
+
+                    <li><a href="../hotel/hotel_list.html?b_uid_s=69&amp;m_uid_s=6901">국내호텔</a></li>
+
+                    <li><a href="../hotel/hotel_list.html?b_uid_s=69&amp;m_uid_s=6902">해외호텔</a></li>
+                </ul>
+
+                <!--<p class="one menu ">
+					<a href="../good/tour_list.html?b_uid_s=109">픽업/샌딩</a>
+				</p>-->
+                <p class="menu ">픽업/샌딩<span><i class="xi-angle-down"></i></span></p>
+                <ul>
+                    <li><a href="../good/tour_list.html?b_uid_s=109">전체보기</a></li>
+
+                    <li><a href="../good/tour_list.html?b_uid_s=109&amp;m_uid_s=10901">인천국제공항</a></li>
+                </ul>
+
+
+
+                <p class="menu">커뮤니티<span><i class="xi-angle-down"></i></span></p>
+                <ul>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('공지사항');">공지사항</a></li>
+                    <li><a href="../site/contact.html">질문과 답변</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('여행후기');">여행후기</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('뉴스');">뉴스</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('자주묻는질문');">자주묻는질문</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('갤러리');">갤러리</a></li>
+                </ul>
+                <p class="menu">회사소개<span><i class="xi-angle-down"></i></span></p>
+                <ul>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('회사소개');">회사소개</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('오시는길');">오시는길</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('해외여행약관');">해외여행약관</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('국내여행표준약관');">국내여행표준약관</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('해외여행보험약관');">해외여행보험약관</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('개인정보취급방침');">개인정보취급방침</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('이용약관');">이용약관</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="kakao_wrap">
+            <a href="javascript:;" onclick="return Mock.notInDemo('카톡 상담');">
+                <i class="xi-kakaotalk"></i><span><strong>카톡</strong>으로 <strong>상담하기</strong></span> </a>
+        </div>
+    </div>
+
+    <!-- wrap_bg -->
+    <div id="wrap_bg" style="display:none;" data-role="sidemenu-close"></div>
+    <!-- /wrap_bg -->
+
+
+    <!-- 최상단 배너 -->
+    <div id="top_banner"></div>
+
+
+    <!-- wrap -->
+    <div id="wrap">
+        <dl id="skip_navi">
+            <dt>
+                <strong class="title">바로가기 메뉴</strong>
+            </dt>
+            <dd>
+                <a href="#container">본문내용 바로가기</a>
+            </dd>
+            <dd>
+                <a href="#gnb">메인메뉴 바로가기</a>
+            </dd>
+            <dd>
+                <a href="#snb">서브메뉴 바로가기</a>
+            </dd>
+        </dl>
+
+
+        <div id="side_Menu" class="sidebar">
+            <ul class="handle">
+                <li class="hastip opener" title="퀵메뉴"><i class="xi-arrow-left"></i></li>
+                <li class="hastip" title="위로" onclick="goTop();return false;"><i class="xi-angle-up-min"></i></li>
+                <li class="hastip toBottom" title="아래로"><i class="xi-angle-down-min"></i></li>
+            </ul>
+            <div class="inner">
+                <div class="banner">
+                    <ul class="bxslider2">
+                        <li><a nohref=""><img src="../FileData/good_thum/20180416_E67836499CDBC838.jpg" alt="테스트"></a>
+                        </li>
+                        <li><a nohref=""><img src="../FileData/good_thum/20180906_2E3A805364876CDF.jpg" alt="배너2"></a>
+                        </li>
+                        <li><a nohref=""><img src="../FileData/good_thum/20180910_16F67F29B4493A87.jpg" alt="배너1"></a>
+                        </li>
+                    </ul>
+                    <div class="pager_02"></div>
+                </div>
+                <div class="cs_menu">
+                    <p class="tit">고객센터</p>
+                    <ul>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('공지사항');">공지사항</a></li>
+                        <li><a href="../site/contact.html">질문과 답변</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('여행후기');">여행후기</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('뉴스');">뉴스</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('자주묻는질문');">자주묻는질문</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('갤러리');">갤러리</a></li>
+                    </ul>
+                </div>
+                <div class="today_list_wrap" id="quick_good_list" style="text-align:center;">
+
+                    <dl id="taday_list">
+                        <dt>오늘본상품</dt>
+                        <dd>
+                            <ul>
+                                        <li><a href="../hotel/hotel_detail.html?id=1021"><img src="../FileData/good_thum/20221206_11EA4729E248F8FC.jpg" width="64" height="53" title="제주 더 원"></a></li>
+                                            <li><a href="../good/tour_detail.html?id=1005"><img src="../FileData/good_thum/20180416_E67836499CDBC838.jpg" width="64" height="53" title="[선착순+좌석확보](싱글팩)스페인 일주 9일-QR"></a></li>
+                                        </ul>
+                            <img src="../image/common/btn_today_pre.gif" alt="이전상품" style="cursor:pointer;" onclick="get_today_good('prev', '2', '0');">&nbsp;<img src="../image/common/btn_today_next.gif" alt="다음상품" style="cursor:pointer;" onclick="get_today_good('next', '2', '0');"> </dd>
+                    </dl></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+
+                $('.bxslider2').bxSlider({
+                    mode: 'vertical',
+                    auto: true,
+                    autoStart: true,
+                    controls: false,
+                    autoHover: true,
+                    pagerSelector: '.pager_02'
+                });
+
+
+                $(function () {
+                    var duration = 300;
+                    var $sidebar = $('.sidebar');
+                    var $opener = $sidebar.find('.opener').on('click', function () {
+                        $sidebar.toggleClass('open');
+                        if ($sidebar.hasClass('open')) {
+                            $sidebar.stop(true).animate({ right: '0' }, duration, 'easeInBack');
+                            $opener.find('i').css('transform', 'rotate(180deg)');
+                        } else {
+                            $sidebar.stop(true).animate({ right: '-236' }, duration, 'easeOutBack');
+                            $opener.find('i').css('transform', 'none');
+                        };
+                    });
+                });
+
+                $(".toBottom").click(function () {
+                    $('html').animate({ scrollTop: ($('.footer').offset().top) }, 600);
+                });
+
+            });
+        </script>
+
+        <!-- header -->
+        <div id="header">
+            <!-- 모바일 좌우측 사이드 메뉴  -->
+            <div class="head_top">
+                <div class="allmenu">
+                    <a href="#" class="ico_head menuall" data-role="sidemenu-toggle" data-direction="left"
+                        data-id="sidemenu"> <i class="xi-bars"></i> </a>
+                </div>
+                <div class="mb_search_btn">
+                    <a nohref=""><i class="xi-magnifier"></i></a>
+                </div>
+
+            </div>
+            <!-- top_wrap -->
+            <!-- /top_wrap -->
+            <!-- logo_wrap -->
+            <!-- 폼 -->
+            <form class="logo_zone_c" name="top_search_frm" method="get" action="../good/tour_list.html">
+                <div class="logo_wrap">
+                    <h1><a href="../main/pure_main.html"><img src="../FileData/logo/logo.png" alt="투어오피스" /></a></h1>
+                </div>
+                <!--  -->
+
+                <ul class="top_right">
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('로그인');">로그인</a></li>
+                    <li><a href="../mypage/res_check.html">예약조회</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('회원가입');">회원가입</a></li>
+                    <li class="last"><a href="../site/contact.html">고객센터</a></li>
+
+                </ul>
+
+            </form>
+            <!-- /폼 -->
+            <!-- /logo_wrap -->
+            <!-- gnb -->
+            <div id="gnb_c">
+                <div class="gnb_wrap">
+                    <a href="../main/pure_main.html" class="gnb_go_home"><i class="xi-home"></i></a>
+                    <span>
+                        <a href="../good/tour_list.html?b_uid_s=71">국내여행</a>
+                        <ul class="snb2">
+                            <li><a href="../good/tour_list.html?b_uid_s=71&amp;m_uid_s=7101">부산출발</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=71&amp;m_uid_s=7102">대구출발</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=71&amp;m_uid_s=7103">서울출발</a></li>
+                        </ul>
+                    </span>
+                    <span>
+                        <a href="../good/tour_list.html?b_uid_s=70">해외여행</a>
+                        <ul class="snb2">
+                            <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7001">일본</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7002">중국, 홍콩, 마카오, 대만</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7003">동남아</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7004">서유럽</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7005">미국캐마나</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=70&amp;m_uid_s=7006">기타및특수지역</a></li>
+                        </ul>
+                    </span>
+                    <span>
+                        <a href="../good/tour_list.html?b_uid_s=86">섬여행</a>
+                        <ul class="snb2">
+                            <li><a href="../good/tour_list.html?b_uid_s=86&amp;m_uid_s=8601">홍도</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=86&amp;m_uid_s=8602">울릉도</a></li>
+                        </ul>
+                    </span>
+                    <span>
+                        <a href="../good/tour_list.html?b_uid_s=2">데이투어</a>
+                        <ul class="snb2">
+                            <li><a href="../good/tour_list.html?b_uid_s=2&amp;m_uid_s=201">지상투어</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=2&amp;m_uid_s=202">차량투어</a></li>
+                            <li><a href="../good/tour_list.html?b_uid_s=2&amp;m_uid_s=203">골프투어</a></li>
+                        </ul>
+                    </span>
+                    <span>
+                        <a href="../good/tour_list.html?b_uid_s=108">패스/티켓</a>
+                        <ul class="snb2">
+                            <li><a href="../good/tour_list.html?b_uid_s=108&amp;m_uid_s=10801">뮤지컬</a></li>
+                        </ul>
+                    </span>
+                    <span>
+                        <a href="../hotel/hotel_list.html?b_uid_s=69">호텔/리조트</a>
+                        <ul class="snb2">
+                            <li><a href="../hotel/hotel_list.html?b_uid_s=69&amp;m_uid_s=6901">국내호텔</a></li>
+                            <li><a href="../hotel/hotel_list.html?b_uid_s=69&amp;m_uid_s=6902">해외호텔</a></li>
+                        </ul>
+                    </span>
+                    <span>
+                        <a href="../good/tour_list.html?b_uid_s=109">픽업/샌딩</a>
+                        <ul class="snb2">
+                            <li><a href="../good/tour_list.html?b_uid_s=109&amp;m_uid_s=10901">인천국제공항</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <!-- hotel_search_area -->
+
+                <div class="hotel_search_area">
+                    <div class="for_mobile_bg">
+                        <div class="tabs_menu">
+                            <ul class="tabsearch">
+                                <li class="on"><input type="radio" name="searchTabRadio" value="1"
+                                        id="searchTabRadio2" /><label for="searchTabRadio2">여행</label></li>
+                                <li><input type="radio" name="searchTabRadio" value="0" id="searchTabRadio1"
+                                        checked /><label for="searchTabRadio1">호텔</label></li>
+
+                            </ul>
+                        </div>
+                        <div class="sch_closeBtn"><span><i class="xi-close"></i></span></div>
+                        <div class="for_mobile_close"><span><i class="xi-close"></i></span></div>
+                        <div class="search_box">
+                            <div class="tit_for_mobile">
+                                <h3>호텔 검색하기</h3>
+                                <div class="for_mobile_close">
+                                    <span><i class="xi-close"></i></span>
+                                </div>
+                            </div>
+                            <div class="area">
+                                <div class="tab_content">
+                                    <div class="search_form">
+                                        <ul id="hotel_search" class="search_selected accommo_search">
+                                            <!-- 검색 창 -->
+                                            <form id="searchHotelForm" method="get" action="../hotel/hotel_list.html">
+                                                <input type="hidden" name="kind" value="h">
+                                                <input type="hidden" id="adultNum" name="adultNum" value="2">
+                                                <input type="hidden" id="childNum" name="childNum" value="0">
+                                                <input type="hidden" id="roomNum" name="roomNum" value="1">
+                                                <input type="hidden" id="hseq" name="hseq" value="">
+                                                <input type="hidden" name="checkIn" value="">
+                                                <input type="hidden" name="checkOut" value="">
+                                                <input type="hidden" name="areab_cd_s" value="">
+                                                <input type="hidden" name="areaa_cd_s" value="">
+                                                <li class="area_form">
+                                                    <input type="text" name="location_input" value=""
+                                                        placeholder="어디로 가실건가요?" style="cursor:pointer;"
+                                                        id="top_hotel_location_input" readonly />
+
+                                                    <div class="location_wrap hotel for_top" style="display:none;">
+                                                        <div class="loca_upper">
+                                                            <ul class="nationCategory">
+                                                                <li data-index="0" data-target="hotel_search"
+                                                                    class="on mr20">해외</li>
+                                                            </ul>
+                                                            <p class="location_close"><i class="xi-close xi-2x"
+                                                                    style="cursor:pointer;"></i></p>
+                                                        </div>
+                                                        <!-- 해외  -->
+                                                        <div class="loca_inner overseas">
+                                                            <div class="left_scrolling">
+                                                                <!-- area A code ajax -->
+                                                            </div>
+                                                            <div class="scrolling_area">
+                                                                <!-- area B code ajax -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- //해외  -->
+                                                    </div>
+                                                </li>
+
+                                                <li class="chkin">
+                                                    <input name="checkInOut" id="checkinout_ok"
+                                                        placeholder="체크인 - 체크아웃 선택" class="search_cal" type="text"
+                                                        value=" ~ " style="cursor:pointer;" readonly="" required>
+                                                </li>
+
+                                                <li class="inwon_area">
+                                                    <input class="peoplecheck personNumCheck" type="text"
+                                                        name="hotel_peoplecheck" value="성인 2명 / 소아 0명"
+                                                        style="cursor:pointer;" readonly="">
+                                                    <div class="personNumArea">
+                                                        <ul class="sel">
+                                                            <li>
+                                                                <span class="num">성인 <strong class="adultNum"
+                                                                        value="2">2</strong>명</span>
+                                                                <div class="set-btn">
+                                                                    <span class="minus"
+                                                                        onclick="person_set('adult','minus','searchHotelForm')"><i
+                                                                            class="xi-minus-circle"></i></span>
+                                                                    <span class="plus"
+                                                                        onclick="person_set('adult','plus','searchHotelForm')"><i
+                                                                            class="xi-plus-circle"></i></span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <span class="num">소아 <strong class="childNum"
+                                                                        value="0">0</strong>명</span>
+                                                                <div class="set-btn">
+                                                                    <span class="minus"
+                                                                        onclick="person_set('child','minus','searchHotelForm')"><i
+                                                                            class="xi-minus-circle"></i></span>
+                                                                    <span class="plus"
+                                                                        onclick="person_set('child','plus','searchHotelForm')"><i
+                                                                            class="xi-plus-circle"></i></span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="room_area ml15">
+                                                    <input class="roomcheck roomNumCheck" type="text"
+                                                        name="hotel_roomcheck" value="객실 1" style="cursor:pointer;"
+                                                        readonly="">
+                                                    <div class="roomNumArea">
+                                                        <ul class="sel">
+                                                            <li>
+                                                                <span class="num">객실<strong
+                                                                        class="roomNum">1</strong></span>
+                                                                <div class="set-btn">
+                                                                    <span class="minus"
+                                                                        onclick="person_set('room','minus','searchHotelForm')"><i
+                                                                            class="xi-minus-circle"></i></span>
+                                                                    <span class="plus"
+                                                                        onclick="person_set('room','plus','searchHotelForm')"><i
+                                                                            class="xi-plus-circle"></i></span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </form>
+                                        </ul>
+                                        <ul id="tour_search" class="search_selected">
+                                            <form name="searchTourForm" id="searchTourForm" method="get" action="../good/tour_list.html">
+                                                <input type="hidden" name="kind" value="t">
+                                                <input type="hidden" name="areaa_cd_s" value="">
+                                                <input type="hidden" name="areab_cd_s" value="">
+                                                <li class="area_form">
+                                                    <input type="text" name="location_input" value=""
+                                                        placeholder="어디로 가실건가요?" id="top_tour_location_input"
+                                                        style="cursor:pointer;" readonly />
+
+                                                    <div class="location_wrap tour for_top" style="display:none;">
+                                                        <div class="loca_upper">
+                                                            <ul class="nationCategory">
+                                                                <li data-index="0" class="on mr20">해외</li>
+                                                            </ul>
+                                                            <p class="location_close"><i class="xi-close xi-2x"
+                                                                    style="cursor:pointer;"></i></p>
+                                                        </div>
+                                                        <!-- 해외  -->
+                                                        <div class="loca_inner overseas">
+                                                            <div class="left_scrolling">
+                                                                <!-- area A code ajax -->
+                                                            </div>
+                                                            <div class="scrolling_area">
+                                                                <!-- area A code ajax -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- //해외  -->
+                                                    </div>
+                                                </li>
+                                                <li class="chkin">
+                                                    <input name="departDate" id="departDate" placeholder="출발일 선택"
+                                                        class="search_cal" type="text" value="" style="cursor:pointer;"
+                                                        readonly="" required>
+                                                </li>
+                                            </form>
+                                        </ul>
+                                        <li class="search_confirm">
+                                            <a href="javascript:;" class="book_btn for_Hotel btnRes" id="topSearchBtn"
+                                                data-kind="h"><i class="xi-search"></i>&nbsp;검색<i
+                                                    class="xi-angle-right"></i></a>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    var kind = "h";
+                    var cfHotel = "Y";
+                    var checkInStr = "";
+                    var checkOutStr = "";
+
+                    $(".tabsearch input[name='searchTabRadio']").on("click", function () {
+                        $(this).addClass("on").siblings().removeClass("on");
+                        $(".search_selected").hide();
+                        $('.location_wrap').hide();
+                        var index = Number($(this).val());
+                        switch (index) {
+                            case 0: // 호텔
+                                $("#hotel_search").show();
+                                $("#topSearchBtn").data("kind", "h");
+                                break;
+                            case 1: // 투어
+                                $("#tour_search").show();
+                                $("#topSearchBtn").data("kind", "t");
+                                break;
+                        }
+                    });
+
+                    if (kind == "t") {
+                        $(".tabsearch input[name='searchTabRadio']:eq(0)").trigger('click');
+                    } else {
+                        $(".tabsearch input[name='searchTabRadio']:eq(1)").trigger('click');
+                    }
+
+                    $('.personNumCheck').on('click', function () {
+                        $(this).siblings('.personNumArea').toggleClass('show');
+                        $(".location_wrap").hide();
+                    });
+
+                    $('.roomNumCheck').on('click', function () {
+                        $(this).siblings('.roomNumArea').toggleClass('show');
+                        $(".location_wrap").hide();
+                    });
+
+                    $(document).on("click", "p.location_close", function () {
+                        $('.location_wrap').hide();
+                    });
+
+                    $(document).on("click", ".search_cal", function () {
+                        $(".location_wrap").hide();
+                    });
+                </script>
+                <script src="../main/pick/moment-locale.min.js"></script>
+                <script src="../main/pick/lightpick.js"></script>
+                <script>
+
+                    var minDateFormat = moment().add(1, 'days').format('YYYY-MM-DD');
+                    var today = moment().format('YYYY');
+                    var picker = new Lightpick({
+
+                        field: document.getElementById('checkinout_ok'),
+                        singleDate: false,
+                        tooltipNights: false,
+                        //lang:'ko',
+                        firstDay: 7,
+                        disabledDatesInRange: false,
+                        dropdowns: {
+                            years: {
+                                min: today,
+                                max: today,
+                            },
+                            months: true,
+                        },
+                        separator: ' ~ ',
+                        hoveringTooltip: false,
+                        selectForward: true,
+                        selectBackward: false,
+                        repick: false,
+                        minDate: minDateFormat,
+                        minDays: 2,
+                        format: 'YYYY-MM-DD',
+                        numberOfMonths: 2,
+                        numberOfColumns: 2,
+                        autoclose: true, //[son]검색폼도 같이 닫혀서 false 지정
+                        parentEl: "#hotel_search",
+                        onSelectStart: function (start) {
+                            var startStr = start.format('YYYY-MM-DD');
+                            $("#searchHotelForm input[name=checkIn]").val(startStr);
+                            checkInStr = startStr;
+                        },
+                        onSelectEnd: function (end) {
+                            var endStr = end.format('YYYY-MM-DD');
+                            $("#searchHotelForm input[name=checkOut]").val(endStr);
+                            checkOutStr = endStr;
+                        }
+
+                    });
+
+                    var minDateFormat = moment().add(1, 'days').format('YYYY-MM-DD');
+                    var today = moment().format('YYYY');
+                    var picker = new Lightpick({
+
+                        field: document.getElementById('departDate'),
+                        singleDate: true,
+                        tooltipNights: false,
+                        //lang:'ko',
+                        firstDay: 7,
+                        disabledDatesInRange: false,
+                        dropdowns: {
+                            years: {
+                                min: today,
+                                max: today,
+                            },
+                            months: true,
+                        },
+                        hoveringTooltip: false,
+                        selectForward: true,
+                        selectBackward: false,
+                        repick: false,
+                        minDate: minDateFormat,
+                        minDays: 2,
+                        format: 'YYYY-MM-DD',
+                        numberOfMonths: 1,
+                        numberOfColumns: 1,
+                        autoclose: true,
+                        parentEl: "#tour_search",
+                    });
+
+                    $('#topSearchBtn').click(function () {
+                        var kind = $(this).data("kind");
+                        if (kind == "h") {
+                            var bCode = $("#searchHotelForm input[name=areab_cd_s]").val();
+                            var checkIn = $("#searchHotelForm input[name=checkIn]").val();
+                            if (!bCode && !checkIn) {
+                                alert("숙박지역 이나  체크인 날짜를 선택하세요.");
+                                return false;
+                            }
+                            $("#searchHotelForm input[name=checkInOut]").attr('disabled', 'disabled');
+                            $("#searchHotelForm").submit();
+                        } else {
+                            var departDate = $("#searchTourForm input[name=departDate]").val();
+                            var bCode = $("#searchTourForm input[name=areab_cd_s]").val();
+                            if (!departDate && !bCode) {
+                                alert("여행 지역이나  출발 일자를 선택하세요.");
+                                return false;
+                            }
+                            $("#searchTourForm").submit();
+                        }
+                    });
+                    $(document).on("click", "input[name='location_input']", function () {
+                        $(this).siblings('.location_wrap').show();
+                        var overseaCnt = "6";
+                        var target = $(this).closest('ul').attr('id');
+                        (overseaCnt > 0) ? areaKind = "oversea" : areaKind = "domestic";
+                        getAreaA(areaKind, target);
+                    });
+
+                    function getAreaA(areaKind, target) {
+                        var areaCode = "a";
+                        var paramLink = "areaCode=" + areaCode + "&areaKind=" + areaKind + "&target=" + target;
+                        // 데모: /include/search_area_ajax.html 대신 가상 데이터로 지역 목록을 그림 (js/demo/common.js)
+                        ToDemo.renderAreaA(areaKind, target);
+                    }
+
+                    function getAreaB(aCode, areaKind, target) {
+                        // 데모: 선택한 지역의 도시 목록을 가상 데이터로 그림
+                        ToDemo.renderAreaB(aCode, areaKind, target);
+                    }
+
+                    function setArea(aCode, bCode, bCodeName, areaKind, target) {
+                        $("#" + target + " .mainCate li").removeClass("on").filter("[data-area='" + aCode + "']").addClass("on");
+                        var area = "b";
+                        var formId = $("#" + target).find('form').attr("id");
+                        $("#" + formId + " input[name='areaa_cd_s']").val(aCode);
+                        $("#" + formId + " input[name='areab_cd_s']").val(bCode);
+                        $("#" + formId + " input[name='location_input']").val(bCodeName);
+                        $('.location_wrap').hide();
+                    }
+                    $(document).on("click", ".nationCategory li", function () {
+                        $(this).addClass("on").siblings().removeClass("on");
+                        var areaKind = "";
+                        var target = $(this).closest("form").parent('ul').attr('id');
+
+                        switch ($(this).data("index")) {
+                            case 0: // 해외.
+                                areaKind = "oversea";
+                                break;
+                            case 1: // 국내
+                                areaKind = "domestic";
+                                break;
+                        }
+                        getAreaA(areaKind, target);
+                    });
+
+                    $('#top_hotel_location_input').on('click', function () {
+                        $(this).siblings('.location_wrap').show();
+                    });
+
+                    $('#top_tour_location_input').on('click', function () {
+                        $(this).siblings('.location_wrap').show();
+                    });
+
+                </script>
+                <!-- hotel_search_area -->
+            </div>
+            <!-- /gnb -->
+
+            <div class="hd_search_wrap">
+                <form name="sfrm" id="top_sfrm" action="../good/tour_list.html">
+                    <input class="search_input" type="text" title="" name="g_title_s" value=""
+                        placeholder="나라, 도시, 상품명으로 검색">
+                    <a href="javascript:$('#top_sfrm').submit();" class="search_btn"><i class="xi-magnifier"></i></a>
+                </form>
+            </div>
+        </div>
+        <!-- /header -->
+
+
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $(".inwon_area .child .minus").css('color', '#d2d2d2');
+                $(".room_area .room .minus").css('color', '#d2d2d2');
+
+                $('.gnb_opener i').on("click", function () {
+                    if ($(this).hasClass('xi-close')) {
+                        $(this).removeClass("xi-close");
+                        $("#gnb_d").stop(true, true).animate({
+                            "height": "0"
+                        }, 400, 'easeOutExpo');
+                    } else {
+                        $(this).addClass("xi-close");
+                        $("#gnb_d").stop(true, true).animate({
+                            "height": "740px"
+                        }, 400, 'easeOutExpo');
+                    }
+                });
+
+                $("#top_nav > li").hover(function () {
+                    $(this).find("ul").slideDown('fast');
+                }, function () {
+                    $(this).find("ul").slideUp('fast');
+                });
+
+            });
+
+            $(".gnb_wrap > span").hover(function () {
+                $(this).find("ul.snb2").stop().fadeToggle(300);
+            });
+
+
+            // 전체메뉴 보기
+            // $('.simple-ajax-popup-align-top').magnificPopup({
+            //     type: 'ajax',
+            //     alignTop: true,
+            //     overflowY: 'hidden',
+            //     fixedContentPos: false,
+            //     mainClass: 'mfp-fade'
+            // });
+
+            // 타겟영역을 제외하고 클릭했을 시 팝업 숨김처리.
+            $('body').on('click', function (e) {
+                var $tgPoint = $(e.target);
+                var $popCallBtn = $tgPoint.hasClass('personNumCheck');
+                var $popArea = $tgPoint.is('.personNumArea *');
+                if (!$popCallBtn && !$popArea) {
+                    $('.personNumArea').removeClass('show');
+                }
+            });
+
+            // GNB 고정
+            var gnb_c = $("#gnb_c").offset();
+            $(window).scroll(function () {
+                var docScrollY = $(document).scrollTop()
+                var barThis = $("#gnb_c")
+
+                if (docScrollY > gnb_c.top) {
+                    barThis.addClass("_fix");
+                    $(".gnb_wrap").addClass('move');
+                    $(".gnb_wrap span a").addClass('move');
+                    $(".gnb_wrap a.gnb_go_home").addClass('move');
+                } else {
+                    barThis.removeClass("_fix");
+                    $(".gnb_wrap a.gnb_go_home").removeClass('move');
+                    $(".gnb_wrap span a").delay(300).removeClass('move');
+                    $(".gnb_wrap").delay(300).removeClass('move');
+                }
+            });
+
+            // Drop down2
+            $(".item-menu").mouseover(function () {
+                $('.menu_box').addClass('none');
+                $(this).find('.menu_box').removeClass('none');
+            });
+            $(".menu_box").mouseleave(function () {
+                $('.menu_box').addClass('none');
+                $(".item-menu").mouseleave(function () {
+                    $('.menu_box').addClass('none');
+                });
+            });
+
+            $(document).on("click", ".side_category > p", function () {
+                if (!$(this).hasClass('one')) {
+                    if ($(this).next().css("display") == "none") {
+                        $(this).next().slideDown();
+                        $(this).children("span").html("<i class=\"xi-angle-up\"></i>");
+                    } else {
+                        $(this).next().slideUp();
+                        $(this).children("span").html("<i class=\"xi-angle-down\"></i>");
+                    }
+                }
+            });
+
+            //검색하기 열고 닫고 버튼 (PC&모바일)
+            $('.search-open').on('click', function () {
+                $('.hotel_search_area').fadeToggle();
+                //$('.transparent_bg').fadeToggle();
+                $('.hotel_search_area').toggleClass('search-on');
+            });
+
+            $('.mb_search_btn').on('click', function () {
+                $('.hotel_search_area').fadeToggle();
+                //$('.transparent_bg').fadeToggle();
+            });
+
+            $('.for_mobile_close').on('click', function () {
+                $('.hotel_search_area').fadeOut();
+                //$('.transparent_bg').css('display','none');
+            });
+
+            $('.sch_closeBtn').on('click', function () {
+                $('.hotel_search_area').fadeOut();
+            });
+            //검색 끝	
+
+            // 타겟영역을 제외하고 클릭했을 시 팝업 숨김처리. PC에서만 필요함
+            if (document.body.clientWidth > 767) {
+                $('body').on('click', function (e) {
+                    var $tgPoint = $(e.target);
+
+                    var $popCallBtn = $tgPoint.hasClass('personNumCheck');
+                    var $popArea = $tgPoint.is('.personNumArea *');
+                    var $popRoomBtn = $tgPoint.hasClass('roomNumCheck');
+                    var $popRoom = $tgPoint.is('.roomNumArea *');
+
+                    if (!$popCallBtn && !$popArea) {
+                        $('.personNumArea').removeClass('show');
+                    }
+                    if (!$popRoomBtn && !$popRoom) {
+                        $('.roomNumArea').removeClass('show');
+                    }
+
+                    var $popMainCallBtn = $tgPoint.hasClass('main_personNumCheck');
+                    var $popMainArea = $tgPoint.is('.main_personNumArea *');
+                    var $popMainRoomBtn = $tgPoint.hasClass('main_roomNumCheck');
+                    var $popMainRoom = $tgPoint.is('.main_roomNumArea *');
+
+                    if (!$popMainCallBtn && !$popMainArea) {
+                        $('.main_personNumArea').removeClass('show');
+                    }
+                    if (!$popMainRoomBtn && !$popMainRoom) {
+                        $('.main_roomNumArea').removeClass('show');
+                    }
+
+                    var $searchBarBtn = $tgPoint.hasClass('search-open');
+                    var $searchIcon = $tgPoint.is('.search-open *');
+                    var $searchArea = $tgPoint.is('.hotel_search_area *');
+                });
+            }
+
+            function person_set(type, sign, form) {
+                if (type == "child") {
+                    var max = 3;
+                    var min = 0;
+                } else {
+                    var max = 9;
+                    var min = 1;
+                }
+                var num = Number($("#" + form + " input[name=" + type + "Num]").val());
+                if (sign == 'plus') {
+                    num++;
+                    $("#" + form + " ." + type + " .minus").css('color', '#777777');
+                    if (num == max) $("#" + form + " ." + type + " .plus").css('color', '#d2d2d2');
+                    if (num > max) return;
+                } else {
+                    num--;
+                    $("#" + form + " ." + type + " .plus").css('color', '#777777');
+                    if (num == min) $("#" + form + " ." + type + " .minus").css('color', '#d2d2d2');
+                    if (num < min) return;
+                }
+
+                $("#" + form + " input[name=" + type + "Num]").val(num);
+                $("#" + form + " ." + type + "Num").text(num);
+                var str = '';
+                if (type == "room") {
+                    str = num + " 객실";
+                    $("#" + form + " .roomNumCheck").val(str);
+                } else {
+                    var adultNum = $("#" + form + " input[name=adultNum]").val();
+                    var childNum = $("#" + form + " input[name=childNum]").val();
+                    str = "성인 " + adultNum + "명 / " + "소아 " + childNum + "명 ";
+                    $("#" + form + " .personNumCheck").val(str);
+                }
+            }
+        </script>
+
+        <!-- container -->
+        <!-- 데모: 이 화면은 가상 데이터(mock)로 동작합니다. 헤더·푸터는 main/pure_main.html 과 같은 마크업입니다. -->
+        <div id="container" class="demo_sub">
+            <div class="demo_wrap" id="demo_list" data-kind="tour">
+                <div class="demo_loc" id="demo_loc"><a href="../main/pure_main.html"><i class="xi-home"></i> 홈</a><span>&gt;</span><strong>여행상품</strong></div>
+                <h2 class="demo_title" id="demo_title">여행상품</h2>
+                <ul class="demo_subtabs" id="demo_subtabs"></ul>
+                <form class="demo_filter" id="demo_filter" action="tour_list.html" method="get">
+                    <input type="hidden" name="b_uid_s" value="">
+                    <input type="hidden" name="m_uid_s" value="">
+                    <div class="demo_filter_row">
+                        <label>지역 <select name="areab_cd_s" id="f_area"><option value="">전체 지역</option></select></label>
+                        <label>출발월 <select name="month" id="f_month"><option value="">전체</option></select></label>
+                        <label>가격대 <select name="price_s" id="f_price">
+                            <option value="">전체</option>
+                            <option value="0-100000">10만원 미만</option>
+                            <option value="100000-500000">10만~50만원</option>
+                            <option value="500000-1000000">50만~100만원</option>
+                            <option value="1000000-">100만원 이상</option>
+                            <option value="ask">요금문의 상품</option>
+                        </select></label>
+                        <label class="demo_kw"><input type="text" name="g_title_s" id="f_kw" placeholder="나라, 도시, 상품명으로 검색" title="검색어"></label>
+                        <button type="submit" class="demo_btn"><i class="xi-search"></i> 검색</button>
+                    </div>
+                </form>
+                <div class="demo_list_head">
+                    <p>총 <strong id="demo_total">0</strong>개 상품</p>
+                    <select id="demo_sort" title="정렬">
+                        <option value="rec">추천순</option>
+                        <option value="price">낮은 가격순</option>
+                        <option value="-price">높은 가격순</option>
+                        <option value="dep">출발일 빠른순</option>
+                        <option value="title">상품명순</option>
+                    </select>
+                </div>
+                <ul class="demo_plist" id="demo_plist"></ul>
+                <div class="paging demo_paging" id="demo_paging"></div>
+            </div>
+        </div>
+        <!-- /container -->
+
+        <div class="footer">
+            <div class="sns">
+                <a href="#"><span><i class="xi-kakaostory"></i></span></a>
+                <a href="#"><span><i class="xi-instagram"></i></span></a>
+                <a href="#"><span><i class="xi-facebook"></i></span></a>
+            </div>
+            <div class="inner">
+                <div class="address">
+                    <h2><a href="../main/pure_main.html"><img src="../FileData/logo/logo_bottom.png" alt="로고" /></a></h2>
+                    <ul>
+                        <li>상호 : 투어오피스 / 대표 : 홍길동</li>
+                        <li>주소 :  </li>
+                        <li>사업자등록번호 : 123-45-67890</li>
+                        <li>관광사업등록증 : 국외여행업</li>
+                        <li>통신판매업신고 : 제 2022-000001 호</li>
+                        <li>대표전화 : 012-3456-7890</li>
+                        <li>팩스 : 012-3456-789</li>
+                        <li>개인정보관리책임자 : 투어오피스</li>
+                        <li>이메일 : <i class="xi-mail xi-fw"></i>sample@notreal.com</li>
+                    </ul>
+                </div>
+                <div class="footer_menu">
+                    <ul>
+                        <li class="comp_m">
+                            <ul>
+                                <h4>회사소개</h4>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('투어오피스 회사소개');">투어오피스 회사소개</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('찾아오시는 길');">찾아오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li class="comp_m">
+                            <ul>
+                                <h4>이용약관</h4>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('개인정보 취급방침');">개인정보 취급방침</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('이용약관');">이용약관</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('해외여행약관');">해외여행약관</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('해외여행보험약관');">해외여행보험약관</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>고객센터</h4>
+                            <p class="phone"><i class="xi-call"></i>012-3456-7890</p>
+                            <p class="work_time">
+                                <span>평일 09:00~18:00</span>
+                                <span>주말 09:00~18:00</span>
+                                <span class="last">일요일 및 공휴일은 휴무입니다.</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_2">
+                <div class="copyright">(c)2018 투어오피스. All Rights Reserved.</div>
+
+            </div>
+            <p class="go_top" onclick="goTop();return false;"><i class="xi-arrow-top"></i></p>
+        </div>
+
+
+        <!-- wrap -->
+    </div>
+    <!-- /wrap -->
+
+
+    <script type='text/javascript'>
+
+        function goTop() {
+            jQuery('html, body').animate({
+                scrollTop: 0
+            }, 500, 'swing');
+            return false;
+        }
+
+        if (document.body.clientWidth < 767) {
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                if (scroll >= 50) {
+                    $("p.go_top").fadeIn();
+                } else {
+                    $("p.go_top").fadeOut();
+                }
+            });
+        }
+
+    </script>
+
+
+
+
+    <script src="../js/demo/tour_list.js"></script>
+</body>
+
+</html>

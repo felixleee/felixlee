@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <title>여행상품예약 수정 :: Travel Management System(v39220105.3)</title>
+    <link type="text/css" rel="stylesheet" href="../css/all.css?v230227.1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
+    <link type="text/css" rel="stylesheet" href="../js/jquery-ui/css/jquery-ui-1.10.4.custom.css?v230227.1">
+    <link type="text/css" rel="stylesheet" href="../css/demo.css">
+
+    <!-- jquery -->
+    <script src="../js/jquery-1.9.1.js?v230227.1" type="text/javascript"></script>
+    <script src="../js/jquery-ui/jquery-ui-1.10.4.custom.js?v230227.1" type="text/javascript"></script>
+
+    <!-- 데모: 가상 데이터(mock) — 상세 창은 목록(good_res.html)에서 모달 iframe 으로 열림 (창 안에서는 DEMO 배지를 숨김) -->
+    <script>if (window.self !== window.top) document.documentElement.className += ' in_dialog';</script>
+    <script src="../../mock/mock-api.js"></script>
+    <script src="../../mock/shared/touroffice-tours.js"></script>
+    <script src="../../mock/shared/tms-reservations.js"></script>
+    <script src="../js/demo/tms-common.js"></script>
+</head>
+
+<body class="demo_edit_body">
+    <!-- 화면ID: resgood_goodresedit -->
+    <div class="iframe demo_edit" id="demo_edit">
+        <div class="top_bar">
+            <h4>여행상품예약 상세</h4>
+            <div class="info_list">
+                <ul>
+                    <li>예약번호<strong id="e_id">-</strong></li>
+                    <li>예약상태<strong id="e_status_now">-</strong></li>
+                    <li>접수일<strong id="e_created">-</strong></li>
+                </ul>
+            </div>
+            <div class="btn_fix">
+                <a href="javascript:;" class="Bbtn red" id="e_save">저장</a>
+                <a href="javascript:;" class="Bbtn" id="e_close">닫기</a>
+            </div>
+        </div>
+        <div class="demo_edit_body_in" id="e_body">
+            <p class="demo_state_box"><span class="demo_spinner"></span> 예약 정보를 불러오는 중…</p>
+        </div>
+    </div>
+
+    <script src="../js/demo/good_res_edit.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>고객센터 | 로뎀투어 - LJY Port :: 실제 운영되는 페이지가 아닙니다</title>
+    <link href="../css/all.css?ver=1.1" rel="stylesheet" type="text/css" />
+    <link href="../css/font/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
+    <!-- 데모(가상 데이터) 화면 스타일 -->
+    <link href="../css/demo.css" rel="stylesheet" type="text/css" />
+
+    <!-- jquery -->
+    <script src="../js/jquery-1.9.1.js" type="text/javascript"></script>
+</head>
+
+<!-- 데모 화면: 헤더·푸터는 main/pure_main.html 마크업을 그대로 복사 (file:// 에서도 동작하도록 include 없이) -->
+<body class="rd-page" data-gnb="고객센터">
+
+    <!-- ajax처리 레이어 -->
+    <div id="ajax_proc"></div>
+
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- skip_navi -->
+        <dl id="skip_navi">
+            <dt><strong class="title">바로가기 메뉴</strong></dt>
+            <dd><a href="#container">본문내용 바로가기</a></dd>
+            <dd><a href="#gnb_re">메인메뉴 바로가기</a></dd>
+            <dd><a href="#container">서브메뉴 바로가기</a></dd>
+        </dl>
+        <!-- /skip_navi -->
+
+        <!--퀵메뉴 -->
+        <div id="divMenu" class="m_quick">
+            <dl id="quick">
+                <dt>
+                    <p>고객센터</p>
+                    <p>1688-9182</p>
+                </dt>
+                <dd>
+                    <ul class="btn_area_1">
+                        <li class="quick2"><a href="../cmm/index.html?BD_CD=NOTICE">고객센터</a></li>
+                        <li class="quick3"><a href="../cmm/index.html?BD_CD=REVIEW">여행후기</a></li>
+                        <li class="quick8"><a href="../cmm/inquiry_travel.html?BD_CD=QNA"><i class="xi-pencil-point"></i><br />단체문의</a></li>
+                    </ul>
+                    <ul class="btn_area_2">
+                        <li><a href="javascript:;" onclick="Mock.notInDemo('카카오톡 상담');return false;"><img src="../tmbi_image/kakao_circle.png" alt="" />카카오톡</a></li>
+                        <li><a href="javascript:;" onclick="Mock.notInDemo('네이버톡톡 상담');return false;"><img src="../tmbi_image/naver_talk.png" alt="" />네이버톡톡</a></li>
+                        <li><a href="../cmm/view.html?BD_CD=NOTICE&amp;id=5"><img src="../image/common/card.png" alt="" />무이자 할부</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <div class="today_list_wrap" id="quick_good_list" style="text-align:center;"></div>
+            <div class="top_go"><a href="#" onclick="goTop();return false;">
+                    <i class="xi-angle-up"></i><br />
+                    TOP
+                </a></div>
+        </div>
+        <!-- /퀵메뉴 -->
+
+
+        <script type="text/javascript">
+
+            function goTop() {
+                jQuery('html, body').animate({
+                    scrollTop: 0
+                }, 500, 'swing');
+                return false;
+            }
+        </script>
+        <!-- header -->
+        <div id="header">
+            <div class="top_banner">
+                <img src="../image/main/211105_top_banner.jpg" alt="">
+            </div>
+            <!-- top_wrap -->
+            <div class="top_wrap_b">
+                <!-- top_menu -->
+                <div class="top_menu_b">
+                    <ul class="top_left">
+                        <li><a href="../main/pure_main.html">홈</a></li>
+                        <li><a href="#"
+                                onclick="return RD.bookmark();">즐겨찾기</a>
+                        </li>
+                        <li><a class="simple-ajax-popup-align-top" href="javascript:;" onclick="Mock.notInDemo('전체메뉴보기');return false;">전체메뉴보기</a></li>
+                    </ul>
+                    <div class="top_center_txt">
+                        성지순례 패키지 1위 <span>'로뎀투어'</span>
+                    </div>
+                    <ul class="top_right">
+                        <li><a href="javascript:;" onclick="Mock.notInDemo('로그인');return false;">로그인</a></li>
+                        <li><a href="../good/reserve_check.html">예약조회</a></li>
+                        <li class="last"><a href="javascript:;" onclick="Mock.notInDemo('회원가입');return false;">회원가입</a></li>
+                        <li style="display:none;"><a href="javascript:;" onclick="Mock.notInDemo('마이페이지');return false;">마이페이지</a></li>
+
+
+                        <li style="display:none;" class="last"><a href="../cmm/index.html?BD_CD=NOTICE">공지사항</a></li>
+                    </ul>
+                </div>
+                <!-- /top_menu -->
+            </div>
+            <!-- /top_wrap -->
+            <style>
+            </style>
+            <!-- logo_wrap -->
+            <!-- 폼 -->
+            <form class="logo_zone_b" name="top_search_frm" method="get" action="../good/list.html">
+                <div class="logo_wrap">
+                    <h1 style="display: inline-block;"><a href="../main/pure_main.html"><img src="../FileData/logo_700x303.png"
+                                alt="로뎀투어" /></a></h1>
+                    <div class="top_search_wrap">
+                        <p class="top_search">
+                            <input id="" class="input_search" type="text"
+                                onblur="if(this.value==''){ this.className='input_search'; this.value='여행지를 입력하세요.'; }"
+                                onfocus="if (this.value == '여행지를 입력하세요.') {this.value = '';}" title="여행지를 입력하세요."
+                                size="25" name="g_title_s" value="여행지를 입력하세요.">
+                            <input class="btn_search" type="image" align="top" alt="검색"
+                                src="../image/main_b/btn_top_search.png">
+                        </p>
+                    </div>
+                    <!-- <div class="top_quick_menu">
+						<ul>
+							<li>
+								<a href="#" class="bookmark" onclick="{window.external.AddFavorite('http://www.rothemtour.co.kr','로뎀투어')}">
+									<i class="xi-star xi-x"></i>즐겨찾기
+								</a>
+							</li>
+							<li><a href="../cmm/index.html?BD_CD=REVIEW" class="review"><i class="xi-pen xi-x"></i>여행리뷰</a></li>
+							<li><a href="../cmm/inquiry_travel.html?BD_CD=QNA" class="alliance"><i class="xi-community xi-x"></i>단체문의</a></li>
+							<li><a href="http://pf.kakao.com/_sfGsd" target="_blank"><img src="../image/main/icon_kakaoplus.png" alt="카카오플러스"></a></li>
+						</ul>	
+					</div> -->
+
+
+                    <div class="t_top_quick_menu">
+                        <ul>
+                            <li>
+                                <a href="#" class="t_bookmark" onclick="return RD.bookmark();">
+                                    <img src="../image/main/icon1.png" alt="즐겨찾기">
+                                </a>
+                            </li>
+                            <li><a href="../cmm/index.html?BD_CD=REVIEW" class="t_review"><img src="../image/main/icon2.png" alt="여행후기"></a></li>
+                            <li><a href="../cmm/inquiry_travel.html?BD_CD=QNA" class="t_alliance"><img src="../image/main/icon3.png" alt="단체문의"></a></li>
+                            <li><a href="javascript:;" onclick="Mock.notInDemo('네이버 블로그');return false;" class="t_alliance"><img src="../image/main/icon5_new.png" alt="네이버블로그"></a></li>
+                            <li><a href="javascript:;" onclick="Mock.notInDemo('인스타그램');return false;" class="t_alliance"><img src="../image/main/icon6_new.png" alt="인스타그램"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+            <!-- /폼 -->
+            <!-- /logo_wrap -->
+            <!-- gnb -->
+            
+            <div id="gnb_re">
+                <div class="gnb_re_wrap">
+                    <ul class="menu">
+                        <li class="item-menu">
+                            <a href="../good/list.html?theme=exodus">출애굽</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="../good/list.html?theme=exodus&amp;course=isr-jor">이스라엘+요르단</a></li>
+                                    <li><a href="../good/list.html?theme=exodus&amp;course=egy-isr-jor">이집트+이스라엘+요르단</a></li>
+                                    <li><a href="../good/list.html?theme=exodus&amp;course=isr">이스라엘 일주</a></li>
+                                    <li><a href="../good/list.html?theme=exodus&amp;course=isr-jor-dxb">이스라엘+요르단+두바이</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../good/list.html?theme=paul">바울여정</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="../good/list.html?theme=paul&amp;course=tur-grc">튀르키예+그리스</a></li>
+                                    <li><a href="../good/list.html?theme=paul&amp;course=tur-grc-ita">튀르키예+그리스+로마</a></li>
+                                    <li><a href="../good/list.html?theme=paul&amp;course=tur">튀르키예 일주</a></li>
+                                    <li><a href="../good/list.html?theme=paul&amp;course=grc">그리스 일주</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../good/list.html?theme=reform">종교개혁지</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="../good/list.html?theme=reform&amp;course=reform5">종교개혁지 5국</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../good/list.html?theme=holyland">성지완전일주</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="../good/list.html?theme=holyland&amp;course=isr-jor-tur">이스라엘+요르단+튀르키예</a></li>
+                                    <li><a href="../good/list.html?theme=holyland&amp;course=isr-ita">이스라엘+이태리</a></li>
+                                    <li><a href="../good/list.html?theme=holyland&amp;course=isr-tur">이스라엘+튀르키예</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--	<li class="item-menu">
+							<a href="../cmm/index.html?BD_CD=GRP101">기획전</a>
+							<div class="menu_box none">
+								<ul>
+																			<li class=""><a href="../cmm/index.html?BD_CD=GRP101">2021 기획전</a></li>
+																	</ul>
+							</div>	
+					</li>	 -->
+                        <li class="item-menu">
+                            <a href="../cmm/index.html?BD_CD=NOTICE">고객센터</a>
+                            <div class="menu_box none">
+                                <ul>
+                                    <li><a href="../cmm/index.html?BD_CD=NOTICE">공지사항</a></li>
+
+                                    <li><a href="../cmm/index.html?BD_CD=REVIEW">여행후기</a></li>
+
+                                    <li><a href="../cmm/index.html?BD_CD=ONLINE">극동방송 랜선 성지순례</a></li>
+
+                                    <li><a href="../cmm/index.html?BD_CD=COLUMN">극동방송 성서의 땅 칼럼</a></li>
+
+                                    <li><a href="../cmm/index.html?BD_CD=PRESS">보도자료</a></li>
+
+                                    <li><a href="../cmm/index.html?BD_CD=FAQ">자주묻는질문</a></li>
+
+                                    <li><a href="../cmm/index.html?BD_CD=GRP101">갤러리</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $("#gnb span").first().addClass("start");
+            })
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // Drop down
+                $(".item-menu").mouseover(function () {
+                    $('.menu_box').addClass('none');
+                    $(this).find('.menu_box').removeClass('none');
+                });
+                $(".menu_box").mouseleave(function () {
+                    $('.menu_box').addClass('none');
+                });
+            });
+        </script>
+        <style>
+            .mfp-fade.mfp-bg {
+                opacity: 0;
+            }
+        </style>
+
+        <!-- container -->
+        <div id="container">
+            <div class="rd-sub rd-has-lnb">
+                <div class="rd-lnb">
+                    <h2><small>CUSTOMER CENTER</small>고객센터</h2>
+                    <ul id="rdLnb">
+                        <li data-bd="NOTICE"><a href="index.html?BD_CD=NOTICE">공지사항</a></li>
+                        <li data-bd="REVIEW"><a href="index.html?BD_CD=REVIEW">여행후기</a></li>
+                        <li data-bd="ONLINE"><a href="index.html?BD_CD=ONLINE">극동방송 랜선 성지순례</a></li>
+                        <li data-bd="COLUMN"><a href="index.html?BD_CD=COLUMN">극동방송 성서의 땅 칼럼</a></li>
+                        <li data-bd="PRESS"><a href="index.html?BD_CD=PRESS">보도자료</a></li>
+                        <li data-bd="FAQ"><a href="index.html?BD_CD=FAQ">자주묻는질문</a></li>
+                        <li data-bd="GRP101"><a href="index.html?BD_CD=GRP101">갤러리</a></li>
+                        <li data-bd="QNA"><a href="index.html?BD_CD=QNA">단체문의</a></li>
+                    </ul>
+                    <div class="rd-lnb-cs">
+                        <p>고객상담센터</p>
+                        <strong>0123-4567</strong>
+                        <p>평일 09:00~18:00 (주말 · 공휴일 휴무)</p>
+                        <a class="rd-btn orange sm" href="inquiry_travel.html?BD_CD=QNA"><i class="xi-pencil-point"></i> 단체 견적 문의</a>
+                    </div>
+                </div>
+                <div class="rd-content">
+                    <p class="rd-location"><a href="../main/pure_main.html"><img src="../image/common/ico_location_home.png" alt="" />홈</a><span class="sep">&gt;</span><a href="index.html?BD_CD=NOTICE">고객센터</a><span class="sep">&gt;</span><strong id="rdLocBoard">게시판</strong></p>
+                    <div class="rd-page-head">
+                        <h2 id="rdBoardTitle">게시판</h2>
+                        <p id="rdBoardDesc"></p>
+                    </div>
+                    <div class="rd-board-top">
+                        <p class="rd-total" id="rdTotal">&nbsp;</p>
+                        <form class="rd-board-search" id="rdSearch" action="index.html" method="get">
+                            <select name="sf" id="rdSf" title="검색 항목">
+                                <option value="title">제목</option>
+                                <option value="content">내용</option>
+                                <option value="name">작성자</option>
+                            </select>
+                            <input type="search" name="sw" id="rdSw" placeholder="검색어를 입력하세요" title="검색어" />
+                            <button type="submit" class="rd-btn">검색</button>
+                        </form>
+                    </div>
+                    <!-- 목록 (js/demo/board_list.js 가 BD_CD 에 맞춰 표 · 갤러리 · FAQ 로 그림) -->
+                    <div id="rdBoard"></div>
+                    <div id="rdPaging"></div>
+                    <div class="rd-board-btns" id="rdBoardBtns"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+
+        <!-- footer -->
+        <div id="footer_b">
+            <!-- gnb_footer -->
+            <div id="gnb_footer_b">
+                <ul>
+                    <li><a href="javascript:;" onclick="Mock.notInDemo('회사소개');return false;">회사소개</a></li>
+                    <li><a href="javascript:;" onclick="Mock.notInDemo('개인정보취급방침');return false;">개인정보취급방침</a></li>
+                    <li><a href="javascript:;" onclick="Mock.notInDemo('이용약관');return false;">이용약관</a></li>
+                    <li><a href="javascript:;" onclick="Mock.notInDemo('해외여행약관');return false;">해외여행약관</a></li>
+                    <li><a href="javascript:;" onclick="Mock.notInDemo('해외여행보험약관');return false;">해외여행보험약관</a></li>
+                    <li class="no_bg"><a href="../cmm/inquiry_travel.html?BD_CD=QNA">제휴안내</a></li>
+                </ul>
+            </div>
+            <!-- /gnb_footer -->
+            <!-- copyright_zone -->
+            <div class="copyright_zone_b">
+                <h2><a href="../main/pure_main.html"><img src="../FileData/logo_200x87.png" alt="로고" /></a></h2>
+                <!-- address -->
+                <ul class="address">
+                    <li>상호 : (주)로뎀투어네트워크</li>
+                    <li>대표이사 : 홍길동&nbsp;&nbsp;|&nbsp;&nbsp;사업자등록번호 : 012-34-56789 &nbsp;&nbsp;|&nbsp;&nbsp;관광사업등록증 :
+                        일반여행업&nbsp;&nbsp;|&nbsp;&nbsp;통신판매업신고 : 제 0123-샘플-4567호 &nbsp;<a
+                            href="javascript:;" onclick="Mock.notInDemo('사업자정보 확인');return false;"
+                            style="display: inline-block; padding: 1px; border: 1px solid #b6b7bc">사업자정보 확인</a>
+                    </li>
+                    <li><i style="vertical-align: middle; font-size: 16px;" class="xi-social-email"></i>E-mail :
+                        sample@notreal.com</li>
+                </ul>
+                <ul class="copyright">
+                    <li>본 홈페이지에 게시된 이메일 주소가 자동 수집되는 것을 거부하며 이를 위반시 정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.</li>
+                    <li>COPYRIGHT (C) <strong>(주)로뎀투어네트워크</strong>. ALL RIGHTS RESERVED.</li>
+                </ul>
+                <!-- /address -->
+            </div>
+            <!-- /copyright_zone -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /wrap -->
+
+    <!-- 데모: 가상 데이터 (mock/README.md) -->
+    <script src="../../mock/mock-api.js"></script>
+    <script src="../data/goods.js"></script>
+    <script src="../data/boards.js"></script>
+    <script src="../js/demo/common.js"></script>
+    <script src="../js/demo/board_list.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+@charset "utf-8";
+/*
+ * STX Engine 정비시스템 — 데모(가상 데이터) 동작에 필요한 추가 스타일
+ * 기존 admin_main.css / admin_new.css 의 색(#007bff)·여백·그림자를 그대로 따름
+ */
+
+/* ---------- 목록 공통 ---------- */
+.table tr.demo_state:hover {background: #fff !important;}
+.table tr.demo_state td {padding: 46px 10px; color: #8a8f98; text-align: center; font-size: 14px;}
+.table tr.demo_state.demo_error td {color: #d93025;}
+.demo_spinner {display: inline-block; width: 14px; height: 14px; margin-right: 8px; vertical-align: -2px; border: 2px solid #cfe2ff; border-top-color: #007bff; border-radius: 50%; animation: demo_spin .8s linear infinite;}
+@keyframes demo_spin {to {transform: rotate(360deg);}}
+
+.table tbody tr.demo_rowlink {cursor: pointer;}
+.table tbody tr.demo_hl, .table tbody tr.demo_hl:hover {background: #fff4cc; transition: background-color .6s;}
+.table th.demo_chkcol {width: 40px;}
+.table td a.demo_link {color: #007bff; font-weight: 500;}
+.table td a.demo_link:hover {color: #0056b3; text-decoration: underline; text-underline-offset: 2px;}
+.table td.demo_ellipsis {max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.table tr.demo_total td {font-weight: 500; color: #333; background: #f8fafc;}
+.table td input.search_cal.demo_cell_date {cursor: pointer; width: 160px;}
+
+.demo_count {font-size: 14px; color: #555; margin-top: 10px;}
+.demo_count strong {color: #007bff; font-weight: 500;}
+
+/* 진행 단계 배지 */
+.demo_stage {display: inline-block; min-width: 46px; padding: 3px 8px; border-radius: 999px; font-size: 12px; line-height: 1.4; color: #fff; background: #6c757d;}
+.demo_stage.s0 {background: #6c757d;}
+.demo_stage.s1 {background: #e8590c;}
+.demo_stage.s2 {background: #b7791f;}
+.demo_stage.s3 {background: #138496;}
+.demo_stage.s4 {background: #6f42c1;}
+.demo_stage.s5 {background: #28a745;}
+
+/* 입고 → 출고 단계 막대 */
+.demo_stepper {display: flex; margin: 4px 0; padding: 0; list-style: none; counter-reset: none;}
+.demo_stepper li {flex: 1; position: relative; text-align: center; font-size: 12px; color: #9aa0a6;}
+.demo_stepper li span {display: block; width: 22px; height: 22px; margin: 0 auto 4px; border-radius: 50%; background: #e9ecef; color: #9aa0a6; line-height: 22px; font-size: 11px; position: relative; z-index: 1;}
+.demo_stepper li:before {content: ""; position: absolute; top: 11px; left: -50%; width: 100%; height: 2px; background: #e9ecef;}
+.demo_stepper li:first-child:before {display: none;}
+.demo_stepper li.done, .demo_stepper li.now {color: #333;}
+.demo_stepper li.done span {background: #cfe2ff; color: #007bff;}
+.demo_stepper li.done:before, .demo_stepper li.now:before {background: #7ab6ff;}
+.demo_stepper li.now span {background: #007bff; color: #fff;}
+.demo_stepper li.now {font-weight: 500;}
+
+/* 표출 스위치 */
+.demo_switch {display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px; color: #555; user-select: none;}
+.demo_switch input {position: absolute; opacity: 0; width: 1px; height: 1px;}
+.demo_switch i {position: relative; width: 34px; height: 18px; border-radius: 999px; background: #c8ccd1; transition: background .2s;}
+.demo_switch i:after {content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.25); transition: left .2s;}
+.demo_switch input:checked + i {background: #007bff;}
+.demo_switch input:checked + i:after {left: 18px;}
+.demo_switch input:focus-visible + i {outline: 2px solid #93c5fd; outline-offset: 2px;}
+
+/* ---------- 버튼 상태 ---------- */
+.btn_area a.demo_busy {opacity: .6; pointer-events: none;}
+.btn_area a.gray {background: #6c757d;}
+.btn_area a.demo_excel {background: none; padding: 0 6px 0 0; vertical-align: middle;}
+
+/* ---------- 입력 ---------- */
+input.demo_invalid, select.demo_invalid, textarea.demo_invalid {border-color: #e53935 !important; background-color: #fff6f6 !important;}
+.table.form_table td.demo_req:after {content: " *"; color: #e53935;}
+/* 새로 넣은 select — default.css 의 화살표 이미지(ico_select.png)가 폴더에 없어서 기본 화살표를 씀 */
+main section article.search_wrap .option_area select, .table.form_table.input95 select, .layer_pop .register select {
+	background-image: none; -webkit-appearance: auto; -moz-appearance: auto; appearance: auto;
+	padding: 0 4px !important; height: 28px; border: 1px solid #cfcfd1; color: #555; box-sizing: border-box;
+}
+main section article.search_wrap .option_area select {width: 88px; min-width: 0;}
+.table.form_table.input95 select {width: 95%;}
+/* 검색 조건이 많은 화면 — 좁은 화면에서는 버튼이 다음 줄 오른쪽으로 */
+main section article.search_wrap.demo_search {flex-wrap: wrap; row-gap: 10px;}
+main section article.search_wrap.demo_search .option_area {flex-wrap: wrap; row-gap: 8px;}
+main section article.search_wrap .option_area span {white-space: nowrap;}
+main section article.search_wrap.demo_search .btn_area {margin-left: auto; white-space: nowrap;}
+.demo_hint {margin-top: 8px; font-size: 12px; color: #8a8f98;}
+.demo_readonly input[type=text][readonly], .demo_readonly textarea[readonly] {background-color: #fbfcfd; color: #444; cursor: default;}
+
+/* ---------- 팝업 ---------- */
+.layer_pop .inner.demo_pop_w640 {width: 640px; max-width: calc(100vw - 40px);}
+.layer_pop .inner.demo_pop_w760 {width: 760px; max-width: calc(100vw - 40px);}
+.layer_pop .inner {max-height: calc(100vh - 40px); overflow: auto;}
+.layer_pop .register .table td {color: #555;}
+.layer_pop .register .demo_gap {height: 10px;}
+.layer_pop .register input[type=text], .layer_pop .register select {width: 100%; box-sizing: border-box; height: 28px;}
+.layer_pop .register select {border: 1px solid #cfcfd1; padding: 0 6px; color: #555;}
+.layer_pop .register td.demo_label {width: 92px; white-space: nowrap;}
+.layer_pop .register td.demo_req:after {content: " *"; color: #e53935;}
+.layer_pop .register .demo_lead {color: #007bff;}
+.layer_pop .header h3 {font-size: 15px; font-weight: 500;}
+.demo_notice_body {white-space: pre-line; line-height: 1.75; min-height: 120px; color: #444; padding: 6px 2px;}
+.demo_ok {color: #1e7e34; font-weight: 500;}
+.demo_wait {color: #b26a00; font-weight: 500;}
+
+/* ---------- 메인 ---------- */
+.demo_sec_head {display: flex; align-items: flex-end; justify-content: space-between;}
+.demo_sec_head h3.section_tit, .demo_sec_head .btn_area {margin-bottom: 0;}
+.demo_tiles {display: flex; gap: 10px; margin: 20px 0 0;}
+.demo_tiles a {flex: 1; display: block; background: #fff; border-radius: 4px; box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%); padding: 14px 16px; color: #555; transition: box-shadow .2s, transform .2s;}
+.demo_tiles a:hover {box-shadow: 0 2px 10px rgb(0 123 255 / 18%), 0 1px 3px rgb(0 0 0 / 20%); transform: translateY(-1px);}
+.demo_tiles a strong {display: block; margin-top: 6px; font-size: 24px; font-weight: 500; color: #333;}
+.demo_tiles a strong small {font-size: 13px; color: #8a8f98; margin-left: 3px; font-weight: 400;}
+.demo_tiles a.demo_tile_total {background: #007bff; color: #e8f1ff;}
+.demo_tiles a.demo_tile_total strong, .demo_tiles a.demo_tile_total strong small {color: #fff;}
+
+/* ---------- 이력관리 상세 탭 ---------- */
+.demo_record_head {display: flex; align-items: center; justify-content: space-between; background: #fff; border-radius: 4px; box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%); padding: 12px 20px; margin-bottom: 14px;}
+.demo_record_head p {font-size: 15px; color: #333;}
+.demo_record_head p em.demo_sep {color: #8a8f98; margin: 0 6px; font-style: normal;}
+.demo_record_head p .demo_stage {margin-left: 8px; vertical-align: 2px;}
+.demo_record_head .btn_area {margin: 0;}
+.demo_tabs {display: flex; border-bottom: 2px solid #dfe3e8; margin-bottom: 4px;}
+.demo_tabs a {padding: 10px 22px; font-size: 15px; color: #666; margin-bottom: -2px; border-bottom: 2px solid transparent;}
+.demo_tabs a:hover {color: #007bff;}
+.demo_tabs a.on {color: #007bff; border-bottom-color: #007bff; font-weight: 500;}
+.demo_tab_panel {display: none; padding-top: 2px;}
+.demo_tab_panel.on {display: block;}
+.demo_tab_panel > h3.section_tit {display: none;}
+.demo_tab_panel > .table:first-of-type, .demo_tab_panel > ul.btn_area.white {margin-top: 16px;}
+ul.btn_area.white a.on {background: #0056b3; box-shadow: inset 0 0 0 2px #cfe2ff;}
+
+/* ---------- 소요율 차트 ---------- */
+.demo_chart_wrap {display: flex; gap: 20px;}
+.demo_chart_card {flex: 1; min-width: 0; background: #fff; border-radius: 4px; box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%); padding: 16px 18px 12px;}
+.demo_chart_tit {font-size: 15px; color: #333; margin-bottom: 10px; font-weight: 500;}
+.demo_chart_tit small {font-size: 12px; color: #8a8f98; font-weight: 400; margin-left: 6px;}
+.demo_chart_box {position: relative; height: 280px;}
+.table td.demo_short {color: #d93025; font-weight: 500;}
+.table tbody tr.demo_sel, .table tbody tr.demo_sel:hover {background: #e7f1ff;}
+.table thead th a.demo_th_link {color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;}
+
+/* ---------- 인쇄 ---------- */
+@media print {
+	header, aside, .paging, .btn_area, .search_wrap, .demo_tabs, .demo_record_head .btn_area {display: none !important;}
+	main {margin-left: 0 !important; background: #fff !important;}
+	main section {padding: 10px 0 !important;}
+	.table {box-shadow: none !important; border: 1px solid #ddd !important;}
+	.demo_tab_panel {display: block !important;}
+	.demo_tab_panel > h3.section_tit {display: block !important; margin: 24px 0 10px !important; font-size: 20px !important;}
+	body.demo_print_detail main > section:not(#detail_info) {display: none !important;}
+	.demo_tab_panel > ul.btn_area.white, .demo_tab_panel > .demo_hint, .demo_tab_panel[data-panel="docs"] {display: none !important;}
+	body.demo_print_pop main > section, body.demo_print_pop main > article {display: none !important;}
+	body.demo_print_pop .layer_pop.pop_on {position: static; background: none; display: block;}
+	body.demo_print_pop .layer_pop.pop_on .inner {box-shadow: none; width: auto; max-height: none;}
+	body.demo_print_pop .layer_pop.pop_on .header i {display: none;}
+}

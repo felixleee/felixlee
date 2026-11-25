@@ -5,44 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=10">
     <title>Travel Management System(v39220105.3)</title>
     <link type="text/css" rel="stylesheet" href="../css/all.css?v230227.1">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css">
 
     <script type="text/javascript">
         var lang = "";
     </script>
 
     <!-- jquery -->
-    <script src="/js/jquery-1.9.1.js?v230227.1" type="text/javascript"></script>
-
-    <!-- 갤러리플래시 -->
-    <script src="../js/swf_upload.js?v230227.1" type="text/javascript"></script>
+    <script src="../js/jquery-1.9.1.js?v230227.1" type="text/javascript"></script>
 
     <!-- jquery ui -->
-    <link type="text/css" rel="stylesheet" href="/js/jquery-ui/css/jquery-ui-1.10.4.custom.css?v230227.1">
-    <script src="/js/jquery-ui/jquery-ui-1.10.4.custom.js?v230227.1" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="../js/jquery-ui/css/jquery-ui-1.10.4.custom.css?v230227.1">
+    <script src="../js/jquery-ui/jquery-ui-1.10.4.custom.js?v230227.1" type="text/javascript"></script>
 
-    <!-- 공통 js -->
-    <script type="text/javascript" src="/js/common.js?v230227.1"></script>
-    <script type="text/javascript" src="/js/common.lib.js?v230227.1"></script>
-    <script type="text/javascript" src="/js/Validator.js?v230227.1"></script>
-
-    <!-- admin js -->
-    <script type="text/javascript" src="../js/admin.lib.js?v230227.1"></script>
-
-    <!-- AjaxCalendar(PHP) -->
-    <script type="text/javascript" src="/js/ajaxcalendar/AjaxCalendar.js?v230227.1"></script>
-
-    <!-- 웹에디터 -->
-    <script type="text/javascript" src="/js/ckeditor_v4.9/ckeditor.js?v230227.1"></script>
+    <!-- 데모: 원래 서버의 공통 스크립트(갤러리플래시 swf_upload, common.js, common.lib.js, Validator.js, admin.lib.js,
+         AjaxCalendar, ckeditor, wickedpicker)는 이 저장소에 없어 뺐습니다. 화면에 필요한 함수(to_dialog, ajax_loader,
+         ajax_post, AjaxCal, help_box …)는 js/demo/tms-common.js 가 가상 데이터로 대신합니다. -->
     <style>
         .cke {
             visibility: hidden;
         }
     </style>
 
-    <!-- timepicker -->
-    <link type="text/css" rel="stylesheet" href="/js/wickedpicker/dist/wickedpicker.min.css?v230227.1">
-    <script type="text/javascript" src="/js/wickedpicker/dist/wickedpicker.min.js?v230227.1"></script>
+    <!-- 데모: 가상 데이터(mock) — 예약·상담·게시판을 데이터에서 그리고, 원래 서버 함수는 js/demo/tms-common.js 가 대신함 -->
+    <link type="text/css" rel="stylesheet" href="../css/demo.css">
+    <script src="../../mock/mock-api.js"></script>
+    <script src="../../mock/shared/touroffice-tours.js"></script>
+    <script src="../../mock/shared/tms-reservations.js"></script>
+    <script src="../js/demo/tms-common.js"></script>
 
     <script type="text/javascript">
 
@@ -68,27 +58,27 @@
 
     <div id="wrap">
         <div class="top_blue" id="top_menu_bg">
-            <div class="top_btn_home"><a href="../main/main.html"><img src="../image/top/logo.png" alt="홈으로가기"></a>
+            <div class="top_btn_home"><a href="pure_main.html"><img src="../image/top/logo.png" alt="홈으로가기"></a>
             </div>
             <div id="gnb">
                 <ul class="top_menu01">
-                    <li class="on"><a href="../res_good/good_res_list.html">상담/예약</a></li>
-                    <li><a href="../cal_good/good_date_cal.html">정산</a></li>
-                    <li><a href="../good/index.html">여행</a></li>
-                    <li><a href="../hotel/hotel_list.html">호텔</a></li>
-                    <li><a href="../place/sights_list.html">관광(지)</a></li>
-                    <li><a href="../member/person_member_list.html">회원/거래처</a></li>
-                    <li><a href="../board/index.html?BD_CD=NOTICE">게시판</a></li>
-                    <li><a href="../design/index.html">디자인</a></li>
-                    <li><a href="../insu/index.html">여행자보험</a></li>
-                    <li><a href="../setting/index.html">기초설정</a></li>
+                    <li class="on"><a href="good_res.html">상담/예약</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('정산');">정산</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('여행');">여행</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('호텔');">호텔</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('관광(지)');">관광(지)</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('회원/거래처');">회원/거래처</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('게시판');">게시판</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('디자인');">디자인</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('여행자보험');">여행자보험</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('기초설정');">기초설정</a></li>
                 </ul>
                 <ul class="top_menu02">
                 </ul>
             </div>
             <div class="log_wrap">
                 <div class="p_info">
-                    <p class="info_log"><a href="../logout.html">로그아웃</a></p>
+                    <p class="info_log"><a href="javascript:;" onclick="return Mock.notInDemo('로그아웃');">로그아웃</a></p>
                     <p class="info_name" style="margin-right: 10px;">
                         <img src="../image/btn/btn_reset.png" alt="새로고침" title="새로고침"
                             style="vertical-align:middle; /*padding-right:6px;*/cursor:pointer; margin-bottom:1px;"
@@ -126,18 +116,18 @@
                     <ul class="left_menu">
                         <li>
                             <a onmouseover="MM_swapImage('Image1','','../image/left/left_on_menu01.gif',1)"
-                                onmouseout="MM_swapImgRestore()" href="https://tour39sky.touroffice.co.kr/"
+                                onmouseout="MM_swapImgRestore()" href="../../touroffice/main/pure_main.html"
                                 target="_blank">
                                 <img border="0" name="Image1" src="../image/left/left_off_menu01.gif" alt="사이트"></a>
                         </li>
                         <li>
-                            <a href="https://tour39sky.touroffice.co.kr/?_m=mb" target="_blank"
+                            <a href="../../touroffice/main/pure_main.html" target="_blank"
                                 onmouseover="MM_swapImage('Image7','','../image/left/left_on_menu07.gif',1)"
                                 onmouseout="MM_swapImgRestore()">
                                 <img border="0" name="Image7" src="../image/left/left_off_menu07.gif" alt="모바일"></a>
                         </li>
                         <li>
-                            <a href="../intra/index.html?BD_CD=INTRA01"
+                            <a href="javascript:;" onclick="return Mock.notInDemo('사내 인트라넷');"
                                 onmouseover="MM_swapImage('Image2','','../image/left/left_on_menu02.gif',1)"
                                 onmouseout="MM_swapImgRestore()">
                                 <img border="0" name="Image2" src="../image/left/left_off_menu02.gif" alt="사내"></a>
@@ -150,7 +140,7 @@
                                 <img border="0" name="Image8" src="../image/left/left_off_menu08.gif" alt="문자팩스충전"></a>
                         </li>
                         <li>
-                            <a href="../exchange/exchang_admin.html"
+                            <a href="javascript:;" onclick="return Mock.notInDemo('환율');"
                                 onmouseover="MM_swapImage('Image3','','../image/left/left_on_menu03.gif',1)"
                                 onmouseout="MM_swapImgRestore()" style="cursor:pointer;">
                                 <img border="0" name="Image3" src="../image/left/left_off_menu03.gif" alt="환율"></a>
@@ -164,14 +154,14 @@
                         </li>
                         <li>
                             <a href="#"
-                                onclick="window.open('https://admin8.kcp.co.kr/assist/login.LoginAction.do');return false;"
+                                onclick="return Mock.notInDemo('KCP PG 관리자');"
                                 onmouseover="MM_swapImage('Image6','','../image/left/left_on_menu06.gif',1)"
                                 onmouseout="MM_swapImgRestore()" style="cursor:pointer;">
                                 <img border="0" name="Image6" src="../image/left/left_off_menu06.gif"
                                     alt="KCP PG"></a><!--  src="../image/left/left_off_menu06_ini.gif" alt="ini PG" -->
                         </li>
                         <li>
-                            <a href="http://analytics.google.com/" target="_blank"
+                            <a href="javascript:;" onclick="return Mock.notInDemo('방문 통계');"
                                 onmouseover="MM_swapImage('Image4','','../image/left/left_on_menu04.gif',1)"
                                 onmouseout="MM_swapImgRestore()" style="cursor:pointer;">
                                 <img border="0" name="Image4" src="../image/left/left_off_menu04.gif" alt="방문"></a>
@@ -182,7 +172,7 @@
                 <div class="sub_menu_wrap">
                     <!-- 공통버튼 -->
                     <ul class="sub_top_btn">
-                        <li class="btn_left"><a href="../res_good/contab_write.html">상담등록</a></li>
+                        <li class="btn_left"><a href="javascript:;" onclick="return Mock.notInDemo('상담등록');">상담등록</a></li>
                         <li class="btn_right"><a href="javascript:;"
                                 onclick="to_dialog.iframe('../res_good/goodResReg.html','여행상품예약','1200','700',true,true,'yes');">예약등록</a>
                         </li>
@@ -192,7 +182,7 @@
 
                         <li class="sub_menu_title"><span>여행예약</span>
                             <ul class="sub_menu_s">
-                                <li class="on"><a href="../res_good/good_res_list.html">예약관리</a></li>
+                                <li class="on"><a href="good_res.html">예약관리</a></li>
                                 <!-- <li ><a href="../res_good/good_res.html">예약등록(구)</a></li>-->
                                 <li><a href="javascript:;"
                                         onclick="to_dialog.iframe('../res_good/goodResReg.html','여행상품예약','1400','700',true,true,'yes');">예약등록</a>
@@ -808,7 +798,7 @@
 
                             <div class="c_top_sch_wrap">
                                 <p class="c_top_sch_l">
-                                    <span><a href="javascript:;" class="c_red">검색 19개</a> ／ <a href="javascript:;"
+                                    <span id="res_summary"><a href="javascript:;" class="c_red">검색 19개</a> ／ <a href="javascript:;"
                                             class="c_blue">전체 19개</a>&nbsp;&nbsp;(검색된 예약&nbsp;&nbsp;&nbsp;총 판매금액 :
                                         6,125,000원&nbsp;&nbsp;&nbsp;총 결제금액 : 464,800원&nbsp;&nbsp;&nbsp;총 미입금액 :
                                         3,107,200원)</span>
@@ -900,468 +890,15 @@
                                             <th>담당자</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P16969054634965B89"></td>
-                                            <td>2023-10-10 11:38:03</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><span
-                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>테스트<br>010-2580-0546</td><!-- 예약자 -->
-                                            <td>2</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16969054634965B89','여행상품예약 수정 - P16969054634965B89','1400','700',true,true,'yes');">
-                                                <strong>[선착순+좌석확보](싱글팩)스페인 일주 9일-QR</strong><br>스페인 일주 9일-QR</td>
-                                            <!-- 행사명 -->
-                                            <td>2023-10-11(수)<br>&nbsp;<img src="/FileData/airlogo/AIRLogo_438_1.gif"
-                                                    width="22" align="absmiddle">123</td><!-- 출발일/출발편 -->
-                                            <td>2023-10-19(목)<br>&nbsp;<img src="/FileData/airlogo/AIRLogo_438_1.gif"
-                                                    width="22" align="absmiddle">124</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">2,370,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">2,370,000</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1694581554E8650BA"></td>
-                                            <td>2023-09-13 14:06:02</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#FF0033;">입금완료</span>
-                                                <span color=""><span
-                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1694581554E8650BA','여행상품예약 수정 - P1694581554E8650BA','1400','700',true,true,'yes');">
-                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
-                                            <td>2023-09-14(목)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
-                                            <!-- 출발일/출발편 -->
-                                            <td>2023-09-15(금)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
-                                            <!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">50,000</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P16945815325C80134"></td>
-                                            <td>2023-09-13 14:05:45</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#FF0033;">입금완료</span>
-                                                <span color=""><span
-                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16945815325C80134','여행상품예약 수정 - P16945815325C80134','1400','700',true,true,'yes');">
-                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
-                                            <td>2023-09-14(목)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
-                                            <td>2023-09-14(목)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">179,100</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P169415377463D1B0D"></td>
-                                            <td>2023-09-08 15:16:46</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color="">대기</span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>3</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P169415377463D1B0D','여행상품예약 수정 - P169415377463D1B0D','1400','700',true,true,'yes');">
-                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
-                                            <td>2023-09-09(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
-                                            <td>2023-09-09(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">498,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                투어테스트
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P169415363898C8813"></td>
-                                            <td>2023-09-08 15:14:38</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color="">대기</span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>3</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P169415363898C8813','여행상품예약 수정 - P169415363898C8813','1400','700',true,true,'yes');">
-                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
-                                            <td>2023-09-30(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
-                                            <td>2023-09-30(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">597,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                투어테스트
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1693547691D86B214"></td>
-                                            <td>2023-09-01 14:55:03</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color="">대기</span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1693547691D86B214','여행상품예약 수정 - P1693547691D86B214','1400','700',true,true,'yes');">
-                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
-                                            <td>2023-09-20(수)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
-                                            <td>2023-09-20(수)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                투어테스트
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P16891275129E67F64"></td>
-                                            <td>2023-07-12 11:05:21</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><b>완납</b></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16891275129E67F64','여행상품예약 수정 - P16891275129E67F64','1400','700',true,true,'yes');">
-                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
-                                            <td>2023-08-24(목)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
-                                            <!-- 출발일/출발편 -->
-                                            <td>2023-08-25(금)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
-                                            <!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">2,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P16891274921204A05"></td>
-                                            <td>2023-07-12 11:05:01</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><b>완납</b></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16891274921204A05','여행상품예약 수정 - P16891274921204A05','1400','700',true,true,'yes');">
-                                                <strong>[부산출발] 문화재의 집합소 제천 여행</strong><br>문화재 투어</td><!-- 행사명 -->
-                                            <td>2023-08-24(목)<br>&nbsp;</td><!-- 출발일/출발편 -->
-                                            <td>2023-08-24(목)<br>&nbsp;</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">1,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1689127460ABF4301"></td>
-                                            <td>2023-07-12 11:04:30</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><b>완납</b></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1689127460ABF4301','여행상품예약 수정 - P1689127460ABF4301','1400','700',true,true,'yes');">
-                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
-                                            <td>2023-08-24(목)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
-                                            <td>2023-08-24(목)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">3,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                투어테스트
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1688948227E70CA0E"></td>
-                                            <td>2023-07-10 09:19:55</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color="">대기</span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>9</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1688948227E70CA0E','여행상품예약 수정 - P1688948227E70CA0E','1400','700',true,true,'yes');">
-                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
-                                            <td>2023-07-11(화)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
-                                            <!-- 출발일/출발편 -->
-                                            <td>2023-07-12(수)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
-                                            <!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">900,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="D168801307274EC446"></td>
-                                            <td>2023-06-29 13:31:59</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color="">대기</span>
-                                            </td><!-- 진행전달 -->
-                                            <td>엄현정<br>01020836726</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=D168801307274EC446','여행상품예약 수정 - D168801307274EC446','1400','700',true,true,'yes');">
-                                                <strong> [단독투어] 부산 시티투어</strong><br>[단독투어] 부산 시티투어</td><!-- 행사명 -->
-                                            <td>2023-07-01(토)<br>&nbsp;</td><!-- 출발일/출발편 -->
-                                            <td>2023-07-01(토)<br>&nbsp;</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">60,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1686727080D54F195"></td>
-                                            <td>2023-06-14 16:18:00</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color="">대기</span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>010-1111-2222</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1686727080D54F195','여행상품예약 수정 - P1686727080D54F195','1400','700',true,true,'yes');">
-                                                <strong></strong><br>테스트 데이투어</td><!-- 행사명 -->
-                                            <td>2023-06-28(수)<br>&nbsp;</td><!-- 출발일/출발편 -->
-                                            <td>2023-06-28(수)<br>&nbsp;</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1685672475272D812"></td>
-                                            <td>2023-06-02 11:21:23</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><b>완납</b></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685672475272D812','여행상품예약 수정 - P1685672475272D812','1400','700',true,true,'yes');">
-                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
-                                            <td>2023-06-03(토)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
-                                            <!-- 출발일/출발편 -->
-                                            <td>2023-06-04(일)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
-                                            <!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P16856724626944646"></td>
-                                            <td>2023-06-02 11:21:09</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><span
-                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16856724626944646','여행상품예약 수정 - P16856724626944646','1400','700',true,true,'yes');">
-                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
-                                            <td>2023-06-03(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
-                                            <td>2023-06-03(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">179,100</td><!-- 미납요금 -->
-                                            <td>
-                                                투어테스트
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1685671118E1C4596"></td>
-                                            <td>2023-06-02 10:58:48</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><span
-                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685671118E1C4596','여행상품예약 수정 - P1685671118E1C4596','1400','700',true,true,'yes');">
-                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
-                                            <td>2023-06-03(토)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
-                                            <!-- 출발일/출발편 -->
-                                            <td>2023-06-04(일)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
-                                            <!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">90,000</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1685671101BDDDA47"></td>
-                                            <td>2023-06-02 10:58:29</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><span
-                                                        style="color:#FF0000;font-weight:bold;">미납</span></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685671101BDDDA47','여행상품예약 수정 - P1685671101BDDDA47','1400','700',true,true,'yes');">
-                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
-                                            <td>2023-06-03(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
-                                            <td>2023-06-03(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">179,100</td><!-- 미납요금 -->
-                                            <td>
-                                                투어테스트
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1685670809A3A2F37"></td>
-                                            <td>2023-06-02 10:53:37</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><b>완납</b></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685670809A3A2F37','여행상품예약 수정 - P1685670809A3A2F37','1400','700',true,true,'yes');">
-                                                <strong>[부산출발] 전주한옥마을 1박2일</strong><br>전주 1박 2일 맛집투어</td><!-- 행사명 -->
-                                            <td>2023-06-03(토)<br>&nbsp;<img src="/image/product/ico_train.png">1</td>
-                                            <!-- 출발일/출발편 -->
-                                            <td>2023-06-04(일)<br>&nbsp;<img src="/image/product/ico_train.png">2</td>
-                                            <!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">100,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                클릭
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P1685670790C69482E"></td>
-                                            <td>2023-06-02 10:53:19</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color=""><b>완납</b></span>
-                                            </td><!-- 진행전달 -->
-                                            <td>클릭<br>01089887869</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P1685670790C69482E','여행상품예약 수정 - P1685670790C69482E','1400','700',true,true,'yes');">
-                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
-                                            <td>2023-06-03(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
-                                            <td>2023-06-03(토)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                투어테스트
-                                            </td><!-- 담당자 -->
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" name="res_no_arr[]" class="item_checkbox_res"
-                                                    value="P16849935960EEC656"></td>
-                                            <td>2023-05-25 14:46:59</td><!-- 예약접수일 -->
-                                            <td>
-                                                <span style="color:#999999;">예약접수 </span>
-                                                <span color="">대기</span>
-                                            </td><!-- 진행전달 -->
-                                            <td>소담<br>01093834697</td><!-- 예약자 -->
-                                            <td>1</td><!-- 인원 -->
-                                            <td class="t_title" style="cursor:pointer;"
-                                                onclick="to_dialog.iframe('good_res_edit.html?res_no=P16849935960EEC656','여행상품예약 수정 - P16849935960EEC656','1400','700',true,true,'yes');">
-                                                <strong>바다의 땅 부산 1박2일</strong><br>바다의 땅 부산 1박2일</td><!-- 행사명 -->
-                                            <td>2023-06-02(금)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">1</td><!-- 출발일/출발편 -->
-                                            <td>2023-06-02(금)<br>&nbsp;<img
-                                                    src="/FileData/airlogo/20170120_1CFC6A1F1D4A0D4C.gif" width="22"
-                                                    align="absmiddle">2</td><!-- 도착일/도착편 -->
-                                            <td class="txt_r ls-1">199,000&nbsp;</td><!-- 판매금액 -->
-                                            <td class="txt_r ls-1">0</td><!-- 미납요금 -->
-                                            <td>
-                                                투어테스트
-                                            </td><!-- 담당자 -->
-                                        </tr>
+                                    <tbody id="res_list_body">
+                                        <!-- 데모: 예약 행은 가상 데이터(tms.reservations)에서 원래 행 마크업 그대로 그립니다 (js/demo/good_res.js).
+                                             원래 여기 하드코딩돼 있던 19건은 mock/shared/tms-reservations.js 시드로 옮겼습니다. -->
+                                        <tr class="demo_state_row"><td colspan="11">예약 목록을 불러오는 중…</td></tr>
                                     </tbody>
                                 </table>
                             </form>
                             <!-- 폼 -->
-                            <div class="c_paging">
+                            <div class="c_paging" id="res_paging">
                                 <ul class="c_paging_wrap">
                                     <ul class="list_no01">
                                         <li><img src="../image/btn/btn_first.gif" alt="처음목록보기"></li>
@@ -1395,13 +932,13 @@
                         var order_by_s = $("#order_by_s").val();
                         var list_count_s = $("#list_count_s").val();
 
-                        window.document.location.href = '/toadmin/res_good/good_res_list.html?&cseq=&contract_s=&search_key_s=&search_word_s=&mode_period_s=&ins_route_s=&srh_payment_s=&is_member_s=&order_state_s=&srh_pay_stat_s=&srh_b_uid_s=&srh_m_uid_s=&srh_s_uid_s=&srh_Bidx_s=&srh_Cidx_s=&period_date_s=&period_yy_s=&period_mm_s=&date_s1=&date_s2=&search_box_s=&order_by_s=&list_count_s=&order_by_s=' + order_by_s + '&list_count_s=' + list_count_s;
+                        TmsResList.setView({ order_by_s: order_by_s, list_count_s: list_count_s }); // 데모: 서버 목록 주소 대신 가상 데이터로 다시 그림
                     });
                     $("#list_count_s").on("change", function () {
                         var order_by_s = $("#order_by_s").val();
                         var list_count_s = $("#list_count_s").val();
 
-                        window.document.location.href = '/toadmin/res_good/good_res_list.html?&cseq=&contract_s=&search_key_s=&search_word_s=&mode_period_s=&ins_route_s=&srh_payment_s=&is_member_s=&order_state_s=&srh_pay_stat_s=&srh_b_uid_s=&srh_m_uid_s=&srh_s_uid_s=&srh_Bidx_s=&srh_Cidx_s=&period_date_s=&period_yy_s=&period_mm_s=&date_s1=&date_s2=&search_box_s=&order_by_s=&list_count_s=&order_by_s=' + order_by_s + '&list_count_s=' + list_count_s;
+                        TmsResList.setView({ order_by_s: order_by_s, list_count_s: list_count_s }); // 데모: 서버 목록 주소 대신 가상 데이터로 다시 그림
                     });
 
 
@@ -1497,8 +1034,7 @@
     </script>
     <!-- /풍선도움말 -->
 
-    <!-- datepicker -->
-    <script src="/js/datepicker.js" type="text/javascript"></script>
+    <!-- datepicker : 데모에서는 jQuery UI datepicker 사용 (js/demo/tms-common.js 의 AjaxCal) -->
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -1516,6 +1052,7 @@
     </script>
 
 
+    <script src="../js/demo/good_res.js"></script>
 </body>
 
 </html>

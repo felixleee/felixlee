@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* ==========================================================================
+   TMS 데모 전용 스타일 — 모달 창(to_dialog), 목록 로딩/결과 없음, 새 예약 표시, 예약 상세 창
+   기존 admin CSS(all.css) 는 그대로 두고 여기서만 더함
+   ========================================================================== */
+
+/* ---------- 상태 ---------- */
+tr.demo_state_row td { padding: 40px 0 !important; color: #999; text-align: center !important; background: #fff; }
+.demo_state_box { padding: 60px 0; text-align: center; color: #999; }
+.demo_spinner { display: inline-block; width: 14px; height: 14px; margin-right: 6px; vertical-align: -2px; border: 2px solid #ddd; border-top-color: #cf2d36; border-radius: 50%; animation: tmsSpin .8s linear infinite; }
+@keyframes tmsSpin { to { transform: rotate(360deg); } }
+.demo_muted { color: #999; font-weight: normal; }
+.demo_new { display: inline-block; min-width: 14px; height: 14px; padding: 0 2px; border-radius: 7px; background: #cf2d36; color: #fff; font-size: 10px; line-height: 14px; text-align: center; font-weight: bold; vertical-align: 1px; }
+.demo_tag { display: inline-block; margin-right: 5px; padding: 1px 5px; border: 1px solid #88bbef; border-radius: 2px; background: #f1f6fc; color: #1c67a5; font-size: 11px; font-weight: normal; }
+.demo_tag.is-hot { border-color: #f1a3a7; background: #fff7f7; color: #cf2d36; }
+.demo_tag.is-done { border-color: #ccc; background: #f5f5f5; color: #888; }
+
+/* ---------- 예약 목록 ---------- */
+tr.demo_cancel td { color: #aaa; }
+tr.demo_cancel td.t_title strong { text-decoration: line-through; color: #aaa; }
+tr.demo_fresh td { animation: tmsFresh 2.4s ease-out 1; }
+@keyframes tmsFresh { 0%, 40% { background: #fff4c2; } 100% { background: transparent; } }
+.t_list td.t_title:focus { outline: 2px solid #88bbef; outline-offset: -2px; }
+.c_paging .list_no02 li a span { color: #939393; }
+.c_paging .list_no02 li a:hover span { color: #d63038; }
+.c_paging .list_no01 a img { vertical-align: middle; }
+
+/* ---------- 대시보드 ---------- */
+.main_situation0 tr.demo_click { cursor: pointer; }
+.main_situation0 tr.demo_click:focus { outline: 2px solid #88bbef; outline-offset: -2px; }
+.main_situation0 td.demo_ellipsis { max-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: normal; }
+.demo_post { margin-top: 12px; padding: 16px; border: 1px solid #e4e4e4; background: #fafafa; line-height: 1.8; font-size: 13px; }
+
+/* ---------- 모달 창 (to_dialog) ---------- */
+body.tms_dlg_open { overflow: hidden; }
+.tms_dlg_bg { position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, .45); }
+.tms_dlg { display: flex; flex-direction: column; max-width: calc(100vw - 40px); max-height: calc(100vh - 40px); background: #fff; box-shadow: 0 10px 40px rgba(0, 0, 0, .35); }
+.tms_dlg_head { display: flex; align-items: center; justify-content: space-between; height: 40px; padding: 0 6px 0 16px; background: #3b3b3b; color: #fff; flex: none; }
+.tms_dlg_head strong { font-size: 13px; font-weight: 600; }
+.tms_dlg_close { width: 32px; height: 32px; border: 0; background: transparent; color: #fff; font-size: 22px; line-height: 32px; cursor: pointer; }
+.tms_dlg_close:hover, .tms_dlg_close:focus { background: rgba(255, 255, 255, .15); outline: none; }
+.tms_dlg_body { flex: 1; min-height: 0; overflow: auto; }
+.tms_dlg_body iframe { display: block; width: 100%; height: 100%; border: 0; }
+.tms_dlg_html { padding: 20px; font-size: 13px; }
+.tms_dlg_html .t_register th { width: 120px; }
+
+/* ---------- 예약 상세 창 (good_res_edit.html) ---------- */
+html.in_dialog .fx-demo { display: none !important; }
+body.demo_edit_body { background: #fff; min-width: 0; }
+.demo_edit { margin: 0; }
+.demo_edit .top_bar { position: sticky; top: 0; height: auto; min-height: 80px; }
+.demo_edit .top_bar .info_list { margin-left: 30px; }
+.demo_edit .top_bar .info_list ul { border-radius: 3px; }
+.demo_edit .top_bar .btn_fix a { margin-left: 4px; }
+.demo_edit_body_in { padding: 24px 30px 40px; }
+.demo_edit_body_in h2 { font-size: 15px; font-weight: 600; color: #333; padding: 0 0 10px 2px; }
+.demo_edit_body_in h2 .bl { color: #cf2d36; margin-right: 6px; font-size: 11px; vertical-align: 2px; }
+.demo_edit_body_in .t_register th { width: 160px; }
+.demo_edit_body_in .t_register td select { height: 28px; min-width: 120px; }
+.demo_edit_body_in .t_register td .input_text { height: 26px; border: 1px solid #d3d3d3; padding: 0 6px; text-align: right; }
+.demo_edit_body_in .cal_input { height: 26px; width: 100px; border: 1px solid #d3d3d3; padding: 0 6px; }
+.demo_edit_body_in .t_list td.txt_l { text-align: left; }
+.demo_inline { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.demo_inline select { height: 28px; }
+.demo_busy { opacity: .6; pointer-events: none; }
+.demo_memo_form { display: flex; gap: 10px; align-items: flex-end; margin-top: 10px; }
+.demo_memo_form textarea { flex: 1; border: 1px solid #d3d3d3; padding: 8px; font-size: 12px; line-height: 1.6; resize: vertical; font-family: inherit; }
+.demo_memo_form > div { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.ui-datepicker { z-index: 10001 !important; font-size: 12px; }

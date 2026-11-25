@@ -19,7 +19,7 @@
     <link href="../css/addon.css?v20201103_2" rel="stylesheet" type="text/css" />
     <link href="../css/all.css?v20201103_2" rel="stylesheet" type="text/css" />
     <link href="../css/font/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
     <link href="https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
@@ -63,6 +63,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 
+    <!-- 가상 데이터 데모 (왼쪽 아래 DEMO 배지) -->
+    <link href="../css/demo.css" rel="stylesheet" type="text/css" />
+    <script src="../../mock/mock-api.js"></script>
+    <script src="../data/tours.js"></script>
+    <script src="../data/reviews.js"></script>
+    <script src="../data/notices.js"></script>
+    <script src="../js/demo/common.js"></script>
+
 </head>
 
 <body>
@@ -74,7 +82,7 @@
         <div id="side_Menu" class="sidebar">
             <ul class="handle">
                 <li class="hastip opener" title="퀵메뉴"><span>QUICK</span></li>
-                <li class="hastip kakao" title="카톡상담"><a href=""><i class="xi-kakaotalk"></i> <span>카톡상담</span>
+                <li class="hastip kakao" title="카톡상담"><a href="javascript:;" onclick="return Mock.notInDemo('카톡상담')"><i class="xi-kakaotalk"></i> <span>카톡상담</span>
                         <div class="clear"></div>
                     </a></li>
                 <li class="hastip" title="위로" onclick="goTop();return false;"><i class="xi-angle-up-min"></i></li>
@@ -93,14 +101,14 @@
                 <div class="cs_menu">
                     <p class="tit">고객센터</p>
                     <ul>
-                        <li><a href="">NOTICE</a></li>
-                        <li><a href="">QnA</a></li>
-                        <li><a href="">여행후기</a></li>
-                        <li><a href="">모나미News</a></li>
-                        <li><a href="">자주묻는질문</a></li>
-                        <li><a href="">EVENT</a></li>
-                        <li><a href="">채용안내</a></li>
-                        <li><a href="">제휴문의</a></li>
+                        <li><a href="../notice/list.html">NOTICE</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('QnA')">QnA</a></li>
+                        <li><a href="../review/list.html">여행후기</a></li>
+                        <li><a href="../notice/list.html?cate=news">모나미News</a></li>
+                        <li><a href="../notice/faq.html">자주묻는질문</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('EVENT')">EVENT</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('채용안내')">채용안내</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('제휴문의')">제휴문의</a></li>
                     </ul>
                 </div>
                 <div class="today_list_wrap" id="quick_good_list" style="text-align:center;">
@@ -174,41 +182,41 @@
                 <!-- top_menu -->
                 <div class="top_menu_c">
                     <ul class="top_left">
-                        <li><a class="simple-ajax-popup-align-top" href=""><i class="xi-bars xi-fw"
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('전체메뉴')"><i class="xi-bars xi-fw"
                                     style="margin-top:13px;"></i>전체메뉴</a></li>
-                        <li><a href="" id="favorite"><i class="xi-star-o xi-fw" style="margin-top:13px;"></i>즐겨찾기</a>
+                        <li><a href="javascript:;" id="favorite" onclick="return Mock.notInDemo('즐겨찾기')"><i class="xi-star-o xi-fw" style="margin-top:13px;"></i>즐겨찾기</a>
                         </li>
                         <li>
-                            <a href="" class="top_sns" ><i class="xi-facebook"></i></a>
+                            <a href="javascript:;" class="top_sns" onclick="return Mock.notInDemo('공식 SNS')"><i class="xi-facebook"></i></a>
                             <!-- <a href="" class="top_sns"><i class="xi-instagram"></i></a> -->
-                            <a href="" class="top_sns" ><i class="xi-naver"></i></a>
-                            <a href="" class="top_sns" ><i class="xi-kakaostory"></i></a>
-                            <a href="" class="top_sns" ><i class="xi-instagram"></i></a>
-                            <a href="" class="top_sns" ><i class="xi-youtube-play"></i></a>
+                            <a href="javascript:;" class="top_sns" onclick="return Mock.notInDemo('공식 SNS')"><i class="xi-naver"></i></a>
+                            <a href="javascript:;" class="top_sns" onclick="return Mock.notInDemo('공식 SNS')"><i class="xi-kakaostory"></i></a>
+                            <a href="javascript:;" class="top_sns" onclick="return Mock.notInDemo('공식 SNS')"><i class="xi-instagram"></i></a>
+                            <a href="javascript:;" class="top_sns" onclick="return Mock.notInDemo('공식 SNS')"><i class="xi-youtube-play"></i></a>
                         </li>
                     </ul>
                     <ul class="top_right">
-                        <li><a href="">로그인</a></li>
-                        <li><a href="">마이페이지</a>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('로그인')">로그인</a></li>
+                        <li><a href="../tour/lookup.html">마이페이지</a>
                             <ul class="tr_ddmenu">
-                                <li><a href="">예약조회</a></li>
-                                <li><a href="">결제조회</a></li>
-                                <li><a href="">적립금조회</a></li>
-                                <li><a href="">찜한상품</a></li>
-                                <li><a href="">회원정보수정</a></li>
+                                <li><a href="../tour/lookup.html">예약조회</a></li>
+                                <li><a href="../tour/lookup.html">결제조회</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('적립금조회')">적립금조회</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('찜한상품')">찜한상품</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('회원정보수정')">회원정보수정</a></li>
                             </ul>
                         </li>
-                        <li><a href="">회원가입</a></li>
-                        <li><a href="">고객센터</a>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('회원가입')">회원가입</a></li>
+                        <li><a href="../notice/list.html">고객센터</a>
                             <ul class="tr_ddmenu">
-                                <li><a href="">NOTICE</a></li>
-                                <li><a href="">QnA</a></li>
-                                <li><a href="">여행후기</a></li>
-                                <li><a href="">모나미News</a></li>
-                                <li><a href="">자주묻는질문</a></li>
-                                <li><a href="">EVENT</a></li>
-                                <li><a href="">채용안내</a></li>
-                                <li><a href="">제휴문의</a></li>
+                                <li><a href="../notice/list.html">NOTICE</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('QnA')">QnA</a></li>
+                                <li><a href="../review/list.html">여행후기</a></li>
+                                <li><a href="../notice/list.html?cate=news">모나미News</a></li>
+                                <li><a href="../notice/faq.html">자주묻는질문</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('EVENT')">EVENT</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('채용안내')">채용안내</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('제휴문의')">제휴문의</a></li>
                             </ul>
                         </li>
                         <li class="last">
@@ -225,7 +233,7 @@
             <div class="search-inline" id="SchBar">
                 <div class="container">
                     <p style="font-family:Rufina; font-weight:600; color:#fff; font-style:italic;">Search</p>
-                    <form name="top_search_frm" id="top_search_frm" method="get" action="">
+                    <form name="top_search_frm" id="top_search_frm" method="get" action="../tour/list.html">
                         <input type="text" id="g_title_s" name="g_title_s" size="40" title="검색어를 입력하세요." placeholder=""
                             class="sch-field form-control">
 
@@ -239,7 +247,7 @@
             <!-- 폼 -->
             <form class="logo_zone_c" name="top_search_frm" method="get" action="">
                 <div class="logo_wrap">
-                    <h1><a href=""><img src="../FileData/logo/logo0820.png" alt="모나미프랑스" /></a></h1>
+                    <h1><a href="../main/pure_main.html"><img src="../FileData/logo/logo0820.png" alt="모나미프랑스" /></a></h1>
 
                 </div>
             </form>
@@ -249,55 +257,55 @@
             <div class="doubled_line">
                 <div id="gnb_c">
                     <div class="gnb_wrap">
-                        <a href="" class="gnb_go_home"><i class="xi-home"></i></a>
+                        <a href="../main/pure_main.html" class="gnb_go_home"><i class="xi-home"></i></a>
 
                         <span>
-                            <a href="" style="font-family: 'Rufina', serif;">monAmi us</a>
+                            <a href="javascript:;" onclick="return Mock.notInDemo('회사소개')" style="font-family: 'Rufina', serif;">monAmi us</a>
                             <ul class="snb2">
-                                <li><a href="">회사소개</a></li>
-                                <li><a href="">라이센스</a></li>
-                                <li><a href="">모나미홍보</a></li>
-                                <li><a href="">서울오피스</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('회사소개')">회사소개</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('라이센스')">라이센스</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('모나미홍보')">모나미홍보</a></li>
+                                <li><a href="javascript:;" onclick="return Mock.notInDemo('서울오피스')">서울오피스</a></li>
                             </ul>
                         </span>
 
 
-                        <span><a href="">단독맞춤투어</a>
+                        <span><a href="../tour/list.html?type=custom">단독맞춤투어</a>
                             <ul class="snb2">
-                                <li><a href="">프랑스</a></li>
-                                <li><a href="">이탈리아</a></li>
-                                <li><a href="">포르투갈</a></li>
-                                <li><a href="">벨기에</a></li>
+                                <li><a href="../tour/list.html?type=custom&amp;country=france">프랑스</a></li>
+                                <li><a href="../tour/list.html?type=custom&amp;country=italy">이탈리아</a></li>
+                                <li><a href="../tour/list.html?type=custom&amp;country=portugal">포르투갈</a></li>
+                                <li><a href="../tour/list.html?type=custom&amp;country=belgium">벨기에</a></li>
                             </ul>
                         </span>
 
-                        <span><a href="">가이드투어</a>
+                        <span><a href="../tour/list.html?type=guide">가이드투어</a>
                             <ul class="snb2">
-                                <li><a href="">프랑스</a></li>
-                                <li><a href="">이탈리아</a></li>
-                                <li><a href="">포르투갈</a></li>
-                                <li><a href="">벨기에</a></li>
+                                <li><a href="../tour/list.html?type=guide&amp;country=france">프랑스</a></li>
+                                <li><a href="../tour/list.html?type=guide&amp;country=italy">이탈리아</a></li>
+                                <li><a href="../tour/list.html?type=guide&amp;country=portugal">포르투갈</a></li>
+                                <li><a href="../tour/list.html?type=guide&amp;country=belgium">벨기에</a></li>
                             </ul>
                         </span>
 
-                        <span><a href="">박물관투어</a>
+                        <span><a href="../tour/list.html?type=museum">박물관투어</a>
                             <ul class="snb2">
-                                <li><a href="">모나리자 루브르박물관</a></li>
-                                <li><a href="">나폴레옹 루브르박물관</a></li>
-                                <li><a href="">오르세미술관</a></li>
-                                <li><a href="">오랑주리미술관</a></li>
-                                <li><a href="">퐁피두센터</a></li>
-                                <li><a href="">로댕미술관</a></li>
+                                <li><a href="../tour/detail.html?id=6">모나리자 루브르박물관</a></li>
+                                <li><a href="../tour/detail.html?id=6">나폴레옹 루브르박물관</a></li>
+                                <li><a href="../tour/detail.html?id=7">오르세미술관</a></li>
+                                <li><a href="../tour/detail.html?id=8">오랑주리미술관</a></li>
+                                <li><a href="../tour/detail.html?id=9">퐁피두센터</a></li>
+                                <li><a href="../tour/detail.html?id=8">로댕미술관</a></li>
                             </ul>
                         </span>
-                        </span>
-
-                        <span>
-                            <a href="">투어후기</a>
                         </span>
 
                         <span>
-                            <a href="">이벤트</a>
+                            <a href="../review/list.html">투어후기</a>
+                        </span>
+
+                        <span>
+                            <a href="javascript:;" onclick="return Mock.notInDemo('이벤트')">이벤트</a>
                         </span>
 
                     </div>
@@ -377,24 +385,24 @@
                             <div class="left_box">
                                 <div class="txt_box">
                                     <p class="up_txt">
-                                        <a href="">
+                                        <a href="javascript:;" onclick="return Mock.notInDemo('회사소개')">
                                             휴식같은 친구 <span class="comp_txt">Monami france</span>
                                         </a>
                                     </p>
                                     <p class="sub_txt">
-                                        <a href="">
+                                        <a href="javascript:;" onclick="return Mock.notInDemo('회사소개')">
                                             만남, 행복, 감동, 배움, 발전 여행에서 만나는 작은 기쁨, 우연한 “만남”. 새로운 만남은 우리를 항상 설레게 합니다. 그 설렘을
                                             “행복”으로 이어질 수 있도록 노력합니다. 재미있는 일을 할 때, 일은 일이 아니라 “행복”이 됩니다. 우리가 사랑하는 이곳을 기쁘게
                                             나눌 수 있고 그 과정 속에서 누군가를 행복하게 만든다는 것 </a>
                                     </p>
 
-                                    <a href=""><span class="rd_more" style="margin-top: 30px;">Read more &nbsp;<i
+                                    <a href="javascript:;" onclick="return Mock.notInDemo('회사소개')"><span class="rd_more" style="margin-top: 30px;">Read more &nbsp;<i
                                                 class="xi-long-arrow-right"></i></span></a>
                                     <div class="clear"></div>
                                 </div>
                                 <div class="imgbox mt40">
-                                    <a href=""><img src="../FileData/hotel/20200810_2D7D2F1298926A82.png" alt="" /></a>
-                                    <a href=""><span class="rd_more mt15 mr60">Read more &nbsp;<i
+                                    <a href="javascript:;" onclick="return Mock.notInDemo('이벤트')"><img src="../FileData/hotel/20200810_2D7D2F1298926A82.png" alt="" /></a>
+                                    <a href="javascript:;" onclick="return Mock.notInDemo('이벤트')"><span class="rd_more mt15 mr60">Read more &nbsp;<i
                                                 class="xi-long-arrow-right"></i></span></a>
                                 </div>
 
@@ -404,11 +412,11 @@
 
                                 <ul class="bxslider">
                                     <li>
-                                        <a href=""><img src="../FileData/hotel/20200820_D146941B6133D3F3.png"
+                                        <a href="../tour/list.html?country=france&amp;type=guide"><img src="../FileData/hotel/20200820_D146941B6133D3F3.png"
                                                 alt=""></a>
                                     </li>
                                     <li>
-                                        <a href=""><img src="../FileData/hotel/20200820_0F5E1C572BCD5B57.png"
+                                        <a href="../tour/list.html?country=france"><img src="../FileData/hotel/20200820_0F5E1C572BCD5B57.png"
                                                 alt=""></a>
                                     </li>
                                 </ul>
@@ -436,64 +444,30 @@
 
                                 <div class="v-story-wrap con">
                                     <!-- v-story-slider 2 -->
-                                    <div class="v-story-slider_2">
+                                    <div class="v-story-slider_2" id="dmBestReview">
+                                    </div>
+                                    <!-- BEST REVIEW 템플릿 (data/reviews.js 의 best 후기 → js/demo/main.js 가 렌더링) -->
+                                    <script type="text/html" id="tpl-best-review">
                                         <div class="slider-item">
-                                            <a href="" class="block">
+                                            <a href="{{href}}" class="block">
                                                 <div class="img-box block">
-                                                    <img src="../FileData/hotel/20200820_575ED6FEAC86596C.jpg"
-                                                        width="699" height="453" alt="">
+                                                    <img src="{{image}}"
+                                                        width="699" height="453" alt="{{title}}">
                                                 </div>
                                             </a>
                                             <div class="v-story-desc-list">
                                                 <p class="v-story-desc mt30 mb20">
-                                                    너무 즐겁고 편안한 여행이었습니다 </p>
+                                                    {{title}} </p>
                                                 <p class="v-story-desc-tt">
-                                                    지수 가이드님이 재미있게 이야기 해주셔서 평소엔 <br />
-                                                    관심 없던 내용도 주의 깊게 들을 수 있었어요!<br />
+                                                    {{{excerpt}}}
                                                 </p>
-                                                <a href="">
+                                                <a href="{{href}}">
                                                     <span class="rd_more_review mt20">Read more &nbsp;<i
                                                             class="xi-long-arrow-right"></i></span>
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="slider-item">
-                                            <a href="" class="block">
-                                                <div class="img-box block">
-                                                    <img src="../FileData/hotel/20200820_526D11D3649C45FB.jpg"
-                                                        width="699" height="453" alt="">
-                                                </div>
-                                            </a>
-                                            <div class="v-story-desc-list">
-                                                <p class="v-story-desc mt30 mb20">
-                                                    파리 간 첫날 했으면 너무 좋았을 것 같고 투어 추천해드려요. </p>
-                                                <p class="v-story-desc-tt">
-                                                    가이드님 엄청 유쾌하시고 드라이브할때 나오는 음악선곡이 <br />
-                                                    정말 소름끼치게 제가 좋아하는 곡들만 나와서 기억에 남아요. </p>
-                                                <a href="" class="rd_more_review mt20">Read more &nbsp;<i
-                                                        class="xi-long-arrow-right"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="slider-item">
-                                            <a href="" class="block">
-                                                <div class="img-box block">
-                                                    <img src="../FileData/hotel/20200820_5CBD99EDCD85987A.jpg"
-                                                        width="699" height="453" alt="">
-                                                </div>
-                                            </a>
-                                            <div class="v-story-desc-list">
-                                                <p class="v-story-desc mt30 mb20">
-                                                    시부모님과 은퇴기념으로 가족여행했던 사람입니다^^ </p>
-                                                <p class="v-story-desc-tt">
-                                                    2018년 6월에 똑같은 투어신청했었는데 <br />
-                                                    알찬 일정으로 스냅까지 너무 좋았어서 또 신청했어요 </p>
-                                                <a href="" class="rd_more_review mt20">Read more &nbsp;<i
-                                                        class="xi-long-arrow-right"></i></span></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                    </script>
                                     <!-- //v-story-slider 2 -->
                                 </div>
 
@@ -513,40 +487,19 @@
 
                             <div class="bx_wrap3">
 
-                                <ul class="bxslider_3">
-                                    <li>
-                                        <a href=""><img src="../FileData/hotel/20200828_7F4FDE1DFBC3B6B9.png"
-                                                alt=""></a>
-                                        <div class="txt">
-                                            <span class="en">France</span><br />
-                                            <span class="ko">프랑스</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href=""><img src="../FileData/hotel/20200828_1A155468BD8DC6EF.png"
-                                                alt=""></a>
-                                        <div class="txt">
-                                            <span class="en">Italia</span><br />
-                                            <span class="ko">이탈리아</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href=""><img src="../FileData/hotel/20200828_7DF92627521837D0.png"
-                                                alt=""></a>
-                                        <div class="txt">
-                                            <span class="en">Portugal</span><br />
-                                            <span class="ko">포르투갈</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href=""><img src="../FileData/hotel/20200828_C5A5E4C7065865D8.png"
-                                                alt=""></a>
-                                        <div class="txt">
-                                            <span class="en">Belgium</span><br />
-                                            <span class="ko">벨기에</span>
-                                        </div>
-                                    </li>
+                                <ul class="bxslider_3" id="dmWhere">
                                 </ul>
+                                <!-- Where to go 템플릿 (data/tours.js 의 monami.countries) -->
+                                <script type="text/html" id="tpl-where">
+                                    <li>
+                                        <a href="{{href}}"><img src="{{image}}"
+                                                alt="{{ko}}"></a>
+                                        <div class="txt">
+                                            <span class="en">{{en}}</span><br />
+                                            <span class="ko">{{ko}}</span>
+                                        </div>
+                                    </li>
+                                </script>
                                 <div class="bx_direction_3">
                                     <span class="slider_prev_3"></span><span class="slider_next_3"></span>
                                 </div>
@@ -571,126 +524,44 @@
                             <!-- 중앙 컨텐츠 3차 visual story -->
                             <div class="v-story-wrap con mt50">
                                 <!-- <h2 class="v-story-tt" data-aos="fade-up">test slider</h2> -->
-                                <div class="v-story-slider">
-
-                                    <div class="slider-item">
-                                        <a href="" class="block">
-                                            <div class="img-box block">
-                                                <img src="../FileData/hotel/20200820_E2942F954A24A1BC.jpg" width="800"
-                                                    height="411" alt="">
-                                            </div>
-
-                                        </a>
-                                        <div class="v-story-desc-list">
-                                            <div class="inner_box">
-                                                <p class="v-story-desc-tt">
-                                                    파리시내+베르사유 </p>
-                                                <p class="v-story-desc">
-                                                    파리지앵이 안내하는 숨어있는 <br />
-                                                    파리의 역사, 문화, 맛을 <br />
-                                                    모두 느낄 수 있는 시간!<br />
-                                                    세계에서 제일 아름다운 성이라고 <br />
-                                                    알려져 있는 베르사유 궁전에서 <br />
-                                                    잊지 못할 추억을 담아 가세요!<br />
-
-                                                </p>
-                                                <p class="time"><i class="xi-clock-o"></i> 09:00~18:00 </p>
-                                                <p class="day"><i class="xi-calendar-list"></i> 매일(월요일 제외)</p>
-                                                <a href="" class="bk_btn">Booking Now</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="v-story-desc-list_2">
-                                            <div class="inner_box">
-                                                <p>고흐+지베르니+베르사유</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="v-story-desc-list_3">
-                                            <div class="inner_box">
-                                                <p>파리시내+파리야경 </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="slider-item">
-                                        <a href="" class="block">
-                                            <div class="img-box block">
-                                                <img src="../FileData/hotel/20200820_39DF192F04F3E6A7.jpg" width="800"
-                                                    height="411" alt="">
-                                            </div>
-
-                                        </a>
-                                        <div class="v-story-desc-list">
-                                            <div class="inner_box">
-                                                <p class="v-story-desc-tt">
-                                                    파리시내+파리야경 </p>
-                                                <p class="v-story-desc">
-                                                    잡힐 듯 잡히지 않는 따뜻한 노을<br />
-                                                    길을 걷다 들리는 <br />
-                                                    연인들의 사랑의 대화<br />
-                                                    눈이 부시게 아름다운 파리 야경과<br />
-                                                    세느강을 거닐며 느끼는 밤공기를<br />
-                                                    모나미프랑스와 함께 느껴보세요.
-                                                </p>
-                                                <p class="time"><i class="xi-clock-o"></i> 20:20AM~23:20PM</p>
-                                                <p class="day"><i class="xi-calendar-list"></i> 수요일 금요일 일요일</p>
-                                                <a href="" class="bk_btn">Booking Now</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="v-story-desc-list_2">
-                                            <div class="inner_box">
-                                                <p>파리시내+베르사유</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="v-story-desc-list_3">
-                                            <div class="inner_box">
-                                                <p>고흐+지베르니+베르사유 </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="slider-item">
-                                        <a href="" class="block">
-                                            <div class="img-box block">
-                                                <img src="../FileData/hotel/20200810_AC1A286621D53EDE.jpg" width="800"
-                                                    height="411" alt="">
-                                            </div>
-
-                                        </a>
-                                        <div class="v-story-desc-list">
-                                            <div class="inner_box">
-                                                <p class="v-story-desc-tt">
-                                                    고흐+지베르니+베르사유 </p>
-                                                <p class="v-story-desc">
-                                                    파리지앵이 안내하는 숨어있는 <br />
-                                                    파리의 역사, 문화, 맛을 <br />
-                                                    모두 느낄 수 있는 시간!<br />
-                                                    화가들이 직접 그렸던 장소로<br />
-                                                    들어가 그림 속에서의 생생한 <br />
-                                                    스토리텔링을 들어보세요. <br />
-
-                                                </p>
-                                                <p class="time"><i class="xi-clock-o"></i> 07:50~19:40 </p>
-                                                <p class="day"><i class="xi-calendar-list"></i> 수요일, 금요일, 일요일</p>
-                                                <a href="" class="bk_btn">Booking Now</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="v-story-desc-list_2">
-                                            <div class="inner_box">
-                                                <p>파리시내+파리야경</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="v-story-desc-list_3">
-                                            <div class="inner_box">
-                                                <p>파리시내+베르사유 </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                <div class="v-story-slider" id="dmBestTour">
                                 </div>
+                                <!-- BEST TOUR 템플릿 (data/tours.js 의 best 투어, _2 = 이전 투어 / _3 = 다음 투어 이름) -->
+                                <script type="text/html" id="tpl-best-tour">
+                                    <div class="slider-item">
+                                        <a href="{{href}}" class="block">
+                                            <div class="img-box block">
+                                                <img src="{{image}}" width="800"
+                                                    height="411" alt="{{name}}">
+                                            </div>
+
+                                        </a>
+                                        <div class="v-story-desc-list">
+                                            <div class="inner_box">
+                                                <p class="v-story-desc-tt">
+                                                    <a href="{{href}}">{{name}}</a> </p>
+                                                <p class="v-story-desc">
+                                                    {{{summary}}}
+                                                </p>
+                                                <p class="time"><i class="xi-clock-o"></i> {{time}} </p>
+                                                <p class="day"><i class="xi-calendar-list"></i> {{daysText}}</p>
+                                                <a href="{{book}}" class="bk_btn">Booking Now</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="v-story-desc-list_2">
+                                            <div class="inner_box">
+                                                <p>{{prevName}}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="v-story-desc-list_3">
+                                            <div class="inner_box">
+                                                <p>{{nextName}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </script>
                                 <!-- //v-story-silder -->
                             </div>
                             <!-- //v-story_wrap -->
@@ -718,7 +589,7 @@
                                     <h4>YouTube</h4>
                                     <div class="img_box">
                                         <img src="../FileData/hotel/20200825_B13A3B03DB757234.png" alt="" />
-                                        <a href="">
+                                        <a href="javascript:;" onclick="return Mock.notInDemo('YouTube 채널')">
                                             <img src="../image/main/youtube_white.png" class="youtube_ico_hover"
                                                 alt="" /> <br /> View more <i class="xi-long-arrow-right"></i></a>
                                     </div>
@@ -733,7 +604,7 @@
                                 </div>
 
                                 <div class="blog_box">
-                                    <a href="" >
+                                    <a href="javascript:;" onclick="return Mock.notInDemo('블로그')">
                                         <img src="../FileData/hotel/20200820_D0E7B7D2B748625A.png" alt="" />
                                     </a>
                                     <div class="txt">
@@ -744,7 +615,7 @@
                                             나치 향수<br />
 
                                         </p>
-                                        <a href="">Read more <i class="xi-long-arrow-right"></i></a>
+                                        <a href="javascript:;" onclick="return Mock.notInDemo('블로그')">Read more <i class="xi-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -782,7 +653,7 @@
                                 <div class="insta_liner">
                                     <div class="insta_intro">
                                         <img src="../image/main/point_finger.png" alt="" />
-                                        <p><a href="">
+                                        <p><a href="javascript:;" onclick="return Mock.notInDemo('인스타그램')">
                                                 INSTAGRAM
                                                 <br />
                                                 WITH US
@@ -813,27 +684,27 @@
                                             이용가이드
                                         </caption>
                                         <tr>
-                                            <td><a href=""><img src="../image/main/bbs_icon_1.jpg" alt="예약조회">
+                                            <td><a href="../tour/lookup.html"><img src="../image/main/bbs_icon_1.jpg" alt="예약조회">
                                                     <p>
                                                         개인결제
                                                     </p>
                                                 </a></td>
-                                            <td><a href=""><img src="../image/main/bbs_icon_2.jpg" alt="여행후기">
+                                            <td><a href="javascript:;" onclick="return Mock.notInDemo('문의답변(QnA)')"><img src="../image/main/bbs_icon_2.jpg" alt="여행후기">
                                                     <p>
                                                         문의답변
                                                     </p>
                                                 </a></td>
-                                            <td><a href=""><img src="../image/main/bbs_icon_3.jpg" alt="문의답변">
+                                            <td><a href="../notice/faq.html"><img src="../image/main/bbs_icon_3.jpg" alt="문의답변">
                                                     <p>
                                                         자주하는 질문
                                                     </p>
                                                 </a></td>
-                                            <td><a href=""><img src="../image/main/bbs_icon_4.jpg" alt="자주하는 질문">
+                                            <td><a href="javascript:;" onclick="return Mock.notInDemo('채용안내')"><img src="../image/main/bbs_icon_4.jpg" alt="자주하는 질문">
                                                     <p>
                                                         채용안내
                                                     </p>
                                                 </a></td>
-                                            <td><a href=""><img src="../image/main/bbs_icon_5.jpg" alt="제휴안내">
+                                            <td><a href="javascript:;" onclick="return Mock.notInDemo('제휴문의')"><img src="../image/main/bbs_icon_5.jpg" alt="제휴안내">
                                                     <p>
                                                         제휴문의
                                                     </p>
@@ -843,30 +714,16 @@
                                 </div>
 
                                 <div class="notice">
-                                    <h3>뉴스 &amp; 공지사항<a href="" class="more_view">+ 더보기</a></h3>
-                                    <ul>
-                                        <li>
-                                            <a href="">
-                                                <span class="c_y">[공지]</span>2022년 3월 14일 Covid-19 프랑스 ...
-                                                <span class="m_bbs_date">2022-03-21</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href=""> <span
-                                                    class="c_y">[공지]</span>2022년 2월 15일부터 변경된 ... <span
-                                                    class="m_bbs_date">2022-02-16</span> </a>
-                                        </li>
-                                        <li>
-                                            <a href=""> <span
-                                                    class="c_y">[공지]</span>COVID-19 HEALTH PASS 18세 이상인... <span
-                                                    class="m_bbs_date">2021-09-30</span> </a>
-                                        </li>
-                                        <li>
-                                            <a href=""
-                                                title="2017년 7월1일부터 차량투어 미팅장소 변경"> <span class="c_y">[공지]</span>2017년
-                                                7월1일부터 차량투어 미팅... <span class="m_bbs_date">2020-10-26</span> </a>
-                                        </li>
+                                    <h3>뉴스 &amp; 공지사항<a href="../notice/list.html" class="more_view">+ 더보기</a></h3>
+                                    <ul id="dmNotice">
                                     </ul>
+                                    <!-- 공지 템플릿 (data/notices.js 의 최근 4건) -->
+                                    <script type="text/html" id="tpl-notice">
+                                        <li>
+                                            <a href="{{href}}" title="{{title}}"> <span class="c_y">[{{cate}}]</span>{{short}} <span
+                                                    class="m_bbs_date">{{date}}</span> </a>
+                                        </li>
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -877,9 +734,9 @@
 
                 <div class="f_right_box">
                     <ul>
-                        <li><a href="">이용약관</a></li>
-                        <li><a href="">개인정보 처리방침</a></li>
-                        <li><a href="">취소 및 환불 정책</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('이용약관')">이용약관</a></li>
+                        <li><a href="javascript:;" onclick="return Mock.notInDemo('개인정보 처리방침')">개인정보 처리방침</a></li>
+                        <li><a href="../notice/faq.html?cate=refund">취소 및 환불 정책</a></li>
                         <div class="clear"></div>
                     </ul>
 
@@ -890,6 +747,8 @@
 
         </div>
 
+        <!-- 메인 데이터 렌더링 (BEST REVIEW · Where to go · BEST TOUR · 공지) — 아래 슬라이더 초기화보다 먼저 -->
+        <script src="../js/demo/main.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -1094,7 +953,7 @@
         <div class="footer">
             <div class="inner">
                 <div class="address">
-                    <h2><a href=""><img src="../FileData/logo/footerlogo.png" alt="로고" /></a></h2>
+                    <h2><a href="../main/pure_main.html"><img src="../FileData/logo/footerlogo.png" alt="로고" /></a></h2>
                     <ul>
                         <li style="margin-bottom:30px;"><span class="run_tit">운영시간</span></li>
                         <li>MON - FRI : 9AM - 6PM</li>

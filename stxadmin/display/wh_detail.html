@@ -8,10 +8,8 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 		<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
 		<script type="text/javascript" src="../js/admin.js"></script>
-		<script type="text/javascript" src="../js/swiper-bundle.js"></script>
 		<link rel="stylesheet" href="../css/swiper-bundle.css" type="text/css" charset="utf-8"/>
-		<!-- CKEditor -->
-		<script type="text/javascript" src="../js/ckeditor_v4.9/ckeditor.js"></script>
+		<link rel="stylesheet" href="../css/demo.css" type="text/css" charset="utf-8"/>
 	</head>
 	<body>
 		<header>
@@ -20,9 +18,9 @@
 					<li><h1>STX Admin Page</h1></li>
 				</ul>
 				<ul class="head_nav">
-					<li><a href="">ADMIN님</a>, 안녕하세요!</li>
-					<li><a href="">슈퍼관리자</a></li>
-					<li><a href="">로그아웃</a></li>
+					<li><a href="javascript:;" data-na="내 정보 관리">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="javascript:;" data-na="관리자 설정">슈퍼관리자</a></li>
+					<li><a href="javascript:;" data-na="로그아웃">로그아웃</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -30,7 +28,7 @@
 		<aside>
             <div class="logo">
                 <h1>
-					<a href=""><img src="../image/stxlogo.png" alt=""></a>
+					<a href="../index.html"><img src="../image/stxlogo.png" alt=""></a>
 				</h1>
             </div>
             <div class="to_user_page">
@@ -57,12 +55,12 @@
                 <li class="main_menu ">
                     <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
                     <ul class="sub_menu">
-                        <li><a href="" class="">검사성적서</a></li>
-                        <li><a href="" class="">조립공정기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
-                        <li><a href="" class="">시운전성적서</a></li>
-                        <li><a href="" class="">입고검사기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="record.html?doc=inspect" class="">검사성적서</a></li>
+                        <li><a href="record.html?doc=assembly" class="">조립공정기록부</a></li>
+                        <li><a href="record.html?doc=trial_log" class="">시운전일지</a></li>
+                        <li><a href="record.html?doc=trial_report" class="">시운전성적서</a></li>
+                        <li><a href="record.html?doc=incoming" class="">입고검사기록부</a></li>
+                        <li><a href="record.html?doc=trial_log" class="">시운전일지</a></li>
                     </ul>
                 </li>
             </ul>
@@ -81,154 +79,80 @@
 					</div>
 
 					<div class="btn_area">
-						<a href="javascript:;">조회</a>
-						<a onclick="addClassName('edit_pop')">입고정보입력</a>
+						<a href="javascript:;" id="btnSearch">조회</a>
+						<a href="javascript:;" id="btnQuickNew">입고정보입력</a>
+						<a href="wh_view.html" class="gray">전체 목록</a>
 					</div>
 				</article>
 				<article class="search_result_wrap w1200">
 						
-							<table class="table partner_table align_c" cellpadding="0" cellspacing="0">
+							<table id="monthTable" class="table partner_table align_c" cellpadding="0" cellspacing="0">
 						<thead>
 							<tr class="tb_header">
 								<th style="width: 170px;"></th>
-								<th>1월</th>
-								<th>2월</th>
-								<th>3월</th>
-								<th>4월</th>
-								<th>5월</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>12V856TB82</td>
-								<td><a onclick="addClassName('view_pop')">2</a></td>
-								<td></td>
-								<td><a onclick="addClassName('view_pop')">3</a></td>
-								<td></td>
-								<td><a onclick="addClassName('view_pop')">1</a></td>
-							</tr>
-							<tr>
-								<td>20V568TB82</td>
-								<td></td>
-								<td><a onclick="addClassName('view_pop')">1</a></td>
-								<td><a onclick="addClassName('view_pop')">1</a></td>
-								<td></td>
-								<td><a onclick="addClassName('view_pop')">2</a></td>
-							</tr>
-							<tr>
-								<td>16V2000TB82</td>
-								<td><a onclick="addClassName('view_pop')">1</a></td>
-								<td></td>
-								<td><a onclick="addClassName('view_pop')">2</a></td>
-								<td><a onclick="addClassName('view_pop')">1</a></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>12V4000TB82</td>
-								<td></td>
-								<td><a onclick="addClassName('view_pop')">3</a></td>
-								<td></td>
-								<td><a onclick="addClassName('view_pop')">2</a></td>
-								<td><a onclick="addClassName('view_pop')">1</a></td>
-							</tr>
+							<tr class="demo_state demo_loading"><td colspan="6">불러오는 중이에요…</td></tr>
 						</tbody>
 					</table>
-					
+					<p class="demo_hint" id="monthHint"></p>
 				</article>
 
 			</section>
 			
-			<div id="view_pop" class="layer_pop">
-				<div class="inner">
-					<div class="header">
-						<h3>조회</h3>
-						<i onclick="removeClassName('view_pop')" class="xi-close"></i>
-					</div>
-					
-					<div class="register">
-						<table class="table no_shadowtable bc_on cate align_c" cellpadding="0" cellspacing="0">
-							<thead>
-								<tr>
-									<th>구분</th>
-									<th>데이터</th>
-									<th>구분</th>
-									<th>데이터</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>S/N</td>
-									<td class="align_l"><input type="text" name="sn_num" value="12345a" id="sn_num"/></td>
-									<td>함명</td>
-									<td><input type="text" name="ship_name" value="참수리" id="ship_name"/></td>
-								</tr>
-								<tr>
-									<td>기종</td>
-									<td class="align_l"><input type="text" name="model" value="12V956TB82" id="model"/> </td>
-									<td>오버홀회차</td>
-									<td><input type="text" name="over" value="2" id="over"/></td>
-								</tr>
-								<tr>
-									<td>가동시간</td>
-									<td class="align_l"><input type="text" name="runnin_time" value="12000H" id="runnin_time"/></td>
-									<td>입고일</td>
-									<td><input type="text" name="Date1" value="2022-02-11" id="Date1"/></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<ul class="btn_area">
-                        <li><a onclick="removeClassName('view_pop')">저장</a></li>
-                        <li><a onclick="removeClassName('view_pop')">취소</a></li>
-                    </ul>
-					
-					</div>
-				
-			</div>
-			
 			<div id="edit_pop" class="layer_pop">
-                <div class="inner">
+                <div class="inner demo_pop_w640">
                     <div class="header">
-                        <h3>입고정보 변경</h3>
+                        <h3>입고정보 입력</h3>
                         <i onclick="removeClassName('edit_pop')" class="xi-close"></i>
                     </div>
-                    
+
                     <div class="register mt10">
-                        <table class="table no_shadowtable bc_on cate align_c" cellpadding="0" cellspacing="0">
+                        <table id="quickForm" class="table no_shadowtable bc_on cate align_c" cellpadding="0" cellspacing="0">
                             <tbody>
                                 <tr>
-                                    <td>기종</td>
-                                    <td><input type="text" name="model" value="12V856TB82" id="model"/></td>
-                                    <td>S/N</td>
-                                    <td><input type="text" name="sn_num" value="123456a" id="sn_num"/></td>
+                                    <td class="demo_label demo_req">기종</td>
+                                    <td><input type="text" name="model" value="" id="model" list="modelList" autocomplete="off"/></td>
+                                    <td class="demo_label demo_req">S/N</td>
+                                    <td><input type="text" name="sn_num" value="" id="sn_num" autocomplete="off"/></td>
                                 </tr>
                                 <tr>
-                                    <td>항명</td>
-                                    <td><input type="text" name="ship_name" value="참수리" id="ship_name"/></td>
-                                    <td>오버홀 회차</td>
-                                    <td><input type="text" name="over" value="2" id="over"/></td>
+                                    <td class="demo_req">함명</td>
+                                    <td><input type="text" name="ship_name" value="" id="ship_name" list="shipList" autocomplete="off"/></td>
+                                    <td class="demo_req">오버홀 회차</td>
+                                    <td><input type="text" name="over" value="" id="over" inputmode="numeric"/></td>
                                 </tr>
                                 <tr>
-                                    <td>가동시간</td>
-                                    <td><input type="text" name="runningtime" value="10,000H" id="runningtime"/></td>
-                                    <td>입고일</td>
-                                    <td><input type="text" name="Date1" value="2022-02-11" id="Date1"/></td>
+                                    <td class="demo_req">가동시간</td>
+                                    <td><input type="text" name="runningtime" value="" id="runningtime" placeholder="예: 10,000H" inputmode="numeric"/></td>
+                                    <td class="demo_req">입고일</td>
+                                    <td><input type="text" name="Date1" value="" id="Date1" autocomplete="off"/></td>
                                 </tr>
                             </tbody>
                         </table>
+                        <datalist id="modelList"></datalist>
+                        <datalist id="shipList"></datalist>
                     </div>
                     <ul class="btn_area">
-                        <li><a onclick="removeClassName('edit_pop')">저장</a></li>
+                        <li><a href="javascript:;" id="btnQuickSave">저장</a></li>
                         <li><a onclick="removeClassName('edit_pop')">취소</a></li>
                     </ul>
-                    
+
                     </div>
-                
+
             </div>
 			
 		</main>
 		
 		
+		<!-- 데모: 가상 데이터 + 화면 동작 -->
+		<script type="text/javascript" src="../../mock/mock-api.js"></script>
+		<script type="text/javascript" src="../data/master.js"></script>
+		<script type="text/javascript" src="../data/warehouse.js"></script>
+		<script type="text/javascript" src="../js/demo/common.js"></script>
+		<script type="text/javascript" src="../js/demo/wh_shared.js"></script>
+		<script type="text/javascript" src="../js/demo/wh_detail.js"></script>
 	</body>
 	
 <link rel="stylesheet" type="text/css" href="../css/lightpick.css">

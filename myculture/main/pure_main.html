@@ -29,14 +29,15 @@
 	<link href="../css/type.css?v20220228" rel="stylesheet" type="text/css" />
 	<link href="../css/font/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
 	<link href="../css/korean_only.css?v20220228" rel="stylesheet" type="text/css" />
+	<link href="../css/demo.css" rel="stylesheet" type="text/css" /><!-- 데모(가상 데이터) 화면 스타일 -->
 
 	<!--- favicon --->
-	<link rel="apple-touch-icon" sizes="180x180" href="/image/common/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/image/common/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/image/common/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../image/common/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../image/common/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../image/common/favicon-16x16.png">
 	<!--- //favicon --->
 
 
@@ -52,7 +53,12 @@
 	<link href="../js/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript" src="../js/jquery.bxslider.min.js"></script>
-	<link type="text/css" href="/css/jquery.bxslider.min.css" rel="stylesheet" />
+	<link type="text/css" href="../css/jquery.bxslider.min.css" rel="stylesheet" />
+
+	<!-- 데모: 공통 가상 API + 가상 데이터 + 공통 도우미 -->
+	<script src="../../mock/mock-api.js"></script>
+	<script src="../data/classes.js"></script>
+	<script src="../js/demo/common.js"></script>
 
 	<!-- side menu -->
 	<link href="../css/sidemenu.css" rel="stylesheet" type="text/css" />
@@ -97,8 +103,8 @@
 			</div>
 			<div class="side_myp">
 				<ul>
-					<li><a href="">로그인</a></li>
-					<li><a href="">회원가입</a></li>
+					<li><a href="javascript:;" onclick="Mock.notInDemo('로그인')">로그인</a></li>
+					<li><a href="javascript:;" onclick="Mock.notInDemo('회원가입')">회원가입</a></li>
 				</ul>
 			</div>
 
@@ -108,34 +114,34 @@
 					<div class="clear"></div>
 					<ul>
 						<li>
-							<a href="">Asia</a>
+							<a href="../good/list.html?b_uid_s=110">Asia</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<a href="">America/Oceania</a>
+							<a href="../good/list.html?b_uid_s=111">America/Oceania</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<a href="">Africa</a>
+							<a href="../good/list.html?b_uid_s=112">Africa</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<a href="">Europe</a>
+							<a href="../good/list.html?b_uid_s=113">Europe</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<a href="">Premium</a>
+							<a href="../good/list.html?b_uid_s=114">Premium</a>
 						</li>
 					</ul>
 
 					<!-- Online Class -->
 					<ul>
 						<li>
-							<a href="">Online Class</a>
+							<a href="../good/list.html?b_uid_s=116">Online Class</a>
 						</li>
 					</ul>
 
@@ -143,7 +149,7 @@
 					<!-- Others -->
 					<ul>
 						<li>
-							<a href="">Others</a>
+							<a href="../good/list.html?b_uid_s=115">Others</a>
 						</li>
 					</ul>
 
@@ -156,22 +162,22 @@
 
 					<ul>
 						<li>
-							<a href="">한국무용/국악</a>
+							<a href="../good/list.html?b_uid_s=105">한국무용/국악</a>
 						</li>
 						<li>
-							<a href="">전통무예</a>
+							<a href="../good/list.html?b_uid_s=100">전통무예</a>
 						</li>
 						<li>
-							<a href="">한식</a>
+							<a href="../good/list.html?b_uid_s=102">한식</a>
 						</li>
 						<li>
-							<a href="">전통공예</a>
+							<a href="../good/list.html?b_uid_s=101">전통공예</a>
 						</li>
 						<li>
-							<a href="">서화</a>
+							<a href="../good/list.html?b_uid_s=104">서화</a>
 						</li>
 						<li>
-							<a href="">기타</a>
+							<a href="../good/list.html?b_uid_s=103">기타</a>
 						</li>
 					</ul>
 
@@ -182,9 +188,10 @@
 				<div class="cmm_area">
 					<span class="tit_navi">고객센터 ></span>
 					<div class="clear"></div>
-					<li><a href="">마이컬처뉴스</a></li>
-					<li><a href="">FAQ</a></li>
-					<li><a href=""></a></li>
+					<li><a href="../cmm/index.html?BD_CD=NOTICE">마이컬처뉴스</a></li>
+					<li><a href="../cmm/index.html?BD_CD=FAQ">FAQ</a></li>
+					<li><a href="../cmm/index.html?BD_CD=QNA&amp;MODE=write">1:1 문의</a></li>
+					<li><a href="../mypage/reservation.html">예약확인</a></li>
 				</div>
 			</div>
 		</div>
@@ -198,11 +205,11 @@
 				<!-- gnb -->
 				<div class="inner">
 					<div class="left_area">
-						<a href="/">
+						<a href="pure_main.html">
 							<img src="../FileData/logo/logo.png" alt="마이컬처이즈" class="logo white pc_logo" />
 							<img src="../image/common/c_logo.png" alt="마이컬처이즈" class="logo white mobile_logo" />
 						</a>
-						<a href=""><img src="../image/common/c_logo.png" alt="색상로고" class="logo color"></a>
+						<a href="pure_main.html"><img src="../image/common/c_logo.png" alt="색상로고" class="logo color"></a>
 
 					</div>
 					<div class="menu">
@@ -210,16 +217,19 @@
 							<li class="language">
 								<a nohref=""><i class="xi-globus"></i> 한국어 <i class="xi-angle-down"></i></a>
 								<ul class="det_menu">
-									<li><a href="">한국어</a></li>
-									<li><a href="">영어</a></li>
+									<li><a href="javascript:;">한국어</a></li>
+									<li><a href="javascript:;" onclick="Mock.notInDemo('영어 사이트')">영어</a></li>
 								</ul>
 							</li>
-							<li><a href="">로그인</a></li>
+							<li><a href="javascript:;" onclick="Mock.notInDemo('로그인')">로그인</a></li>
 							<li>
-								<a href="">회원가입</a>
+								<a href="javascript:;" onclick="Mock.notInDemo('회원가입')">회원가입</a>
 							</li>
 							<li>
-								<a href="">고객센터</a>
+								<a href="../mypage/reservation.html">예약확인</a>
+							</li>
+							<li>
+								<a href="../cmm/index.html?BD_CD=NOTICE">고객센터</a>
 							</li>
 						</ul>
 						<div class="gnb_opener">
@@ -254,8 +264,11 @@
 					$("#snb").slideUp();
 				});
 
+				// 사이트맵: 원래는 sitemap.html 을 ajax 로 불러왔지만 file:// 에서도 열리도록
+				// 같은 마크업(js/demo/common.js 의 #mcSitemap)을 inline 으로 연다
 				$('.simple-ajax-popup-align-top').magnificPopup({
-					type: 'ajax',
+					type: 'inline',
+					items: { src: '#mcSitemap' },
 					alignTop: true,
 					overflowY: 'hidden',
 					fixedContentPos: false,
@@ -378,10 +391,10 @@
 				</div>
 				<ul class="bxslider">
 					<li>
-						<a href=""><img src="p_main2.jpg" alt="5" style="width: 100%;" /></a>
+						<a href="../good/list.html?grp=global"><img src="p_main2.jpg" alt="5" style="width: 100%;" /></a>
 					</li>
 					<li>
-						<a href=""><img src="p_main1.jpg" alt="5" style="width: 100%;" /></a>
+						<a href="../good/list.html"><img src="p_main1.jpg" alt="5" style="width: 100%;" /></a>
 					</li>
 				</ul>
 				<div class="bx_direction">
@@ -399,12 +412,12 @@
 				</div>
 				<div class="swiper-wrapper ">
 					<div class="swiper-slide">
-						<a href="">
+						<a href="../good/list.html?grp=global">
 							<img src="m_main1.jpg" style="width: 100%;" />
 						</a>
 					</div>
 					<div class="swiper-slide">
-						<a href="">
+						<a href="../good/list.html">
 							<img src="m_main2.jpg" style="width: 100%;" />
 						</a>
 					</div>
@@ -421,13 +434,14 @@
 						<div class="mid_banner">
 							<div class="swiper-container pc_recomm">
 								<div class="swiper-wrapper">
+									<!-- 데모: js/demo/main.js 가 myculture.picks 데이터로 다시 그린다 (아래는 같은 마크업의 기본값) -->
 									<div class="swiper-slide">
-										<a href="">
+										<a href="../good/detail.html?id=1">
 											<img src="sub1.jpg" />
 										</a>
 									</div>
 									<div class="swiper-slide">
-										<a href="">
+										<a href="../good/detail.html?id=2">
 											<img src="sub2.jpg" />
 										</a>
 									</div>
@@ -443,31 +457,32 @@
 
 					<section>
 						<h1>한국에서 느끼는 외쿡<span class="nd_br">하루만에 경험하는 갓성비 세계여행 (feat. 나보다 한국어가 유창한 외국인)</span></h1>
-						<a href="" class="all_btn">전체보기 <i class="xi-angle-right"></i></a>
+						<a href="../good/list.html?grp=global" class="all_btn">전체보기 <i class="xi-angle-right"></i></a>
 						<div class="menu_kor_only">
+							<!-- 데모: js/demo/main.js 가 myculture.categories(세계문화) 데이터로 다시 그린다 -->
 							<ul>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=110">
 										<div class="tit">Asia</div>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=111">
 										<div class="tit">America/Oceania</div>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=112">
 										<div class="tit">Africa</div>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=113">
 										<div class="tit">Europe</div>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=114">
 										<div class="tit">Premium</div>
 									</a>
 								</li>
@@ -487,37 +502,38 @@
 					<!--My culture is-->
 					<section>
 						<h1>한국! 어디까지 알고있니?<span>라떼도 몰랐던 전통문화, 이제는 제대로 알아보자</span></h1>
-						<a href="" class="all_btn">전체보기 <i class="xi-angle-right"></i></a>
+						<a href="../good/list.html?grp=korean" class="all_btn">전체보기 <i class="xi-angle-right"></i></a>
 						<div class="culture_menu">
+							<!-- 데모: js/demo/main.js 가 myculture.categories(한국문화) 데이터로 다시 그린다 -->
 							<ul>
 
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=105">
 										<div class="tit">한국무용/국악</div>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=100">
 										<div class="tit">전통무예</div>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=102">
 										<div class="tit">한식</div>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=101">
 										<div class="tit">전통공예</div>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=104">
 										<div class="tit">서화</div>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../good/list.html?b_uid_s=103">
 										<div class="tit">기타</div>
 									</a>
 								</li>
@@ -542,6 +558,8 @@
 			}
 		</style>
 
+		<!-- 데모: Pick 배너·타일을 데이터로 그린 뒤(동기) 아래에서 슬라이더를 초기화 -->
+		<script src="../js/demo/main.js"></script>
 
 		<script type="text/javascript">
 			$(document).ready(function () {
@@ -643,11 +661,11 @@
 		</script>
 		<div id="footer">
 			<div class="footer_wrap">
-				<a href="/" class="f_logo"><img src="../FileData/logo/f_logo.png" alt="로고" /></a>
+				<a href="pure_main.html" class="f_logo"><img src="../FileData/logo/f_logo.png" alt="로고" /></a>
 				<div class="menu">
 					<ul>
-						<li><a href="">서비스 이용약관</a></li>
-						<li><a href="">개인정보 이용방침</a></li>
+						<li><a href="javascript:;" onclick="Mock.notInDemo('서비스 이용약관')">서비스 이용약관</a></li>
+						<li><a href="javascript:;" onclick="Mock.notInDemo('개인정보 이용방침')">개인정보 이용방침</a></li>
 					</ul>
 				</div>
 				<div class="info">
@@ -656,8 +674,8 @@
 						사업자등록번호 : 012-34-56789 <br> 통신판매업신고번호 : 0123-샘플-4567 호<br>
 						이메일 : sample@sample.com <!-- | 팩스 : --><br>
 						주소 : 서울특별시 마포구 양화로 78-9 (서교동 395-155) 1층 2호<br>
-						고객센터 (AM10:00~PM5:00/ 주말,공휴일 제외) &nbsp;&nbsp;&nbsp;&nbsp;<a class="common_btn normal" href=""
-							target=""><img src="../image/main/kakao_ch_logo.png" alt="채널"> 문의</a>
+						고객센터 (AM10:00~PM5:00/ 주말,공휴일 제외) &nbsp;&nbsp;&nbsp;&nbsp;<a class="common_btn normal" href="javascript:;"
+							onclick="Mock.notInDemo('카카오톡 채널 문의')"><img src="../image/main/kakao_ch_logo.png" alt="채널"> 문의</a>
 					</div>
 					<span class="copyright">© 2020 Myculture Inc. All Rights Reserved</span>
 					<!--
@@ -665,10 +683,10 @@
 				-->
 				</div>
 				<div class="sns">
-					<a href="" class="instagram" target=""><i class="xi-instagram xi-x"></i></a>
-					<a href="" class="facebook" target=""><i class="xi-facebook xi-x"></i></a>
-					<a href="" class="blogger" target=""><i class="xi-blogger xi-x"></i></a>
-					<a href="" class="youtube" target=""><i class="xi-youtube xi-x"></i></a>
+					<a href="javascript:;" class="instagram" onclick="Mock.notInDemo('인스타그램')"><i class="xi-instagram xi-x"></i></a>
+					<a href="javascript:;" class="facebook" onclick="Mock.notInDemo('페이스북')"><i class="xi-facebook xi-x"></i></a>
+					<a href="javascript:;" class="blogger" onclick="Mock.notInDemo('블로그')"><i class="xi-blogger xi-x"></i></a>
+					<a href="javascript:;" class="youtube" onclick="Mock.notInDemo('유튜브')"><i class="xi-youtube xi-x"></i></a>
 				</div>
 			</div>
 		</div>

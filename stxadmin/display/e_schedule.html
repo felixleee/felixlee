@@ -8,10 +8,8 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 		<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
 		<script type="text/javascript" src="../js/admin.js"></script>
-		<script type="text/javascript" src="../js/swiper-bundle.js"></script>
 		<link rel="stylesheet" href="../css/swiper-bundle.css" type="text/css" charset="utf-8"/>
-		<!-- CKEditor -->
-		<script type="text/javascript" src="../js/ckeditor_v4.9/ckeditor.js"></script>
+		<link rel="stylesheet" href="../css/demo.css" type="text/css" charset="utf-8"/>
 	</head>
 	<body>
 		<header>
@@ -20,9 +18,9 @@
 					<li><h1>STX Admin Page</h1></li>
 				</ul>
 				<ul class="head_nav">
-					<li><a href="">ADMIN님</a>, 안녕하세요!</li>
-					<li><a href="">슈퍼관리자</a></li>
-					<li><a href="">로그아웃</a></li>
+					<li><a href="javascript:;" data-na="내 정보 관리">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="javascript:;" data-na="관리자 설정">슈퍼관리자</a></li>
+					<li><a href="javascript:;" data-na="로그아웃">로그아웃</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -30,7 +28,7 @@
 		<aside>
             <div class="logo">
                 <h1>
-					<a href=""><img src="../image/stxlogo.png" alt=""></a>
+					<a href="../index.html"><img src="../image/stxlogo.png" alt=""></a>
 				</h1>
             </div>
             <div class="to_user_page">
@@ -57,12 +55,12 @@
                 <li class="main_menu ">
                     <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
                     <ul class="sub_menu">
-                        <li><a href="" class="">검사성적서</a></li>
-                        <li><a href="" class="">조립공정기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
-                        <li><a href="" class="">시운전성적서</a></li>
-                        <li><a href="" class="">입고검사기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="record.html?doc=inspect" class="">검사성적서</a></li>
+                        <li><a href="record.html?doc=assembly" class="">조립공정기록부</a></li>
+                        <li><a href="record.html?doc=trial_log" class="">시운전일지</a></li>
+                        <li><a href="record.html?doc=trial_report" class="">시운전성적서</a></li>
+                        <li><a href="record.html?doc=incoming" class="">입고검사기록부</a></li>
+                        <li><a href="record.html?doc=trial_log" class="">시운전일지</a></li>
                     </ul>
                 </li>
             </ul>
@@ -74,10 +72,10 @@
 				
 				<article class="search_result_wrap w1200">
 						<h3 class="section_tit">긴급일정</h3>
-							<table class="table partner_table align_c" cellpadding="0" cellspacing="0">
+							<table id="scheduleTable" class="table partner_table align_c" cellpadding="0" cellspacing="0">
 						<thead>
 							<tr class="tb_header">
-								<th>
+								<th class="demo_chkcol">
 									<input type="checkbox" name="all_chk" value="" id="all_chk"/>
 								</th>
 								<th>No</th>
@@ -89,162 +87,122 @@
 								<th>파일 다운로드</th>
 								<th>인쇄</th>
 								<th>형식</th>
+								<th>표출</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									<input type="checkbox" name="cont_15" value="" id="cont_15"/>
-								</td>
-								<td>1</td>
-								<td>아이템 이름1</td>
-								<td>1개월 (32일)</td>
-								<td>000-0000</td>
-								<td>2022.3.21</td>
-								<td>2022.5.21</td>
-								<td><a class="gray_btn" href="">다운로드</a></td>
-								<td><a class="gray_btn" href="">인쇄</a></td>
-								<td><a class="" href=""><img src="../image/excel_icon.png" width="30" alt="엑셀"></a></td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" name="cont_14" value="" id="cont_14"/>
-								</td>
-								<td>2</td>
-								<td>아이템 이름2</td>
-								<td>2개월 (58일)</td>
-								<td>000-0000</td>
-								<td>2022.5.21</td>
-								<td>2022.7.21</td>
-								<td><a class="gray_btn" href="">다운로드</a></td>
-								<td><a class="gray_btn" href="">인쇄</a></td>
-								<td><a class="" href=""><img src="../image/excel_icon.png" width="30" alt="엑셀"></a></td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" name="cont_13" value="" id="cont_13"/>
-								</td>
-								<td>
-									3
-								</td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" name="cont_12" value="" id="cont_12"/>
-								</td>
-								<td>
-									4
-								</div>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" name="cont_11" value="" id="cont_11"/>
-								</td>
-								<td>
-									5
-								</td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" name="cont_10" value="" id="cont_10"/>
-								</td>
-								<td>
-									6
-								</div>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" name="cont_9" value="" id="cont_9"/>
-								</td>
-								<td>
-									7
-								</div>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" name="cont_8" value="" id="cont_8"/>
-								</td>
-								<td>
-									8
-								</div>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							
+							<tr class="demo_state demo_loading"><td colspan="11">불러오는 중이에요…</td></tr>
 						</tbody>
 					</table>
-                   		
-                   		
-					
-					
-					<div class="paging">
-						<ul>
-							<li><a href="">처음</a></li>
-							<li><a href="">이전</a></li>
-							<li class="on"><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-							<li><a href="">4</a></li>
-							<li><a href="">5</a></li>
-							<li><a href="">다음</a></li>
-							<li><a href="">마지막</a></li>
+					<div class="flex_box">
+						<p class="demo_count" id="schCount"></p>
+						<ul class="btn_area flex_end mt10">
+							<li><a href="javascript:;" class="demo_excel" id="btnExcel" title="목록을 엑셀(CSV)로 내려받기"><img src="../image/excel_icon.png" width="30" alt="엑셀"></a></li>
+							<li><a href="javascript:;" id="btnNew">등록</a></li>
+							<li><a href="javascript:;" class="gray" id="btnDelete">선택 삭제</a></li>
 						</ul>
+					</div>
+
+					<div class="paging" id="schPaging">
+						<ul></ul>
 					</div>
 					
 				</article>
 
 			</section>
+
+			<div id="schedule_pop" class="layer_pop">
+                <div class="inner demo_pop_w640">
+                    <div class="header">
+                        <h3 id="schPopTitle">긴급일정 등록</h3>
+                        <i onclick="removeClassName('schedule_pop')" class="xi-close"></i>
+                    </div>
+
+                    <div class="register mt10">
+                        <table id="schForm" class="table no_shadowtable bc_on cate align_c" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td class="demo_label demo_req">제목</td>
+                                    <td colspan="3"><input type="text" name="title" value="" id="sch_title" placeholder="메인 화면에 보일 제목"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="demo_req">아이템</td>
+                                    <td colspan="3"><input type="text" name="item" value="" id="sch_item" placeholder="예: 터보차저 카트리지 (20V538TB92)"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="demo_req">입고일</td>
+                                    <td><input type="text" name="Date1" value="" id="Date1" autocomplete="off"/></td>
+                                    <td class="demo_label demo_req">출고일</td>
+                                    <td><input type="text" name="Date2" value="" id="Date2" autocomplete="off"/></td>
+                                </tr>
+                                <tr>
+                                    <td>리드타임</td>
+                                    <td class="align_l"><span class="demo_lead" id="sch_lead">-</span></td>
+                                    <td>표출</td>
+                                    <td class="align_l"><label class="demo_switch"><input type="checkbox" name="show" id="sch_show"/><i></i><span>메인 화면에 표출</span></label></td>
+                                </tr>
+                                <tr>
+                                    <td class="demo_req">담당자</td>
+                                    <td><input type="text" name="manager" value="" id="sch_manager"/></td>
+                                    <td class="demo_req">전화번호</td>
+                                    <td><input type="text" name="phone" value="" id="sch_phone" placeholder="010-0000-1234"/></td>
+                                </tr>
+                                <tr>
+                                    <td>비고</td>
+                                    <td colspan="3"><input type="text" name="memo" value="" id="sch_memo"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ul class="btn_area">
+                        <li><a href="javascript:;" id="btnSchSave">저장</a></li>
+                        <li><a href="javascript:;" id="btnSchDelete" class="gray">삭제</a></li>
+                        <li><a onclick="removeClassName('schedule_pop')">취소</a></li>
+                    </ul>
+
+                    </div>
+
+            </div>
 			
 			
 			
 		</main>
 		
 		
+		<link rel="stylesheet" type="text/css" href="../css/lightpick.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+		<script src="../js/lightpick.js"></script>
+		<script>
+			var picker = new Lightpick({
+			    field: document.getElementById('Date1'),
+			    format: 'YYYY-MM-DD',
+			    singleDate: true,
+	    locale: {
+	    	tooltip: {
+                one: '일',
+                other: '일',
+            },
+	    },
+			    onSelect: function () { if (window.onScheduleDate) window.onScheduleDate(); }
+			});
+
+			var picker2 = new Lightpick({
+			    field: document.getElementById('Date2'),
+			    format: 'YYYY-MM-DD',
+			    singleDate: true,
+	    locale: {
+	    	tooltip: {
+                one: '일',
+                other: '일',
+            },
+	    },
+			    onSelect: function () { if (window.onScheduleDate) window.onScheduleDate(); }
+			});
+		</script>
+		<!-- 데모: 가상 데이터 + 화면 동작 -->
+		<script type="text/javascript" src="../../mock/mock-api.js"></script>
+		<script type="text/javascript" src="../data/board.js"></script>
+		<script type="text/javascript" src="../js/demo/common.js"></script>
+		<script type="text/javascript" src="../js/demo/e_schedule.js"></script>
 	</body>
 </html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="CIELPIA :: 씨엘피아">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="씨엘피아 강의 검색 — 강의명·선생님·태그">
+    <title>강의 검색 | LJY Port :: 실제 운영되는 페이지가 아닙니다</title>
+
+    <!-- 메인(main/pure_main.html)과 같은 공통 CSS·스크립트 -->
+    <link rel="stylesheet" href="../css/web/default.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/web/main.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/web/respon.css?ver=220607" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+    <!--------------------------------------------------------------------------------------- sidemenu  -->
+    <script type="text/javascript" src="../js/sidemenu.js"></script>
+    <link type="text/css" href="../js/sidemenu.css" rel="stylesheet" />
+    <!--------------------------------------------------------------------------------------- jquery ui -->
+    <link type="text/css" rel="stylesheet" href="../js/jquery-ui/css/jquery-ui-1.10.4.custom.css" />
+    <script src="../js/jquery-ui/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
+    <!--------------------------------------------------------------------------------------- demo (가상 데이터) -->
+    <link rel="stylesheet" href="../css/demo.css" type="text/css" charset="utf-8" />
+    <script src="../../mock/mock-api.js"></script>
+    <script src="../data/categories.js"></script>
+    <script src="../data/lectures.js"></script>
+    <script src="../data/user.js"></script>
+    <script src="../js/demo/common.js"></script>
+</head>
+
+<body>
+    <!-- ===================== 헤더 (메인과 같은 마크업) ===================== -->
+    <div class="top_liner">
+
+        <a href="javascript:;" onclick="return Mock.notInDemo('아빠 체험단 모집 이벤트')">
+            <img class="pc" src="../image/web/main/top_liner.jpg" width="100%" style="max-width: 1200px;" alt="" />
+            <img class="mobile" src="../image/web/main/mobile_line_banner.jpg" width="100%" style="max-width: 1200px;"
+                alt="" />
+        </a>
+
+
+
+    </div>
+
+    <div id="sidemenu" style="display:none;">
+        <div class="sidemenu_wrap">
+            <div class="side_title">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="lang_setting_btn">
+                            <img src="../image/web/icon/setting.png" alt="세팅아이콘" />
+                            <span>설정</span>
+                        </a>
+                    </li>
+                </ul>
+                <a href="#" class="sidemenu_close" data-role="sidemenu-close">
+                    <i class="xi-close"></i>
+                </a>
+            </div>
+            <div class="side_category">
+                <p class="menu "><span>소개</span><i class="xi-angle-down"></i></p>
+                <ul class="sub_menu">
+                    <li><a href="../intro/cielpia_intro.html">씨엘피아 소개</a></li>
+                    <li><a href="../content/lecture_list.html?sort=rate">수업 추천</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('전문강사 가입')">전문강사 가입</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('교육 픽토그램')">교육 픽토그램</a></li>
+                </ul>
+                <p class="menu "><span>지원</span><i class="xi-angle-down"></i></p>
+                <ul class="sub_menu">
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('공지사항')">공지사항</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('자주하는 질문')">자주하는 질문</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('1:1 문의')">1:1 문의</a></li>
+                </ul>
+                <p class="menu one"><a href="../mypage/my_class.html">내 강의실</a></p>
+                <p class="menu one"><a href="javascript:;" onclick="return Mock.notInDemo('로그인')">로그인</a></p>
+            </div>
+
+            <h4>강의</h4>
+            <div class="side_category">
+
+            </div>
+        </div>
+
+        <script>
+            $(document).on("click", ".side_category p", function () {
+                if (!$(this).hasClass('one')) {
+                    if ($(this).next().css("display") == "none") {
+                        $('p.menu').removeClass('on');
+                        $(this).addClass('on');
+                        $('ul.sub_menu').slideUp();
+                        $(this).next().slideDown();
+                        $(this).children("i").addClass('xi-rotate-180');
+                    } else {
+                        $(this).removeClass('on');
+                        $(this).next().slideUp();
+                        $(this).children("i").removeClass('xi-rotate-180');
+                    }
+                }
+            });
+
+            $(document).on("click", "a.third_tit", function () {
+                if ($(this).next().css("display") == "none") {
+                    $(this).addClass('on');
+                    $('ul.third_menu').slideUp();
+                    $(this).next().slideDown();
+                } else {
+                    $(this).removeClass('on');
+                    $(this).next().slideUp();
+                }
+            });
+
+        </script>
+    </div>
+    <div id="wrap_bg" style="display:none;" data-role="sidemenu-close"></div>
+
+    <header>
+        <a class="m_left_menu" data-role="sidemenu-toggle" data-direction="left" data-id="sidemenu">
+            <i class="xi-bars"></i>
+        </a>
+
+        <ul class="m_right_menu">
+            <li><a href="javascript:;" onclick="return Mock.notInDemo('로그인')">로그인</a></li>
+            <li><a href="../content/search.html" title="강의 검색"><i class="xi-search"></i></a></li>
+        </ul>
+
+        <div class="inner">
+            <div class="logo_area" onclick="location.href='../main/pure_main.html'" style="cursor: pointer;">
+                <h1 class="cl_logo">CIELPIA</h1>
+                <h1 class="branch_logo">
+
+
+                </h1>
+            </div>
+
+            <nav>
+                <ul class="nav_list">
+                    <li><a href="../main/pure_main.html">홈</a></li>
+                    <li>
+                        <a href="../intro/cielpia_intro.html">소개</a>
+                        <ul class="sub_menu">
+                            <li><a href="../content/lecture_list.html?sort=rate">· 수업 추천</a></li>
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('전문강사 가입')">· 전문강사 가입</a></li>
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('교육 픽토그램')">· 교육 픽토그램</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="return Mock.notInDemo('지원')">지원</a>
+                        <ul class="sub_menu">
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('공지사항')">· 공지사항</a></li>
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('자주하는 질문')">· 자주하는 질문</a></li>
+                            <li><a href="javascript:;" onclick="return Mock.notInDemo('1:1 문의')">· 1:1 문의</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../mypage/my_class.html">내 강의실</a></li>
+                    <li><a href="javascript:;" onclick="return Mock.notInDemo('로그인')">로그인</a></li>
+                    <li><a href="javascript:;" class="lang_setting_btn"><img src="../image/web/icon/setting.png"
+                                alt="세팅아이콘" /></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="child_select setting_pop">
+        <form name="childForm" id="childForm" method="post" action="javascript:;" onsubmit="return false;"><!-- 원래 POST /setting/set_child → 데모: MockDB.setItem('cielpia.child') (js/demo/common.js) -->
+            <input type="hidden" name="_token" value="{CSRF_TOKEN}">
+            <div class="inner align_c">
+                <i class="xi-close"></i>
+                <div class="header">
+                    <p>자녀선택</p>
+                </div>
+                <div class="select_wrap">
+                    <ul>
+                    </ul>
+                    <a class="ok_btn mt30 mb20" href="javascript:;">선택완료</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="lang_select setting_pop">
+        <form name="languageForm" id="languageForm" method="post" action="javascript:;" onsubmit="return false;"><!-- 원래 POST /setting/set_language → 데모: MockDB.setItem('cielpia.setting') (js/demo/common.js) -->
+            <input type="hidden" name="_token" value="{CSRF_TOKEN}">
+            <div class="inner align_c">
+                <i class="xi-close"></i>
+                <div class="header">
+                    <p>설정</p>
+                </div>
+                <div class="select_wrap">
+                    <ul>
+                        <li>
+                            <p>언어변경</p>
+                            <div class="input">
+                                <input type="radio" name="flag_language" value="1" id="flag_language_kr"
+                                    checked /><label for="flag_language_kr">한국어</label>
+                            </div>
+                            <div class="input">
+                                <input type="radio" name="flag_language" value="2" id="flag_language_en" /><label
+                                    for="flag_language_en">영어</label>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Change currency</p>
+                            <div class="input">
+                                <input type="radio" name="flag_current" value="1" id="flag_current_krw" checked /><label
+                                    for="flag_current_krw">KRW (원화)</label>
+                            </div>
+                            <div class="input">
+                                <input type="radio" name="flag_current" value="2" id="flag_current_usd" /><label
+                                    for="flag_current_usd">USD (미국달러)</label>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="ok_btn mt30 mb20" href="javascript:;">OK</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        $("ul.nav_list > li").hover(function () {
+            $(this).children('ul.sub_menu').stop().slideToggle();
+        });
+
+        $("a.child_select_btn").click(function () {
+            $('div.child_select').css("display", "flex").hide().fadeIn();
+        });
+
+        $(".child_select a.ok_btn, .child_select .xi-close").click(function () {
+            $('div.child_select').fadeOut();
+        });
+
+        $("a.lang_setting_btn").click(function () {
+            $('div.lang_select').css("display", "flex").hide().fadeIn();
+        });
+
+        $(".lang_select a.ok_btn, .lang_select .xi-close").click(function () {
+            $('div.lang_select').fadeOut();
+        });
+
+        // function setConfig(formName) {
+        //     let urlStr = $('#' + formName).attr('action');
+        //     let params = $('#' + formName).serializeObject();
+        //     $.ajax({
+        //         type: "post",
+        //         cache: false,
+        //         url: urlStr,
+        //         data: JSON.stringify(params),
+        //         dataType: "json",
+        //         context: this,
+        //         beforeSend: function (xhr) {
+        //             xhr.setRequestHeader("X-CSRF-TOKEN", "{CSRF_TOKEN}");
+        //             xhr.setRequestHeader("Content-Type", "application/json");
+        //         },
+        //         success: function (data) {
+        //             if (data.status == "200") location.reload();
+        //         }
+        //     });
+        // }
+    </script>
+
+    <main>
+        <div class="cp-page">
+            <div class="cp-inner">
+                <div class="cp-search-hero">
+                    <h2 class="cp-title">어떤 수업을 찾고 있나요?</h2>
+                    <form class="cp-search-form" id="cpSearchForm" action="search.html" method="get" role="search">
+                        <label for="cpQ" class="cp-blind">검색어</label>
+                        <input type="search" name="q" id="cpQ" placeholder="강의명·선생님·키워드 (예: 몬테소리, 요가, 영어)" autocomplete="off" />
+                        <button type="submit" title="검색"><i class="xi-search" aria-hidden="true"></i><span class="cp-blind">검색</span></button>
+                        <p class="cp-search-alert" role="alert"></p>
+                    </form>
+                    <div class="cp-keywords" id="cpKeywords"></div>
+                </div>
+
+                <div class="cp-list-head">
+                    <p class="cp-total" id="cpTotal" aria-live="polite"></p>
+                    <div class="cp-sort" id="cpSort" role="group" aria-label="정렬">
+                        <button type="button" data-sort="pop">인기순</button>
+                        <button type="button" data-sort="new">최신순</button>
+                        <button type="button" data-sort="rate">평점순</button>
+                    </div>
+                </div>
+                <div id="cpList"></div>
+                <div class="cp-paging" id="cpPaging"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===================== 푸터 (메인과 같은 마크업) ===================== -->
+    <footer>
+
+
+
+        <div class="foot_info">
+            <ul class="comp_menu">
+                <li><a href="../intro/cielpia_intro.html">회사소개</a></li>
+                <li><a href="javascript:;" onclick="return Mock.notInDemo('이용약관')">이용약관</a></li>
+                <li><a href="javascript:;" onclick="return Mock.notInDemo('개인정보처리방침')">개인정보처리방침</a></li>
+                <li><a href="javascript:;" onclick="return Mock.notInDemo('사이트맵')">사이트맵</a></li>
+                <li><a href="javascript:;" onclick="return Mock.notInDemo('공지사항')">공지사항</a></li>
+            </ul>
+            <div class="company_info">
+                <p>CIELPIA / Footer 사업자 주소란 / 사업자 번호 : 012-34-5678</p>
+                <p>대표 : 가나다 / 이메일 : sample@example.com
+                    <!--------------------------------------------------------------------------------------- / 연락처 : 010-0000-4441 -->
+                </p>
+                <p>통신판매업신고번호 : 제 0123-샘플-4567호 / 개인정보관리책임자 : 가나다</p>
+                <p class="copyright">Copyright ⓒ 씨엘피아 All Rights Reserved</p>
+            </div>
+
+            <ul class="sns">
+            </ul>
+
+        </div>
+    </footer>
+
+    <script src="../js/demo/search.js"></script>
+</body>
+
+</html>

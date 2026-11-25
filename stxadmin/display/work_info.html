@@ -8,10 +8,8 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 		<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
 		<script type="text/javascript" src="../js/admin.js"></script>
-		<script type="text/javascript" src="../js/swiper-bundle.js"></script>
 		<link rel="stylesheet" href="../css/swiper-bundle.css" type="text/css" charset="utf-8"/>
-		<!-- CKEditor -->
-		<script type="text/javascript" src="../js/ckeditor_v4.9/ckeditor.js"></script>
+		<link rel="stylesheet" href="../css/demo.css" type="text/css" charset="utf-8"/>
 	</head>
 	<body>
 		<header>
@@ -20,9 +18,9 @@
 					<li><h1>STX Admin Page</h1></li>
 				</ul>
 				<ul class="head_nav">
-					<li><a href="../teacher/teacher_info.html">ADMIN님</a>, 안녕하세요!</li>
-					<li><a href="../controller/admin_setting.html">슈퍼관리자</a></li>
-					<li><a href="../login.html">로그아웃</a></li>
+					<li><a href="javascript:;" data-na="내 정보 관리">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="javascript:;" data-na="관리자 설정">슈퍼관리자</a></li>
+					<li><a href="javascript:;" data-na="로그아웃">로그아웃</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -36,17 +34,17 @@
 			</div>
 			<ul id="left_wrap">
 				<li class="main_menu ">
-					<a class="m_menu_list"><span><i class="xi-label"></i> 기본정보 관리</span><i class="xi-angle-down"></i></a>
+					<a href="javascript:;" data-na="기본정보 관리" class="m_menu_list"><span><i class="xi-label"></i> 기본정보 관리</span><i class="xi-angle-down"></i></a>
 				</li>
 				<li class="main_menu ">
-					<a class="m_menu_list"><span><i class="xi-label"></i> 운영 관리</span><i class="xi-angle-down"></i></a>
+					<a href="javascript:;" data-na="운영 관리" class="m_menu_list"><span><i class="xi-label"></i> 운영 관리</span><i class="xi-angle-down"></i></a>
 				</li>
 				<li class="main_menu ">
 					<a class="m_menu_list"><span><i class="xi-label"></i> 화면 관리</span><i class="xi-angle-down"></i></a>
 					<ul class="sub_menu ">
-						<li><a href="" class="">즐겨찾기</a></li>
+						<li><a href="javascript:;" data-na="즐겨찾기 관리" class="">즐겨찾기</a></li>
 						<li><a href="e_schedule.html" class="on">긴급일정</a></li>
-						<li><a href="" class="">공지사항</a></li>
+						<li><a href="javascript:;" data-na="공지사항 관리" class="">공지사항</a></li>
 					</ul>
 				</li>
 				<li class="main_menu ">
@@ -61,24 +59,24 @@
 					<a href="record.html" class="m_menu_list"><span><i class="xi-label"></i> 이력관리</span><i class="xi-angle-down"></i></a>
 				</li>
 				<li class="main_menu ">
-                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> 예측소요</span><i class="xi-angle-down"></i></a>
+                    <a href="quality_test.html" class="m_menu_list"><span><i class="xi-label"></i> 예측소요</span><i class="xi-angle-down"></i></a>
                 </li>
                 <li class="main_menu ">
                     <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
                     <ul class="sub_menu">
-                        <li><a href="" class="">검사성적서</a></li>
-                        <li><a href="" class="">조립공정기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
-                        <li><a href="" class="">시운전성적서</a></li>
-                        <li><a href="" class="">입고검사기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="record.html?doc=inspect" class="">검사성적서</a></li>
+                        <li><a href="record.html?doc=assembly" class="">조립공정기록부</a></li>
+                        <li><a href="record.html?doc=trial_log" class="">시운전일지</a></li>
+                        <li><a href="record.html?doc=trial_report" class="">시운전성적서</a></li>
+                        <li><a href="record.html?doc=incoming" class="">입고검사기록부</a></li>
+                        <li><a href="record.html?doc=trial_log" class="">시운전일지</a></li>
                     </ul>
                 </li>
                 <li class="main_menu ">
-                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> 시운전</span><i class="xi-angle-down"></i></a>
+                    <a href="record.html?doc=trial_log" class="m_menu_list"><span><i class="xi-label"></i> 시운전</span><i class="xi-angle-down"></i></a>
                 </li>
                 <li class="main_menu ">
-                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> C/S</span><i class="xi-angle-down"></i></a>
+                    <a href="javascript:;" data-na="C/S" class="m_menu_list"><span><i class="xi-label"></i> C/S</span><i class="xi-angle-down"></i></a>
                 </li>
 			</ul>
 		</aside>
@@ -86,8 +84,14 @@
 		
 		<main>
 			<section>
+				<div class="demo_record_head">
+					<p id="recordTitle">불러오는 중이에요…</p>
+					<ul class="btn_area">
+						<li><a href="record.html" id="btnBackRecord" class="gray">이력관리로</a></li>
+					</ul>
+				</div>
 				<h3 class="section_tit">영업정보</h3>
-				<article>
+				<article id="workForm">
 				<table class="table form_table input95" cellpadding="0" cellspacing="0">
 						<colgroup>
 							<col width="15%">
@@ -195,25 +199,71 @@
                         </tr>
                     </tbody>
                 </table>
-                
+                <ul class="btn_area mt20 w1200">
+                    <li><a href="record.html" id="btnList">목록</a></li>
+                    <li><a href="javascript:;" id="btnSave">저장</a></li>
+                </ul>
+
                 <h3 class="section_tit mt50">품질정보 - 성적서 조회</h3>
 					<ul class="btn_area mt20 w1200 white">
-						<li><a href="">조립공정기록부</a></li>
-						<li><a href="">부품검사이력</a></li>
-						<li><a href="">입고검사기록</a></li>
-						<li><a href="">시운전일지</a></li>
-						<li><a href="">시운전성적서</a></li>
-						<li><a href="">입창시운전기록부</a></li>
-						<li><a href="">기타</a></li>
+						<li><a href="javascript:;" data-doc="assembly">조립공정기록부</a></li>
+						<li><a href="javascript:;" data-doc="parts">부품검사이력</a></li>
+						<li><a href="javascript:;" data-doc="incoming">입고검사기록</a></li>
+						<li><a href="javascript:;" data-doc="trial_log">시운전일지</a></li>
+						<li><a href="javascript:;" data-doc="trial_report">시운전성적서</a></li>
+						<li><a href="javascript:;" data-doc="dock_trial">입창시운전기록부</a></li>
+						<li><a href="javascript:;" data-doc="etc">기타</a></li>
 					</ul>
+					<p class="demo_hint">문서 이름을 누르면 성적서를 볼 수 있어요. 진행 단계에 이르지 않은 문서는 '작성 전'으로 보여요.</p>
 				</article>
 			</section>
+
+			<div id="doc_pop" class="layer_pop">
+				<div class="inner demo_pop_w760">
+					<div class="header">
+						<h3 id="docTitle">성적서 조회</h3>
+						<i onclick="removeClassName('doc_pop')" class="xi-close"></i>
+					</div>
+
+					<div class="register mt10">
+						<table class="table no_shadowtable bc_on cate align_c" cellpadding="0" cellspacing="0">
+							<tbody id="docInfo"></tbody>
+						</table>
+						<div class="demo_gap"></div>
+						<table class="table no_shadowtable bc_on cate align_c" cellpadding="0" cellspacing="0">
+							<thead>
+								<tr>
+									<th>점검 항목</th>
+									<th>기준</th>
+									<th>측정값</th>
+									<th>판정</th>
+								</tr>
+							</thead>
+							<tbody id="docItems"></tbody>
+						</table>
+					</div>
+					<ul class="btn_area">
+						<li><a href="javascript:;" id="btnDocCsv">다운로드</a></li>
+						<li><a href="javascript:;" id="btnDocPrint">인쇄</a></li>
+						<li><a onclick="removeClassName('doc_pop')" class="gray">닫기</a></li>
+					</ul>
+
+				</div>
+
+			</div>
 			
 			
 			
 		</main>
 		
 		
+		<!-- 데모: 가상 데이터 + 화면 동작 -->
+		<script type="text/javascript" src="../../mock/mock-api.js"></script>
+		<script type="text/javascript" src="../data/master.js"></script>
+		<script type="text/javascript" src="../data/warehouse.js"></script>
+		<script type="text/javascript" src="../js/demo/common.js"></script>
+		<script type="text/javascript" src="../js/demo/docs.js"></script>
+		<script type="text/javascript" src="../js/demo/work_info.js"></script>
 	</body>
 	
 <link rel="stylesheet" type="text/css" href="../css/lightpick.css">

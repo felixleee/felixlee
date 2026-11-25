@@ -8,10 +8,8 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 		<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
 		<script type="text/javascript" src="../js/admin.js"></script>
-		<script type="text/javascript" src="../js/swiper-bundle.js"></script>
 		<link rel="stylesheet" href="../css/swiper-bundle.css" type="text/css" charset="utf-8"/>
-		<!-- CKEditor -->
-		<script type="text/javascript" src="../js/ckeditor_v4.9/ckeditor.js"></script>
+		<link rel="stylesheet" href="../css/demo.css" type="text/css" charset="utf-8"/>
 	</head>
 	<body>
 		<header>
@@ -20,9 +18,9 @@
 					<li><h1>STX Admin Page</h1></li>
 				</ul>
 				<ul class="head_nav">
-					<li><a href="../teacher/teacher_info.html">ADMIN님</a>, 안녕하세요!</li>
-					<li><a href="../controller/admin_setting.html">슈퍼관리자</a></li>
-					<li><a href="../login.html">로그아웃</a></li>
+					<li><a href="javascript:;" data-na="내 정보 관리">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="javascript:;" data-na="관리자 설정">슈퍼관리자</a></li>
+					<li><a href="javascript:;" data-na="로그아웃">로그아웃</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -36,17 +34,17 @@
             </div>
             <ul id="left_wrap">
                 <li class="main_menu ">
-                    <a class="m_menu_list"><span><i class="xi-label"></i> 기본정보 관리</span><i class="xi-angle-down"></i></a>
+                    <a href="javascript:;" data-na="기본정보 관리" class="m_menu_list"><span><i class="xi-label"></i> 기본정보 관리</span><i class="xi-angle-down"></i></a>
                 </li>
                 <li class="main_menu ">
-                    <a class="m_menu_list"><span><i class="xi-label"></i> 운영 관리</span><i class="xi-angle-down"></i></a>
+                    <a href="javascript:;" data-na="운영 관리" class="m_menu_list"><span><i class="xi-label"></i> 운영 관리</span><i class="xi-angle-down"></i></a>
                 </li>
                 <li class="main_menu ">
                     <a class="m_menu_list"><span><i class="xi-label"></i> 화면 관리</span><i class="xi-angle-down"></i></a>
                     <ul class="sub_menu ">
-                        <li><a href="" class="">즐겨찾기</a></li>
+                        <li><a href="javascript:;" data-na="즐겨찾기 관리" class="">즐겨찾기</a></li>
                         <li><a href="e_schedule.html" class="on">긴급일정</a></li>
-                        <li><a href="" class="">공지사항</a></li>
+                        <li><a href="javascript:;" data-na="공지사항 관리" class="">공지사항</a></li>
                     </ul>
                 </li>
                 <li class="main_menu on">
@@ -61,24 +59,24 @@
                     <a href="record.html" class="m_menu_list"><span><i class="xi-label"></i> 이력관리</span><i class="xi-angle-down"></i></a>
                 </li>
                 <li class="main_menu ">
-                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> 예측소요</span><i class="xi-angle-down"></i></a>
+                    <a href="quality_test.html" class="m_menu_list"><span><i class="xi-label"></i> 예측소요</span><i class="xi-angle-down"></i></a>
                 </li>
                 <li class="main_menu ">
                     <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
                     <ul class="sub_menu">
-                        <li><a href="" class="">검사성적서</a></li>
-                        <li><a href="" class="">조립공정기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
-                        <li><a href="" class="">시운전성적서</a></li>
-                        <li><a href="" class="">입고검사기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="record.html?doc=inspect" class="">검사성적서</a></li>
+                        <li><a href="record.html?doc=assembly" class="">조립공정기록부</a></li>
+                        <li><a href="record.html?doc=trial_log" class="">시운전일지</a></li>
+                        <li><a href="record.html?doc=trial_report" class="">시운전성적서</a></li>
+                        <li><a href="record.html?doc=incoming" class="">입고검사기록부</a></li>
+                        <li><a href="record.html?doc=trial_log" class="">시운전일지</a></li>
                     </ul>
                 </li>
                 <li class="main_menu ">
-                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> 시운전</span><i class="xi-angle-down"></i></a>
+                    <a href="record.html?doc=trial_log" class="m_menu_list"><span><i class="xi-label"></i> 시운전</span><i class="xi-angle-down"></i></a>
                 </li>
                 <li class="main_menu ">
-                    <a href="" class="m_menu_list"><span><i class="xi-label"></i> C/S</span><i class="xi-angle-down"></i></a>
+                    <a href="javascript:;" data-na="C/S" class="m_menu_list"><span><i class="xi-label"></i> C/S</span><i class="xi-angle-down"></i></a>
                 </li>
             </ul>
         </aside>
@@ -88,7 +86,7 @@
 			<section>
 				<h3 class="section_tit">입고정보 변경</h3>
 				<article>
-				<table class="table form_table input95" cellpadding="0" cellspacing="0">
+				<table id="whForm" class="table form_table input95" cellpadding="0" cellspacing="0">
 						<colgroup>
 							<col width="15%">
 							<col width="35%">
@@ -97,27 +95,51 @@
 						</colgroup>
 						<tbody>
 						<tr>
-							<td>기종</td>
-							<td><input type="text" name="model" value="12V856TB82" id="model"/></td>
-							<td>S/N</td>
-							<td><input type="text" name="sn_num" value="123456a" id="sn_num"/></td>
+							<td class="demo_req">기종</td>
+							<td><input type="text" name="model" value="" id="model" list="modelList" autocomplete="off"/></td>
+							<td class="demo_req">S/N</td>
+							<td><input type="text" name="sn_num" value="" id="sn_num" autocomplete="off"/></td>
 						</tr>
 						<tr>
-							<td>항명</td>
-							<td><input type="text" name="ship_name" value="참수리" id="ship_name"/></td>
-							<td>오버홀 회차</td>
-							<td><input type="text" name="over" value="2" id="over"/></td>
+							<td class="demo_req">함명</td>
+							<td><input type="text" name="ship_name" value="" id="ship_name" list="shipList" autocomplete="off"/></td>
+							<td class="demo_req">오버홀 회차</td>
+							<td><input type="text" name="over" value="" id="over" inputmode="numeric"/></td>
 						</tr>
 						<tr>
-							<td>가동시간</td>
-							<td><input type="text" name="runningtime" value="10,000H" id="runningtime"/></td>
-							<td>입고일</td>
-							<td><input type="text" name="Date1" value="2022-02-11" id="Date1"/></td>
+							<td class="demo_req">가동시간</td>
+							<td><input type="text" name="runningtime" value="" id="runningtime" placeholder="예: 10,000H" inputmode="numeric"/></td>
+							<td class="demo_req">입고일</td>
+							<td><input type="text" name="Date1" value="" id="Date1" placeholder="YYYY-MM-DD" autocomplete="off"/></td>
+						</tr>
+						<tr>
+							<td>PJT/No</td>
+							<td><input type="text" name="pjt_no" value="" id="pjt_no" placeholder="" autocomplete="off"/></td>
+							<td>담당자</td>
+							<td><input type="text" name="manager" value="" id="manager" autocomplete="off"/></td>
+						</tr>
+						<tr>
+							<td>진행 단계</td>
+							<td>
+								<select name="stage" id="stage">
+									<option value="입고">입고</option>
+									<option value="분해">분해</option>
+									<option value="검사">검사</option>
+									<option value="조립">조립</option>
+									<option value="시운전">시운전</option>
+									<option value="출고">출고</option>
+								</select>
+							</td>
+							<td>출고일</td>
+							<td><input type="text" name="Date2" value="" id="Date2" placeholder="출고 단계일 때 입력" autocomplete="off"/></td>
 						</tr>
 					</tbody></table>
+					<datalist id="modelList"></datalist>
+					<datalist id="shipList"></datalist>
+					<p class="demo_hint">* 표시는 꼭 입력해야 하는 항목이에요. 함명을 고르면 함번호가, 기종을 고르면 제원(RPM·마력 등)이 이력관리 품질정보에 자동으로 채워져요.</p>
 					<ul class="btn_area mt20 w1200">
-						<li><a href="wh_view.html">목록</a></li>
-						<li><a href="wh_view.html">저장</a></li>
+						<li><a href="wh_view.html" id="btnList">목록</a></li>
+						<li><a href="javascript:;" id="btnSave">저장</a></li>
 					</ul>
 				</article>
 			</section>
@@ -127,6 +149,13 @@
 		</main>
 		
 		
+		<!-- 데모: 가상 데이터 + 화면 동작 -->
+		<script type="text/javascript" src="../../mock/mock-api.js"></script>
+		<script type="text/javascript" src="../data/master.js"></script>
+		<script type="text/javascript" src="../data/warehouse.js"></script>
+		<script type="text/javascript" src="../js/demo/common.js"></script>
+		<script type="text/javascript" src="../js/demo/wh_shared.js"></script>
+		<script type="text/javascript" src="../js/demo/wh_form.js"></script>
 	</body>
 	
 <link rel="stylesheet" type="text/css" href="../css/lightpick.css">
@@ -144,6 +173,18 @@
             },
 	    },
 	});
+
+	var picker2 = new Lightpick({
+        field: document.getElementById('Date2'),
+        format: 'YYYY-MM-DD',
+        singleDate: true,
+        locale: {
+            tooltip: {
+                one: '일',
+                other: '일',
+            },
+        },
+    });
 </script>	
 	
 </html>

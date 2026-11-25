@@ -1,0 +1,568 @@
+@charset "utf-8";
+/*
+ * Cielpia 데모 화면 스타일 (가상 데이터로 추가한 화면·요소만)
+ *  - 메인 기존 디자인(main.css·respon.css)은 그대로 두고, 추가 요소와 새 화면만 여기서 정의
+ *  - 색: 하늘 #3cc0fd · 연하늘 #d8f2ff · 파랑 #1b79ee · 노랑 #ffd954 · 주황 #ff7800
+ */
+
+/* ===================================================== 메인 보완 ===== */
+div.sub_line_wrap .inner .right_search_wrap input#main_search::placeholder { color: #a9bfcc; font-size: 14px; }
+#search_alert:empty { display: none; }
+#search_alert {
+	position: absolute; top: 50px; right: 0; z-index: 5;
+	padding: 7px 14px; border-radius: 10px; background: #fff; color: #e5484d;
+	font-size: 13px; box-shadow: 0 2px 8px rgba(0, 0, 0, .15); white-space: nowrap;
+}
+.sub_list li .sub_menu ul.right_cate li a { color: #333; display: block; }
+.sub_list li .sub_menu ul.right_cate .cp-cnt {
+	display: inline-block; min-width: 20px; margin-left: 4px; padding: 0 6px; border-radius: 10px;
+	background: #d8f2ff; color: #1b79ee; font-size: 12px; font-style: normal; line-height: 20px; text-align: center;
+	text-decoration: none;
+}
+.sub_list li .sub_menu ul.left_cate li a { color: #333; }
+
+/* Class Case 캡션 (평소엔 숨김, 마우스 올리면 강의명) */
+.class_case .swiper-slide a { position: relative; display: block; }
+.cp-case-cap {
+	position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 18px 14px;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .65)); color: #fff;
+	font-family: 'TmoneyRoundWindExtraBold'; font-size: 17px; line-height: 1.35; text-align: left;
+	opacity: 0; transform: translateY(8px); transition: opacity .25s, transform .25s;
+}
+.cp-case-cap em { display: block; font-style: normal; font-family: 'TmoneyRoundWindRegular'; font-size: 13px; opacity: .85; margin-bottom: 3px; }
+.class_case .swiper-slide a:hover .cp-case-cap,
+.class_case .swiper-slide a:focus-visible .cp-case-cap { opacity: 1; transform: none; }
+
+/* 글로벌리더 국가 팝업 — 국기는 CSS 로 (원래 이미지 파일 없음) */
+#nation_detail ul.table_list { height: auto !important; max-height: 500px; }
+#nation_detail .inner .header p.cp-nation-desc { font-family: 'TmoneyRoundWindRegular'; font-size: 15px; color: #777; margin-top: 6px; }
+div.nation_detail #img_list::after { content: ''; display: block; clear: both; }
+div.nation_detail #img_list span { border-radius: 10px; overflow: hidden; border: 3px solid transparent; transition: border-color .2s, transform .2s; }
+div.nation_detail #img_list span:hover { transform: translateY(-3px); border-color: #d8f2ff; }
+div.nation_detail #img_list span.cp-on { border-color: #3cc0fd; }
+div.nation_detail #img_list span a { display: block; color: #333; }
+.cp-flag { display: block; width: 140px; height: 80px; position: relative; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06); }
+.cp-flag-us {
+	background:
+		linear-gradient(#3c3b6e, #3c3b6e) 0 0 / 56px 43px no-repeat,
+		repeating-linear-gradient(#b22234 0 6.15px, #fff 6.15px 12.3px);
+}
+.cp-flag-us::before {
+	content: '★ ★ ★\A ★ ★\A★ ★ ★'; white-space: pre; position: absolute; left: 6px; top: 4px;
+	color: #fff; font-size: 8px; line-height: 12px; letter-spacing: 1px;
+}
+.cp-flag-cn { background: #de2910; }
+.cp-flag-cn::before { content: '★'; position: absolute; left: 12px; top: 6px; color: #ffde00; font-size: 30px; line-height: 1; }
+.cp-flag-cn::after { content: '★ ★'; position: absolute; left: 44px; top: 8px; width: 16px; color: #ffde00; font-size: 9px; line-height: 13px; }
+.cp-flag-jp { background: radial-gradient(circle at 50% 50%, #bc002d 0 23px, #fff 24px); }
+.cp-flag-fr { background: linear-gradient(90deg, #0055a4 0 33.3%, #fff 33.3% 66.6%, #ef4135 66.6%); }
+.cp-flag-es { background: linear-gradient(#aa151b 0 25%, #f1bf00 25% 75%, #aa151b 75%); }
+
+/* ===================================================== 공통 레이아웃 ===== */
+.cp-blind { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.cp-page { padding: 34px 0 80px; color: #333; font-size: 15px; }
+.cp-inner { max-width: 1150px; margin: 0 auto; }
+.cp-location { font-size: 13px; color: #999; margin-bottom: 12px; }
+.cp-location a { color: #999 !important; }
+.cp-location a:hover { color: #1b79ee !important; }
+.cp-location i { font-size: 12px; margin: 0 4px; vertical-align: -1px; }
+.cp-title { font-family: 'yg-jalnan'; font-weight: normal; font-size: 34px; color: #444; line-height: 1.3; }
+.cp-title-desc { font-family: 'TmoneyRoundWindRegular'; font-size: 16px; color: #777; margin-top: 8px; line-height: 1.5; }
+
+.cp-btn {
+	display: inline-flex; align-items: center; justify-content: center; gap: 6px; box-sizing: border-box;
+	height: 50px; padding: 0 26px; border: 0; border-radius: 25px; cursor: pointer;
+	background: #ffd954; color: #333 !important; font-family: 'BMJUA'; font-size: 19px; line-height: 1;
+	transition: filter .2s, transform .1s; text-decoration: none;
+}
+.cp-btn:hover { filter: brightness(.96); }
+.cp-btn:active { transform: translateY(1px); }
+.cp-btn:disabled { opacity: .55; cursor: default; }
+.cp-btn-blue { background: #3cc0fd; color: #fff !important; }
+.cp-btn-line { background: #fff; box-shadow: inset 0 0 0 2px #3cc0fd; color: #1b79ee !important; }
+.cp-btn-gray { background: #f1f3f5; color: #555 !important; }
+.cp-btn-sm { height: 38px; padding: 0 16px; font-size: 16px; }
+.cp-btn-lg { height: 58px; font-size: 22px; }
+.cp-btn i { font-size: 1.05em; }
+
+/* 칩 (필터) */
+.cp-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.cp-chip {
+	border: 1px solid #cfe6f3 !important; background: #fff; color: #555; padding: 0 16px; height: 34px; border-radius: 999px;
+	font-family: 'TmoneyRoundWindRegular'; font-size: 14px; cursor: pointer; transition: all .2s; line-height: 32px;
+}
+.cp-chip:hover { border-color: #3cc0fd !important; color: #1b79ee; }
+.cp-chip.is-on { background: #3cc0fd; border-color: #3cc0fd !important; color: #fff; }
+.cp-chip em { font-style: normal; font-size: 12px; opacity: .75; margin-left: 2px; }
+
+/* 배지 */
+.cp-badges { position: absolute; top: 10px; left: 10px; display: flex; gap: 4px; flex-wrap: wrap; right: 54px; }
+.cp-badge {
+	display: inline-block; padding: 0 9px; height: 24px; line-height: 24px; border-radius: 12px;
+	background: rgba(27, 121, 238, .9); color: #fff; font-size: 12px; font-family: 'TmoneyRoundWindRegular'; white-space: nowrap;
+}
+.cp-g-monte { background: rgba(60, 192, 253, .95); }
+.cp-g-health { background: rgba(255, 158, 46, .95); }
+.cp-g-art { background: rgba(236, 92, 140, .95); }
+.cp-g-global { background: rgba(96, 112, 235, .95); }
+.cp-g-coding { background: rgba(124, 96, 220, .95); }
+.cp-g-explorer { background: rgba(70, 176, 104, .95); }
+.cp-badge.cp-free { background: #ffd954; color: #333; }
+.cp-badge.cp-mine { background: #222; }
+.cp-badge.cp-done { background: #46b068; }
+
+/* 별점 */
+.cp-stars { position: relative; display: inline-block; color: #e3e7ea; letter-spacing: 1px; line-height: 1; vertical-align: -1px; }
+.cp-stars-on { position: absolute; left: 0; top: 0; overflow: hidden; white-space: nowrap; color: #ffb400; }
+
+/* 강의 카드 */
+.cp-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px 22px; }
+.cp-card {
+	position: relative; border-radius: 22px; background: #fff; overflow: hidden;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, .08); transition: transform .2s, box-shadow .2s;
+}
+.cp-card:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(41, 152, 202, .22); }
+.cp-card-link { display: block; color: #333 !important; }
+.cp-thumb { position: relative; aspect-ratio: 500 / 389; overflow: hidden; background: #eef7fc; }
+.cp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+.cp-card:hover .cp-thumb img { transform: scale(1.04); }
+.cp-card-body { padding: 14px 16px 16px; }
+.cp-card-path { font-size: 12px; color: #3c9fd6; min-height: 1.4em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cp-card-title {
+	font-family: 'TmoneyRoundWindExtraBold'; font-weight: normal; font-size: 16px; color: #222; line-height: 1.4;
+	height: 2.8em; margin: 4px 0 6px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+.cp-card-title mark, .cp-mark { background: #fff2b3; color: inherit; padding: 0 1px; }
+.cp-card-meta { font-size: 12.5px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cp-card-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding-top: 10px; border-top: 1px solid #f0f0f0; }
+.cp-card-rate { color: #ffb400; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.cp-card-rate em { color: #aaa; font-weight: 400; font-style: normal; font-size: 12px; }
+.cp-card-price { font-size: 16px; color: #222; white-space: nowrap; }
+.cp-card-price.is-free { color: #ff7800; }
+
+.cp-wish {
+	position: absolute; top: 10px; right: 10px; z-index: 2; width: 38px; height: 38px; border-radius: 50%;
+	background: rgba(255, 255, 255, .94); border: 0; box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+	color: #ff5a7a; font-size: 19px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s;
+}
+.cp-wish:hover { transform: scale(1.08); }
+.cp-wish.is-on { background: #ff5a7a; color: #fff; }
+
+/* 로딩 · 결과 없음 · 페이징 */
+.cp-loading { text-align: center; padding: 80px 0; color: #6c9fbd; font-size: 15px; }
+.cp-spin {
+	display: inline-block; width: 22px; height: 22px; margin-right: 10px; vertical-align: middle;
+	border: 3px solid #d8f2ff; border-top-color: #3cc0fd; border-radius: 50%; animation: cp-spin .8s linear infinite;
+}
+@keyframes cp-spin { to { transform: rotate(360deg); } }
+.cp-empty { text-align: center; padding: 60px 20px; background: #f6fbff; border-radius: 22px; }
+.cp-empty-tit { font-family: 'BMJUA'; font-size: 23px; color: #555; }
+.cp-empty-desc { font-size: 15px; color: #888; margin-top: 8px; line-height: 1.5; }
+.cp-empty .cp-btn { margin-top: 20px; }
+.cp-paging { display: flex; justify-content: center; gap: 6px; margin-top: 40px; }
+.cp-paging:empty { display: none; }
+.cp-paging button {
+	min-width: 40px; height: 40px; padding: 0 6px; border-radius: 12px; border: 1px solid #dbe8f0 !important;
+	background: #fff; color: #555; font-size: 15px; cursor: pointer; font-family: 'TmoneyRoundWindRegular';
+}
+.cp-paging button:hover:not(:disabled) { border-color: #3cc0fd !important; color: #1b79ee; }
+.cp-paging button.is-on { background: #3cc0fd; color: #fff; border-color: #3cc0fd !important; }
+.cp-paging button:disabled { opacity: .35; cursor: default; }
+
+/* 모달 */
+.cp-modal {
+	position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center;
+	padding: 16px; background: rgba(0, 0, 0, .65); opacity: 0; transition: opacity .2s;
+}
+.cp-modal.is-open { opacity: 1; }
+.cp-modal-box { position: relative; width: 100%; max-width: 760px; max-height: calc(100vh - 32px); overflow: auto; background: #fff; border-radius: 22px; }
+.cp-modal-x {
+	position: absolute; top: 10px; right: 10px; z-index: 3; width: 40px; height: 40px; border-radius: 50%;
+	background: rgba(255, 255, 255, .92); border: 0; color: #555; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.cp-modal-body { padding: 22px 26px 26px; }
+.cp-modal-body h3 { font-family: 'BMJUA'; font-weight: normal; font-size: 22px; color: #333; }
+.cp-modal-body p { color: #666; margin-top: 6px; line-height: 1.5; }
+.cp-modal-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; flex-wrap: wrap; }
+
+/* 영상 자리표시 */
+.cp-player { position: relative; overflow: hidden; background: #0e2233; aspect-ratio: 16 / 10; }
+.cp-player > img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .9; }
+.cp-player-ov {
+	position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+	padding: 20px; text-align: center; color: #fff; background: linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .5));
+	font-family: 'TmoneyRoundWindExtraBold'; font-size: 17px; line-height: 1.45; text-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+}
+.cp-player-ov small { display: block; font-family: 'TmoneyRoundWindRegular'; font-size: 13px; opacity: .85; }
+.cp-play {
+	width: 74px; height: 74px; border-radius: 50%; border: 0; cursor: pointer; background: rgba(255, 255, 255, .92);
+	color: #1b79ee; font-size: 34px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+	padding-left: 5px; box-sizing: border-box;
+}
+.cp-player.is-playing .cp-player-ov { background: rgba(8, 28, 46, .78); }
+.cp-player.is-playing .cp-play { display: none; }
+.cp-player-bar { display: none; width: 70%; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .25); overflow: hidden; }
+.cp-player-bar span { display: block; height: 100%; width: 0; background: #3cc0fd; }
+.cp-player.is-playing .cp-player-bar { display: block; }
+.cp-player.is-playing .cp-player-bar span { animation: cp-bar 12s linear forwards; }
+@keyframes cp-bar { to { width: 100%; } }
+
+/* ===================================================== 강의 목록 ===== */
+.cp-cate-tabs { display: flex; gap: 12px; margin: 24px 0 18px; }
+.cp-cate-tabs a {
+	flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 6px 12px;
+	border-radius: 20px; border: 2px solid transparent; background: #f6fbff; color: #333 !important;
+	font-family: 'MaplestoryOTFLight'; font-size: 15px; transition: all .2s;
+}
+.cp-cate-tabs a img, .cp-cate-tabs .cp-all-ico { width: 66px; height: 56px; }
+.cp-cate-tabs .cp-all-ico {
+	display: flex; align-items: center; justify-content: center; border-radius: 16px; background: #fff;
+	font-family: 'yg-jalnan'; font-size: 18px; color: #3cc0fd; box-shadow: inset 0 0 0 2px #d8f2ff;
+}
+.cp-cate-tabs a:hover { background: #eaf7ff; }
+.cp-cate-tabs a.is-on { border-color: #3cc0fd; background: #d8f2ff; color: #0482e3 !important; }
+
+.cp-filter { border: 1px solid #e1e1e1; border-radius: 20px; padding: 4px 24px; }
+.cp-filter-row { display: flex; align-items: flex-start; padding: 12px 0; border-bottom: 1px dashed #e1e1e1; }
+.cp-filter-row:last-child { border-bottom: 0; }
+.cp-filter-row dt { flex: none; width: 92px; padding-top: 7px; font-family: 'BMJUA'; font-size: 18px; color: #1b79ee; }
+.cp-filter-row dd { flex: 1; min-width: 0; }
+.cp-filter-note { font-size: 13px; color: #999; padding-top: 8px; }
+
+.cp-list-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 30px 0 16px; flex-wrap: wrap; }
+.cp-total { font-size: 16px; color: #333; }
+.cp-total b { color: #ff7800; font-size: 19px; }
+.cp-total .cp-reset { margin-left: 10px; font-size: 13px; color: #999 !important; text-decoration: underline; text-underline-position: under; }
+.cp-sort { display: flex; align-items: center; }
+.cp-sort button { border: 0; background: none; padding: 4px 12px; font-size: 15px; color: #999; cursor: pointer; position: relative; font-family: 'TmoneyRoundWindRegular'; }
+.cp-sort button + button::before { content: ''; position: absolute; left: 0; top: 50%; height: 12px; margin-top: -6px; border-left: 1px solid #ddd; }
+.cp-sort button.is-on { color: #1b79ee; font-family: 'TmoneyRoundWindExtraBold'; }
+
+/* ===================================================== 강의 상세 ===== */
+.cp-view-top { display: flex; gap: 44px; align-items: flex-start; }
+.cp-view-media { flex: 0 0 600px; }
+.cp-view-media .cp-player { border-radius: 25px; }
+.cp-view-media-note { margin-top: 10px; font-size: 13px; color: #999; }
+.cp-view-info { flex: 1; min-width: 0; }
+.cp-view-info .cp-badges { position: static; }
+.cp-view-title { font-family: 'TmoneyRoundWindExtraBold'; font-weight: normal; font-size: 29px; color: #222; line-height: 1.35; margin: 12px 0 10px; }
+.cp-view-sum { font-size: 16px; color: #666; line-height: 1.6; }
+.cp-view-rate { margin-top: 12px; font-size: 15px; color: #555; }
+.cp-view-rate b { color: #222; margin: 0 4px; }
+.cp-dl { display: grid; grid-template-columns: 92px 1fr; gap: 10px 12px; margin: 20px 0 18px; padding: 18px 22px; background: #f6fbff; border-radius: 18px; font-size: 15px; line-height: 1.5; }
+.cp-dl dt { font-family: 'BMJUA'; font-size: 17px; color: #1b79ee; }
+.cp-dl dd { color: #333; }
+.cp-price-box { display: flex; align-items: baseline; justify-content: space-between; padding: 16px 4px; border-top: 2px solid #333; }
+.cp-price-box span { font-family: 'BMJUA'; font-size: 19px; color: #333; }
+.cp-price-box strong { font-size: 30px; color: #ff7800; font-family: 'TmoneyRoundWindExtraBold'; font-weight: normal; }
+.cp-price-box strong.is-free { color: #46b068; }
+.cp-view-btns { display: flex; gap: 10px; }
+.cp-view-btns .cp-btn { flex: 1; }
+.cp-view-btns .cp-btn.cp-wish-btn { flex: 0 0 auto; color: #ff5a7a !important; box-shadow: inset 0 0 0 2px #ffc2cf; background: #fff; }
+.cp-view-btns .cp-btn.cp-wish-btn.is-on { background: #ff5a7a; color: #fff !important; box-shadow: none; }
+.cp-view-enrolled { margin-top: 10px; font-size: 14px; color: #1b79ee; }
+
+.cp-tabs { position: sticky; top: 0; z-index: 20; display: flex; margin-top: 54px; background: #fff; border-bottom: 2px solid #e1e1e1; }
+.cp-tabs a { flex: 1; text-align: center; padding: 16px 6px; font-family: 'BMJUA'; font-size: 19px; color: #999 !important; }
+.cp-tabs a.is-on { color: #1b79ee !important; box-shadow: inset 0 -3px #3cc0fd; }
+.cp-sec { padding: 44px 0 8px; scroll-margin-top: 60px; }
+.cp-sec > h3 { font-family: 'BMJUA'; font-weight: normal; font-size: 25px; color: #333; margin-bottom: 16px; }
+.cp-sec > h3 small { font-family: 'TmoneyRoundWindRegular'; font-size: 14px; color: #999; margin-left: 8px; }
+.cp-sec-txt { font-size: 16px; line-height: 1.8; color: #444; }
+.cp-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+.cp-points li { display: flex; align-items: center; gap: 10px; padding: 16px 18px; border-radius: 18px; background: #fffbed; font-family: 'TmoneyRoundWindExtraBold'; font-size: 15px; color: #444; }
+.cp-points li b { flex: none; width: 30px; height: 30px; border-radius: 50%; background: #ffd954; color: #333; display: flex; align-items: center; justify-content: center; font-family: 'BMJUA'; font-size: 16px; font-weight: normal; }
+
+.cp-cur { border-top: 2px solid #333; }
+.cp-cur li { display: flex; align-items: center; gap: 14px; padding: 15px 16px; border-bottom: 1px solid #eee; }
+.cp-cur li.is-preview { background: #fbfeff; }
+.cp-cur-no { flex: none; width: 58px; font-family: 'BMJUA'; font-size: 16px; color: #1b79ee; }
+.cp-cur-tit { flex: 1; min-width: 0; font-size: 15px; color: #333; }
+.cp-cur-min { flex: none; font-size: 13px; color: #999; }
+.cp-cur-act { flex: none; width: 92px; text-align: right; }
+.cp-cur-pv { border: 0; border-radius: 15px; height: 30px; padding: 0 12px; background: #ffd954; color: #333; font-family: 'BMJUA'; font-size: 15px; cursor: pointer; }
+.cp-cur-pv i { font-size: 12px; margin-right: 2px; }
+.cp-cur-lock { font-size: 13px; color: #bbb; }
+
+.cp-teacher { display: flex; gap: 22px; padding: 26px; border-radius: 22px; background: #fffbed; align-items: flex-start; }
+.cp-avatar {
+	flex: none; width: 88px; height: 88px; border-radius: 50%; background: #d8f2ff; display: flex; align-items: center; justify-content: center;
+	font-family: 'BMJUA'; font-size: 30px; color: #1b79ee; box-shadow: inset 0 0 0 4px #fff;
+}
+.cp-teacher h4 { font-family: 'TmoneyRoundWindExtraBold'; font-weight: normal; font-size: 20px; color: #222; }
+.cp-teacher h4 small { font-family: 'TmoneyRoundWindRegular'; font-size: 14px; color: #888; margin-left: 6px; }
+.cp-teacher p { margin-top: 8px; color: #555; line-height: 1.6; }
+.cp-teacher ul { margin-top: 10px; }
+.cp-teacher ul li { position: relative; padding-left: 12px; font-size: 14px; color: #666; line-height: 1.8; }
+.cp-teacher ul li::before { content: ''; position: absolute; left: 0; top: .8em; width: 4px; height: 4px; border-radius: 50%; background: #3cc0fd; }
+.cp-materials { display: flex; flex-wrap: wrap; gap: 10px; }
+.cp-materials li { padding: 10px 16px; border-radius: 14px; background: #f6fbff; border: 1px solid #d8f2ff; color: #444; font-size: 15px; }
+.cp-materials li i { color: #3cc0fd; margin-right: 6px; }
+.cp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.cp-tags a { font-size: 13px; color: #1b79ee !important; background: #eef8ff; padding: 4px 10px; border-radius: 12px; }
+
+/* ===================================================== 수강신청 ===== */
+.cp-steps { display: flex; justify-content: center; margin: 8px 0 30px; }
+.cp-steps li { display: flex; align-items: center; gap: 8px; color: #bbb; font-family: 'BMJUA'; font-size: 18px; }
+.cp-steps li + li::before { content: ''; width: 46px; border-top: 2px dotted #ccc; margin: 0 14px; }
+.cp-steps li b { width: 30px; height: 30px; border-radius: 50%; background: #eee; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: normal; }
+.cp-steps li.is-on { color: #1b79ee; }
+.cp-steps li.is-on b { background: #3cc0fd; }
+.cp-steps li.is-done b { background: #9fd9f6; }
+
+.cp-apply { display: flex; gap: 30px; align-items: flex-start; }
+.cp-apply-main { flex: 1; min-width: 0; }
+.cp-apply-side { flex: 0 0 340px; position: sticky; top: 20px; box-sizing: border-box; padding: 24px; border: 2px solid #d8f2ff; border-radius: 22px; background: #fff; }
+.cp-box { border: 1px solid #e1e1e1; border-radius: 20px; padding: 22px 24px; margin-bottom: 18px; }
+.cp-box > h3 { font-family: 'BMJUA'; font-weight: normal; font-size: 21px; color: #333; margin-bottom: 14px; }
+.cp-box > h3 .req { color: #ff5a5a; font-size: 14px; margin-left: 4px; font-family: 'TmoneyRoundWindRegular'; }
+.cp-order-item { display: flex; gap: 18px; align-items: center; }
+.cp-order-item img { flex: none; width: 150px; border-radius: 14px; aspect-ratio: 500 / 389; object-fit: cover; }
+.cp-order-item h4 { font-family: 'TmoneyRoundWindExtraBold'; font-weight: normal; font-size: 18px; color: #222; line-height: 1.4; }
+.cp-order-item p { font-size: 14px; color: #888; margin-top: 6px; }
+.cp-radio-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.cp-radio {
+	display: flex; align-items: center; gap: 8px; padding: 12px 16px; border: 1.5px solid #dbe8f0; border-radius: 14px;
+	cursor: pointer; font-size: 15px; color: #333; transition: all .2s; background: #fff;
+}
+.cp-radio input { width: 18px; height: 18px; margin: 0; accent-color: #1b79ee; }
+.cp-radio:hover { border-color: #3cc0fd; }
+.cp-radio.is-on { border-color: #3cc0fd; background: #f0faff; }
+.cp-radio small { color: #999; font-size: 13px; }
+.cp-field { margin-top: 12px; }
+.cp-field label { display: block; font-size: 14px; color: #666; margin-bottom: 6px; }
+.cp-input {
+	width: 100%; height: 46px !important; box-sizing: border-box; padding: 0 14px !important; border: 1.5px solid #dbe8f0 !important;
+	border-radius: 12px; font-size: 15px !important; color: #333 !important; background: #fff;
+}
+.cp-input:focus { outline: 0; border-color: #3cc0fd !important; }
+.cp-error { display: none; color: #e5484d; font-size: 13px; margin-top: 8px; }
+.is-invalid .cp-error { display: block; }
+.is-invalid .cp-radio, .is-invalid .cp-input { border-color: #f3a5a8 !important; }
+.cp-agree { display: flex; align-items: flex-start; gap: 8px; font-size: 15px; color: #333; cursor: pointer; line-height: 1.5; }
+.cp-agree input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: #1b79ee; flex: none; }
+.cp-agree-txt { margin-top: 10px; padding: 12px 14px; border-radius: 12px; background: #f8f9fa; font-size: 13px; color: #888; line-height: 1.6; }
+.cp-demo-note { margin-top: 10px; font-size: 13px; color: #1b79ee; }
+.cp-sum-row { display: flex; justify-content: space-between; padding: 7px 0; font-size: 15px; color: #555; }
+.cp-sum-total { margin-top: 10px; padding-top: 14px; border-top: 2px solid #333; align-items: baseline; }
+.cp-sum-total span { font-family: 'BMJUA'; font-size: 19px; color: #333; }
+.cp-sum-total strong { font-family: 'TmoneyRoundWindExtraBold'; font-weight: normal; font-size: 26px; color: #ff7800; }
+.cp-apply-side .cp-btn { width: 100%; margin-top: 18px; }
+
+.cp-done { text-align: center; padding: 20px 0 10px; }
+.cp-done-ico { width: 96px; height: 96px; margin: 0 auto 18px; border-radius: 50%; background: #d8f2ff; color: #1b79ee; font-size: 50px; display: flex; align-items: center; justify-content: center; }
+.cp-done h2 { font-family: 'yg-jalnan'; font-weight: normal; font-size: 30px; color: #444; }
+.cp-done > p { margin-top: 10px; color: #777; font-size: 16px; }
+.cp-receipt { max-width: 560px; margin: 26px auto 0; text-align: left; border: 1px solid #e1e1e1; border-radius: 20px; padding: 10px 24px; }
+.cp-receipt div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px dashed #e1e1e1; font-size: 15px; }
+.cp-receipt div:last-child { border-bottom: 0; }
+.cp-receipt dt { color: #888; flex: none; }
+.cp-receipt dd { color: #222; text-align: right; }
+.cp-receipt dd.is-price { color: #ff7800; font-family: 'TmoneyRoundWindExtraBold'; }
+.cp-done-btns { display: flex; justify-content: center; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
+
+/* ===================================================== 검색 ===== */
+.cp-search-hero { background: #d8f2ff; border-radius: 25px; padding: 34px 30px 26px; text-align: center; }
+.cp-search-hero .cp-title { font-size: 28px; margin-bottom: 18px; }
+.cp-search-form { position: relative; max-width: 660px; margin: 0 auto; }
+.cp-search-form input {
+	width: 100%; height: 54px !important; box-sizing: border-box; padding: 0 76px 0 20px !important; border: 0 !important; border-radius: 14px;
+	font-size: 16px !important; color: #333 !important; box-shadow: 0 2px 8px rgba(41, 152, 202, .4);
+}
+.cp-search-form input:focus { outline: 2px solid #3cc0fd; }
+.cp-search-form button { position: absolute; right: 0; top: 0; width: 62px; height: 54px; border: 0; border-radius: 14px; background: #3cc0fd; color: #fff; font-size: 24px; cursor: pointer; }
+.cp-search-alert { min-height: 18px; margin-top: 8px; color: #e5484d; font-size: 13px; }
+.cp-keywords { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin-top: 4px; }
+.cp-keywords span { font-size: 13px; color: #5a8aa6; }
+.cp-keywords a { background: #fff; border-radius: 999px; padding: 6px 14px; font-size: 14px; color: #1b79ee !important; }
+.cp-keywords a:hover { background: #3cc0fd; color: #fff !important; }
+
+/* ===================================================== 내 강의실 ===== */
+.cp-my-head {
+	display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 30px; border-radius: 25px;
+	background: linear-gradient(110deg, #d8f2ff 0%, #eaf8ff 55%, #fffbed 100%);
+}
+.cp-my-head .cp-my-hello { font-family: 'ONE-Mobile-POP'; font-size: 27px; color: #0070c0; margin-top: 0; }
+.cp-my-head p { font-size: 15px; color: #555; margin-top: 6px; }
+.cp-learner { display: flex; align-items: center; gap: 10px; flex: none; }
+.cp-learner > span { font-size: 15px; color: #555; }
+.cp-learner b { color: #1b79ee; }
+a.child_select_btn { display: inline-flex; align-items: center; gap: 4px; height: 38px; padding: 0 16px; border-radius: 19px; background: #fff; color: #1b79ee !important; font-family: 'BMJUA'; font-size: 16px; box-shadow: 0 2px 6px rgba(41, 152, 202, .25); }
+.cp-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0 30px; }
+.cp-stat { padding: 18px 10px; border: 1px solid #e1e1e1; border-radius: 20px; text-align: center; }
+.cp-stat b { display: block; font-family: 'BMJUA'; font-weight: normal; font-size: 32px; color: #1b79ee; }
+.cp-stat span { font-size: 14px; color: #777; }
+.cp-mytabs { display: flex; gap: 4px; border-bottom: 2px solid #e1e1e1; }
+.cp-mytabs button { position: relative; padding: 12px 20px; border: 0; background: none; cursor: pointer; font-family: 'BMJUA'; font-size: 20px; color: #999; }
+.cp-mytabs button em { font-style: normal; font-size: 14px; margin-left: 4px; color: #bbb; }
+.cp-mytabs button.is-on { color: #1b79ee; box-shadow: inset 0 -3px #3cc0fd; }
+.cp-mytabs button.is-on em { color: #3cc0fd; }
+.cp-mypanel { padding-top: 18px; }
+
+.cp-enr { border: 1px solid #e1e1e1; border-radius: 22px; margin-bottom: 16px; overflow: hidden; background: #fff; transition: box-shadow .2s; }
+.cp-enr.is-open { box-shadow: 0 6px 18px rgba(41, 152, 202, .16); border-color: #bfe6f8; }
+.cp-enr-top { display: flex; gap: 22px; align-items: center; padding: 18px; }
+.cp-enr-thumb { flex: none; width: 176px; border-radius: 16px; overflow: hidden; aspect-ratio: 500 / 389; position: relative; }
+.cp-enr-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cp-enr-info { flex: 1; min-width: 0; }
+.cp-enr-info h4 { font-family: 'TmoneyRoundWindExtraBold'; font-weight: normal; font-size: 19px; line-height: 1.4; margin: 6px 0 4px; }
+.cp-enr-info h4 a { color: #222 !important; }
+.cp-enr-meta { font-size: 13.5px; color: #888; }
+.cp-enr-meta b { color: #555; font-weight: 500; }
+.cp-status { display: inline-block; height: 24px; line-height: 24px; padding: 0 10px; border-radius: 12px; font-size: 12px; background: #e6f5fe; color: #1b79ee; }
+.cp-status.is-done { background: #e5f6ea; color: #2f9a52; }
+.cp-progress { height: 12px; margin: 12px 0 6px; border-radius: 999px; background: #eef4f8; overflow: hidden; }
+.cp-progress span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #3cc0fd, #1b79ee); transition: width .45s; }
+.cp-enr.is-complete .cp-progress span { background: linear-gradient(90deg, #6fd08f, #2f9a52); }
+.cp-progress-txt { font-size: 14px; color: #555; }
+.cp-progress-txt b { color: #1b79ee; font-size: 16px; }
+.cp-enr-act { flex: none; display: flex; flex-direction: column; gap: 8px; width: 150px; }
+.cp-enr-act .cp-btn { width: 100%; }
+.cp-lessons { display: none; padding: 4px 22px 10px; background: #f8fcff; border-top: 1px solid #e1eef5; }
+.cp-enr.is-open .cp-lessons { display: block; }
+.cp-lesson { display: flex; align-items: center; gap: 14px; padding: 13px 0; border-bottom: 1px dashed #d6e6ef; }
+.cp-lesson:last-child { border-bottom: 0; }
+.cp-lesson-no { flex: none; width: 52px; font-family: 'BMJUA'; font-size: 16px; color: #1b79ee; }
+.cp-lesson-tit { flex: 1; min-width: 0; font-size: 15px; color: #333; }
+.cp-lesson-tit small { color: #999; font-size: 13px; margin-left: 6px; }
+.cp-lesson.is-done .cp-lesson-tit { color: #8aa3b3; }
+.cp-lesson-play { flex: none; border: 0; height: 32px; padding: 0 12px; border-radius: 16px; background: #fff; box-shadow: inset 0 0 0 1.5px #3cc0fd; color: #1b79ee; font-family: 'BMJUA'; font-size: 15px; cursor: pointer; }
+.cp-check { flex: none; display: flex; align-items: center; gap: 6px; padding: 0 12px; height: 32px; border-radius: 16px; background: #fff; border: 1.5px solid #dbe8f0; font-size: 14px; color: #666; cursor: pointer; user-select: none; }
+.cp-check input { width: 17px; height: 17px; margin: 0; accent-color: #2f9a52; }
+.cp-lesson.is-done .cp-check { border-color: #9bd9ae; background: #f0fbf3; color: #2f9a52; }
+
+/* ===================================================== 소개 ===== */
+.cp-intro-sec { margin-top: 56px; }
+.cp-intro-sec > h3 { font-family: 'yg-jalnan'; font-weight: normal; font-size: 32px; color: #444; text-align: center; margin-bottom: 26px; }
+.cp-feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.cp-feature { display: flex; gap: 16px; align-items: center; padding: 20px; border-radius: 22px; background: #f6fbff; color: #333 !important; transition: all .2s; }
+.cp-feature:hover { background: #d8f2ff; transform: translateY(-3px); }
+.cp-feature img { flex: none; width: 88px; height: 75px; }
+.cp-feature h4 { font-family: 'BMJUA'; font-weight: normal; font-size: 21px; color: #222; }
+.cp-feature h4 em { font-style: normal; font-family: 'TmoneyRoundWindRegular'; font-size: 13px; color: #1b79ee; margin-left: 6px; }
+.cp-feature p { margin-top: 6px; font-size: 14px; color: #666; line-height: 1.5; }
+.cp-numbers { display: flex; justify-content: center; gap: 20px; padding: 30px; border-radius: 25px; background: #fffbed; }
+.cp-numbers li { flex: 1; text-align: center; }
+.cp-numbers b { display: block; font-family: 'yg-jalnan'; font-weight: normal; font-size: 40px; color: #ff7800; }
+.cp-numbers span { font-size: 15px; color: #666; }
+.cp-steps-guide { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: g; }
+.cp-steps-guide li { position: relative; padding: 24px 18px 20px; border-radius: 20px; border: 2px solid #d8f2ff; text-align: center; }
+.cp-steps-guide li::before { counter-increment: g; content: 'STEP ' counter(g); display: block; font-family: 'yg-jalnan'; font-size: 15px; color: #3cc0fd; margin-bottom: 8px; }
+.cp-steps-guide h4 { font-family: 'BMJUA'; font-weight: normal; font-size: 20px; color: #333; }
+.cp-steps-guide p { margin-top: 6px; font-size: 14px; color: #777; line-height: 1.5; }
+.cp-cta { text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+
+/* ===================================================== 태블릿·모바일 ===== */
+@media all and (max-width: 1024px) {
+	.cp-page { padding: 18px 0 60px; }
+	.cp-inner { padding: 0 16px; box-sizing: border-box; }
+	.cp-title { font-size: 24px; }
+	.cp-title-desc { font-size: 14px; }
+	.cp-btn { height: 46px; font-size: 17px; padding: 0 18px; }
+	.cp-btn-lg { height: 52px; font-size: 19px; }
+
+	.cp-cate-tabs { gap: 8px; margin: 16px -16px 14px; padding: 0 16px 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+	.cp-cate-tabs::-webkit-scrollbar { display: none; }
+	.cp-cate-tabs a { flex: 0 0 auto; width: 76px; font-size: 12px; padding: 8px 4px 10px; border-radius: 16px; white-space: nowrap; }
+	.cp-cate-tabs a img, .cp-cate-tabs .cp-all-ico { width: 46px; height: 39px; }
+	.cp-cate-tabs .cp-all-ico { font-size: 14px; border-radius: 12px; }
+	.cp-filter { padding: 2px 14px; border-radius: 16px; }
+	.cp-filter-row { padding: 10px 0; }
+	.cp-filter-row dt { width: 50px; font-size: 15px; padding-top: 5px; }
+	.cp-chips { gap: 6px; }
+	.cp-chip { height: 30px; line-height: 28px; padding: 0 11px; font-size: 13px; }
+	.cp-list-head { margin: 20px 0 12px; }
+	.cp-total { font-size: 14px; }
+	.cp-sort button { font-size: 13px; padding: 4px 8px; }
+
+	.cp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 12px; }
+	.cp-view-top { flex-direction: column; gap: 20px; }
+	.cp-view-media { flex: none; width: 100%; }
+	.cp-view-media .cp-player { border-radius: 18px; }
+	.cp-view-title { font-size: 22px; }
+	.cp-view-sum { font-size: 14px; }
+	.cp-dl { grid-template-columns: 74px 1fr; padding: 14px 16px; font-size: 14px; }
+	.cp-dl dt { font-size: 15px; }
+	.cp-price-box strong { font-size: 24px; }
+	.cp-tabs { margin-top: 34px; }
+	.cp-tabs a { font-size: 15px; padding: 13px 2px; }
+	.cp-sec { padding-top: 30px; }
+	.cp-sec > h3 { font-size: 21px; }
+	.cp-sec-txt { font-size: 15px; }
+	.cp-points { grid-template-columns: 1fr; gap: 8px; }
+	.cp-cur li { flex-wrap: wrap; gap: 4px 10px; padding: 12px 6px; }
+	.cp-cur-no { width: 48px; font-size: 14px; }
+	.cp-cur-tit { font-size: 14px; }
+	.cp-cur-act { width: auto; }
+	.cp-teacher { flex-direction: column; padding: 20px; gap: 12px; }
+	.cp-avatar { width: 64px; height: 64px; font-size: 22px; }
+
+	.cp-steps li { font-size: 14px; gap: 5px; }
+	.cp-steps li + li::before { width: 16px; margin: 0 6px; }
+	.cp-steps li b { width: 24px; height: 24px; font-size: 13px; }
+	.cp-apply { flex-direction: column; gap: 0; }
+	.cp-apply-side { position: static; flex: none; width: 100%; }
+	.cp-box { padding: 18px 16px; border-radius: 16px; }
+	.cp-box > h3 { font-size: 18px; }
+	.cp-order-item img { width: 104px; border-radius: 10px; }
+	.cp-order-item h4 { font-size: 15px; }
+	.cp-radio { padding: 10px 12px; font-size: 14px; }
+	.cp-done h2 { font-size: 22px; }
+	.cp-receipt { padding: 6px 16px; }
+	.cp-receipt div { font-size: 14px; }
+
+	.cp-search-hero { padding: 24px 16px 18px; border-radius: 18px; }
+	.cp-search-hero .cp-title { font-size: 21px; }
+
+	.cp-my-head { flex-direction: column; align-items: flex-start; padding: 20px; border-radius: 18px; }
+	.cp-my-head .cp-my-hello { font-size: 21px; }
+	.cp-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 14px 0 22px; }
+	.cp-stat b { font-size: 26px; }
+	.cp-mytabs { overflow-x: auto; }
+	.cp-mytabs button { font-size: 16px; padding: 10px 12px; white-space: nowrap; }
+	.cp-enr-top { flex-wrap: wrap; gap: 14px; padding: 14px; }
+	.cp-enr-thumb { width: 104px; border-radius: 12px; }
+	.cp-enr-info h4 { font-size: 16px; }
+	.cp-enr-act { width: 100%; flex-direction: row; }
+	.cp-enr-act .cp-btn { flex: 1; }
+	.cp-lessons { padding: 2px 14px 8px; }
+	.cp-lesson { flex-wrap: wrap; gap: 8px 10px; }
+	.cp-lesson-no { width: 44px; font-size: 14px; }
+	.cp-lesson-tit { flex-basis: calc(100% - 60px); font-size: 14px; }
+	.cp-lesson-play, .cp-check { margin-left: 54px; }
+	.cp-lesson-play + .cp-check { margin-left: 0; }
+
+	.cp-intro-sec { margin-top: 36px; }
+	.cp-intro-sec > h3 { font-size: 22px; margin-bottom: 16px; }
+	.cp-feature-grid { grid-template-columns: 1fr; gap: 10px; }
+	.cp-feature { padding: 14px; }
+	.cp-feature img { width: 66px; height: 56px; }
+	.cp-numbers { flex-wrap: wrap; padding: 20px 10px; gap: 14px 0; }
+	.cp-numbers li { flex: 0 0 50%; }
+	.cp-numbers b { font-size: 28px; }
+	.cp-steps-guide { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+	div.nation_detail #img_list { text-align: center; }
+	div.nation_detail #img_list span { float: none; display: inline-block; vertical-align: top; }
+	.cp-flag { width: 120px; height: 69px; }
+}
+@media all and (max-width: 767px) {
+	.cp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 10px; }
+	.cp-card { border-radius: 16px; }
+	.cp-card-body { padding: 10px 11px 12px; }
+	.cp-card-path { font-size: 11px; }
+	.cp-card-title { font-size: 14px; margin: 3px 0 4px; }
+	.cp-card-meta { font-size: 11px; }
+	.cp-card-foot { margin-top: 8px; padding-top: 8px; flex-wrap: wrap; gap: 2px; }
+	.cp-card-rate { font-size: 12px; }
+	.cp-card-price { font-size: 14px; }
+	.cp-badges { top: 7px; left: 7px; right: 44px; }
+	.cp-badge { height: 20px; line-height: 20px; padding: 0 7px; font-size: 11px; }
+	.cp-wish { width: 32px; height: 32px; top: 7px; right: 7px; font-size: 16px; }
+	.cp-view-btns { flex-wrap: wrap; }
+	.cp-view-btns .cp-btn, .cp-view-btns .cp-btn.cp-wish-btn { flex: 1 1 100%; white-space: nowrap; }
+	.cp-flag { width: 100px; height: 57px; }
+	.cp-flag-us { background: linear-gradient(#3c3b6e, #3c3b6e) 0 0 / 40px 31px no-repeat, repeating-linear-gradient(#b22234 0 4.4px, #fff 4.4px 8.8px); }
+	.cp-flag-us::before { font-size: 6px; line-height: 9px; left: 4px; top: 3px; }
+	.cp-flag-jp { background: radial-gradient(circle at 50% 50%, #bc002d 0 16px, #fff 17px); }
+}

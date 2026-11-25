@@ -8,10 +8,8 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 		<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 		<script type="text/javascript" src="js/admin.js"></script>
-		<script type="text/javascript" src="js/swiper-bundle.js"></script>
 		<link rel="stylesheet" href="css/swiper-bundle.css" type="text/css" charset="utf-8"/>
-		<!-- CKEditor -->
-		<script type="text/javascript" src="js/ckeditor_v4.9/ckeditor.js"></script>
+		<link rel="stylesheet" href="css/demo.css" type="text/css" charset="utf-8"/>
 	</head>
 	<body>
 		<header>
@@ -20,9 +18,9 @@
 					<li><h1>STX Admin Page</h1></li>
 				</ul>
 				<ul class="head_nav">
-					<li><a href="">ADMIN님</a>, 안녕하세요!</li>
-					<li><a href="">슈퍼관리자</a></li>
-					<li><a href="../login.html">로그아웃</a></li>
+					<li><a href="javascript:;" data-na="내 정보 관리">ADMIN님</a>, 안녕하세요!</li>
+					<li><a href="javascript:;" data-na="관리자 설정">슈퍼관리자</a></li>
+					<li><a href="javascript:;" data-na="로그아웃">로그아웃</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -30,7 +28,7 @@
 		<aside>
             <div class="logo">
                 <h1>
-					<a href=""><img src="image/stxlogo.png" alt=""></a>
+					<a href="index.html"><img src="image/stxlogo.png" alt=""></a>
 				</h1>
             </div>
             <div class="to_user_page">
@@ -38,17 +36,17 @@
             </div>
             <ul id="left_wrap">
                 <!-- <li class="main_menu ">
-                    <a class="m_menu_list"><span><i class="xi-label"></i> 기본정보 관리</span><i class="xi-angle-down"></i></a>
+                    <a href="javascript:;" data-na="기본정보 관리" class="m_menu_list"><span><i class="xi-label"></i> 기본정보 관리</span><i class="xi-angle-down"></i></a>
                 </li>
                 <li class="main_menu ">
-                    <a class="m_menu_list"><span><i class="xi-label"></i> 운영 관리</span><i class="xi-angle-down"></i></a>
+                    <a href="javascript:;" data-na="운영 관리" class="m_menu_list"><span><i class="xi-label"></i> 운영 관리</span><i class="xi-angle-down"></i></a>
                 </li> -->
                 <li class="main_menu ">
                     <a class="m_menu_list"><span><i class="xi-label"></i> 화면 관리</span><i class="xi-angle-down"></i></a>
                     <ul class="sub_menu ">
-                        <!-- <li><a href="" class="">즐겨찾기</a></li> -->
+                        <!-- <li><a href="javascript:;" data-na="즐겨찾기 관리" class="">즐겨찾기</a></li> -->
                         <li><a href="display/e_schedule.html" class="">긴급일정</a></li>
-                        <!-- <li><a href="" class="">공지사항</a></li> -->
+                        <!-- <li><a href="javascript:;" data-na="공지사항 관리" class="">공지사항</a></li> -->
                     </ul>
                 </li>
                 <li class="main_menu ">
@@ -64,12 +62,12 @@
                 <li class="main_menu ">
                     <a class="m_menu_list"><span><i class="xi-label"></i> 품질문서</span><i class="xi-angle-down"></i></a>
                     <ul class="sub_menu">
-                        <li><a href="" class="">검사성적서</a></li>
-                        <li><a href="" class="">조립공정기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
-                        <li><a href="" class="">시운전성적서</a></li>
-                        <li><a href="" class="">입고검사기록부</a></li>
-                        <li><a href="" class="">시운전일지</a></li>
+                        <li><a href="display/record.html?doc=inspect" class="">검사성적서</a></li>
+                        <li><a href="display/record.html?doc=assembly" class="">조립공정기록부</a></li>
+                        <li><a href="display/record.html?doc=trial_log" class="">시운전일지</a></li>
+                        <li><a href="display/record.html?doc=trial_report" class="">시운전성적서</a></li>
+                        <li><a href="display/record.html?doc=incoming" class="">입고검사기록부</a></li>
+                        <li><a href="display/record.html?doc=trial_log" class="">시운전일지</a></li>
                     </ul>
                 </li>
             </ul>
@@ -83,7 +81,7 @@
 					<div class="flex_box maintb">
 						<div class="left_tb">
 						<h3 class="section_tit">즐겨찾기</h3>
-							<table class="table partner_table align_c on_main" cellpadding="0" cellspacing="0">
+							<table id="favTable" class="table partner_table align_c on_main" cellpadding="0" cellspacing="0">
 								<thead>
 									<tr class="tb_header">
 										<th>
@@ -94,48 +92,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_15" value="" id="cont_15"/>
-										</td>
-										<td>1</td>
-										<td>입고정보</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_14" value="" id="cont_14"/>
-										</td>
-										<td>2</td>
-										<td>예상 소요</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_13" value="" id="cont_13"/>
-										</td>
-										<td>
-											3
-										</td>
-										<td>이력시스템</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_12" value="" id="cont_12"/>
-										</td>
-										<td>
-											4
-										</div>
-										<td>시운전</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_11" value="" id="cont_11"/>
-										</td>
-										<td>
-											5
-										</div>
-										<td>품질문서</td>
-									</tr>
-									
+									<tr class="demo_state demo_loading"><td colspan="3">불러오는 중이에요…</td></tr>
 								</tbody>
 							</table>
 							
@@ -150,7 +107,7 @@
                    		
                    		<div id="myDiv" class="right_tb">
                    			<h3 class="section_tit">공지사항</h3>
-                   			<table class="table partner_table align_c on_main" cellpadding="0" cellspacing="0">
+                   			<table id="noticeTable" class="table partner_table align_c on_main" cellpadding="0" cellspacing="0">
 								<thead>
 									<tr class="tb_header">
 										<th>
@@ -162,53 +119,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_15" value="" id="cont_15"/>
-										</td>
-										<td>1</td>
-										<td>공지 제목1</td>
-										<td>내용...</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_14" value="" id="cont_14"/>
-										</td>
-										<td>2</td>
-										<td>공지 제목2</td>
-										<td>내용...</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_13" value="" id="cont_13"/>
-										</td>
-										<td>
-											3
-										</td>
-										<td>공지 제목3</td>
-										<td>내용...</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_12" value="" id="cont_12"/>
-										</td>
-										<td>
-											4
-										</div>
-										<td>공지 제목4</td>
-										<td>내용...</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_11" value="" id="cont_11"/>
-										</td>
-										<td>
-											5
-										</div>
-										<td>공지 제목5</td>
-										<td>내용...</td>
-									</tr>
-									
+									<tr class="demo_state demo_loading"><td colspan="4">불러오는 중이에요…</td></tr>
 								</tbody>
 							</table>
 							
@@ -224,8 +135,13 @@
                    		</div>
                    	</div>
 					
-					<h3 class="section_tit pt20">긴급일정</h3>
-                   			<table class="table partner_table align_c on_main" cellpadding="0" cellspacing="0">
+					<div class="demo_sec_head">
+						<h3 class="section_tit pt20">긴급일정</h3>
+						<ul class="btn_area">
+							<li><a href="display/e_schedule.html">긴급일정 관리</a></li>
+						</ul>
+					</div>
+                   			<table id="urgentTable" class="table partner_table align_c on_main" cellpadding="0" cellspacing="0">
 								<thead>
 									<tr class="tb_header">
 										<th>
@@ -238,59 +154,33 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_15" value="" id="cont_15"/>
-										</td>
-										<td>1</td>
-										<td>3월 긴급 일정 팝업</td>
-										<td>2022-01-28</td>
-										<td>표출</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_14" value="" id="cont_14"/>
-										</td>
-										<td>2</td>
-										<td>4월 긴급 일정 팝업</td>
-										<td>2022-01-28</td>
-										<td>표출</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_13" value="" id="cont_13"/>
-										</td>
-										<td>
-											3
-										</td>
-										<td>5월 긴급 일정 팝업</td>
-										<td>2022-01-28</td>
-										<td>표출</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_12" value="" id="cont_12"/>
-										</td>
-										<td>
-											4
-										</td>
-										<td>6월 긴급 일정 팝업</td>
-										<td>2022-01-28</td>
-										<td>표출</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" name="cont_11" value="" id="cont_11"/>
-										</td>
-										<td>
-										</td>
-										<td></td>
-										<td></td>
-										<td></td>
-									</tr>
-									
+									<tr class="demo_state demo_loading"><td colspan="5">불러오는 중이에요…</td></tr>
 								</tbody>
-							</table>	
+							</table>
+
+					<div class="demo_sec_head">
+						<h3 class="section_tit pt20">최근 입고 현황</h3>
+						<ul class="btn_area">
+							<li><a href="display/wh_view.html">입고정보 목록</a></li>
+						</ul>
+					</div>
+					<div id="stageTiles" class="demo_tiles"></div>
+					<table id="recentTable" class="table partner_table align_c" cellpadding="0" cellspacing="0">
+						<thead>
+							<tr class="tb_header">
+								<th>No</th>
+								<th>기종</th>
+								<th>S/N</th>
+								<th>함명</th>
+								<th>PJT/No</th>
+								<th>진행 단계</th>
+								<th>입고일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="demo_state demo_loading"><td colspan="7">불러오는 중이에요…</td></tr>
+						</tbody>
+					</table>
 					
 							
 					
@@ -312,10 +202,47 @@
 				</article>
 
 			</section>
+
+			<div id="notice_pop" class="layer_pop">
+				<div class="inner demo_pop_w640">
+					<div class="header">
+						<h3 id="noticeTitle">공지사항</h3>
+						<i onclick="removeClassName('notice_pop')" class="xi-close"></i>
+					</div>
+					<div class="register mt10">
+						<table class="table no_shadowtable bc_on cate align_c" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="demo_label">작성자</td>
+									<td class="align_l" id="noticeAuthor"></td>
+									<td class="demo_label">등록일</td>
+									<td class="align_l" id="noticeDate"></td>
+								</tr>
+								<tr>
+									<td class="demo_label">내용</td>
+									<td class="align_l" colspan="3"><div class="demo_notice_body" id="noticeBody"></div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<ul class="btn_area">
+						<li><a href="javascript:;" id="btnNoticePrev" class="gray">이전 글</a></li>
+						<li><a href="javascript:;" id="btnNoticeNext" class="gray">다음 글</a></li>
+						<li><a onclick="removeClassName('notice_pop')">닫기</a></li>
+					</ul>
+				</div>
+			</div>
 			
 		</main>
 		
 		
+		<!-- 데모: 가상 데이터 + 화면 동작 -->
+		<script type="text/javascript" src="../mock/mock-api.js"></script>
+		<script type="text/javascript" src="data/master.js"></script>
+		<script type="text/javascript" src="data/warehouse.js"></script>
+		<script type="text/javascript" src="data/board.js"></script>
+		<script type="text/javascript" src="js/demo/common.js"></script>
+		<script type="text/javascript" src="js/demo/main.js"></script>
 	</body>
 
 	<!-- <script>

@@ -1,10 +1,12 @@
 window.addEventListener('DOMContentLoaded', function(){
 	var acc = document.getElementsByClassName("m_menu_list");
 	 
-	    for (i = 0; i < acc.length; i++) {
+	    for (var i = 0; i < acc.length; i++) {
 	        acc[i].addEventListener("click", function () {
-	            this.parentElement.classList.toggle("on");
 	            var panel = this.nextElementSibling;
+	            // 하위 메뉴가 없는 항목(이력관리·예측소요 등)은 링크로만 동작 — 예전에는 여기서 null 오류가 났음
+	            if (!panel || !panel.classList.contains("sub_menu")) return;
+	            this.parentElement.classList.toggle("on");
 	            if (panel.classList.contains("on")) {
 	                panel.classList.remove("on");
 	            } else {

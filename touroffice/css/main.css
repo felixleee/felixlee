@@ -1019,7 +1019,7 @@
 	color: #757575;
 	font-weight: 300;
 	border-radius:4px;
-	background: #fff url("/image/common/ico_select_gray.png") no-repeat 94% 50%;
+	background: #fff url("../image/common/ico_select_gray.png") no-repeat 94% 50%;
 }
 
 .hotel_search_area ul#hotel_search li input[name="top_hotel_location_input"], .hotel_search_area ul#tour_search li input[name="top_tour_location_input"]{
@@ -1032,7 +1032,7 @@
 
 .hotel_search_area ul#hotel_search li input.search_cal[name="checkInOut"] {
 	width: 100%;
-	background-image: url(/image/common/btn_calendar.png);
+	background-image: url(../image/common/btn_calendar.png);
     background-position: 97% 50%;
     background-repeat: no-repeat;
     background-size: 19px;
@@ -1184,12 +1184,12 @@
 	color: #757575;
 	font-weight: 300;
 	border-radius: 4px;
-	background: #fff url(/image/common/ico_select_gray.png) no-repeat 97% 50%;
+	background: #fff url(../image/common/ico_select_gray.png) no-repeat 97% 50%;
 }
 
 .hotel_search_area ul#tour_search li input[name="top_tour_location_input"] {
 	width:100%;
-	background: #fff url(/image/common/ico_select_gray.png) no-repeat 97% 50%;
+	background: #fff url(../image/common/ico_select_gray.png) no-repeat 97% 50%;
 }
 
 .hotel_search_area ul#tour_search li input.tour_name {
@@ -1209,7 +1209,7 @@
 
 .hotel_search_area ul#tour_search li.chkin input{
 	width: 100%;
-	background-image: url(/image/common/btn_calendar.png);
+	background-image: url(../image/common/btn_calendar.png);
     background-position: 94% 50%;
     background-repeat: no-repeat;
     background-size: 19px;
@@ -1566,7 +1566,7 @@
 	padding: 5px 0 5px 14px !important;
 	color: #757575;
 	font-weight: 300;
-	background: #fff url("/image/common/ico_select_gray.png") no-repeat 94% 50%;
+	background: #fff url("../image/common/ico_select_gray.png") no-repeat 94% 50%;
 	border-radius:4px;
 	border: 0;
 	cursor:pointer;
@@ -1582,7 +1582,7 @@
 
 .main_hotel_search_area ul#main_hotel_search li input.search_cal[name="checkInOut"] {
 	width: 350px;
-	background-image: url(/image/common/btn_calendar.png);
+	background-image: url(../image/common/btn_calendar.png);
     background-position: 94% 50%;
     background-repeat: no-repeat;
     background-size: 19px;
@@ -1705,7 +1705,7 @@
     padding: 5px 0 5px 14px !important;
     color: #757575;
     font-weight: 300;
-    background: #fff url(/image/common/ico_select_gray.png) no-repeat 94% 50%;
+    background: #fff url(../image/common/ico_select_gray.png) no-repeat 94% 50%;
     border-radius: 4px;
     border: 0;
     cursor: pointer;
@@ -1762,7 +1762,7 @@
 	font-weight: 300;
 	border-radius:4px;
 	border: 0;
-	background: #fff url(/image/common/ico_select_gray.png) no-repeat 94% 50%;
+	background: #fff url(../image/common/ico_select_gray.png) no-repeat 94% 50%;
 	margin-right: 15px
 }
 
@@ -1772,7 +1772,7 @@
 
 .main_hotel_search_area ul#main_tour_search li input.search_cal[name="departDate"] {
 	width: 430px;
-	background-image: url(/image/common/btn_calendar.png);
+	background-image: url(../image/common/btn_calendar.png);
     background-position: 94% 50%;
     background-repeat: no-repeat;
     background-size: 19px;
