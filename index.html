@@ -1,477 +1,342 @@
+<!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
-		<title>Lee Jae Youn :: Web Portfolio</title>
-		<link rel="stylesheet" href="css/default.css?ver=20231107" type="text/css" charset="utf-8"/>
-		<link rel="stylesheet" href="css/style.css?ver=20231107" type="text/css" charset="utf-8"/>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>이재윤 · Front-end Developer &amp; UX/UI Designer</title>
+	<meta name="description" content="디자인부터 프런트 개발까지 — 웹 퍼블리셔·프런트엔드 개발자 이재윤의 포트폴리오. 17개 프로젝트, 가상 데이터로 직접 체험하는 데모 8개.">
+	<meta property="og:title" content="이재윤 · Front-end Developer & UX/UI Designer">
+	<meta property="og:description" content="디자인부터 프런트 개발까지, 한 사람이 끝까지. 프로젝트 17개 · 데모 8개">
+	<meta property="og:image" content="https://felixleee.github.io/felixlee/img/toadmin.jpg">
+	<meta name="theme-color" content="#161412">
+	<script>
+		// 저장된 테마를 그리기 전에 적용 (깜빡임 방지)
+		try { if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+	</script>
+	<link rel="preconnect" href="https://cdn.jsdelivr.net">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+	<link rel="stylesheet" href="css/portfolio.css?v=20261126">
+</head>
+<body>
+	<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+		<symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+		<symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></symbol>
+		<symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+		<symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+		<symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+	</svg>
 
-		<!-- jquery -->
-		<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
-	</head>
-
-	<body>
+	<header class="site-header" id="top">
 		<div class="wrap">
-			<!-- top  -->
-			<header id="header">
-				<div class="top">
-					<div class="logo_wrap">
-						<h3>Lee Jae Youn</h3>
+			<a class="brand" href="#top">이재윤<span>.</span></a>
+			<nav class="nav" aria-label="주요 메뉴">
+				<a href="#projects">Projects</a>
+				<a href="#about">About</a>
+				<a class="contact-link" href="#contact">Contact</a>
+				<button type="button" class="theme-btn" id="themeBtn" aria-label="라이트/다크 테마 전환">
+					<svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+					<svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+				</button>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<!-- 히어로 -->
+		<section class="hero" aria-labelledby="heroTitle">
+			<div class="wrap">
+				<div class="bento">
+					<div class="tile tile-intro">
+						<div>
+							<p class="eyebrow">Front-end Developer · UX/UI Designer · Stable &amp; Communicative</p>
+							<h1 id="heroTitle">디자인부터<br>프런트 개발까지,<br><em>한 사람이 끝까지.</em></h1>
+							<p class="lead">여행·교육·제조 관리자 시스템까지, 화면을 설계하고 퍼블리싱하고 개발해 온 이재윤입니다.</p>
+						</div>
+						<div class="hero-actions">
+							<a class="btn btn-accent" href="#projects">프로젝트 보기 <svg aria-hidden="true"><use href="#i-down"/></svg></a>
+							<a class="btn" href="files/lee_resume_ns.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-file"/></svg> Resume PDF</a>
+						</div>
 					</div>
-					<div class="right_menu_wrap">
-						<ul class="menu">
-							<li>younyoun708@naver.com</li>
-							<!-- <li>Home</li>
-							<li>About</li>
-							<li>Ability</li>
-							<li>Projects</li>
-							<li>Contact</li> -->
+
+					<a class="tile tile-stat is-accent" href="#projects">
+						<span class="num" id="statTotal">17</span>
+						<span class="label">projects · 2020 — 2024</span>
+					</a>
+					<button type="button" class="tile tile-stat" data-jump-filter="demo" aria-label="데모 체험 가능한 프로젝트만 보기">
+						<svg class="go" aria-hidden="true"><use href="#i-ext"/></svg>
+						<span class="num" id="statDemo">8</span>
+						<span class="label">직접 눌러 보는 데모</span>
+					</button>
+
+					<div class="tile tile-stack">
+						<p class="tile-title">What I do</p>
+						<ul class="chips chips-role">
+							<li>UX/UI 디자인</li><li>퍼블리싱</li><li>프런트엔드 개발</li><li>운영·유지보수</li>
+						</ul>
+						<p class="tile-title" style="margin-top:20px">Stack</p>
+						<ul class="chips">
+							<li>HTML</li><li>CSS · SCSS</li><li>JavaScript</li><li>jQuery</li><li>Vue.js</li><li>Next.js</li><li>React</li><li>반응형 · 적응형 웹</li>
 						</ul>
 					</div>
-				</div>
-			</header>
-			<!-- // top  -->
 
-			<!-- main -->
-			<main id="main_wrap">
-
-				<div class="main_slider_wrap">
-					<div class="main_txt">
-						<div class="left_txt">
-							<p>Stable</p>
-							<p>Communicative</p>
-						</div>
-						<div class="right_txt">
-							<h2>Front-end Developer / UX & UI Designer</h2>
-							<h4>LEE's PORTFOLIO</h4>
-						</div>
-					</div> 
-				</div>
-				<!-- circle_list_wrap -->
-				<!-- <div class="circle_list_wrap">
-					<div class="tit_wrap">
-						<h3>Available Skiils</h3>
-					</div>
-					<div class="circles">
-						<div class="list">
-							<img src="" alt="" />
-							<p>
-								Example 1
-							</p>
-						</div>
-						<div class="list">
-							<img src="" alt="" />
-							<p>
-								Example 2
-							</p>
-						</div>
-						<div class="list">
-							<img src="" alt="" />
-							<p>
-								Example 3
-							</p>
-						</div>
-						<div class="list">
-							<img src="" alt="" />
-							<p>
-								Example 4
-							</p>
-						</div>
-					</div>
-				</div> -->
-				<!-- circle_list_wrap end -->
-
-				<!-- card_gallery_wrap -->
-				<div class="card_gallery_wrap">
-					<div class="tit_wrap">
-						<h3>My ProJects</h3>
-					</div>
-					
-					<!-- card area -->
-					<div class="card_area">
-						<div class="card_list">
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/airbike.jpg" alt="에어바이크" />
-								</div>
-								<div class="text_wrap">
-									<h3>에어바이크 <span>(Front 70% / UX&UI 70%)</span></h3>
-									<p>자전거 라이딩 플랫폼입니다.<br> Vue.js로 개발 진행되었으며, 해당 프로젝트의 UI/UX를 다시 정리하고 퍼블리싱을 포함한 프론트 개발을 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://airbike.tours" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">August 2024</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/bs_uhak.jpg" alt="bs유학" />
-								</div>
-								<div class="text_wrap">
-									<h3>BS유학 <span>(Front 60% / UX&UI 80%)</span></h3>
-									<p>어학연수 플랫폼 프로젝트로,<br> Next.js로 개발 진행된 프로젝트로, 해당 프로젝트의 UI/UX 디자인부터 퍼블리싱을 포함한 프론트 개발을 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://www.bs-uhak.com" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">May 2023</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/woojoo.jpg" alt="우쥬" />
-								</div>
-								<div class="text_wrap">
-									<h3>Woojoo <span>(Front 80% / UX&UI 80%)</span></h3>
-									<p>유학원 프로그램 소개 사이트입니다.<br> Next.js로 개발 진행된 프로젝트로, 사이트 전체의 디자인과 프론트 개발을 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://www.woo-joo.com" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">March 2023</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/stx.jpg" alt="stx" />
-								</div>
-								<div class="text_wrap">
-									<h3>STX Engine 정비시스템<span>(Published 100% / Designed 100%)</span></h3>
-									<p>STX엔진의 기존 아날로그식 문서 처리방식을 대체하고자 발주된 프로젝트입니다. 국가과제로 선정되어 창원소재 STX엔진에 7개월가량 상주하며 진행하였습니다. 해당 프로젝트의 전체 디자인과 퍼블리싱을 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="stxadmin/index.html" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">PC Only</span>
-										<span class="right">Feb 2023</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/ciel.jpg" alt="씨엘피아" />
-								</div>
-								<div class="text_wrap">
-									<h3>Cielpia <span>(Published 100% / Designed 50%)</span></h3>
-									<p>유치원생과 부모님을 대상으로 한 여러 강의들을 제공하는 플랫폼형 사이트 입니다. 해당 프로젝트 진행 당시 클라이언트 측에 디자이너가 있어 전달받은 시안에 대한 피드백과 전체적인 퍼블리싱을 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://www.cielpia.com/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-										<li><a href="cielpia/main/pure_main.html" target="_blank" title="가상 데이터로 동작하는 데모">Demo <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">May 2022</span>
-									</div>
-								</div>
-							</div>
-							
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/athome.jpg" alt="앳홈트립" />
-								</div>
-								<div class="text_wrap">
-									<h3>AthomeTrip <span>(Published 100% / Designed 70%)</span></h3>
-									<p>미국 전문 여행사 사이트 입니다. <br>리뉴얼 프로젝트로 진행하게 되었으며, 클라이언트측 디자이너와 협업을 하여 시안 결정 후, 퍼블리싱은 단독으로 진행하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://athometrip2.clickis.kr/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-										<li><a href="athome/main/pure_main.html" target="_blank" title="가상 데이터로 동작하는 데모">Demo <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">September 2021</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/hiddencliff.jpg" alt="stx" />
-								</div>
-								<div class="text_wrap">
-									<h3>Hidden Cliff<span>(Published 80% / Designed 50%)</span></h3>
-									<p>제주도에 위치한 호텔의 공식 및 예약사이트 입니다. 메인 및 상세페이지 리뉴얼 작업을 진행하였고, 완료 후 배너 및 유지보수 일체를 담당하여 처리했습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://www.hiddencliff.kr/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Adaptive Project</span>
-										<span class="right">May 2021</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/treksta.jpg" alt="stx" />
-								</div>
-								<div class="text_wrap">
-									<h3>Treksta<span>(Published 80% / Designed 70%)</span></h3>
-									<p>아웃도어 브랜드 공식 쇼핑몰사이트 입니다. 메인 및 상세페이지 리뉴얼 및 프론트 기능개발 작업을 진행하였고, 이후 배너, 이벤트 페이지 제작 등 유지보수를 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://www.treksta.co.kr/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Adaptive Project</span>
-										<span class="right">Feb 2021</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/toadmin.jpg" alt="stx" />
-								</div>
-								<div class="text_wrap">
-									<h3>TourOffice TMS<span>(Published 80% / Designed 50%)</span></h3>
-									<p>TourOffice의 여행관리 시스템으로 업체와 계약한 여행사 운영자 전용 관리자(Admin) 페이지입니다.<br> 해당 프로젝트의 리뉴얼 디자인과 퍼블리싱을 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="toadmin/main/pure_main.html" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">PC Only</span>
-										<span class="right">January 2021</span>
-									</div>
-								</div>
-							</div>
-							
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/tourboss.jpg" alt="stx" />
-								</div>
-								<div class="text_wrap">
-									<h3>여행대장<span>(Published 70% / Designed 50%)</span></h3>
-									<p>국내여행 전문 여행사 사이트 입니다. 메인 및 상세페이지 퍼블리싱을 진행하였고, 완료 후 추가기능 개발 등 프론트 유지보수를 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://www.tourboss.co.kr/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Adaptive Project</span>
-										<span class="right">Oct 2020</span>
-									</div>
-								</div>
-							</div>
-							
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/touroffice.jpg" alt="stx" />
-								</div>
-								<div class="text_wrap">
-									<h3>TourOffice 기본형<span>(Published 100% / Designed 100%)</span></h3>
-									<p>TourOffice의 솔루션 기본형을 반응형으로 리뉴얼 한 프로젝트입니다.<br> 해당 프로젝트의 전체 디자인과 퍼블리싱을 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://tour39sky.touroffice.co.kr/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-										<li><a href="touroffice/main/pure_main.html" target="_blank" title="가상 데이터로 동작하는 데모">Demo <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">August 2020</span>
-									</div>
-								</div>
-							</div>
-							
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/monami.jpg" alt="모나미" />
-								</div>
-								<div class="text_wrap">
-									<h3>Monami France <span>(Published 100% / Designed 20%)</span></h3>
-									<p>프랑스 전문 여행사 사이트 입니다. <br>클라이언트측에 디자이너가 있어 작업한 시안을 전달받고 피드백과 퍼블리싱을 진행하고 서비스 시작 후 유지보수도 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://monamifrance.com/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-										<li><a href="monami/main/pure_main.html" target="_blank" title="가상 데이터로 동작하는 데모">Demo <i class="xi-long-arrow-right"></i></a></li>
-										<!-- <li><a href="monami/main/m_pure_main.html" target="_blank">View M<i class="xi-long-arrow-right"></i></a></li> -->
-									</ul>
-									<span class="under_bar"></span>
-									<div class="tool_date">
-										<span class="left">Adaptive Project</span>
-										<span class="right">June 2020</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/songdo.jpg" alt="송도" />
-								</div>
-								<div class="text_wrap">
-									<h3>부산 송도케이블카 <span>(Published 80% / Designed 50%)</span></h3>
-									<p>부산 송도 소재의 케이블카 공식 사이트입니다. <br> 해당 프로젝트에 배너 디자인과 퍼블리싱을 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="http://busanaircruise.co.kr/main/main.html" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">April 2020</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/myculture.jpg" alt="마이컬쳐" />
-								</div>
-								<div class="text_wrap">
-									<h3>MyCultureis <span>(Published 100% / Designed 50%)</span></h3>
-									<p>세계 각국 요리부터 한국 전통문화 관련된 클래스 예약 사이트입니다. 해당 프로젝트의 레이아웃 디자인과 퍼블리싱에 참여하여 완성하고, 유지보수까지 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://kor.mycultureis.com/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-										<li><a href="myculture/main/pure_main.html" target="_blank" title="가상 데이터로 동작하는 데모">Demo <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">March 2020</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/vipevent.jpg" alt="stx" />
-								</div>
-								<div class="text_wrap">
-									<h3>VIPEVENT 투어<span>(Published 100% / Designed 70%)</span></h3>
-									<p>해외 박람회를 전문으로 하는 사이트입니다. TourOffice 기본 반응형에서 박람회를 전문으로 하고자하는 클라이언트의 요구를 반영하여 개발을 진행한 프로젝트입니다. 이후 유지보수 담당했습니다.</p>
-									<ul class="view_list">
-										<li><a href="http://www.vipevent.co.kr/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">Dec 2021</span>
-									</div>
-								</div>
-							</div>
-
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/ryokan.jpg" alt="stx" />
-								</div>
-								<div class="text_wrap">
-									<h3>료칸클럽<span>(Published 50% / Designed 40%)</span></h3>
-									<p>일본의 료칸여행 전문 여행사 사이트 입니다. 이전 작업자의 작업을 이어받아 전반적인 퍼블리싱을 담당하였고, 완료 후 유지보수도 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="https://www.ryokanclub.com/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-									</ul>
-									<div class="tool_date">
-										<span class="left">Responsive Project</span>
-										<span class="right">March 2020</span>
-									</div>
-								</div>
-							</div>
-
-
-							<div class="card">
-								<div class="img_wrap">
-									<img src="img/rothem.jpg" alt="로뎀" />
-								</div>
-								<div class="text_wrap">
-									<h3>로뎀투어 <span>(Published 80% / Designed 50%)</span></h3>
-									<p>해외 성지순례 전문 여행사 사이트입니다.<br> 기존 서비스 중인 사이트로 전반적인 레이아웃 리뉴얼 퍼블리싱과 그 후 유지보수를 담당하였습니다.</p>
-									<ul class="view_list">
-										<li><a href="http://www.rothemtour.co.kr/" target="_blank">View <i class="xi-long-arrow-right"></i></a></li>
-										<li><a href="rothem/main/pure_main.html" target="_blank" title="가상 데이터로 동작하는 데모">Demo <i class="xi-long-arrow-right"></i></a></li>
-										<!-- <li><a href="http://www.rothemtour.co.kr/" target="_blank">View M<i class="xi-long-arrow-right"></i></a></li> -->
-									</ul>
-									<span class="under_bar"></span>
-									<div class="tool_date">
-										<span class="left">Adaptive Project</span>
-										<span class="right">May 2021</span>
-									</div>
-								</div>
+					<div class="tile tile-feature">
+						<div>
+							<p class="tile-title" style="margin-bottom:0">대표 데모</p>
+							<p class="feature-title">TourOffice에서 예약하면, TMS 관리자 화면에 바로 들어와요</p>
+							<div class="feature-flow" aria-label="데모 흐름">
+								<span>상품 목록</span>→<span>출발일·인원 선택</span>→<span>예약</span>→<span>관리자 확정·입금 처리</span>→<span>고객 예약조회</span>
 							</div>
 						</div>
-					</div>
-					<!-- card area end -->
-				</div>
-				<!-- card_gallery_wrap end -->
-
-				<!-- big_project_slider -->
-				<div class="big_project_slider gray_bg">
-					<div class="main_sec">
-						<div class="photo_wrap">
-							<img src="img/itsme.jpg" alt="" />
-						</div>
-						<div class="txt_wrap">
-							<div class="txt_inner">
-								<div class="tit">
-									<h2>Who am I?</h2>
-								</div>
-								<div class="contents">
-									<p>디지털 Web & App 디자인과정 수료 후 웹 솔루션 기업에서 Web Designer 겸 Web Publisher로 일을 하며 쇼핑몰, 여행사, 유치원생 교육용 플랫폼 등 여러 프로젝트를 경험해왔습니다.
-										이러한 경험과 끊임없는 자기 개발을 통해 HTML, CSS, JavaScript를 기본기로 꾸준히 다듬어가고 있습니다.</p>
-									<p>여기에 안주하지 않고 더 정진하고, 견문과 지식을 넓히기 위해 JavaScript 라이브러리 (React.js, Vue.js)를 접해 공부를 하고 있으며, 현재는 <span>UI/UX 디자인</span>과 <span>퍼블리싱</span>은 물론 <span>Front-End 개발</span>도 담당하고 있습니다.</p>
-									<p>여러 프로젝트를 해오며 다양한 사람들과 협업을 하고, 클라이언트들과 직접 소통해보며 나 자신 혼자만 잘해서는 진행이 안된다는 것을 느낀적이 많습니다. 그렇기에 개인 지식과 기술은 기본, 사람들과 이야기가 잘 통하고 맡은 업무에 책임감있게 임하는 개발자가 되는 것이 가장 큰 목표입니다.</p>
-									<a href="files/lee_resume_ns.pdf" target="_blank">
-										<span class="pdf">Resume PDF</span>
-										<span class="view">View</span>
-									</a>
-								</div>
-								<div class="contact_area">
-									<div class="tit_wrap">
-										<h2>Get in Touch with Me !</h2>
-									</div>
-									<div class="contact_feature">
-										<ul>
-											<li><i class="xi-call"></i> <span>010.4534.4084</span></li>
-											<li><i class="xi-mail"></i> <span>younyoun708@naver.com</span></li>
-											<li><i class="xi-maker"></i> <span>부산광역시 동래구 안남로 46, 102 - 708</span></li>
-										</ul>
-									</div>
-								</div>
-							</div>
+						<div class="hero-actions" style="margin-top:0">
+							<a class="btn btn-accent" href="touroffice/main/pure_main.html" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-play"/></svg> 고객 화면</a>
+							<a class="btn" href="toadmin/main/good_res.html" target="_blank" rel="noopener">관리자 화면 <svg aria-hidden="true"><use href="#i-ext"/></svg></a>
 						</div>
 					</div>
 				</div>
-				<!-- big_project_slider end -->
+			</div>
+		</section>
 
-				<footer class="footer">
-					<p>Made By Lee Jae Youn</p>
-					<p>Copyright ⓒ 2023. LEE's Portfolio All rights reserved.</p>
-				</footer>
-			</main>
-			<!-- // main -->
+		<!-- 프로젝트 -->
+		<section class="section" id="projects" aria-labelledby="projectsTitle">
+			<div class="wrap">
+				<div class="section-head">
+					<div>
+						<h2 id="projectsTitle">Projects</h2>
+						<p>Demo 는 가상 데이터로 목록·상세·예약 흐름을 직접 눌러 볼 수 있는 화면이에요.</p>
+					</div>
+					<div class="filters" role="group" aria-label="프로젝트 필터">
+						<button type="button" data-filter="all" aria-pressed="true">전체<span class="count"></span></button>
+						<button type="button" data-filter="demo" aria-pressed="false">데모 체험<span class="count"></span></button>
+						<button type="button" data-filter="dev" aria-pressed="false">프런트 개발<span class="count"></span></button>
+						<button type="button" data-filter="responsive" aria-pressed="false">반응형<span class="count"></span></button>
+						<button type="button" data-filter="adaptive" aria-pressed="false">적응형<span class="count"></span></button>
+						<button type="button" data-filter="admin" aria-pressed="false">관리자<span class="count"></span></button>
+					</div>
+				</div>
 
-		</div>
-		
-		<p class="go_top" onclick="goTop();return false;"><i class="xi-angle-up"></i></p>
-		
-	</body>
+				<div class="grid" id="projectGrid">
+					<article class="card" data-tags="dev responsive">
+						<a class="thumb" href="https://airbike.tours" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/airbike.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>에어바이크</h3><span class="year">2024.08</span></div>
+							<p class="meta">자전거 라이딩 플랫폼 · 반응형 · Vue.js</p>
+							<p class="point">운영 중인 라이딩 플랫폼의 UI/UX를 다시 정리하고 Vue.js로 프런트를 개발했어요.</p>
+							<ul class="tags"><li>UI/UX 재정리</li><li>퍼블리싱</li><li>Vue.js 개발</li></ul>
+							<div class="links"><a href="https://airbike.tours" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+						</div>
+					</article>
 
-	<script>
-		// GNB 고정
-		var gnb = $("#header").offset();
-		$(window).scroll(function () {
-			var docScrollY = $(document).scrollTop()
-			var barThis = $("#header")
+					<article class="card" data-tags="dev responsive">
+						<a class="thumb" href="https://www.bs-uhak.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/bs_uhak.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>BS유학</h3><span class="year">2023.05</span></div>
+							<p class="meta">어학연수 플랫폼 · 반응형 · Next.js</p>
+							<p class="point">어학연수 플랫폼을 UI/UX 디자인부터 Next.js 프런트 개발까지 맡았어요.</p>
+							<ul class="tags"><li>UI/UX 디자인</li><li>퍼블리싱</li><li>Next.js 개발</li></ul>
+							<div class="links"><a href="https://www.bs-uhak.com" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+						</div>
+					</article>
 
-			if (docScrollY > 0) {
-				barThis.addClass("fix");
-				//$(".inner").addClass('move');
-				//$(".inner li a").addClass('move');
-			} else {
-				barThis.removeClass("fix");
-				//$(".inner li a").delay(300).removeClass('move');
-				//$(".inner").delay(300).removeClass('move');
-			}
-		});
+					<article class="card" data-tags="dev responsive">
+						<a class="thumb" href="https://www.woo-joo.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/woojoo.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>Woojoo</h3><span class="year">2023.03</span></div>
+							<p class="meta">유학원 프로그램 소개 · 반응형 · Next.js</p>
+							<p class="point">유학원 프로그램 소개 사이트 전체를 디자인하고 Next.js로 개발했어요.</p>
+							<ul class="tags"><li>전체 디자인</li><li>Next.js 개발</li></ul>
+							<div class="links"><a href="https://www.woo-joo.com" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+						</div>
+					</article>
 
-		function goTop() {
-			jQuery('html, body').animate({
-				scrollTop: 0
-			}, 500, 'swing');
-			return false;
-		}
-	</script>
+					<article class="card" data-tags="demo admin">
+						<a class="thumb" href="stxadmin/index.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/stx.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>STX Engine 정비시스템</h3><span class="year">2023.02</span></div>
+							<p class="meta">국가과제 · 관리자 · PC</p>
+							<p class="point">종이 문서로 하던 엔진 정비 기록을 웹 관리 화면으로 옮겼어요. 창원 STX엔진에 7개월 상주했어요.</p>
+							<ul class="tags"><li>전체 디자인</li><li>퍼블리싱</li><li>7개월 상주</li></ul>
+							<div class="links"><a class="is-demo" href="stxadmin/index.html" target="_blank" rel="noopener">Demo <svg aria-hidden="true"><use href="#i-play"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="demo responsive">
+						<a class="thumb" href="cielpia/main/pure_main.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/ciel.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>Cielpia</h3><span class="year">2022.05</span></div>
+							<p class="meta">유아·부모 강의 플랫폼 · 반응형</p>
+							<p class="point">유치원생과 부모를 위한 강의 플랫폼이에요. 클라이언트 디자이너 시안에 피드백하며 전체를 퍼블리싱했어요.</p>
+							<ul class="tags"><li>시안 피드백</li><li>전체 퍼블리싱</li></ul>
+							<div class="links"><a href="https://www.cielpia.com/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a><a class="is-demo" href="cielpia/main/pure_main.html" target="_blank" rel="noopener">Demo <svg aria-hidden="true"><use href="#i-play"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="responsive">
+						<a class="thumb" href="http://www.vipevent.co.kr/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/vipevent.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>VIPEVENT 투어</h3><span class="year">2021.12</span></div>
+							<p class="meta">해외 박람회 전문 여행사 · 반응형</p>
+							<p class="point">TourOffice 반응형 기본형을 해외 박람회 전문 사이트로 맞춤 개발하고, 이후 유지보수도 맡았어요.</p>
+							<ul class="tags"><li>맞춤 개발</li><li>퍼블리싱</li><li>유지보수</li></ul>
+							<div class="links"><a href="http://www.vipevent.co.kr/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="demo responsive">
+						<a class="thumb" href="athome/main/pure_main.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/athome.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>AthomeTrip</h3><span class="year">2021.09</span></div>
+							<p class="meta">미국 전문 여행사 리뉴얼 · 반응형</p>
+							<p class="point">클라이언트 디자이너와 시안을 정한 뒤, 퍼블리싱은 혼자 끝까지 진행했어요.</p>
+							<ul class="tags"><li>디자이너 협업</li><li>퍼블리싱 단독</li></ul>
+							<div class="links"><a href="https://athometrip2.clickis.kr/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a><a class="is-demo" href="athome/main/pure_main.html" target="_blank" rel="noopener">Demo <svg aria-hidden="true"><use href="#i-play"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="adaptive">
+						<a class="thumb" href="https://www.hiddencliff.kr/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/hiddencliff.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>Hidden Cliff</h3><span class="year">2021.05</span></div>
+							<p class="meta">제주 호텔 공식·예약 사이트 · 적응형</p>
+							<p class="point">호텔 공식 사이트의 메인·상세를 리뉴얼하고, 오픈 후 배너와 유지보수를 맡았어요.</p>
+							<ul class="tags"><li>리뉴얼 퍼블리싱</li><li>배너 제작</li><li>유지보수</li></ul>
+							<div class="links"><a href="https://www.hiddencliff.kr/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="demo adaptive">
+						<a class="thumb" href="rothem/main/pure_main.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/rothem.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>로뎀투어</h3><span class="year">2021.05</span></div>
+							<p class="meta">성지순례 전문 여행사 · 적응형</p>
+							<p class="point">운영 중인 사이트의 전체 레이아웃을 리뉴얼하고, 이후 유지보수를 맡았어요.</p>
+							<ul class="tags"><li>레이아웃 리뉴얼</li><li>퍼블리싱</li><li>유지보수</li></ul>
+							<div class="links"><a href="http://www.rothemtour.co.kr/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a><a class="is-demo" href="rothem/main/pure_main.html" target="_blank" rel="noopener">Demo <svg aria-hidden="true"><use href="#i-play"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="adaptive">
+						<a class="thumb" href="https://www.treksta.co.kr/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/treksta.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>Treksta</h3><span class="year">2021.02</span></div>
+							<p class="meta">아웃도어 브랜드 쇼핑몰 · 적응형</p>
+							<p class="point">메인·상세를 리뉴얼하며 프런트 기능을 개발하고, 이벤트 페이지 제작까지 이어서 맡았어요.</p>
+							<ul class="tags"><li>리뉴얼</li><li>프런트 기능 개발</li><li>이벤트 페이지</li></ul>
+							<div class="links"><a href="https://www.treksta.co.kr/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="demo admin">
+						<a class="thumb" href="toadmin/main/pure_main.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/toadmin.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>TourOffice TMS</h3><span class="year">2021.01</span></div>
+							<p class="meta">여행사 운영자용 관리자 · PC</p>
+							<p class="point">여행사 운영자가 쓰는 예약관리 시스템을 리뉴얼했어요. 예약 처리 흐름을 데모로 직접 해 볼 수 있어요.</p>
+							<ul class="tags"><li>리뉴얼 디자인</li><li>퍼블리싱</li></ul>
+							<div class="links"><a class="is-demo" href="toadmin/main/pure_main.html" target="_blank" rel="noopener">Demo <svg aria-hidden="true"><use href="#i-play"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="adaptive">
+						<a class="thumb" href="https://www.tourboss.co.kr/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/tourboss.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>여행대장</h3><span class="year">2020.10</span></div>
+							<p class="meta">국내여행 전문 여행사 · 적응형</p>
+							<p class="point">메인·상세를 퍼블리싱하고, 오픈 후 추가 기능 개발 등 프런트 유지보수를 맡았어요.</p>
+							<ul class="tags"><li>퍼블리싱</li><li>추가 기능 개발</li><li>유지보수</li></ul>
+							<div class="links"><a href="https://www.tourboss.co.kr/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="demo responsive">
+						<a class="thumb" href="touroffice/main/pure_main.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/touroffice.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>TourOffice 기본형</h3><span class="year">2020.08</span></div>
+							<p class="meta">여행사 솔루션 · 반응형</p>
+							<p class="point">여행사 솔루션 기본형을 반응형으로 리뉴얼하며 디자인과 퍼블리싱을 모두 맡았어요.</p>
+							<ul class="tags"><li>전체 디자인</li><li>반응형 퍼블리싱</li></ul>
+							<div class="links"><a href="https://tour39sky.touroffice.co.kr/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a><a class="is-demo" href="touroffice/main/pure_main.html" target="_blank" rel="noopener">Demo <svg aria-hidden="true"><use href="#i-play"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="demo adaptive">
+						<a class="thumb" href="monami/main/pure_main.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/monami.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>Monami France</h3><span class="year">2020.06</span></div>
+							<p class="meta">프랑스 현지투어 여행사 · 적응형</p>
+							<p class="point">디자이너 시안에 피드백하며 퍼블리싱하고, 서비스 오픈 후 유지보수까지 맡았어요.</p>
+							<ul class="tags"><li>시안 피드백</li><li>퍼블리싱</li><li>유지보수</li></ul>
+							<div class="links"><a href="https://monamifrance.com/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a><a class="is-demo" href="monami/main/pure_main.html" target="_blank" rel="noopener">Demo <svg aria-hidden="true"><use href="#i-play"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="responsive">
+						<a class="thumb" href="http://busanaircruise.co.kr/main/main.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/songdo.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>부산 송도케이블카</h3><span class="year">2020.04</span></div>
+							<p class="meta">케이블카 공식 사이트 · 반응형</p>
+							<p class="point">부산 송도 케이블카 공식 사이트의 배너를 디자인하고 퍼블리싱했어요.</p>
+							<ul class="tags"><li>배너 디자인</li><li>퍼블리싱</li></ul>
+							<div class="links"><a href="http://busanaircruise.co.kr/main/main.html" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="demo responsive">
+						<a class="thumb" href="myculture/main/pure_main.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/myculture.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>MyCultureis</h3><span class="year">2020.03</span></div>
+							<p class="meta">원데이 클래스 예약 · 반응형</p>
+							<p class="point">세계 요리부터 한국 전통문화까지, 클래스 예약 사이트의 레이아웃을 디자인하고 퍼블리싱했어요.</p>
+							<ul class="tags"><li>레이아웃 디자인</li><li>퍼블리싱</li><li>유지보수</li></ul>
+							<div class="links"><a href="https://kor.mycultureis.com/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a><a class="is-demo" href="myculture/main/pure_main.html" target="_blank" rel="noopener">Demo <svg aria-hidden="true"><use href="#i-play"/></svg></a></div>
+						</div>
+					</article>
+
+					<article class="card" data-tags="responsive">
+						<a class="thumb" href="https://www.ryokanclub.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/ryokan.jpg" alt="" loading="lazy"></a>
+						<div class="card-body">
+							<div class="card-head"><h3>료칸클럽</h3><span class="year">2020.03</span></div>
+							<p class="meta">일본 료칸 여행사 · 반응형</p>
+							<p class="point">이전 작업자의 작업을 이어받아 전체 퍼블리싱을 마무리하고, 이후 유지보수를 맡았어요.</p>
+							<ul class="tags"><li>작업 인수</li><li>퍼블리싱</li><li>유지보수</li></ul>
+							<div class="links"><a href="https://www.ryokanclub.com/" target="_blank" rel="noopener">Live <svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+						</div>
+					</article>
+				</div>
+				<p class="empty" id="projectEmpty">이 조건에 맞는 프로젝트가 없어요.</p>
+			</div>
+		</section>
+
+		<!-- 소개 -->
+		<section class="section" id="about" aria-labelledby="aboutTitle">
+			<div class="wrap">
+				<div class="section-head"><h2 id="aboutTitle">About</h2></div>
+				<div class="about">
+					<div class="about-photo"><img src="img/itsme.jpg" alt="이재윤 사진" loading="lazy"></div>
+					<div class="about-text">
+						<p>디지털 Web &amp; App 디자인 과정을 수료한 뒤 웹 솔루션 기업에서 Web Designer 겸 Web Publisher로 일하며 쇼핑몰, 여행사, 유치원생 교육용 플랫폼 등 여러 프로젝트를 경험해 왔습니다. 그 경험과 꾸준한 자기 개발로 HTML, CSS, JavaScript 기본기를 다듬어 왔습니다.</p>
+						<p>여기에 안주하지 않고 JavaScript 라이브러리(React.js, Vue.js)를 공부하며, 지금은 <strong>UI/UX 디자인</strong>과 <strong>퍼블리싱</strong>은 물론 <strong>Front-End 개발</strong>까지 맡고 있습니다.</p>
+						<p>여러 프로젝트에서 다양한 사람과 협업하고 클라이언트와 직접 소통하며, 혼자만 잘해서는 일이 진행되지 않는다는 것을 배웠습니다. 그래서 지식과 기술은 기본, 사람들과 이야기가 잘 통하고 맡은 일에 책임감 있게 임하는 개발자가 되는 것이 가장 큰 목표입니다.</p>
+						<div class="hero-actions" style="margin-top:24px">
+							<a class="btn btn-accent" href="files/lee_resume_ns.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-file"/></svg> Resume PDF</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="contact" id="contact">
+					<a href="tel:01045344084"><span class="k">Phone</span><span class="v">010.4534.4084</span></a>
+					<a href="mailto:younyoun708@naver.com"><span class="k">Email</span><span class="v">younyoun708@naver.com</span></a>
+					<div><span class="k">Location</span><span class="v">부산광역시 동래구</span></div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<p>© <span id="year">2026</span> Lee Jae Youn. Made with HTML, CSS, JavaScript.</p>
+	</footer>
+
+	<button type="button" class="go-top" id="goTop" aria-label="맨 위로"><svg aria-hidden="true"><use href="#i-up"/></svg></button>
+
+	<script src="js/portfolio.js?v=20261126"></script>
+</body>
 </html>
