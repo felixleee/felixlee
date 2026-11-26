@@ -5,6 +5,7 @@ import { IconExternal, IconPlay } from './Icons';
 
 /** Live(실서비스) · Demo(가상 데이터 데모) 버튼 */
 export function ProjectLinks({ project, withDetail = false }: { project: Project; withDetail?: boolean }) {
+	if (!withDetail && !project.live && !project.demo) return null; // 상세 페이지에 보여 줄 버튼이 없으면 빈 줄도 만들지 않음
 	return (
 		<div className="links">
 			{withDetail && (

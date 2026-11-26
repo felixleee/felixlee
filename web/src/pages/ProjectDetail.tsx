@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { IconLeft, IconRight } from '../components/Icons';
 import { ProjectLinks } from '../components/ProjectCard';
-import { findProject, projects } from '../data/projects';
+import { findProject, formatLabel, projects } from '../data/projects';
 import { useTitle } from '../lib/hooks';
 import { asset } from '../lib/util';
 import NotFound from './NotFound';
@@ -49,7 +49,7 @@ export default function ProjectDetail() {
 					</div>
 					<div>
 						<dt>형태</dt>
-						<dd>{project.format === 'PC' ? 'PC 전용' : `${project.format} 웹`}</dd>
+						<dd>{formatLabel(project)}</dd>
 					</div>
 					<div>
 						<dt>맡은 역할</dt>
@@ -86,19 +86,21 @@ export default function ProjectDetail() {
 						</section>
 						{cs.flow && (
 							<section className="detail-section" aria-labelledby="sec-flow">
-								<h2 id="sec-flow">데모로 직접 해 보기</h2>
+								<h2 id="sec-flow">{cs.flow.title ?? '데모로 직접 해 보기'}</h2>
 								<ol className="steps">
 									{cs.flow.steps.map((t) => (
 										<li key={t}>{t}</li>
 									))}
 								</ol>
-								<div className="hero-actions">
-									{cs.flow.links.map((l, n) => (
-										<a key={l.href} className={`btn${n === 0 ? ' btn-accent' : ''}`} href={asset(l.href)} target="_blank" rel="noopener">
-											{l.label}
-										</a>
-									))}
-								</div>
+								{cs.flow.links && cs.flow.links.length > 0 && (
+									<div className="hero-actions">
+										{cs.flow.links.map((l, n) => (
+											<a key={l.href} className={`btn${n === 0 ? ' btn-accent' : ''}`} href={asset(l.href)} target="_blank" rel="noopener">
+												{l.label}
+											</a>
+										))}
+									</div>
+								)}
 								{cs.flow.note && <p className="note">{cs.flow.note}</p>}
 							</section>
 						)}

@@ -7,7 +7,7 @@ export const profile = {
 	headline: ['디자인부터', '프런트 개발까지,'],
 	headlineEm: '한 사람이 끝까지.',
 	lead: '여행·교육·제조 관리자 시스템까지, 화면을 설계하고 퍼블리싱하고 개발해 온 이재윤입니다.',
-	years: '2020 — 2024',
+	years: '2020 — 2026',
 	resume: 'files/lee_resume_ns.pdf',
 	whatIDo: ['UX/UI 디자인', '퍼블리싱', '프런트엔드 개발', '운영·유지보수'],
 	stack: ['HTML', 'CSS · SCSS', 'JavaScript', 'jQuery', 'Vue.js', 'Next.js', 'React', '반응형 · 적응형 웹'],
