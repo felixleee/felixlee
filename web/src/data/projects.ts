@@ -39,6 +39,8 @@ export interface Project {
 	thumb: string;
 	live?: string;
 	demo?: string;
+	/** Windows 실행 파일(.exe) 직접 내려받기 — GitHub 릴리스의 최신 파일 */
+	download?: string;
 	/** 상세 페이지 소개 문단 */
 	description: string;
 	caseStudy?: CaseStudy;
@@ -66,6 +68,7 @@ export const projects: Project[] = [
 		roles: ['기획 · 디자인', '개발', 'exe 배포'],
 		tags: ['side', 'dev'],
 		thumb: 'img/mdeautify.jpg',
+		download: 'https://github.com/felixleee/MDeautify/releases/latest/download/MDeautify.exe',
 		description: '마크다운(.md) 문서를 페이지 단위로 정돈된 PDF로 바꿔 주는 데스크톱 앱이에요. 왼쪽에 원문, 오른쪽에 실제 PDF 모양을 나란히 보면서 테마 · 글꼴 · 여백 · 목차 · 머리말을 고르고, 인터넷 없이 exe 파일 하나로 동작해요.',
 		caseStudy: {
 			background: [
@@ -81,14 +84,15 @@ export const projects: Project[] = [
 				'폰트 · 라이브러리를 모두 넣은 단일 HTML / 단일 exe 빌드 스크립트'
 			],
 			flow: {
-				title: '사용 흐름',
+				title: '직접 써 보기',
 				steps: [
-					'MDeautify.exe 를 실행해요 (설치 없음)',
+					'MDeautify.exe 를 내려받아 실행해요 (설치 없음)',
 					'.md 파일을 창에 끌어다 놓아요',
 					'오른쪽 미리보기를 보며 PDF 설정에서 테마 · 글꼴 · 여백을 바꿔요',
 					'[PDF 저장] 을 누르면 미리보기 그대로 PDF가 저장돼요'
 				],
-				note: '아래 화면 속 사용 안내서도 MDeautify 로 만든 문서예요.'
+				links: [{ label: 'MDeautify 내려받기 (.exe)', href: 'https://github.com/felixleee/MDeautify/releases/latest/download/MDeautify.exe' }],
+				note: 'Windows 용이에요. 아래 화면 속 사용 안내서도 MDeautify 로 만든 문서예요.'
 			},
 			shots: [
 				{ src: 'case/mdeautify-cover.jpg', caption: '원문과 PDF 미리보기 — 머리 정보로 표지를 자동으로 만들어요' },
@@ -109,6 +113,7 @@ export const projects: Project[] = [
 		roles: ['기획 · 디자인', '프런트 · 백엔드', '서버리스 배포'],
 		tags: ['side', 'dev'],
 		thumb: 'img/whoscoffee.jpg',
+		download: 'https://github.com/felixleee/WHOSCOFFEE/releases/latest/download/WHOSCOFFEE.exe',
 		live: 'https://whoscoffee.youn7084084.workers.dev',
 		description: "동료와 번갈아 커피를 사는 '품앗이' 순번을 알려 주는 2인용 웹앱이에요. 날짜 계산 없이, 커피를 산 사람이 도장을 찍으면 차례가 상대에게 넘어가요. 브라우저로 바로 쓰거나 주소창 없는 데스크톱 앱 창으로 띄울 수 있어요.",
 		caseStudy: {
@@ -132,7 +137,10 @@ export const projects: Project[] = [
 					'커피를 산 사람이 [품앗이 수행] 도장을 찍으면 차례가 넘어가요',
 					'지난 기록은 리스트나 달력으로 봐요'
 				],
-				links: [{ label: 'WHOSCOFFEE 열기', href: 'https://whoscoffee.youn7084084.workers.dev' }],
+				links: [
+					{ label: 'WHOSCOFFEE 열기', href: 'https://whoscoffee.youn7084084.workers.dev' },
+					{ label: '앱 창 내려받기 (.exe)', href: 'https://github.com/felixleee/WHOSCOFFEE/releases/latest/download/WHOSCOFFEE.exe' }
+				],
 				note: '실제로 쓰고 있는 서비스예요. 아래 화면의 이름 · 기록은 가상 데이터예요.'
 			},
 			shots: [
@@ -152,6 +160,7 @@ export const projects: Project[] = [
 		roles: ['기획 · 디자인', '개발', 'exe 배포'],
 		tags: ['side', 'dev'],
 		thumb: 'img/mdocify.jpg',
+		download: 'https://github.com/felixleee/MDocify/releases/latest/download/MDocify.exe',
 		description: '마크다운(.md)을 Word(.docx)로 바꿔 주는 데스크톱 앱이에요. MDeautify 와 같은 화면 구조로, 왼쪽에서 편집하고 오른쪽에서 문서 모양을 확인한 뒤 .docx 로 저장해요.',
 		caseStudy: {
 			background: ['PDF 는 받는 쪽에서 고칠 수 없어서, 함께 수정해야 하는 문서는 Word 파일이 필요했어요.'],
@@ -178,6 +187,7 @@ export const projects: Project[] = [
 		roles: ['기획 · 디자인', '개발', 'exe 배포'],
 		tags: ['side', 'dev'],
 		thumb: 'img/mdhwpxify.jpg',
+		download: 'https://github.com/felixleee/MDhwpxify/releases/latest/download/MDhwpxify.exe',
 		description: '마크다운(.md)을 한글 문서(.hwpx)로 바꿔 주는 데스크톱 앱이에요. MDeautify(PDF) · MDocify(Word) 에 이은 세 번째 자매 앱으로, 한글 파일로 내야 하는 보고 문서를 위해 만들었어요.',
 		caseStudy: {
 			background: ['공공 · 사내 보고는 한글(.hwpx) 파일로 내야 할 때가 많아, 마크다운 원본 하나로 PDF · Word · 한글을 모두 만들 수 있게 했어요.'],

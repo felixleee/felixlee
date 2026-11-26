@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { metaLine, type Project } from '../data/projects';
 import { asset } from '../lib/util';
-import { IconExternal, IconPlay } from './Icons';
+import { IconDown, IconExternal, IconPlay } from './Icons';
 
-/** Live(실서비스) · Demo(가상 데이터 데모) 버튼 */
+/** Live(실서비스) · Demo(가상 데이터 데모) · 내려받기(.exe) 버튼 */
 export function ProjectLinks({ project, withDetail = false }: { project: Project; withDetail?: boolean }) {
-	if (!withDetail && !project.live && !project.demo) return null; // 상세 페이지에 보여 줄 버튼이 없으면 빈 줄도 만들지 않음
+	if (!withDetail && !project.live && !project.demo && !project.download) return null; // 상세 페이지에 보여 줄 버튼이 없으면 빈 줄도 만들지 않음
 	return (
 		<div className="links">
 			{withDetail && (
@@ -21,6 +21,11 @@ export function ProjectLinks({ project, withDetail = false }: { project: Project
 			{project.demo && (
 				<a className="is-demo" href={asset(project.demo)} target="_blank" rel="noopener">
 					Demo <IconPlay />
+				</a>
+			)}
+			{project.download && (
+				<a href={project.download} rel="noopener" title="Windows 용 실행 파일(.exe)을 내려받아요">
+					내려받기 <IconDown />
 				</a>
 			)}
 		</div>

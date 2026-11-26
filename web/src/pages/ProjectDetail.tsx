@@ -95,7 +95,8 @@ export default function ProjectDetail() {
 								{cs.flow.links && cs.flow.links.length > 0 && (
 									<div className="hero-actions">
 										{cs.flow.links.map((l, n) => (
-											<a key={l.href} className={`btn${n === 0 ? ' btn-accent' : ''}`} href={asset(l.href)} target="_blank" rel="noopener">
+											// 실행 파일은 새 탭 없이 바로 내려받기
+											<a key={l.href} className={`btn${n === 0 ? ' btn-accent' : ''}`} href={asset(l.href)} target={/\.exe$/i.test(l.href) ? undefined : '_blank'} rel="noopener">
 												{l.label}
 											</a>
 										))}
