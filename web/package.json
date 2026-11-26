@@ -1,0 +1,33 @@
+{
+  "name": "felixlee-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "이재윤 포트폴리오 첫 화면 (Vite + React + TypeScript, 빌드 시 정적 HTML 프리렌더)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "prerender": "node scripts/prerender.mjs",
+    "assemble": "node scripts/assemble.mjs",
+    "build": "npm run typecheck && npm run build:client && npm run build:server && npm run prerender && npm run assemble",
+    "preview": "node scripts/serve-site.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "7.18.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "19.3.3",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "typescript": "5.9.3",
+    "vite": "8.3.8"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
