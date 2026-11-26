@@ -74,7 +74,7 @@ button { font: inherit; color: inherit; }
 }
 .site-header.is-scrolled { border-bottom-color: var(--line); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-.brand { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.brand { font-weight: 800; font-size: 20px; letter-spacing: -0.03em; white-space: nowrap; }
 .brand span { color: var(--accent-text); }
 .nav { display: flex; align-items: center; gap: 6px; }
 .nav a { padding: 8px 12px; border-radius: 999px; font-size: 14px; color: var(--sub); transition: color .15s, background-color .15s; }
