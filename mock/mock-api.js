@@ -375,7 +375,7 @@
 			'<span class="fx-dot" aria-hidden="true"></span>' +
 			'<span class="fx-label" title="이 화면의 목록·상세·예약 데이터는 가상 데이터이고, 바꾼 내용은 이 브라우저에만 저장돼요">DEMO · 가상 데이터</span>' +
 			'<button type="button" class="fx-act" data-act="reset">초기화</button>' +
-			'<a class="fx-act" href="' + Mock.esc(root + 'index.html') + '">포트폴리오</a>' +
+			'<a class="fx-act" href="' + Mock.esc(root) + '">포트폴리오</a>' +
 			'<button type="button" data-act="min" aria-label="배지 접기" title="접기/펴기">–</button>';
 		el.addEventListener('click', function (e) {
 			var act = e.target && e.target.getAttribute('data-act');
