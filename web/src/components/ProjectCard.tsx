@@ -35,7 +35,7 @@ export function ProjectLinks({ project, withDetail = false }: { project: Project
 export default function ProjectCard({ project }: { project: Project }) {
 	const to = `/projects/${project.slug}`;
 	return (
-		<article className="card">
+		<article className="card" data-reveal>
 			<Link className="thumb" to={to} tabIndex={-1} aria-hidden="true">
 				<img src={asset(project.thumb)} alt="" loading="lazy" width={800} height={500} />
 			</Link>

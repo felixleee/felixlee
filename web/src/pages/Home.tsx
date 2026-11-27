@@ -1,22 +1,57 @@
-import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import { IconDown, IconExternal, IconFile, IconPlay } from '../components/Icons';
+import { IconBraces, IconChat, IconCode, IconCycle, IconDown, IconExternal, IconFile, IconLayout } from '../components/Icons';
 import { profile } from '../data/profile';
 import { countBy, FILTERS, projects, type FilterKey } from '../data/projects';
-import { useTitle } from '../lib/hooks';
+import { useInView, useTitle } from '../lib/hooks';
 import { asset, splitBold } from '../lib/util';
 
 type Filter = FilterKey | 'all';
 const isFilter = (v: string | null): v is Filter => !!v && FILTERS.some((f) => f.key === v);
 
+const WORK_ICONS = { chat: IconChat, layout: IconLayout, code: IconCode, braces: IconBraces, cycle: IconCycle };
+
+/** How I work — 단계가 왼쪽부터 차례로 켜지는 스테퍼 (화면에 들어올 때 한 번) */
+function HowIWork() {
+	const w = profile.howIWork;
+	const { ref, inView } = useInView<HTMLDivElement>(0.35);
+	return (
+		<div ref={ref} className={`tile tile-work${inView ? ' is-in' : ''}`} data-reveal>
+			<p className="tile-title" style={{ marginBottom: 0 }}>
+				How I work
+			</p>
+			<p className="work-title">{w.title}</p>
+			<ol className="work-steps" aria-label="일하는 순서">
+				{w.steps.map((s, i) => {
+					const Icon = WORK_ICONS[s.icon];
+					return (
+						<li key={s.title} style={{ '--i': i } as CSSProperties}>
+							<span className="work-icon">
+								<Icon />
+							</span>
+							<span className="work-num">{String(i + 1).padStart(2, '0')}</span>
+							<strong className="work-name">{s.title}</strong>
+							<span className="work-desc">{s.desc}</span>
+						</li>
+					);
+				})}
+			</ol>
+			<div className="work-owner">
+				<span>
+					<b>{profile.handle}</b>
+					{w.owner}
+				</span>
+			</div>
+		</div>
+	);
+}
+
 function Hero({ onShowDemos }: { onShowDemos: () => void }) {
-	const f = profile.featured;
 	return (
 		<section className="hero" aria-labelledby="heroTitle">
 			<div className="wrap">
 				<div className="bento">
-					<div className="tile tile-intro">
+					<div className="tile tile-intro" data-reveal>
 						<div>
 							<p className="eyebrow">{profile.roleLine}</p>
 							<h1 id="heroTitle">
@@ -40,17 +75,17 @@ function Hero({ onShowDemos }: { onShowDemos: () => void }) {
 						</div>
 					</div>
 
-					<a className="tile tile-stat is-accent" href="#projects">
+					<a className="tile tile-stat is-accent" href="#projects" data-reveal>
 						<span className="num">{projects.length}</span>
 						<span className="label">projects · {profile.years}</span>
 					</a>
-					<button type="button" className="tile tile-stat" onClick={onShowDemos} aria-label="데모 체험 가능한 프로젝트만 보기">
+					<button type="button" className="tile tile-stat" onClick={onShowDemos} aria-label="데모 체험 가능한 프로젝트만 보기" data-reveal>
 						<IconExternal className="go" />
 						<span className="num">{countBy('demo')}</span>
 						<span className="label">직접 눌러 보는 데모</span>
 					</button>
 
-					<div className="tile tile-stack">
+					<div className="tile tile-stack" data-reveal>
 						<p className="tile-title">What I do</p>
 						<ul className="chips chips-role">
 							{profile.whatIDo.map((s) => (
@@ -67,33 +102,7 @@ function Hero({ onShowDemos }: { onShowDemos: () => void }) {
 						</ul>
 					</div>
 
-					<div className="tile tile-feature">
-						<div>
-							<p className="tile-title" style={{ marginBottom: 0 }}>
-								대표 데모
-							</p>
-							<p className="feature-title">{f.title}</p>
-							<div className="feature-flow" aria-label="데모 흐름">
-								{f.steps.map((s, i) => (
-									<span key={s} className="flow-item">
-										{i > 0 && <i aria-hidden="true">→</i>}
-										<span>{s}</span>
-									</span>
-								))}
-							</div>
-						</div>
-						<div className="hero-actions" style={{ marginTop: 0 }}>
-							<a className="btn btn-accent" href={asset(f.customer)} target="_blank" rel="noopener">
-								<IconPlay /> 고객 화면
-							</a>
-							<a className="btn" href={asset(f.admin)} target="_blank" rel="noopener">
-								관리자 화면 <IconExternal />
-							</a>
-							<Link className="btn" to={`/projects/${f.caseSlug}`}>
-								설명 보기
-							</Link>
-						</div>
-					</div>
+					<HowIWork />
 				</div>
 			</div>
 		</section>
@@ -105,7 +114,7 @@ function Projects({ filter, onChange }: { filter: Filter; onChange: (f: Filter) 
 	return (
 		<section className="section" id="projects" aria-labelledby="projectsTitle">
 			<div className="wrap">
-				<div className="section-head">
+				<div className="section-head" data-reveal>
 					<div>
 						<h2 id="projectsTitle">Projects</h2>
 						<p>Demo 는 가상 데이터로 목록·상세·예약 흐름을 직접 눌러 볼 수 있는 화면이에요.</p>
@@ -138,14 +147,14 @@ function About() {
 	return (
 		<section className="section" id="about" aria-labelledby="aboutTitle">
 			<div className="wrap">
-				<div className="section-head">
+				<div className="section-head" data-reveal>
 					<h2 id="aboutTitle">About</h2>
 				</div>
 				<div className="about">
-					<div className="about-photo">
+					<div className="about-photo" data-reveal>
 						<img src={asset(profile.photo)} alt={`${profile.nameKo} 사진`} loading="lazy" />
 					</div>
-					<div className="about-text">
+					<div className="about-text" data-reveal>
 						{profile.about.map((para) => (
 							<p key={para.slice(0, 20)}>
 								{splitBold(para).map(([t, b], i) => (b ? <strong key={i}>{t}</strong> : <span key={i}>{t}</span>))}
@@ -159,15 +168,15 @@ function About() {
 					</div>
 				</div>
 				<div className="contact" id="contact">
-					<a href={`tel:${c.tel}`}>
+					<a href={`tel:${c.tel}`} data-reveal>
 						<span className="k">Phone</span>
 						<span className="v">{c.phone}</span>
 					</a>
-					<a href={`mailto:${c.email}`}>
+					<a href={`mailto:${c.email}`} data-reveal>
 						<span className="k">Email</span>
 						<span className="v">{c.email}</span>
 					</a>
-					<div>
+					<div data-reveal>
 						<span className="k">Location</span>
 						<span className="v">{c.location}</span>
 					</div>

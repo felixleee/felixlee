@@ -135,15 +135,66 @@ button.tile-stat:hover { transform: translateY(-2px); }
 .chips li { background: var(--chip); color: var(--chip-ink); font-size: 13px; padding: 6px 12px; border-radius: 999px; }
 .chips-role li { background: var(--tag); color: var(--tag-ink); font-weight: 600; }
 
-.tile-feature { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-.feature-flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px; color: var(--sub); }
-.feature-flow .flow-item { display: inline-flex; align-items: center; gap: 8px; }
-.feature-flow .flow-item i { font-style: normal; }
-.feature-flow .flow-item > span { background: var(--tag); color: var(--tag-ink); padding: 5px 11px; border-radius: 8px; font-weight: 600; }
-.feature-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin: 4px 0 10px; }
+/* ---------- How I work — 일하는 순서 (스테퍼) ----------
+   기본 스타일 = 다 켜진 마지막 모습. 애니메이션은 시작 모습만 정의(fill backwards)하고,
+   화면에 들어와 .is-in 이 붙기 전까지는 멈춰 있음 → 끝나면 기본 스타일로 돌아가 hover 도 그대로 먹음 */
+.tile-work { --g: 16px; --dot: 52px; grid-column: 1 / -1; padding: 28px 32px 46px; }
+.work-title { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin: 4px 0 0; }
+.work-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--g); margin: 30px 0 0; padding: 0; list-style: none; }
+.work-steps li { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.work-icon {
+	position: relative; z-index: 1; display: grid; place-items: center;
+	width: var(--dot); height: var(--dot); border-radius: 50%;
+	background: var(--tag); color: var(--tag-ink); box-shadow: 0 0 0 6px var(--card);
+	transition: transform .2s, background-color .2s, color .2s;
+}
+.work-icon svg { width: 22px; height: 22px; }
+.work-steps li:hover .work-icon { background: var(--accent); color: var(--accent-ink); transform: translateY(-3px); }
+/* 다음 단계로 잇는 선 */
+.work-steps li:not(:last-child)::after {
+	content: ''; position: absolute;
+	top: calc(var(--dot) / 2 - 1px); left: calc(50% + var(--dot) / 2 + 10px);
+	width: calc(100% + var(--g) - var(--dot) - 20px); height: 2px; border-radius: 2px;
+	background: linear-gradient(90deg, var(--tag-ink), color-mix(in srgb, var(--tag-ink) 35%, transparent));
+	transform-origin: left center;
+}
+.work-num { margin-top: 14px; font-size: 12px; font-weight: 600; color: var(--sub); font-variant-numeric: tabular-nums; letter-spacing: .08em; }
+.work-name { margin-top: 2px; font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
+.work-desc { margin-top: 4px; font-size: 13px; color: var(--sub); line-height: 1.5; }
+/* 다섯 단계를 묶는 괄호 + 담당 표시 */
+.work-owner {
+	position: relative; height: 16px; margin: 22px calc((100% - 4 * var(--g)) / 10) 0;
+	border: 2px solid var(--line); border-top: 0; border-radius: 0 0 14px 14px;
+}
+.work-owner span {
+	position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 50%);
+	display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+	padding: 5px 14px 5px 5px; border-radius: 999px; background: var(--card-2); border: 1px solid var(--line);
+	font-size: 13px; color: var(--sub);
+}
+.work-owner b { background: var(--accent); color: var(--accent-ink); padding: 2px 10px; border-radius: 999px; font-size: 12px; }
+
+/* 칸이 떠오르는 동안(.3s) 기다렸다가 시작 */
+.work-icon { animation: work-lit .45s ease backwards paused; animation-delay: calc(var(--i) * .5s + .3s); }
+.work-steps li:not(:last-child)::after { animation: work-line .35s linear backwards paused; animation-delay: calc(var(--i) * .5s + .45s); }
+.work-owner { animation: work-owner .5s ease backwards paused; animation-delay: 2.7s; }
+.tile-work.is-in .work-icon,
+.tile-work.is-in .work-steps li::after,
+.tile-work.is-in .work-owner { animation-play-state: running; }
+@keyframes work-lit {
+	from { background: var(--card-2); color: var(--sub); transform: scale(.86); }
+	60% { background: var(--accent); color: var(--accent-ink); transform: scale(1.1); }
+}
+@keyframes work-line { from { transform: scaleX(0); } }
+@keyframes work-line-v { from { transform: scaleY(0); } }
+@keyframes work-owner { from { opacity: 0; transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) {
+	.work-icon, .work-steps li::after, .work-owner { animation: none !important; }
+}
 
 /* ---------- 프로젝트 ---------- */
 .section { padding: 72px 0 0; scroll-margin-top: 60px; }
+.hero + .section { padding-top: 40px; } /* 첫 화면 칸들 바로 아래 Projects 는 덜 띄움 */
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .section-head h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 800; letter-spacing: -0.03em; }
 .section-head p { color: var(--sub); font-size: 14px; margin-top: 4px; }
@@ -255,6 +306,12 @@ button.tile-stat:hover { transform: translateY(-2px); }
 .notfound h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.03em; margin-top: 8px; }
 .notfound .lead { color: var(--sub); margin-top: 10px; }
 
+/* ---------- 등장 효과 (토스 브랜딩 페이지처럼 살짝 떠오르며 또렷해짐) ----------
+   useScrollReveal 이 화면 아래에 있는 [data-reveal] 에만 data-reveal-wait 를 붙여 투명하게 두고,
+   화면에 들어오면 떼면서 떠오르게 한다. 처음 보이는 화면은 숨기지 않음 */
+[data-reveal-wait] { opacity: 0; }
+@media print { [data-reveal-wait] { opacity: 1; } }
+
 /* ---------- 반응형 ---------- */
 @media (max-width: 1024px) {
 	.bento { grid-template-columns: 1fr 1fr; }
@@ -263,6 +320,25 @@ button.tile-stat:hover { transform: translateY(-2px); }
 	.grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 	.about { grid-template-columns: 240px minmax(0, 1fr); }
 	.facts { grid-template-columns: 1fr 1fr; }
+}
+/* How I work — 좁은 화면에선 세로 타임라인 */
+@media (max-width: 760px) {
+	.tile-work { --g: 18px; --dot: 44px; padding-bottom: 24px; }
+	.work-title { font-size: 18px; }
+	.work-steps { grid-template-columns: 1fr; margin-top: 24px; }
+	.work-steps li { display: grid; grid-template-columns: var(--dot) minmax(0, 1fr); column-gap: 14px; align-items: start; text-align: left; }
+	.work-icon { grid-row: 1 / span 3; box-shadow: none; }
+	.work-icon svg { width: 20px; height: 20px; }
+	.work-num, .work-name, .work-desc { grid-column: 2; }
+	.work-num { margin-top: 0; }
+	.work-steps li:not(:last-child)::after {
+		top: calc(var(--dot) + 6px); left: calc(var(--dot) / 2 - 1px);
+		width: 2px; height: calc(100% - var(--dot) + var(--g) - 12px);
+		background: linear-gradient(180deg, var(--tag-ink), color-mix(in srgb, var(--tag-ink) 35%, transparent));
+		transform-origin: center top; animation-name: work-line-v;
+	}
+	.work-owner { height: auto; margin: 22px 0 0; border: 0; }
+	.work-owner span { position: static; transform: none; white-space: normal; }
 }
 @media (max-width: 640px) {
 	.wrap { padding: 0 16px; }
@@ -275,6 +351,7 @@ button.tile-stat:hover { transform: translateY(-2px); }
 	.tile-stat .num { font-size: 42px; }
 	.grid { grid-template-columns: 1fr; }
 	.section { padding-top: 56px; }
+	.hero + .section { padding-top: 32px; }
 	.about { grid-template-columns: 1fr; }
 	.about-photo { aspect-ratio: 4 / 3; }
 	.about-text { padding: 24px; }

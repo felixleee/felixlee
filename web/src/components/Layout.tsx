@@ -1,13 +1,16 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { profile } from '../data/profile';
-import { useScrolledPast, useTheme } from '../lib/hooks';
+import { useScrolledPast, useScrollReveal, useTheme } from '../lib/hooks';
 import { IconMoon, IconSun, IconUp } from './Icons';
 
-/** 주소가 바뀌면: #해시가 있으면 그 섹션으로, 없으면 맨 위로 */
+/**
+ * 주소가 바뀌면: #해시가 있으면 그 섹션으로, 없으면 맨 위로.
+ * 새 화면을 그리자마자(useLayoutEffect) 옮겨야 등장 효과가 바뀐 스크롤 위치로 화면 안 · 아래를 가른다
+ */
 function ScrollManager() {
 	const { pathname, hash } = useLocation();
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (hash) {
 			const el = document.getElementById(decodeURIComponent(hash.slice(1)));
 			if (el) {
@@ -15,7 +18,7 @@ function ScrollManager() {
 				return;
 			}
 		}
-		window.scrollTo(0, 0);
+		window.scrollTo({ top: 0, behavior: 'instant' }); // 새 페이지는 위에서 바로 시작 (부드럽게 올라가는 모습 없이)
 	}, [pathname, hash]);
 	return null;
 }
@@ -77,6 +80,7 @@ function GoTop() {
 }
 
 export default function Layout() {
+	useScrollReveal();
 	return (
 		<>
 			<ScrollManager />

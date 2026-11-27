@@ -24,7 +24,7 @@ export default function ProjectDetail() {
 					<IconLeft /> 모든 프로젝트
 				</Link>
 
-				<header className="detail-head">
+				<header className="detail-head" data-reveal>
 					<p className="eyebrow">
 						{project.date} · {project.format}
 						{project.stack ? ` · ${project.stack}` : ''}
@@ -34,24 +34,24 @@ export default function ProjectDetail() {
 					<ProjectLinks project={project} />
 				</header>
 
-				<div className="detail-hero">
+				<div className="detail-hero" data-reveal>
 					<img src={asset(project.thumb)} alt={`${project.title} 화면`} width={1600} height={1000} />
 				</div>
 
 				<dl className="facts">
-					<div>
+					<div data-reveal>
 						<dt>시기</dt>
 						<dd>{project.date}</dd>
 					</div>
-					<div>
+					<div data-reveal>
 						<dt>분야</dt>
 						<dd>{project.category}</dd>
 					</div>
-					<div>
+					<div data-reveal>
 						<dt>형태</dt>
 						<dd>{formatLabel(project)}</dd>
 					</div>
-					<div>
+					<div data-reveal>
 						<dt>맡은 역할</dt>
 						<dd>
 							<ul className="tags">
@@ -63,20 +63,20 @@ export default function ProjectDetail() {
 					</div>
 				</dl>
 
-				<section className="detail-section" aria-labelledby="sec-intro">
+				<section className="detail-section" aria-labelledby="sec-intro" data-reveal>
 					<h2 id="sec-intro">프로젝트 소개</h2>
 					<p>{project.description}</p>
 				</section>
 
 				{cs && (
 					<>
-						<section className="detail-section" aria-labelledby="sec-bg">
+						<section className="detail-section" aria-labelledby="sec-bg" data-reveal>
 							<h2 id="sec-bg">배경</h2>
 							{cs.background.map((t) => (
 								<p key={t}>{t}</p>
 							))}
 						</section>
-						<section className="detail-section" aria-labelledby="sec-did">
+						<section className="detail-section" aria-labelledby="sec-did" data-reveal>
 							<h2 id="sec-did">내가 한 일</h2>
 							<ul className="bullets">
 								{cs.did.map((t) => (
@@ -85,7 +85,7 @@ export default function ProjectDetail() {
 							</ul>
 						</section>
 						{cs.flow && (
-							<section className="detail-section" aria-labelledby="sec-flow">
+							<section className="detail-section" aria-labelledby="sec-flow" data-reveal>
 								<h2 id="sec-flow">{cs.flow.title ?? '데모로 직접 해 보기'}</h2>
 								<ol className="steps">
 									{cs.flow.steps.map((t) => (
@@ -107,10 +107,10 @@ export default function ProjectDetail() {
 						)}
 						{cs.shots && cs.shots.length > 0 && (
 							<section className="detail-section" aria-labelledby="sec-shots">
-								<h2 id="sec-shots">화면</h2>
+								<h2 id="sec-shots" data-reveal>화면</h2>
 								<div className="shots">
 									{cs.shots.map((s) => (
-										<figure key={s.src}>
+										<figure key={s.src} data-reveal>
 											<img src={asset(s.src)} alt={s.caption} loading="lazy" width={1050} height={675} />
 											<figcaption>{s.caption}</figcaption>
 										</figure>
@@ -123,7 +123,7 @@ export default function ProjectDetail() {
 
 				<nav className="pager" aria-label="다른 프로젝트">
 					{newer ? (
-						<Link to={`/projects/${newer.slug}`} className="prev">
+						<Link to={`/projects/${newer.slug}`} className="prev" data-reveal>
 							<span className="k">
 								<IconLeft /> 최근 프로젝트
 							</span>
@@ -133,7 +133,7 @@ export default function ProjectDetail() {
 						<span />
 					)}
 					{older ? (
-						<Link to={`/projects/${older.slug}`} className="next">
+						<Link to={`/projects/${older.slug}`} className="next" data-reveal>
 							<span className="k">
 								이전 프로젝트 <IconRight />
 							</span>
